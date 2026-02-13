@@ -1,0 +1,39 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Http\Resources\Api\V1;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class GuruResource extends JsonResource
+{
+    public function toArray(Request $request): array
+    {
+        return [
+            'id' => $this->id,
+            'nip' => $this->nip,
+            'nuptk' => $this->nuptk,
+            'nama' => $this->nama,
+            'jenis_kelamin' => $this->jenis_kelamin,
+            'tanggal_lahir' => $this->tanggal_lahir?->format('Y-m-d'),
+            'alamat' => $this->alamat,
+            'no_hp' => $this->no_hp,
+            'email' => $this->email,
+            'pendidikan_terakhir' => $this->pendidikan_terakhir,
+            'jabatan' => $this->jabatan,
+            'user' => $this->whenLoaded('user', fn () => [
+                'id' => $this->user->id,
+                'email' => $this->user->email,
+            ]),
+            'mapel' => $this->whenLoaded('mapel', fn () => $this->mapel->map(fn ($m) => [
+                'id' => $m->id,
+                'kode' => $m->kode,
+                'nama' => $m->nama,
+            ])),
+            'created_at' => $this->created_at?->toIso8601String(),
+            'updated_at' => $this->updated_at?->toIso8601String(),
+        ];
+    }
+}
