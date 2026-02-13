@@ -1,0 +1,44 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Http\Requests\Api\V1\Siswa;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class CreateSiswaRequest extends FormRequest
+{
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    public function rules(): array
+    {
+        return [
+            'sys_user_id' => ['required', 'integer', 'exists:sys_users,id'],
+            'nis' => ['required', 'string', 'max:20', 'unique:mst_siswa,nis'],
+            'nama' => ['required', 'string', 'max:100'],
+            'jenis_kelamin' => ['required', 'string', 'in:L,P'],
+            'tanggal_lahir' => ['nullable', 'date', 'before:today'],
+            'alamat' => ['nullable', 'string'],
+            'mst_kelas_id' => ['nullable', 'integer', 'exists:mst_kelas,id'],
+            'status' => ['nullable', 'string', 'in:aktif,lulus,pindah'],
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'sys_user_id.required' => 'User ID wajib diisi',
+            'sys_user_id.exists' => 'User tidak ditemukan',
+            'nis.required' => 'NIS wajib diisi',
+            'nis.unique' => 'NIS sudah terdaftar',
+            'nama.required' => 'Nama wajib diisi',
+            'jenis_kelamin.required' => 'Jenis kelamin wajib dipilih',
+            'jenis_kelamin.in' => 'Jenis kelamin harus L atau P',
+            'tanggal_lahir.before' => 'Tanggal lahir harus sebelum hari ini',
+            'mst_kelas_id.exists' => 'Kelas tidak ditemukan',
+        ];
+    }
+}

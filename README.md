@@ -1,59 +1,222 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sekolah API - Backend RESTful API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Backend RESTful API untuk sistem informasi sekolah dengan arsitektur Clean Architecture, JWT Authentication, Redis Caching, dan MinIO File Storage.
 
-## About Laravel
+## Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- ✅ **Clean Architecture** - Controller → Service → Repository → Model
+- ✅ **JWT Authentication** - php-open-source-saver/jwt-auth dengan Redis blacklist
+- ✅ **RBAC (Role-Based Access Control)** - Admin, Guru, Siswa, Wali
+- ✅ **Redis Optimization** - Cache, Queue, Session, Rate Limiting
+- ✅ **MinIO/S3 Integration** - File upload dengan presigned URL
+- ✅ **Performance Optimization** - Eager loading, cursor pagination, indexing
+- ✅ **API Versioning** - /api/v1
+- ✅ **Standardized Response** - Consistent JSON response format
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Persyaratan Sistem
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP 8.2+
+- MySQL 8.0+ / MariaDB 10.6+
+- Redis 6.0+
+- Composer 2.0+
+- MinIO (opsional, untuk file storage)
 
-## Learning Laravel
+## Instalasi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 1. Clone Repository
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+cd /Users/bodo/www/sekolah/src
+git clone <repository-url> .
+```
 
-## Laravel Sponsors
+### 2. Install Dependencies
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+composer install
+```
 
-### Premium Partners
+### 3. Environment Setup
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+cp .env.example .env
+php artisan key:generate
+php artisan jwt:secret
+```
 
-## Contributing
+Edit `.env` file dan sesuaikan konfigurasi database, Redis, dan MinIO.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Database Setup
 
-## Code of Conduct
+```bash
+# Import existing schema
+mysql -u root -p db_sekolah < database/db_sekolah.sql
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Run migrations (if needed)
+php artisan migrate
 
-## Security Vulnerabilities
+# Seed RBAC data
+php artisan db:seed --class=RbacSeeder
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 5. Cache Configuration (Production)
+
+```bash
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+## Penggunaan
+
+### Default Credentials
+
+```
+Email: admin@sekolah.com
+Password: password
+```
+
+### API Endpoints
+
+#### Authentication
+- `POST /api/v1/auth/login` - Login
+- `POST /api/v1/auth/register` - Register
+- `POST /api/v1/auth/refresh` - Refresh token
+- `POST /api/v1/auth/logout` - Logout (auth required)
+- `GET /api/v1/auth/me` - Get current user (auth required)
+
+#### Siswa (Admin & Guru only)
+- `GET /api/v1/siswa` - List all siswa
+- `POST /api/v1/siswa` - Create siswa
+- `GET /api/v1/siswa/{id}` - Get single siswa
+- `PUT /api/v1/siswa/{id}` - Update siswa
+- `DELETE /api/v1/siswa/{id}` - Delete siswa
+- `GET /api/v1/siswa/kelas/{kelas_id}` - Get siswa by kelas
+- `GET /api/v1/siswa/{id}/absensi-summary` - Get absensi summary
+- `POST /api/v1/siswa/{id}/naik-kelas` - Naik kelas
+- `POST /api/v1/siswa/{id}/lulus` - Lulus
+
+#### File Upload (Auth required)
+- `POST /api/v1/files/upload` - Upload file
+- `POST /api/v1/files/presigned-url` - Get presigned URL
+- `DELETE /api/v1/files/delete` - Delete file
+
+#### Health Check
+- `GET /api/health` - Health check
+
+## Struktur Folder
+
+```
+app/
+├── Http/
+│   ├── Controllers/Api/V1/    # API Controllers
+│   ├── Middleware/            # Custom middleware
+│   ├── Requests/Api/V1/       # Form request validation
+│   └── Resources/Api/V1/      # API resources
+├── Models/
+│   ├── Master/                # Master data (siswa, guru, kelas, etc)
+│   ├── System/                # System models (users, roles, logs)
+│   └── Transaction/           # Transaction models
+├── Repositories/              # Repository pattern
+│   ├── Contracts/             # Interfaces
+│   └── Eloquent/              # Implementations
+├── Services/                  # Business logic
+└── Traits/                    # Reusable traits
+```
+
+Lihat [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) untuk detail lengkap.
+
+## Dokumentasi API
+
+Lihat [API_DOCUMENTATION.md](API_DOCUMENTATION.md) untuk dokumentasi lengkap endpoint API.
+
+## Optimization
+
+Lihat [OPTIMIZATION_RECOMMENDATIONS.md](OPTIMIZATION_RECOMMENDATIONS.md) untuk:
+- Database indexing recommendations
+- Query optimization guidelines
+- Redis optimization
+- Performance targets
+- Security best practices
+
+## Konfigurasi Penting
+
+### JWT (.env)
+```env
+JWT_SECRET=your-secret-key
+JWT_TTL=30                    # Access token: 30 menit
+JWT_REFRESH_TTL=10080         # Refresh token: 7 hari
+JWT_BLACKLIST_ENABLED=true
+```
+
+### Redis (.env)
+```env
+CACHE_STORE=redis
+QUEUE_CONNECTION=redis
+SESSION_DRIVER=redis
+REDIS_HOST=127.0.0.1
+REDIS_PORT=6379
+```
+
+### MinIO/S3 (.env)
+```env
+FILESYSTEM_DISK=s3
+AWS_ACCESS_KEY_ID=your-key
+AWS_SECRET_ACCESS_KEY=your-secret
+AWS_BUCKET=sekolah-files
+AWS_ENDPOINT=http://localhost:9000
+AWS_USE_PATH_STYLE_ENDPOINT=true
+```
+
+## Development
+
+### Run Development Server
+```bash
+php artisan serve
+```
+
+### Run Queue Worker
+```bash
+php artisan queue:work
+```
+
+### Run Tests
+```bash
+php artisan test
+```
+
+### Code Formatting
+```bash
+./vendor/bin/pint
+```
+
+## Performance Targets
+
+| Operation | Target Response Time |
+|-----------|---------------------|
+| Cached GET endpoint | < 100ms |
+| Normal GET endpoint | < 200ms |
+| POST/PUT/DELETE | < 300ms |
+| Complex queries | < 500ms |
+| File upload | < 2s |
+
+## Deployment Checklist
+
+- [ ] Run migrations: `php artisan migrate --force`
+- [ ] Seed RBAC data: `php artisan db:seed --class=RbacSeeder`
+- [ ] Cache configurations: `php artisan config:cache`
+- [ ] Cache routes: `php artisan route:cache`
+- [ ] Set proper file permissions
+- [ ] Configure queue workers (Supervisor)
+- [ ] Set up Redis for cache/sessions
+- [ ] Configure MinIO/S3 credentials
+- [ ] Enable HTTPS
+- [ ] Set up monitoring
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[MIT License](LICENSE)
+
+## Author
+
+Development Team

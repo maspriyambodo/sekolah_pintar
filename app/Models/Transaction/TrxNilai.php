@@ -1,0 +1,37 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Models\Transaction;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Master\MstSiswa;
+
+class TrxNilai extends Model
+{
+    use HasFactory;
+
+    protected $table = 'trx_nilai';
+
+    protected $fillable = [
+        'trx_ujian_id',
+        'mst_siswa_id',
+        'nilai',
+    ];
+
+    protected $casts = [
+        'nilai' => 'decimal:2',
+    ];
+
+    public function ujian(): BelongsTo
+    {
+        return $this->belongsTo(TrxUjian::class, 'trx_ujian_id');
+    }
+
+    public function siswa(): BelongsTo
+    {
+        return $this->belongsTo(MstSiswa::class, 'mst_siswa_id');
+    }
+}
