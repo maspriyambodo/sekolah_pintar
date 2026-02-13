@@ -13,12 +13,14 @@ use App\Http\Controllers\Api\V1\GuruController;
 use App\Http\Controllers\Api\V1\KelasController;
 use App\Http\Controllers\Api\V1\MapelController;
 use App\Http\Controllers\Api\V1\NilaiController;
+use App\Http\Controllers\Api\V1\PembayaranSppController;
 use App\Http\Controllers\Api\V1\PeminjamanBukuController;
 use App\Http\Controllers\Api\V1\PermissionController;
 use App\Http\Controllers\Api\V1\RankingController;
 use App\Http\Controllers\Api\V1\RaporController;
 use App\Http\Controllers\Api\V1\RoleController;
 use App\Http\Controllers\Api\V1\SiswaController;
+use App\Http\Controllers\Api\V1\TarifSppController;
 use App\Http\Controllers\Api\V1\UjianController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\WaliController;
@@ -271,6 +273,31 @@ Route::prefix('v1')->group(function () {
                 Route::get('/{id}', [PermissionController::class, 'show'])->name('api.v1.admin.permissions.show');
                 Route::put('/{id}', [PermissionController::class, 'update'])->name('api.v1.admin.permissions.update');
                 Route::delete('/{id}', [PermissionController::class, 'destroy'])->name('api.v1.admin.permissions.destroy');
+            });
+        });
+
+        // Keuangan Routes - Admin & Staff access
+        Route::middleware([RoleMiddleware::class . ':admin,staff'])->prefix('keuangan')->group(function () {
+            // Tarif SPP
+            Route::prefix('tarif-spp')->group(function () {
+                Route::get('/', [TarifSppController::class, 'index'])->name('api.v1.keuangan.tarif-spp.index');
+                Route::post('/', [TarifSppController::class, 'store'])->name('api.v1.keuangan.tarif-spp.store');
+                Route::get('/kelas/{kelasId}', [TarifSppController::class, 'byKelas'])->name('api.v1.keuangan.tarif-spp.by-kelas');
+                Route::get('/{id}', [TarifSppController::class, 'show'])->name('api.v1.keuangan.tarif-spp.show');
+                Route::put('/{id}', [TarifSppController::class, 'update'])->name('api.v1.keuangan.tarif-spp.update');
+                Route::delete('/{id}', [TarifSppController::class, 'destroy'])->name('api.v1.keuangan.tarif-spp.destroy');
+            });
+
+            // Pembayaran SPP
+            Route::prefix('pembayaran-spp')->group(function () {
+                Route::get('/', [PembayaranSppController::class, 'index'])->name('api.v1.keuangan.pembayaran-spp.index');
+                Route::post('/', [PembayaranSppController::class, 'store'])->name('api.v1.keuangan.pembayaran-spp.store');
+                Route::post('/bayar', [PembayaranSppController::class, 'bayar'])->name('api.v1.keuangan.pembayaran-spp.bayar');
+                Route::get('/siswa/{siswaId}', [PembayaranSppController::class, 'bySiswa'])->name('api.v1.keuangan.pembayaran-spp.by-siswa');
+                Route::get('/siswa/{siswaId}/status', [PembayaranSppController::class, 'statusSiswa'])->name('api.v1.keuangan.pembayaran-spp.status');
+                Route::get('/{id}', [PembayaranSppController::class, 'show'])->name('api.v1.keuangan.pembayaran-spp.show');
+                Route::put('/{id}', [PembayaranSppController::class, 'update'])->name('api.v1.keuangan.pembayaran-spp.update');
+                Route::delete('/{id}', [PembayaranSppController::class, 'destroy'])->name('api.v1.keuangan.pembayaran-spp.destroy');
             });
         });
     });
