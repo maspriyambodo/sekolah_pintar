@@ -1,0 +1,99 @@
+### Dashboard API Testing
+### Base URL and Authentication
+
+@baseUrl = http://localhost:8000/api/v1
+@contentType = application/json
+
+# NOTE: Replace this with your actual JWT token after login
+@authToken = your_jwt_token_here
+
+###
+
+# Get Complete Dashboard Data (All in one)
+# Returns: summary_cards, financial, academic_attendance, counseling
+GET {{baseUrl}}/dashboard
+Authorization: Bearer {{authToken}}
+Accept: {{contentType}}
+
+###
+
+# Get Summary Cards Only
+# Returns: total_siswa_aktif, total_guru, total_kelas, total_tunggakan_spp, kasus_bk_proses
+GET {{baseUrl}}/dashboard/summary-cards
+Authorization: Bearer {{authToken}}
+Accept: {{contentType}}
+
+###
+
+# Get Financial Analytics Only
+# Returns: spp_trend (12 months), payment_status_distribution (donut chart), yearly_summary
+GET {{baseUrl}}/dashboard/financial-analytics
+Authorization: Bearer {{authToken}}
+Accept: {{contentType}}
+
+###
+
+# Get Academic & Attendance Analytics Only
+# Returns: attendance_7_days, attendance_summary, nilai_distribution, nilai_summary
+GET {{baseUrl}}/dashboard/academic-attendance
+Authorization: Bearer {{authToken}}
+Accept: {{contentType}}
+
+###
+
+# Get Counseling (BK) Insights Only
+# Returns: top_kategori_kasus, status_penyelesaian, kasus_per_bulan, ringkasan
+GET {{baseUrl}}/dashboard/counseling-insights
+Authorization: Bearer {{authToken}}
+Accept: {{contentType}}
+
+###
+### FILTER EXAMPLES
+###
+
+# Dashboard with Filter by Tahun Ajaran
+GET {{baseUrl}}/dashboard?tahun_ajaran=2024/2025
+Authorization: Bearer {{authToken}}
+Accept: {{contentType}}
+
+###
+
+# Dashboard with Filter by Kelas
+GET {{baseUrl}}/dashboard?mst_kelas_id=1
+Authorization: Bearer {{authToken}}
+Accept: {{contentType}}
+
+###
+
+# Dashboard with Combined Filters (Tahun Ajaran + Kelas)
+GET {{baseUrl}}/dashboard?tahun_ajaran=2024/2025&mst_kelas_id=1
+Authorization: Bearer {{authToken}}
+Accept: {{contentType}}
+
+###
+
+# Summary Cards with Filter
+GET {{baseUrl}}/dashboard/summary-cards?tahun_ajaran=2024/2025&mst_kelas_id=1
+Authorization: Bearer {{authToken}}
+Accept: {{contentType}}
+
+###
+
+# Financial Analytics with Filter
+GET {{baseUrl}}/dashboard/financial-analytics?tahun_ajaran=2024/2025&mst_kelas_id=1
+Authorization: Bearer {{authToken}}
+Accept: {{contentType}}
+
+###
+
+# Academic & Attendance with Filter
+GET {{baseUrl}}/dashboard/academic-attendance?tahun_ajaran=2024/2025&mst_kelas_id=1
+Authorization: Bearer {{authToken}}
+Accept: {{contentType}}
+
+###
+
+# Counseling Insights with Filter
+GET {{baseUrl}}/dashboard/counseling-insights?tahun_ajaran=2024/2025&mst_kelas_id=1
+Authorization: Bearer {{authToken}}
+Accept: {{contentType}}
