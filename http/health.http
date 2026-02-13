@@ -1,0 +1,68 @@
+### ============================================================
+### HEALTH CHECK & MISCELLANEOUS ENDPOINTS
+### Sekolah REST Client
+### ============================================================
+
+@baseUrl = http://localhost:8000/api
+
+### -----------------------------------------------------------
+### Health Check
+### GET /api/health
+### No authentication required
+### -----------------------------------------------------------
+GET {{baseUrl}}/health
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "API is running",
+###   "data": {
+###     "timestamp": "2024-01-15T10:30:00+07:00",
+###     "version": "1.0.0"
+###   }
+### }
+
+### ============================================================
+### API INFORMATION
+### ============================================================
+
+### Available API Versions:
+###   - v1: Current stable version
+
+### Base URLs:
+###   - Local: http://localhost:8000/api/v1
+###   - Development: https://dev-api.sekolah.test/api/v1
+###   - Production: https://api.sekolah.test/api/v1
+
+### Authentication:
+###   - Type: JWT Bearer Token
+###   - Header: Authorization: Bearer {token}
+###   - Access Token Expiry: 1 hour
+###   - Refresh Token Expiry: 7 days
+
+### Response Format:
+###   All responses follow this structure:
+###   {
+###     "success": boolean,
+###     "message": string,
+###     "data": object|array|null,
+###     "errors": object (only on validation errors)
+###   }
+
+### HTTP Status Codes:
+###   200 - OK: Request successful
+###   201 - Created: Resource created successfully
+###   400 - Bad Request: Invalid request data
+###   401 - Unauthorized: Authentication required
+###   403 - Forbidden: Insufficient permissions
+###   404 - Not Found: Resource not found
+###   422 - Unprocessable Entity: Validation error
+###   500 - Internal Server Error: Server error
+
+### Rate Limiting:
+###   - Authenticated: 1000 requests per hour
+###   - Unauthenticated: 60 requests per minute
+
+### Supported Content Types:
+###   - application/json (default)
+###   - multipart/form-data (for file uploads)

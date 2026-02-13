@@ -1,0 +1,179 @@
+### ============================================================
+### FILE UPLOAD API - Sekolah REST Client
+### Base URL: http://localhost:8000/api/v1
+### Authentication Required: Yes
+### ============================================================
+
+@baseUrl = http://localhost:8000/api/v1
+@contentType = application/json
+
+### ============================================================
+### CONFIGURATION
+### ============================================================
+### Set your auth token here after login
+@authToken = YOUR_ACCESS_TOKEN_HERE
+
+### ============================================================
+### FILE UPLOAD ENDPOINTS
+### ============================================================
+
+### -----------------------------------------------------------
+### 1. Upload File
+### POST /api/v1/files/upload
+### Content-Type: multipart/form-data
+### Parameters:
+###   - file: required|file|max:10240 (10MB)
+###   - folder: optional|string|max:100
+### Supported formats: JPEG, PNG, GIF, PDF, DOC, DOCX
+### -----------------------------------------------------------
+POST {{baseUrl}}/files/upload
+Authorization: Bearer {{authToken}}
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="folder"
+
+uploads/profile-pictures
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="profile.jpg"
+Content-Type: image/jpeg
+
+< ./path/to/your/file.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### Expected Response 201 Created:
+### {
+###   "success": true,
+###   "message": "File uploaded successfully",
+###   "data": {
+###     "file_path": "uploads/profile-pictures/abc123.jpg",
+###     "file_name": "profile.jpg",
+###     "file_size": 1024567,
+###     "mime_type": "image/jpeg",
+###     "url": "https://storage.example.com/uploads/profile-pictures/abc123.jpg"
+###   }
+### }
+
+### -----------------------------------------------------------
+### 2. Get Presigned URL
+### POST /api/v1/files/presigned-url
+### Parameters:
+###   - file_path: required|string
+###   - expiration: optional|integer|min:1|max:60 (minutes, default 15)
+### -----------------------------------------------------------
+POST {{baseUrl}}/files/presigned-url
+Authorization: Bearer {{authToken}}
+Content-Type: {{contentType}}
+
+{
+  "file_path": "uploads/profile-pictures/abc123.jpg",
+  "expiration": 30
+}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Success",
+###   "data": {
+###     "url": "https://storage.example.com/uploads/profile-pictures/abc123.jpg?signed_token=...",
+###     "expires_in": 1800
+###   }
+### }
+
+### -----------------------------------------------------------
+### 3. Delete File
+### DELETE /api/v1/files/delete
+### Parameters:
+###   - file_path: required|string
+### -----------------------------------------------------------
+DELETE {{baseUrl}}/files/delete
+Authorization: Bearer {{authToken}}
+Content-Type: {{contentType}}
+
+{
+  "file_path": "uploads/profile-pictures/abc123.jpg"
+}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "File deleted successfully",
+###   "data": null
+### }
+
+### ============================================================
+### VALIDATION RULES
+### ============================================================
+### Upload File:
+###   - file: required|file|max:10240 (10MB)
+###   - folder: nullable|string|max:100
+###   - Allowed mime types:
+###     - image/jpeg
+###     - image/png
+###     - image/gif
+###     - application/pdf
+###     - application/msword
+###     - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+
+### Get Presigned URL:
+###   - file_path: required|string
+###   - expiration: nullable|integer|min:1|max:60
+
+### Delete File:
+###   - file_path: required|string
+
+### ============================================================
+### ERROR RESPONSE EXAMPLES
+### ============================================================
+
+### 400 Bad Request - Invalid file
+### {
+###   "success": false,
+###   "message": "File upload failed: Invalid file type. Allowed types: image/jpeg, image/png, ...",
+###   "data": null
+### }
+
+### 404 Not Found - File not found
+### {
+###   "success": false,
+###   "message": "File not found",
+###   "data": null
+### }
+
+### 422 Validation Error
+### {
+###   "success": false,
+###   "message": "Validation failed",
+###   "errors": {
+###     "file": ["The file field is required."],
+###     "file": ["The file must not be greater than 10240 kilobytes."]
+###   }
+### }
+
+### 500 Server Error
+### {
+###   "success": false,
+###   "message": "Failed to delete file",
+###   "data": null
+### }
+
+### ============================================================
+### EXAMPLE USAGE WITH CURL
+### ============================================================
+### Upload file:
+### curl -X POST http://localhost:8000/api/v1/files/upload \
+###   -H "Authorization: Bearer YOUR_TOKEN" \
+###   -F "file=@/path/to/file.jpg" \
+###   -F "folder=uploads/documents"
+###
+### Get presigned URL:
+### curl -X POST http://localhost:8000/api/v1/files/presigned-url \
+###   -H "Authorization: Bearer YOUR_TOKEN" \
+###   -H "Content-Type: application/json" \
+###   -d '{"file_path":"uploads/file.jpg","expiration":30}'
+###
+### Delete file:
+### curl -X DELETE http://localhost:8000/api/v1/files/delete \
+###   -H "Authorization: Bearer YOUR_TOKEN" \
+###   -H "Content-Type: application/json" \
+###   -d '{"file_path":"uploads/file.jpg"}'

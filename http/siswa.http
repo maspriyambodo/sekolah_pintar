@@ -1,0 +1,301 @@
+### ============================================================
+### SISWA API - Sekolah REST Client
+### Base URL: http://localhost:8000/api/v1
+### Role Required: admin, guru
+### ============================================================
+
+@baseUrl = http://localhost:8000/api/v1
+@contentType = application/json
+
+### ============================================================
+### CONFIGURATION
+### ============================================================
+### Set your auth token here after login
+@authToken = YOUR_ACCESS_TOKEN_HERE
+
+### ============================================================
+### SISWA ENDPOINTS
+### ============================================================
+
+### -----------------------------------------------------------
+### 1. Get All Siswa (Paginated)
+### GET /api/v1/siswa
+### Query Parameters:
+###   - kelas_id: Filter by class ID (optional)
+###   - status: Filter by status - aktif, lulus, pindah (optional)
+###   - jenis_kelamin: Filter by gender - L, P (optional)
+###   - search: Search by name or NIS (optional)
+###   - per_page: Items per page, default 15 (optional)
+### -----------------------------------------------------------
+GET {{baseUrl}}/siswa?per_page=15&status=aktif
+Authorization: Bearer {{authToken}}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Siswa retrieved successfully",
+###   "data": [
+###     {
+###       "id": 1,
+###       "nis": "2024001",
+###       "nama": "Budi Santoso",
+###       "jenis_kelamin": "L",
+###       "tanggal_lahir": "2008-05-15",
+###       "alamat": "Jl. Merdeka No. 123",
+###       "kelas": { "id": 1, "nama": "7A" },
+###       "status": "aktif"
+###     }
+###   ],
+###   "meta": {
+###     "current_page": 1,
+###     "last_page": 5,
+###     "per_page": 15,
+###     "total": 75
+###   }
+### }
+
+### -----------------------------------------------------------
+### 2. Get Siswa by ID
+### GET /api/v1/siswa/{id}
+### -----------------------------------------------------------
+GET {{baseUrl}}/siswa/1
+Authorization: Bearer {{authToken}}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Siswa retrieved successfully",
+###   "data": {
+###     "id": 1,
+###     "nis": "2024001",
+###     "nama": "Budi Santoso",
+###     "jenis_kelamin": "L",
+###     "tanggal_lahir": "2008-05-15",
+###     "alamat": "Jl. Merdeka No. 123",
+###     "kelas": { "id": 1, "nama": "7A" },
+###     "status": "aktif"
+###   }
+### }
+
+### -----------------------------------------------------------
+### 3. Get Siswa by Kelas
+### GET /api/v1/siswa/kelas/{kelasId}
+### -----------------------------------------------------------
+GET {{baseUrl}}/siswa/kelas/1
+Authorization: Bearer {{authToken}}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Siswa retrieved successfully",
+###   "data": [
+###     {
+###       "id": 1,
+###       "nis": "2024001",
+###       "nama": "Budi Santoso",
+###       "jenis_kelamin": "L",
+###       "kelas": { "id": 1, "nama": "7A" },
+###       "status": "aktif"
+###     }
+###   ]
+### }
+
+### -----------------------------------------------------------
+### 4. Create New Siswa
+### POST /api/v1/siswa
+### -----------------------------------------------------------
+POST {{baseUrl}}/siswa
+Authorization: Bearer {{authToken}}
+Content-Type: {{contentType}}
+
+{
+  "sys_user_id": 2,
+  "nis": "2024002",
+  "nama": "Ani Wulandari",
+  "jenis_kelamin": "P",
+  "tanggal_lahir": "2008-08-20",
+  "alamat": "Jl. Sudirman No. 45",
+  "mst_kelas_id": 1,
+  "status": "aktif"
+}
+
+### Expected Response 201 Created:
+### {
+###   "success": true,
+###   "message": "Siswa created successfully",
+###   "data": {
+###     "id": 2,
+###     "nis": "2024002",
+###     "nama": "Ani Wulandari",
+###     "jenis_kelamin": "P",
+###     "tanggal_lahir": "2008-08-20",
+###     "alamat": "Jl. Sudirman No. 45",
+###     "kelas": { "id": 1, "nama": "7A" },
+###     "status": "aktif"
+###   }
+### }
+
+### -----------------------------------------------------------
+### 5. Update Siswa
+### PUT /api/v1/siswa/{id}
+### -----------------------------------------------------------
+PUT {{baseUrl}}/siswa/1
+Authorization: Bearer {{authToken}}
+Content-Type: {{contentType}}
+
+{
+  "nama": "Budi Santoso Updated",
+  "alamat": "Jl. Merdeka No. 456",
+  "mst_kelas_id": 2
+}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Siswa updated successfully",
+###   "data": {
+###     "id": 1,
+###     "nis": "2024001",
+###     "nama": "Budi Santoso Updated",
+###     "jenis_kelamin": "L",
+###     "tanggal_lahir": "2008-05-15",
+###     "alamat": "Jl. Merdeka No. 456",
+###     "kelas": { "id": 2, "nama": "7B" },
+###     "status": "aktif"
+###   }
+### }
+
+### -----------------------------------------------------------
+### 6. Delete Siswa
+### DELETE /api/v1/siswa/{id}
+### -----------------------------------------------------------
+DELETE {{baseUrl}}/siswa/1
+Authorization: Bearer {{authToken}}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Siswa deleted successfully",
+###   "data": null
+### }
+
+### -----------------------------------------------------------
+### 7. Get Absensi Summary
+### GET /api/v1/siswa/{id}/absensi-summary
+### Query Parameters:
+###   - start_date: Start date (YYYY-MM-DD), default 1 month ago
+###   - end_date: End date (YYYY-MM-DD), default today
+### -----------------------------------------------------------
+GET {{baseUrl}}/siswa/1/absensi-summary?start_date=2024-01-01&end_date=2024-12-31
+Authorization: Bearer {{authToken}}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Absensi summary retrieved successfully",
+###   "data": {
+###     "hadir": 45,
+###     "izin": 3,
+###     "sakit": 2,
+###     "alpha": 1,
+###     "total": 51,
+###     "persentase_kehadiran": 88.24
+###   }
+### }
+
+### -----------------------------------------------------------
+### 8. Naik Kelas (Promote to next class)
+### POST /api/v1/siswa/{id}/naik-kelas
+### -----------------------------------------------------------
+POST {{baseUrl}}/siswa/1/naik-kelas
+Authorization: Bearer {{authToken}}
+Content-Type: {{contentType}}
+
+{
+  "kelas_id": 2
+}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Siswa naik kelas successfully",
+###   "data": {
+###     "id": 1,
+###     "nis": "2024001",
+###     "nama": "Budi Santoso",
+###     "kelas": { "id": 2, "nama": "7B" },
+###     "status": "aktif"
+###   }
+### }
+
+### -----------------------------------------------------------
+### 9. Lulus (Graduate)
+### POST /api/v1/siswa/{id}/lulus
+### -----------------------------------------------------------
+POST {{baseUrl}}/siswa/1/lulus
+Authorization: Bearer {{authToken}}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Siswa lulus successfully",
+###   "data": {
+###     "id": 1,
+###     "nis": "2024001",
+###     "nama": "Budi Santoso",
+###     "status": "lulus"
+###   }
+### }
+
+### ============================================================
+### VALIDATION RULES
+### ============================================================
+### Create Siswa:
+###   - sys_user_id: required|integer|exists:sys_users,id
+###   - nis: required|string|max:20|unique:mst_siswa,nis
+###   - nama: required|string|max:100
+###   - jenis_kelamin: required|string|in:L,P
+###   - tanggal_lahir: nullable|date|before:today
+###   - alamat: nullable|string
+###   - mst_kelas_id: nullable|integer|exists:mst_kelas,id
+###   - status: nullable|string|in:aktif,lulus,pindah
+
+### Update Siswa:
+###   - nis: nullable|string|max:20|unique (except current)
+###   - nama: nullable|string|max:100
+###   - jenis_kelamin: nullable|string|in:L,P
+###   - tanggal_lahir: nullable|date|before:today
+###   - alamat: nullable|string
+###   - mst_kelas_id: nullable|integer|exists:mst_kelas,id
+###   - status: nullable|string|in:aktif,lulus,pindah
+
+### Naik Kelas:
+###   - kelas_id: required|integer|exists:mst_kelas,id
+
+### ============================================================
+### ERROR RESPONSE EXAMPLES
+### ============================================================
+
+### 403 Forbidden - Insufficient permissions
+### {
+###   "success": false,
+###   "message": "You don't have permission to access this resource",
+###   "data": null
+### }
+
+### 404 Not Found
+### {
+###   "success": false,
+###   "message": "Siswa not found",
+###   "data": null
+### }
+
+### 422 Validation Error
+### {
+###   "success": false,
+###   "message": "Validation failed",
+###   "errors": {
+###     "nis": ["NIS sudah terdaftar"],
+###     "jenis_kelamin": ["Jenis kelamin harus L atau P"]
+###   }
+### }

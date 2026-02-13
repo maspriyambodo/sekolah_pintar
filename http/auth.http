@@ -1,0 +1,159 @@
+### ============================================================
+### AUTH API - Sekolah REST Client
+### Base URL: http://localhost:8000/api/v1
+### ============================================================
+
+@baseUrl = http://localhost:8001/api/v1
+@contentType = application/json
+
+### ============================================================
+### PUBLIC ENDPOINTS (No Authentication Required)
+### ============================================================
+
+### -----------------------------------------------------------
+### 1. Login
+### POST /api/v1/auth/login
+### -----------------------------------------------------------
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: {{contentType}}
+
+{
+  "email": "admin@sekolah.test",
+  "password": "password123"
+}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Login successful",
+###   "data": {
+###     "access_token": "eyJhbGciOiJIUzI1NiIs...",
+###     "refresh_token": "eyJhbGciOiJIUzI1NiIs...",
+###     "token_type": "bearer",
+###     "expires_in": 3600,
+###     "user": {
+###       "id": 1,
+###       "name": "Admin",
+###       "email": "admin@sekolah.test",
+###       "roles": ["admin"]
+###     }
+###   }
+### }
+
+### -----------------------------------------------------------
+### 2. Register
+### POST /api/v1/auth/register
+### -----------------------------------------------------------
+POST {{baseUrl}}/auth/register
+Content-Type: {{contentType}}
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "Password123!",
+  "password_confirmation": "Password123!",
+  "role": "guru"
+}
+
+### Expected Response 201 Created:
+### {
+###   "success": true,
+###   "message": "User registered successfully",
+###   "data": {
+###     "id": 2,
+###     "name": "John Doe",
+###     "email": "john.doe@example.com",
+###     "roles": ["guru"]
+###   }
+### }
+
+### -----------------------------------------------------------
+### 3. Refresh Token
+### POST /api/v1/auth/refresh
+### -----------------------------------------------------------
+POST {{baseUrl}}/auth/refresh
+Content-Type: {{contentType}}
+
+{
+  "refresh_token": "eyJhbGciOiJIUzI1NiIs..."
+}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Token refreshed successfully",
+###   "data": {
+###     "access_token": "eyJhbGciOiJIUzI1NiIs...",
+###     "refresh_token": "eyJhbGciOiJIUzI1NiIs...",
+###     "token_type": "bearer",
+###     "expires_in": 3600
+###   }
+### }
+
+### ============================================================
+### PROTECTED ENDPOINTS (Authentication Required)
+### ============================================================
+### Use the token from login response:
+### Authorization: Bearer {{login.response.body.data.access_token}}
+
+### -----------------------------------------------------------
+### 4. Get Current User (Me)
+### GET /api/v1/auth/me
+### -----------------------------------------------------------
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{login.response.body.data.access_token}}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Success",
+###   "data": {
+###     "id": 1,
+###     "name": "Admin",
+###     "email": "admin@sekolah.test",
+###     "roles": ["admin"]
+###   }
+### }
+
+### -----------------------------------------------------------
+### 5. Logout
+### POST /api/v1/auth/logout
+### -----------------------------------------------------------
+POST {{baseUrl}}/auth/logout
+Authorization: Bearer {{login.response.body.data.access_token}}
+
+### Expected Response 200 OK:
+### {
+###   "success": true,
+###   "message": "Logout successful",
+###   "data": null
+### }
+
+### ============================================================
+### ERROR RESPONSE EXAMPLES
+### ============================================================
+
+### 401 Unauthorized - Invalid credentials
+### {
+###   "success": false,
+###   "message": "Invalid credentials",
+###   "data": null
+### }
+
+### 422 Validation Error
+### {
+###   "success": false,
+###   "message": "Validation failed",
+###   "errors": {
+###     "email": ["Email wajib diisi", "Format email tidak valid"],
+###     "password": ["Password wajib diisi", "Password minimal 6 karakter"]
+###   }
+### }
+
+### 500 Server Error
+### {
+###   "success": false,
+###   "message": "Registration failed: ...",
+###   "data": null
+### }
