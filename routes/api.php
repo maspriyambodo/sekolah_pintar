@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\BkJenisController;
 use App\Http\Controllers\Api\V1\BkKasusController;
 use App\Http\Controllers\Api\V1\BukuController;
+use App\Http\Controllers\Api\V1\DashboardController;
 use App\Http\Controllers\Api\V1\FileUploadController;
 use App\Http\Controllers\Api\V1\GuruController;
 use App\Http\Controllers\Api\V1\KelasController;
@@ -55,6 +56,15 @@ Route::prefix('v1')->group(function () {
         Route::prefix('auth')->group(function () {
             Route::post('logout', [AuthController::class, 'logout'])->name('api.v1.auth.logout');
             Route::get('me', [AuthController::class, 'me'])->name('api.v1.auth.me');
+        });
+
+        // Dashboard Routes
+        Route::prefix('dashboard')->group(function () {
+            Route::get('/', [DashboardController::class, 'index'])->name('api.v1.dashboard.index');
+            Route::get('summary-cards', [DashboardController::class, 'summaryCards'])->name('api.v1.dashboard.summary-cards');
+            Route::get('financial-analytics', [DashboardController::class, 'financialAnalytics'])->name('api.v1.dashboard.financial-analytics');
+            Route::get('academic-attendance', [DashboardController::class, 'academicAttendanceAnalytics'])->name('api.v1.dashboard.academic-attendance');
+            Route::get('counseling-insights', [DashboardController::class, 'counselingInsights'])->name('api.v1.dashboard.counseling-insights');
         });
 
         // File Upload routes
