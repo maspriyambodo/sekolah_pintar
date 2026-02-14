@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
+use App\Traits\LogsActivity;
 use App\Models\Master\MstGuru;
 use App\Models\Master\MstSiswa;
 use App\Models\Master\MstWali;
@@ -19,7 +20,7 @@ use App\Models\Master\MstWaliMurid;
 
 class SysUser extends Authenticatable implements JWTSubject
 {
-    use HasFactory, Notifiable, SoftDeletes;
+    use HasFactory, Notifiable, SoftDeletes, LogsActivity;
 
     protected $table = 'sys_users';
 

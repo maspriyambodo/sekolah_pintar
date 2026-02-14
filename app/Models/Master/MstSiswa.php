@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Traits\LogsActivity;
 use App\Models\System\SysUser;
 use App\Models\Transaction\TrxAbsensiSiswa;
 use App\Models\Transaction\TrxBkKasus;
@@ -19,7 +20,7 @@ use App\Models\Transaction\TrxRapor;
 
 class MstSiswa extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, LogsActivity;
 
     protected $table = 'mst_siswa';
 
