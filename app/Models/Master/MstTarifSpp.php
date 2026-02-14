@@ -24,6 +24,8 @@ class MstTarifSpp extends Model
 
     protected $casts = [
         'nominal' => 'decimal:2',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     public function kelas(): BelongsTo

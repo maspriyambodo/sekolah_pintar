@@ -35,6 +35,8 @@ class TrxPembayaranSpp extends Model
         'tahun' => 'integer',
         'tanggal_bayar' => 'date',
         'jumlah_bayar' => 'decimal:2',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     public function siswa(): BelongsTo

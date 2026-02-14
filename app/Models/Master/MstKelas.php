@@ -27,6 +27,7 @@ class MstKelas extends Model
     protected $casts = [
         'tingkat' => 'integer',
         'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     public function waliGuru(): BelongsTo
