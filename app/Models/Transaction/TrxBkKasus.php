@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Master\MstBkJenis;
 use App\Models\Master\MstBkKategori;
 use App\Models\Master\MstGuru;
@@ -15,7 +16,7 @@ use App\Models\Master\MstSiswa;
 
 class TrxBkKasus extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'trx_bk_kasus';
 
