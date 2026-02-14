@@ -11,7 +11,7 @@
  Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 14/02/2026 11:18:15
+ Date: 14/02/2026 12:15:09
 */
 
 SET NAMES utf8mb4;
@@ -134,6 +134,7 @@ CREATE TABLE `mst_buku` (
   `stok` int DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
@@ -150,6 +151,7 @@ CREATE TABLE `mst_guru` (
   `tanggal_lahir` date DEFAULT NULL,
   `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `no_hp` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `nip` (`nip`) USING BTREE,
   KEY `sys_user_id` (`sys_user_id`) USING BTREE,
@@ -182,6 +184,7 @@ CREATE TABLE `mst_kelas` (
   `tahun_ajaran` varchar(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `wali_guru_id` bigint unsigned DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
@@ -193,6 +196,7 @@ CREATE TABLE `mst_mapel` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `kode_mapel` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `nama_mapel` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `kode_mapel` (`kode_mapel`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
@@ -211,6 +215,7 @@ CREATE TABLE `mst_siswa` (
   `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `mst_kelas_id` bigint unsigned DEFAULT NULL,
   `status` enum('aktif','lulus','pindah') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'aktif',
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `nis` (`nis`) USING BTREE,
   KEY `sys_user_id` (`sys_user_id`) USING BTREE,
@@ -265,6 +270,7 @@ CREATE TABLE `mst_wali` (
   `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `no_hp` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `sys_user_id` (`sys_user_id`) USING BTREE,
   CONSTRAINT `mst_wali_ibfk_1` FOREIGN KEY (`sys_user_id`) REFERENCES `sys_users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -282,6 +288,7 @@ CREATE TABLE `mst_wali_murid` (
   `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `fk_mst_wali_user` (`sys_user_id`) USING BTREE,
   CONSTRAINT `fk_mst_wali_user` FOREIGN KEY (`sys_user_id`) REFERENCES `sys_users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -442,6 +449,7 @@ CREATE TABLE `sys_users` (
   `is_active` tinyint(1) DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `email` (`email`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
@@ -471,6 +479,7 @@ CREATE TABLE `trx_absensi_siswa` (
   `tanggal` date DEFAULT NULL,
   `status` enum('hadir','izin','sakit','alpha') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `keterangan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `uq_as` (`mst_siswa_id`,`tanggal`) USING BTREE,
   KEY `idx_absensi_siswa_tanggal` (`mst_siswa_id`,`tanggal`),
@@ -507,6 +516,7 @@ CREATE TABLE `trx_bk_kasus` (
   `status` enum('dibuka','proses','selesai','dirujuk') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `tanggal_mulai` date DEFAULT NULL,
   `tanggal_selesai` date DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `mst_siswa_id` (`mst_siswa_id`) USING BTREE,
   KEY `mst_guru_id` (`mst_guru_id`) USING BTREE,
@@ -589,6 +599,7 @@ CREATE TABLE `trx_nilai` (
   `trx_ujian_id` bigint unsigned DEFAULT NULL,
   `mst_siswa_id` bigint unsigned DEFAULT NULL,
   `nilai` decimal(5,2) DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `uq_nilai` (`trx_ujian_id`,`mst_siswa_id`) USING BTREE,
   KEY `mst_siswa_id` (`mst_siswa_id`) USING BTREE,
@@ -616,6 +627,7 @@ CREATE TABLE `trx_pembayaran_spp` (
   `petugas_id` bigint unsigned DEFAULT NULL COMMENT 'User yang mencatat pembayaran',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `uq_spp_bayar` (`mst_siswa_id`,`bulan`,`tahun`) USING BTREE,
   KEY `mst_tarif_spp_id` (`mst_tarif_spp_id`) USING BTREE,
@@ -637,6 +649,7 @@ CREATE TABLE `trx_peminjaman_buku` (
   `tanggal_kembali` date DEFAULT NULL,
   `status` enum('dipinjam','dikembalikan','hilang') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'dipinjam',
   `created_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `fk_trx_pinjam_buku` (`mst_buku_id`) USING BTREE,
   KEY `fk_trx_pinjam_siswa` (`mst_siswa_id`) USING BTREE,
