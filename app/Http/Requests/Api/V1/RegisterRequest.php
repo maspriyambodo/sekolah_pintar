@@ -19,6 +19,7 @@ class RegisterRequest extends FormRequest
             'name' => ['required', 'string', 'max:100'],
             'email' => ['required', 'email', 'max:100', 'unique:sys_users,email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => ['required', 'integer', 'in:2,3,4'],
         ];
     }
 
@@ -32,6 +33,9 @@ class RegisterRequest extends FormRequest
             'password.required' => 'Password wajib diisi',
             'password.min' => 'Password minimal 8 karakter',
             'password.confirmed' => 'Konfirmasi password tidak cocok',
+            'role.required' => 'Role wajib diisi',
+            'role.integer' => 'Role harus berupa angka',
+            'role.in' => 'Role harus salah satu dari: 2 (guru), 3 (siswa), 4 (wali)',
         ];
     }
 }
