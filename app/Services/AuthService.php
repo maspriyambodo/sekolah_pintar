@@ -26,14 +26,14 @@ class AuthService
         $user = $this->userRepository->findActiveByEmail($credentials['email']);
 
         if (!$user || !Hash::check($credentials['password'], $user->password)) {
-            $this->logLoginAttempt($credentials['email'], 'failed', $ipAddress, $userAgent);
+            $this->logLoginAttempt($credentials['email'], 2, $ipAddress, $userAgent);
             throw new \Exception('Invalid credentials', 401);
         }
 
         $token = JWTAuth::fromUser($user);
         $refreshToken = $this->generateRefreshToken($user);
 
-        $this->logLoginAttempt($user->email, 'success', $ipAddress, $userAgent, $user->id);
+        $this->logLoginAttempt($user->email, 1, $ipAddress, $userAgent, $user->id);
 
         return [
             'access_token' => $token,
@@ -121,7 +121,7 @@ class AuthService
 
     private function logLoginAttempt(
         string $email,
-        string $status,
+        int $status,
         string $ipAddress,
         string $userAgent,
         ?int $userId = null
