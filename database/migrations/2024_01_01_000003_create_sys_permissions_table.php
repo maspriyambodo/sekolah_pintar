@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('name', 150);
             $table->string('module', 50);
             $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
