@@ -24,11 +24,13 @@ class TrxRapor extends Model
         'tahun_ajaran',
         'total_nilai',
         'rata_rata',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     protected $casts = [
-        'semester' => 'string',
+        'semester' => 'integer',
         'total_nilai' => 'decimal:2',
         'rata_rata' => 'decimal:2',
     ];

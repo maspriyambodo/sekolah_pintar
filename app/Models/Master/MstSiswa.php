@@ -33,12 +33,15 @@ class MstSiswa extends Model
         'alamat',
         'mst_kelas_id',
         'status',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     protected $casts = [
         'tanggal_lahir' => 'date',
-        'status' => 'string',
+        'jenis_kelamin' => 'integer',
+        'status' => 'integer',
     ];
 
     public function user(): BelongsTo

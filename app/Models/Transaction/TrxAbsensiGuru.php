@@ -21,12 +21,14 @@ class TrxAbsensiGuru extends Model
         'tanggal',
         'status',
         'keterangan',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     protected $casts = [
         'tanggal' => 'date',
-        'status' => 'string',
+        'status' => 'integer',
     ];
 
     public function guru(): BelongsTo

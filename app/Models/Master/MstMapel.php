@@ -22,6 +22,8 @@ class MstMapel extends Model
     protected $fillable = [
         'kode_mapel',
         'nama_mapel',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 

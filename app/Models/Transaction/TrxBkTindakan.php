@@ -18,6 +18,8 @@ class TrxBkTindakan extends Model
     protected $fillable = [
         'trx_bk_kasus_id',
         'deskripsi_tindakan',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 

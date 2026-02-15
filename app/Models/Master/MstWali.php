@@ -22,6 +22,8 @@ class MstWali extends Model
         'nama',
         'no_hp',
         'alamat',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 

@@ -24,13 +24,13 @@ class MstKelas extends Model
         'tingkat',
         'tahun_ajaran',
         'wali_guru_id',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     protected $casts = [
         'tingkat' => 'integer',
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
     ];
 
     public function waliGuru(): BelongsTo

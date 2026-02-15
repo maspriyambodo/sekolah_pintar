@@ -20,12 +20,13 @@ class TrxBkWali extends Model
         'trx_bk_kasus_id',
         'mst_wali_murid_id',
         'peran',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     protected $casts = [
-        'peran' => 'string',
-        'created_at' => 'datetime',
+        'peran' => 'integer',
     ];
 
     public function kasus(): BelongsTo

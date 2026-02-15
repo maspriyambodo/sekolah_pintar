@@ -18,6 +18,8 @@ class MstBkKategori extends Model
 
     protected $fillable = [
         'nama',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 

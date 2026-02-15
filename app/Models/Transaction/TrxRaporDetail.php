@@ -20,6 +20,8 @@ class TrxRaporDetail extends Model
         'trx_rapor_id',
         'mst_mapel_id',
         'nilai_akhir',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 

@@ -24,14 +24,14 @@ class MstBuku extends Model
         'penerbit',
         'tahun',
         'stok',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     protected $casts = [
         'tahun' => 'integer',
         'stok' => 'integer',
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
     ];
 
     public function peminjaman(): HasMany
@@ -41,13 +41,15 @@ class MstBuku extends Model
 
     public function isAvailable(): bool
     {
-        $dipinjam = $this->peminjaman()->where('status', 'dipinjam')->count();
+        // Status 1 = dipinjam (sesuaikan dengan sys_references)
+        $dipinjam = $this->peminjaman()->where('status', 1)->count();
         return $this->stok > $dipinjam;
     }
 
     public function availableStock(): int
     {
-        $dipinjam = $this->peminjaman()->where('status', 'dipinjam')->count();
+        // Status 1 = dipinjam (sesuaikan dengan sys_references)
+        $dipinjam = $this->peminjaman()->where('status', 1)->count();
         return max(0, $this->stok - $dipinjam);
     }
 }

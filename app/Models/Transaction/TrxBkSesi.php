@@ -20,12 +20,14 @@ class TrxBkSesi extends Model
         'tanggal',
         'metode',
         'catatan',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     protected $casts = [
         'tanggal' => 'date',
-        'metode' => 'string',
+        'metode' => 'integer',
     ];
 
     public function kasus(): BelongsTo

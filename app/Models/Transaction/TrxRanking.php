@@ -20,6 +20,8 @@ class TrxRanking extends Model
         'trx_rapor_id',
         'mst_kelas_id',
         'peringkat',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 

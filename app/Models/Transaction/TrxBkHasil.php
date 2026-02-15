@@ -19,6 +19,8 @@ class TrxBkHasil extends Model
         'trx_bk_kasus_id',
         'hasil',
         'rekomendasi',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 

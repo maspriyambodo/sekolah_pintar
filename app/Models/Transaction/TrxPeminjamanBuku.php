@@ -23,14 +23,15 @@ class TrxPeminjamanBuku extends Model
         'tanggal_pinjam',
         'tanggal_kembali',
         'status',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     protected $casts = [
         'tanggal_pinjam' => 'date',
         'tanggal_kembali' => 'date',
-        'status' => 'string',
-        'created_at' => 'datetime',
+        'status' => 'integer',
     ];
 
     public function buku(): BelongsTo
@@ -45,7 +46,8 @@ class TrxPeminjamanBuku extends Model
 
     public function isOverdue(): bool
     {
-        if ($this->status !== 'dipinjam' || !$this->tanggal_pinjam) {
+        // Status 1 = dipinjam (sesuaikan dengan sys_references)
+        if ($this->status !== 1 || !$this->tanggal_pinjam) {
             return false;
         }
         return now()->diffInDays($this->tanggal_pinjam) > 7;

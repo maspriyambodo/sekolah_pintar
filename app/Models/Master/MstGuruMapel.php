@@ -18,6 +18,8 @@ class MstGuruMapel extends Model
     protected $fillable = [
         'mst_guru_id',
         'mst_mapel_id',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 

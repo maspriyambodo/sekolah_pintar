@@ -31,12 +31,15 @@ class TrxBkKasus extends Model
         'status',
         'tanggal_mulai',
         'tanggal_selesai',
+        'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
     protected $casts = [
         'tanggal_mulai' => 'date',
         'tanggal_selesai' => 'date',
-        'status' => 'string',
+        'status' => 'integer',
     ];
 
     public function siswa(): BelongsTo

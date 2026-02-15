@@ -21,6 +21,8 @@ class TrxNilai extends Model
         'trx_ujian_id',
         'mst_siswa_id',
         'nilai',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 

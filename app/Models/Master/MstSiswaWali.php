@@ -19,11 +19,13 @@ class MstSiswaWali extends Model
         'mst_siswa_id',
         'mst_wali_id',
         'hubungan',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     protected $casts = [
-        'hubungan' => 'string',
+        'hubungan' => 'integer',
     ];
 
     public function siswa(): BelongsTo

@@ -22,12 +22,13 @@ class MstTarifSpp extends Model
         'tahun_ajaran',
         'nominal',
         'keterangan',
+        'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
     protected $casts = [
         'nominal' => 'decimal:2',
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
     ];
 
     public function kelas(): BelongsTo

@@ -29,11 +29,14 @@ class MstGuru extends Model
         'tanggal_lahir',
         'alamat',
         'no_hp',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     protected $casts = [
         'tanggal_lahir' => 'date',
+        'jenis_kelamin' => 'integer',
     ];
 
     public function user(): BelongsTo

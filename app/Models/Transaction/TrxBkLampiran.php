@@ -19,11 +19,9 @@ class TrxBkLampiran extends Model
         'trx_bk_kasus_id',
         'file_path',
         'keterangan',
+        'created_at',
+        'updated_at',
         'deleted_at',
-    ];
-
-    protected $casts = [
-        'created_at' => 'datetime',
     ];
 
     public function kasus(): BelongsTo

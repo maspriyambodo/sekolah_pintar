@@ -24,13 +24,15 @@ class TrxUjian extends Model
         'jenis',
         'semester',
         'tanggal',
+        'created_at',
+        'updated_at',
         'deleted_at',
     ];
 
     protected $casts = [
         'tanggal' => 'date',
-        'jenis' => 'string',
-        'semester' => 'string',
+        'jenis' => 'integer',
+        'semester' => 'integer',
     ];
 
     public function mapel(): BelongsTo
