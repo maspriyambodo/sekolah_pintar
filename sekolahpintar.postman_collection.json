@@ -1,0 +1,1061 @@
+{
+  "info": {
+    "_postman_id": "a09d6c16-2d67-4602-b65a-5f8d59768834",
+    "name": "sekolahpintar",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "7492476",
+    "_collection_link": "https://go.postman.co/collection/7492476-a09d6c16-2d67-4602-b65a-5f8d59768834?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "admin@sekolah.com",
+                  "description": "'required', 'email'",
+                  "type": "text",
+                  "uuid": "da6cdbfa-2af5-4edb-b415-78f0ae216534"
+                },
+                {
+                  "key": "password",
+                  "value": "password",
+                  "description": "'required', 'string'",
+                  "type": "text",
+                  "uuid": "7b0a55d1-ef69-4dc3-b071-cfdcce274cc7"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/auth/login/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "register",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "priyambodo",
+                  "description": "'required', 'string', 'max:100'",
+                  "type": "text",
+                  "uuid": "a73213a8-876d-4f9e-a681-5308b4898410"
+                },
+                {
+                  "key": "email",
+                  "value": "maspriyambodo@gmail.com",
+                  "description": "'required', 'email', 'max:100', 'unique:sys_users,email'",
+                  "type": "text",
+                  "uuid": "41fecbd9-5e92-4094-9f75-55d9d20a77a1"
+                },
+                {
+                  "key": "password",
+                  "value": "bodo1327",
+                  "description": "'required', 'string', 'min:8', 'confirmed'",
+                  "type": "text",
+                  "uuid": "e9b114fa-6e05-4718-b81b-ea3781ab0364"
+                },
+                {
+                  "key": "password_confirmation",
+                  "value": "bodo1327",
+                  "description": "'required', 'string', 'min:8', 'confirmed'",
+                  "type": "text",
+                  "uuid": "bccdb4a9-9faa-46bb-9a34-1a897a8ae5ac"
+                },
+                {
+                  "key": "role",
+                  "value": "3",
+                  "description": "'required', 'integer', 'in:2,3,4'",
+                  "type": "text",
+                  "uuid": "00531a63-63aa-4931-aed9-7912a004dd0b"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/auth/register/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "auth",
+                "register",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refresh",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"refresh_token\": \"{{refresh_token}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/auth/refresh",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "auth",
+                "refresh"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/auth/logout/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "auth",
+                "logout",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "me",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "priyambodo",
+                  "description": "'required', 'string', 'max:100'",
+                  "type": "text",
+                  "uuid": "a73213a8-876d-4f9e-a681-5308b4898410"
+                },
+                {
+                  "key": "email",
+                  "value": "maspriyambodo@gmail.com",
+                  "description": "'required', 'email', 'max:100', 'unique:sys_users,email'",
+                  "type": "text",
+                  "uuid": "41fecbd9-5e92-4094-9f75-55d9d20a77a1"
+                },
+                {
+                  "key": "password",
+                  "value": "bodo1327",
+                  "description": "'required', 'string', 'min:8', 'confirmed'",
+                  "type": "text",
+                  "uuid": "e9b114fa-6e05-4718-b81b-ea3781ab0364"
+                },
+                {
+                  "key": "password_confirmation",
+                  "value": "bodo1327",
+                  "description": "'required', 'string', 'min:8', 'confirmed'",
+                  "type": "text",
+                  "uuid": "bccdb4a9-9faa-46bb-9a34-1a897a8ae5ac"
+                },
+                {
+                  "key": "role",
+                  "value": "3",
+                  "description": "'required', 'integer', 'in:2,3,4'",
+                  "type": "text",
+                  "uuid": "00531a63-63aa-4931-aed9-7912a004dd0b"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/auth/me",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "dashboard",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/dashboard/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "dashboard",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Summary Cards",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/dashboard/summary-cards/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "dashboard",
+                "summary-cards",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "financial-analytics",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/dashboard/financial-analytics/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "dashboard",
+                "financial-analytics",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "academic-attendance",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/dashboard/academic-attendance/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "dashboard",
+                "academic-attendance",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "counseling-insights",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/dashboard/counseling-insights/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "dashboard",
+                "counseling-insights",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Files",
+      "item": [
+        {
+          "name": "upload",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "description": "required|file|max:10240",
+                  "type": "file",
+                  "uuid": "73ae00e9-6c29-44a4-ab2f-696533eb1409",
+                  "src": "/Users/bodo/Documents/DUMMY DOCUMENT.docx"
+                },
+                {
+                  "key": "folder",
+                  "value": "dokumen",
+                  "description": "nullable|string|max:100",
+                  "type": "text",
+                  "uuid": "6eb2c698-7ee3-471a-a426-ed90cca4e3d2"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/files/upload/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "files",
+                "upload",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "presigned-url",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file_path",
+                  "description": "required|string",
+                  "type": "text",
+                  "uuid": "73ae00e9-6c29-44a4-ab2f-696533eb1409",
+                  "value": ""
+                },
+                {
+                  "key": "expiration",
+                  "value": "",
+                  "description": "nullable|integer|min:1|max:60",
+                  "type": "text",
+                  "uuid": "6eb2c698-7ee3-471a-a426-ed90cca4e3d2"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/files/presigned-url/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "files",
+                "presigned-url",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "description": "required|string",
+                  "type": "text",
+                  "uuid": "73ae00e9-6c29-44a4-ab2f-696533eb1409",
+                  "value": ""
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/files/delete/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "files",
+                "delete",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "kelas",
+      "item": [
+        {
+          "name": "index",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "tingkat",
+                  "value": "10",
+                  "type": "text",
+                  "uuid": "530724eb-1616-4107-8caa-6374b3ab7deb",
+                  "disabled": true
+                },
+                {
+                  "key": "tahun_ajaran",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "90cd236c-b6d4-4357-80cc-9069f0af36a5",
+                  "disabled": true
+                },
+                {
+                  "key": "wali_guru_id",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "df61dee5-151f-4868-9feb-63821bfafe75",
+                  "disabled": true
+                },
+                {
+                  "key": "per_page",
+                  "value": "10",
+                  "type": "text",
+                  "uuid": "7716269a-1e7f-499b-9b29-3c2d1ab8f525",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/kelas/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "kelas",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "store",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "nama_kelas",
+                  "value": "XII IPS 2",
+                  "description": "'required', 'string', 'max:50'",
+                  "type": "text",
+                  "uuid": "b27b058a-5272-4323-b5af-9e5d573c288f"
+                },
+                {
+                  "key": "tingkat",
+                  "value": "12",
+                  "description": "'required', 'integer', 'min:1', 'max:12'",
+                  "type": "text",
+                  "uuid": "0dafc657-45ed-496e-817e-07723a13e79b"
+                },
+                {
+                  "key": "tahun_ajaran",
+                  "value": "2024/2025",
+                  "description": "'required', 'string', 'max:20'",
+                  "type": "text",
+                  "uuid": "fa7a09c2-1b63-444e-8f71-69de6551be48"
+                },
+                {
+                  "key": "wali_guru_id",
+                  "value": "1",
+                  "description": "'nullable', 'integer', 'exists:mst_guru,id'",
+                  "type": "text",
+                  "uuid": "0a6d985b-e5a1-4a17-af7c-2d10bfdb72fa"
+                },
+                {
+                  "key": "kapasitas",
+                  "value": "34",
+                  "description": "'nullable', 'integer', 'min:1'",
+                  "type": "text",
+                  "uuid": "5ca67c20-2d57-457a-af84-104b2ebf7a4c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/kelas/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "kelas",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/kelas/2",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "kelas",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "nama_kelas",
+                  "value": "",
+                  "description": "'nullable', 'string', 'max:50'",
+                  "type": "text",
+                  "uuid": "9659dcc2-84bc-456e-882c-37cee0c41107"
+                },
+                {
+                  "key": "tingkat",
+                  "value": "",
+                  "description": "'nullable', 'integer', 'min:1', 'max:12'",
+                  "type": "text",
+                  "uuid": "bbffabe2-2a79-4e50-9d26-2de5f010be98"
+                },
+                {
+                  "key": "tahun_ajaran",
+                  "value": "",
+                  "description": "'nullable', 'string', 'max:20'",
+                  "type": "text",
+                  "uuid": "8656b3ed-c690-4a4d-9779-3109d7a7208d"
+                },
+                {
+                  "key": "wali_guru_id",
+                  "value": "",
+                  "description": "'nullable', 'integer', 'exists:mst_guru,id'",
+                  "type": "text",
+                  "uuid": "0f824520-0f03-432a-9273-2115f66f3c22"
+                },
+                {
+                  "key": "kapasitas",
+                  "value": "",
+                  "description": "'nullable', 'integer', 'min:1'",
+                  "type": "text",
+                  "uuid": "7b7049af-b466-4c81-a2a2-4a167c6e802f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/kelas/2",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "kelas",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/kelas/10",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "kelas",
+                "10"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getSiswaByKelas",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/kelas/1/siswa",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "kelas",
+                "1",
+                "siswa"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getKelasByTingkat",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/kelas/tingkat/10",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "kelas",
+                "tingkat",
+                "10"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "healthcheck",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8002/api/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8002",
+          "path": [
+            "api",
+            "health"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "url_sekolah",
+      "value": ""
+    },
+    {
+      "key": "sekolah_token",
+      "value": ""
+    },
+    {
+      "key": "refresh_token",
+      "value": ""
+    }
+  ]
+}
