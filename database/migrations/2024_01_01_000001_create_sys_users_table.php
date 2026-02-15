@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('email', 100)->unique();
             $table->string('password', 255);
-            $table->enum('role', ['admin', 'guru', 'siswa', 'wali']);
+            $table->tinyInteger('role')->default(3)->comment('Referensi ke sys_roles dengan id 2=guru, 3=siswa, 4=wali');
             $table->tinyInteger('is_active')->default(1);
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

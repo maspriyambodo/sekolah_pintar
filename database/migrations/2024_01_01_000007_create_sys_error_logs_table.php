@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('sys_error_logs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->enum('level', ['info', 'warning', 'error', 'critical']);
+            $table->unsignedTinyInteger('level')->comment('Referensi ke sys_references dengan kategori level_error');
             $table->text('message');
             $table->string('file', 255)->nullable();
             $table->integer('line')->nullable();

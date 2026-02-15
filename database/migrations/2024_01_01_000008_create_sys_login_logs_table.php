@@ -12,7 +12,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('sys_user_id')->nullable();
             $table->string('email', 100)->nullable();
-            $table->enum('status', ['success', 'failed']);
+            $table->unsignedTinyInteger('status')->comment('Referensi ke sys_references dengan kategori status_login');
             $table->string('ip_address', 45)->nullable();
             $table->string('user_agent', 255)->nullable();
             $table->timestamp('login_at')->useCurrent();

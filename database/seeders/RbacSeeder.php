@@ -156,7 +156,7 @@ class RbacSeeder extends Seeder
             [
                 'name' => 'Administrator',
                 'password' => Hash::make('password'),
-                'role' => 'admin',
+                'role' => 1, // Assuming '1' is the default role for admin
                 'is_active' => true,
             ]
         );
