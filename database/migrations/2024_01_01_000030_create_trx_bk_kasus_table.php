@@ -16,10 +16,12 @@ return new class extends Migration
             $table->unsignedBigInteger('mst_bk_jenis_id')->nullable();
             $table->string('judul_kasus', 150)->nullable();
             $table->text('deskripsi_masalah')->nullable();
-            $table->enum('status', ['dibuka', 'proses', 'selesai', 'dirujuk'])->nullable();
+            $table->unsignedTinyInteger('status')->comment('Referensi ke sys_references dengan kategori status_bk');
             $table->date('tanggal_mulai')->nullable();
             $table->date('tanggal_selesai')->nullable();
             $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
 
             $table->index(['mst_siswa_id', 'status'], 'idx_bk_kasus_siswa');
             $table->index('mst_guru_id', 'idx_bk_kasus_guru');

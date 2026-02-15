@@ -15,6 +15,8 @@ return new class extends Migration
             $table->string('no_hp', 20)->nullable();
             $table->text('alamat')->nullable();
             $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
 
             $table->foreign('sys_user_id')->references('id')->on('sys_users')->onDelete('restrict')->onUpdate('restrict');
         });

@@ -13,6 +13,9 @@ return new class extends Migration
             $table->unsignedBigInteger('trx_rapor_id')->nullable();
             $table->unsignedBigInteger('mst_mapel_id')->nullable();
             $table->decimal('nilai_akhir', 5, 2)->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->unique(['trx_rapor_id', 'mst_mapel_id'], 'uq_rd');
             $table->foreign('trx_rapor_id')->references('id')->on('trx_rapor')->onDelete('restrict')->onUpdate('restrict');

@@ -12,8 +12,11 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('trx_bk_kasus_id')->nullable();
             $table->date('tanggal')->nullable();
-            $table->enum('metode', ['tatap_muka', 'online', 'telepon'])->nullable();
+            $table->unsignedTinyInteger('metode')->comment('Referensi ke sys_references dengan kategori metode_bk');
             $table->text('catatan')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->foreign('trx_bk_kasus_id')->references('id')->on('trx_bk_kasus')->onDelete('restrict')->onUpdate('restrict');
         });

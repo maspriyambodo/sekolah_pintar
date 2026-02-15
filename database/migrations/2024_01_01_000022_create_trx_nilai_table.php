@@ -14,6 +14,8 @@ return new class extends Migration
             $table->unsignedBigInteger('mst_siswa_id')->nullable();
             $table->decimal('nilai', 5, 2)->nullable();
             $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
 
             $table->unique(['trx_ujian_id', 'mst_siswa_id'], 'uq_nilai');
             $table->index(['trx_ujian_id', 'mst_siswa_id'], 'idx_nilai_ujian_siswa');

@@ -12,7 +12,10 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('mst_siswa_id')->nullable();
             $table->unsignedBigInteger('mst_wali_id')->nullable();
-            $table->enum('hubungan', ['ayah', 'ibu', 'wali'])->nullable();
+            $table->unsignedTinyInteger('hubungan')->comment('Referensi ke sys_references dengan kategori hubungan_wali');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->unique(['mst_siswa_id', 'mst_wali_id'], 'uq_sw');
             $table->foreign('mst_siswa_id')->references('id')->on('mst_siswa')->onDelete('restrict')->onUpdate('restrict');

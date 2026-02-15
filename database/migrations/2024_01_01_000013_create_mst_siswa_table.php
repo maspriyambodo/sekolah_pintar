@@ -13,12 +13,14 @@ return new class extends Migration
             $table->unsignedBigInteger('sys_user_id');
             $table->string('nis', 20)->unique();
             $table->string('nama', 100);
-            $table->enum('jenis_kelamin', ['L', 'P'])->nullable();
+            $table->unsignedTinyInteger('jenis_kelamin')->comment('Referensi ke sys_references dengan kategori jenis_kelamin');
             $table->date('tanggal_lahir')->nullable();
             $table->text('alamat')->nullable();
             $table->unsignedBigInteger('mst_kelas_id')->nullable();
-            $table->enum('status', ['aktif', 'lulus', 'pindah'])->default('aktif');
+            $table->unsignedTinyInteger('status')->comment('Referensi ke sys_references dengan kategori status_siswa');
             $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
 
             $table->index(['mst_kelas_id', 'status'], 'idx_siswa_kelas_status');
             $table->index('nama', 'idx_siswa_nama');

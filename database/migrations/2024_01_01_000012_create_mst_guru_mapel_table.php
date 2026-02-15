@@ -12,6 +12,9 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('mst_guru_id')->nullable();
             $table->unsignedBigInteger('mst_mapel_id')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->unique(['mst_guru_id', 'mst_mapel_id'], 'uq_gm');
             $table->foreign('mst_guru_id')->references('id')->on('mst_guru')->onDelete('restrict')->onUpdate('restrict');

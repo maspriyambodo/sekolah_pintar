@@ -14,9 +14,10 @@ return new class extends Migration
             $table->unsignedBigInteger('mst_siswa_id');
             $table->date('tanggal_pinjam');
             $table->date('tanggal_kembali')->nullable();
-            $table->enum('status', ['dipinjam', 'dikembalikan', 'hilang'])->default('dipinjam');
+            $table->unsignedTinyInteger('status')->comment('Referensi ke sys_references dengan kategori status_pinjam');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
 
             $table->index(['mst_siswa_id', 'status'], 'idx_pinjam_siswa_status');
             $table->index(['mst_buku_id', 'status'], 'idx_pinjam_buku_status');

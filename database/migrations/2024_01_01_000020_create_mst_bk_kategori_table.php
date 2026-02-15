@@ -11,6 +11,9 @@ return new class extends Migration
         Schema::create('mst_bk_kategori', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama', 100)->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

@@ -13,11 +13,11 @@ return new class extends Migration
             $table->unsignedBigInteger('mst_siswa_id');
             $table->unsignedBigInteger('mst_tarif_spp_id');
             $table->tinyInteger('bulan')->comment('1=Januari, 12=Desember');
-            $table->year('tanggal');
+            $table->year('tahun');
             $table->date('tanggal_bayar');
             $table->decimal('jumlah_bayar', 10, 2);
-            $table->enum('status', ['lunas', 'belum_lunas', 'pending', 'dibatalkan'])->default('pending');
-            $table->enum('metode_pembayaran', ['tunai', 'transfer', 'virtual_account', 'qris'])->default('tunai');
+            $table->unsignedTinyInteger('status')->comment('Referensi ke sys_references dengan kategori status_bayar');
+            $table->unsignedTinyInteger('metode_pembayaran')->comment('Referensi ke sys_references dengan kategori metode_pembayaran');
             $table->text('keterangan')->nullable();
             $table->unsignedBigInteger('petugas_id')->nullable()->comment('User yang mencatat pembayaran');
             $table->timestamp('created_at')->nullable();

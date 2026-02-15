@@ -13,6 +13,8 @@ return new class extends Migration
             $table->string('kode_mapel', 10)->unique();
             $table->string('nama_mapel', 100);
             $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

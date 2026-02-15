@@ -13,6 +13,9 @@ return new class extends Migration
             $table->unsignedBigInteger('trx_bk_kasus_id')->nullable();
             $table->text('hasil')->nullable();
             $table->text('rekomendasi')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->foreign('trx_bk_kasus_id')->references('id')->on('trx_bk_kasus')->onDelete('restrict')->onUpdate('restrict');
         });

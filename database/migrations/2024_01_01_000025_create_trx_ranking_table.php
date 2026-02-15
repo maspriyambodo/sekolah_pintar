@@ -13,6 +13,9 @@ return new class extends Migration
             $table->unsignedBigInteger('trx_rapor_id')->nullable();
             $table->unsignedBigInteger('mst_kelas_id')->nullable();
             $table->integer('peringkat')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->foreign('trx_rapor_id')->references('id')->on('trx_rapor')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('mst_kelas_id')->references('id')->on('mst_kelas')->onDelete('restrict')->onUpdate('restrict');

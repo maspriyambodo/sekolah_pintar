@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('wali_guru_id')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

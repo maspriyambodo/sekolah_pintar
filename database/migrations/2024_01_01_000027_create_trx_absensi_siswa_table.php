@@ -12,9 +12,11 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('mst_siswa_id')->nullable();
             $table->date('tanggal')->nullable();
-            $table->enum('status', ['hadir', 'izin', 'sakit', 'alpha'])->nullable();
+            $table->unsignedTinyInteger('status')->comment('Referensi ke sys_references dengan kategori status_absensi');
             $table->text('keterangan')->nullable();
             $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
 
             $table->unique(['mst_siswa_id', 'tanggal'], 'uq_as');
             $table->index(['mst_siswa_id', 'tanggal'], 'idx_absensi_siswa_tanggal');

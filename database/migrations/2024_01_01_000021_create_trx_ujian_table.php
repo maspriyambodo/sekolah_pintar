@@ -12,9 +12,12 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('mst_mapel_id')->nullable();
             $table->unsignedBigInteger('mst_kelas_id')->nullable();
-            $table->enum('jenis', ['harian', 'uts', 'uas'])->nullable();
-            $table->enum('semester', ['ganjil', 'genap'])->nullable();
+            $table->unsignedTinyInteger('jenis')->comment('Referensi ke sys_references dengan kategori jenis_ujian');
+            $table->unsignedTinyInteger('semester')->comment('Referensi ke sys_references dengan kategori semester');
             $table->date('tanggal')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->foreign('mst_mapel_id')->references('id')->on('mst_mapel')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('mst_kelas_id')->references('id')->on('mst_kelas')->onDelete('restrict')->onUpdate('restrict');

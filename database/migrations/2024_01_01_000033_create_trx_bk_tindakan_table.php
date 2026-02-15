@@ -12,6 +12,9 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('trx_bk_kasus_id')->nullable();
             $table->text('deskripsi_tindakan')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->foreign('trx_bk_kasus_id')->references('id')->on('trx_bk_kasus')->onDelete('restrict')->onUpdate('restrict');
         });
