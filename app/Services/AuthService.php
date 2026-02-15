@@ -51,7 +51,7 @@ class AuthService
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
-                'role' => $data['role'] ?? 'siswa',
+                'role' => $data['role'] ?? 4, // Default to 'siswa' role
                 'is_active' => true,
             ]);
 
