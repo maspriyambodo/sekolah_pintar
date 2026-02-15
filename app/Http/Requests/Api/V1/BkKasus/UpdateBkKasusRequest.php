@@ -21,7 +21,7 @@ class UpdateBkKasusRequest extends FormRequest
             'jenis_id' => ['nullable', 'integer', 'exists:mst_bk_jenis,id'],
             'tanggal' => ['nullable', 'date'],
             'keterangan' => ['nullable', 'string'],
-            'status' => ['nullable', 'string', 'in:open,progress,resolved,closed'],
+            'status' => ['nullable', 'integer', 'min:1', 'max:4'],
         ];
     }
 }

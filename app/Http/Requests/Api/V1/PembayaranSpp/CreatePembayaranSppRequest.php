@@ -22,8 +22,8 @@ class CreatePembayaranSppRequest extends FormRequest
             'tahun' => ['required', 'integer', 'min:2000', 'max:2100'],
             'tanggal_bayar' => ['nullable', 'date'],
             'jumlah_bayar' => ['required', 'numeric', 'min:0'],
-            'status' => ['nullable', 'string', 'in:lunas,belum_lunas,pending,dibatalkan'],
-            'metode_pembayaran' => ['nullable', 'string', 'in:tunai,transfer,virtual_account,qris'],
+            'status' => ['nullable', 'integer', 'min:1', 'max:4'],
+            'metode_pembayaran' => ['nullable', 'integer', 'min:1', 'max:4'],
             'keterangan' => ['nullable', 'string'],
         ];
     }
@@ -41,6 +41,12 @@ class CreatePembayaranSppRequest extends FormRequest
             'tahun.required' => 'Tahun wajib diisi',
             'jumlah_bayar.required' => 'Jumlah bayar wajib diisi',
             'jumlah_bayar.min' => 'Jumlah bayar tidak boleh negatif',
+            'status.integer' => 'Status harus berupa angka',
+            'status.min' => 'Status tidak valid',
+            'status.max' => 'Status tidak valid',
+            'metode_pembayaran.integer' => 'Metode pembayaran harus berupa angka',
+            'metode_pembayaran.min' => 'Metode pembayaran tidak valid',
+            'metode_pembayaran.max' => 'Metode pembayaran tidak valid',
         ];
     }
 }

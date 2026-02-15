@@ -20,7 +20,7 @@ class CreateGuruRequest extends FormRequest
             'nip' => ['nullable', 'string', 'max:30', 'unique:mst_guru,nip'],
             'nuptk' => ['nullable', 'string', 'max:30', 'unique:mst_guru,nuptk'],
             'nama' => ['required', 'string', 'max:100'],
-            'jenis_kelamin' => ['required', 'string', 'in:L,P'],
+            'jenis_kelamin' => ['required', 'integer', 'min:1', 'max:2'],
             'tanggal_lahir' => ['nullable', 'date', 'before:today'],
             'alamat' => ['nullable', 'string'],
             'no_hp' => ['nullable', 'string', 'max:15'],
@@ -39,7 +39,9 @@ class CreateGuruRequest extends FormRequest
             'nuptk.unique' => 'NUPTK sudah terdaftar',
             'nama.required' => 'Nama wajib diisi',
             'jenis_kelamin.required' => 'Jenis kelamin wajib dipilih',
-            'jenis_kelamin.in' => 'Jenis kelamin harus L atau P',
+            'jenis_kelamin.integer' => 'Jenis kelamin harus berupa angka',
+            'jenis_kelamin.min' => 'Jenis kelamin tidak valid',
+            'jenis_kelamin.max' => 'Jenis kelamin tidak valid',
         ];
     }
 }

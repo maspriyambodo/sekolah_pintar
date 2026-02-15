@@ -21,7 +21,7 @@ class CreateBkKasusRequest extends FormRequest
             'jenis_id' => ['required', 'integer', 'exists:mst_bk_jenis,id'],
             'tanggal' => ['required', 'date'],
             'keterangan' => ['required', 'string'],
-            'status' => ['nullable', 'string', 'in:open,progress,resolved,closed'],
+            'status' => ['nullable', 'integer', 'min:1', 'max:4'],
         ];
     }
 
@@ -36,6 +36,9 @@ class CreateBkKasusRequest extends FormRequest
             'jenis_id.exists' => 'Jenis kasus tidak ditemukan',
             'tanggal.required' => 'Tanggal wajib diisi',
             'keterangan.required' => 'Keterangan wajib diisi',
+            'status.integer' => 'Status harus berupa angka',
+            'status.min' => 'Status tidak valid',
+            'status.max' => 'Status tidak valid',
         ];
     }
 }

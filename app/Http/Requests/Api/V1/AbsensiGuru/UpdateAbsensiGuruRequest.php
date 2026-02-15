@@ -18,7 +18,7 @@ class UpdateAbsensiGuruRequest extends FormRequest
         return [
             'guru_id' => ['nullable', 'integer', 'exists:mst_guru,id'],
             'tanggal' => ['nullable', 'date'],
-            'status' => ['nullable', 'string', 'in:hadir,izin,sakit,alpha'],
+            'status' => ['nullable', 'integer', 'min:1', 'max:4'],
             'keterangan' => ['nullable', 'string'],
             'jam_masuk' => ['nullable', 'date_format:H:i'],
             'jam_keluar' => ['nullable', 'date_format:H:i'],
@@ -30,7 +30,9 @@ class UpdateAbsensiGuruRequest extends FormRequest
         return [
             'guru_id.exists' => 'Guru tidak ditemukan',
             'tanggal.date' => 'Tanggal tidak valid',
-            'status.in' => 'Status harus hadir, izin, sakit, atau alpha',
+            'status.integer' => 'Status harus berupa angka',
+            'status.min' => 'Status tidak valid',
+            'status.max' => 'Status tidak valid',
             'jam_masuk.date_format' => 'Format jam masuk tidak valid (HH:mm)',
             'jam_keluar.date_format' => 'Format jam keluar tidak valid (HH:mm)',
         ];

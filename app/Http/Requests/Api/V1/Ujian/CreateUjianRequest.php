@@ -18,10 +18,10 @@ class CreateUjianRequest extends FormRequest
         return [
             'mst_mapel_id' => ['required', 'integer', 'exists:mst_mapel,id'],
             'mst_kelas_id' => ['required', 'integer', 'exists:mst_kelas,id'],
-            'jenis' => ['required', 'string', 'in:uts,uas,ulangan_harian,ulangan_bulanan,praktik'],
+            'jenis' => ['required', 'integer', 'min:1', 'max:5'],
             'nama' => ['required', 'string', 'max:100'],
             'tanggal' => ['required', 'date'],
-            'semester' => ['required', 'string', 'max:10'],
+            'semester' => ['required', 'integer', 'min:1', 'max:2'],
             'tahun_ajaran' => ['required', 'string', 'max:20'],
             'keterangan' => ['nullable', 'string'],
         ];
@@ -34,7 +34,12 @@ class CreateUjianRequest extends FormRequest
             'mst_mapel_id.exists' => 'Mapel tidak ditemukan',
             'mst_kelas_id.required' => 'Kelas wajib dipilih',
             'mst_kelas_id.exists' => 'Kelas tidak ditemukan',
-            'jenis.in' => 'Jenis ujian tidak valid',
+            'jenis.integer' => 'Jenis ujian harus berupa angka',
+            'jenis.min' => 'Jenis ujian tidak valid',
+            'jenis.max' => 'Jenis ujian tidak valid',
+            'semester.integer' => 'Semester harus berupa angka',
+            'semester.min' => 'Semester tidak valid',
+            'semester.max' => 'Semester tidak valid',
         ];
     }
 }

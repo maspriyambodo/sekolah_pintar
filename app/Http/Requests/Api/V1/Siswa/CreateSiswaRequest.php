@@ -19,11 +19,11 @@ class CreateSiswaRequest extends FormRequest
             'sys_user_id' => ['required', 'integer', 'exists:sys_users,id'],
             'nis' => ['required', 'string', 'max:20', 'unique:mst_siswa,nis'],
             'nama' => ['required', 'string', 'max:100'],
-            'jenis_kelamin' => ['required', 'string', 'in:L,P'],
+            'jenis_kelamin' => ['required', 'integer', 'min:1', 'max:2'],
             'tanggal_lahir' => ['nullable', 'date', 'before:today'],
             'alamat' => ['nullable', 'string'],
             'mst_kelas_id' => ['nullable', 'integer', 'exists:mst_kelas,id'],
-            'status' => ['nullable', 'string', 'in:aktif,lulus,pindah'],
+            'status' => ['nullable', 'integer', 'min:1', 'max:3'],
         ];
     }
 
@@ -36,9 +36,14 @@ class CreateSiswaRequest extends FormRequest
             'nis.unique' => 'NIS sudah terdaftar',
             'nama.required' => 'Nama wajib diisi',
             'jenis_kelamin.required' => 'Jenis kelamin wajib dipilih',
-            'jenis_kelamin.in' => 'Jenis kelamin harus L atau P',
+            'jenis_kelamin.integer' => 'Jenis kelamin harus berupa angka',
+            'jenis_kelamin.min' => 'Jenis kelamin tidak valid',
+            'jenis_kelamin.max' => 'Jenis kelamin tidak valid',
             'tanggal_lahir.before' => 'Tanggal lahir harus sebelum hari ini',
             'mst_kelas_id.exists' => 'Kelas tidak ditemukan',
+            'status.integer' => 'Status harus berupa angka',
+            'status.min' => 'Status tidak valid',
+            'status.max' => 'Status tidak valid',
         ];
     }
 }
