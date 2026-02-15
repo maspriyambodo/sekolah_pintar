@@ -11,7 +11,7 @@
  Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 15/02/2026 19:18:21
+ Date: 15/02/2026 20:19:01
 */
 
 SET NAMES utf8mb4;
@@ -411,6 +411,23 @@ CREATE TABLE `sys_permissions` (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `code` (`code`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Table structure for sys_references
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_references`;
+CREATE TABLE `sys_references` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `kategori` varchar(50) NOT NULL COMMENT 'Contoh: JENIS_KELAMIN, STATUS_SISWA, STATUS_BAYAR',
+  `kode` varchar(20) NOT NULL COMMENT 'Contoh: L, P, aktif, lunas',
+  `nama` varchar(100) NOT NULL COMMENT 'Label yang muncul di UI',
+  `urutan` int DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_kategori` (`kategori`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Table structure for sys_role_permissions
