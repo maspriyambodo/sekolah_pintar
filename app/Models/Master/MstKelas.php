@@ -24,6 +24,7 @@ class MstKelas extends Model
         'tingkat',
         'tahun_ajaran',
         'wali_guru_id',
+        'deleted_at',
     ];
 
     protected $casts = [

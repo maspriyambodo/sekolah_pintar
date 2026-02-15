@@ -29,6 +29,7 @@ class MstGuru extends Model
         'tanggal_lahir',
         'alamat',
         'no_hp',
+        'deleted_at',
     ];
 
     protected $casts = [

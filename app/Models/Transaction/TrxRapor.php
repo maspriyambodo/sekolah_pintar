@@ -9,11 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Master\MstSiswa;
 
 class TrxRapor extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'trx_rapor';
 
@@ -23,6 +24,7 @@ class TrxRapor extends Model
         'tahun_ajaran',
         'total_nilai',
         'rata_rata',
+        'deleted_at',
     ];
 
     protected $casts = [

@@ -33,6 +33,7 @@ class MstSiswa extends Model
         'alamat',
         'mst_kelas_id',
         'status',
+        'deleted_at',
     ];
 
     protected $casts = [

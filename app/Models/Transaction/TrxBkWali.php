@@ -7,11 +7,12 @@ namespace App\Models\Transaction;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Master\MstWaliMurid;
 
 class TrxBkWali extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'trx_bk_wali';
 
@@ -19,6 +20,7 @@ class TrxBkWali extends Model
         'trx_bk_kasus_id',
         'mst_wali_murid_id',
         'peran',
+        'deleted_at',
     ];
 
     protected $casts = [

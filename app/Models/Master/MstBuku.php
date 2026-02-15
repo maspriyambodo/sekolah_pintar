@@ -24,6 +24,7 @@ class MstBuku extends Model
         'penerbit',
         'tahun',
         'stok',
+        'deleted_at',
     ];
 
     protected $casts = [

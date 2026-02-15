@@ -30,6 +30,7 @@ class SysUser extends Authenticatable implements JWTSubject
         'password',
         'role',
         'is_active',
+        'deleted_at',
     ];
 
     protected $hidden = [

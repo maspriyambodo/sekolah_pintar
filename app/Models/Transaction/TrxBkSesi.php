@@ -7,10 +7,11 @@ namespace App\Models\Transaction;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TrxBkSesi extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'trx_bk_sesi';
 
@@ -19,6 +20,7 @@ class TrxBkSesi extends Model
         'tanggal',
         'metode',
         'catatan',
+        'deleted_at',
     ];
 
     protected $casts = [

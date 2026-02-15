@@ -30,6 +30,7 @@ class TrxPembayaranSpp extends Model
         'metode_pembayaran',
         'keterangan',
         'petugas_id',
+        'deleted_at',
     ];
 
     protected $casts = [

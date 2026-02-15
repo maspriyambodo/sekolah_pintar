@@ -21,6 +21,7 @@ class TrxNilai extends Model
         'trx_ujian_id',
         'mst_siswa_id',
         'nilai',
+        'deleted_at',
     ];
 
     protected $casts = [

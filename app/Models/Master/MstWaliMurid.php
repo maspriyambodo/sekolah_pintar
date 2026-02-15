@@ -23,6 +23,7 @@ class MstWaliMurid extends Model
         'nama',
         'no_hp',
         'alamat',
+        'deleted_at',
     ];
 
     protected $casts = [

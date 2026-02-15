@@ -7,10 +7,11 @@ namespace App\Models\Master;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class MstSiswaWali extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'mst_siswa_wali';
 
@@ -18,6 +19,7 @@ class MstSiswaWali extends Model
         'mst_siswa_id',
         'mst_wali_id',
         'hubungan',
+        'deleted_at',
     ];
 
     protected $casts = [

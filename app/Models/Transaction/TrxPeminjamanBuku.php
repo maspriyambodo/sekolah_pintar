@@ -23,6 +23,7 @@ class TrxPeminjamanBuku extends Model
         'tanggal_pinjam',
         'tanggal_kembali',
         'status',
+        'deleted_at',
     ];
 
     protected $casts = [

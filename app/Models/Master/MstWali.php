@@ -22,6 +22,7 @@ class MstWali extends Model
         'nama',
         'no_hp',
         'alamat',
+        'deleted_at',
     ];
 
     public function user(): BelongsTo

@@ -21,6 +21,7 @@ class TrxAbsensiSiswa extends Model
         'tanggal',
         'status',
         'keterangan',
+        'deleted_at',
     ];
 
     protected $casts = [

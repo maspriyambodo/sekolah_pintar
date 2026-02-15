@@ -7,11 +7,12 @@ namespace App\Models\Transaction;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Master\MstKelas;
 
 class TrxRanking extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'trx_ranking';
 
@@ -19,6 +20,7 @@ class TrxRanking extends Model
         'trx_rapor_id',
         'mst_kelas_id',
         'peringkat',
+        'deleted_at',
     ];
 
     protected $casts = [

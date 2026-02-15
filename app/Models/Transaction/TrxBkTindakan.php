@@ -7,16 +7,18 @@ namespace App\Models\Transaction;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TrxBkTindakan extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'trx_bk_tindakan';
 
     protected $fillable = [
         'trx_bk_kasus_id',
         'deskripsi_tindakan',
+        'deleted_at',
     ];
 
     public function kasus(): BelongsTo

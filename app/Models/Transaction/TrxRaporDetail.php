@@ -7,11 +7,12 @@ namespace App\Models\Transaction;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Master\MstMapel;
 
 class TrxRaporDetail extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'trx_rapor_detail';
 
@@ -19,6 +20,7 @@ class TrxRaporDetail extends Model
         'trx_rapor_id',
         'mst_mapel_id',
         'nilai_akhir',
+        'deleted_at',
     ];
 
     protected $casts = [

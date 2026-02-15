@@ -18,6 +18,7 @@ class SysRolePermission extends Model
     protected $fillable = [
         'sys_role_id',
         'sys_permission_id',
+        'updated_at',
     ];
 
     protected $casts = [

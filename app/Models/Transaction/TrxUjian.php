@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Master\MstKelas;
 use App\Models\Master\MstMapel;
 
 class TrxUjian extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'trx_ujian';
 
@@ -23,6 +24,7 @@ class TrxUjian extends Model
         'jenis',
         'semester',
         'tanggal',
+        'deleted_at',
     ];
 
     protected $casts = [

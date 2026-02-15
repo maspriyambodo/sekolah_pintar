@@ -7,16 +7,18 @@ namespace App\Models\Master;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class MstGuruMapel extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'mst_guru_mapel';
 
     protected $fillable = [
         'mst_guru_id',
         'mst_mapel_id',
+        'deleted_at',
     ];
 
     public function guru(): BelongsTo
