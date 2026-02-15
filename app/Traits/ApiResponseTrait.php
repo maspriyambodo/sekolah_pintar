@@ -46,7 +46,7 @@ trait ApiResponseTrait
     }
 
     protected function paginatedResponse(
-        CursorPaginator $paginator,
+        $paginator,
         string $message = 'Success',
         ?string $resourceClass = null
     ): JsonResponse {
@@ -54,12 +54,25 @@ trait ApiResponseTrait
             ? $resourceClass::collection($paginator->items())
             : $paginator->items();
 
-        return $this->successResponse($data, $message, 200, [
-            'current_page' => $paginator->currentPage(),
-            'next_cursor' => $paginator->nextCursor()?->encode(),
-            'prev_cursor' => $paginator->previousCursor()?->encode(),
-            'has_more' => $paginator->hasMorePages(),
-        ]);
+        // Handle both CursorPaginator and LengthAwarePaginator
+        $meta = [];
+
+        if (method_exists($paginator, 'currentPage')) {
+            $meta['current_page'] = $paginator->currentPage();
+        }
+
+        if (method_exists($paginator, 'nextCursor')) {
+            $meta['next_cursor'] = $paginator->nextCursor()?->encode();
+            $meta['prev_cursor'] = $paginator->previousCursor()?->encode();
+            $meta['has_more'] = $paginator->hasMorePages();
+        }
+
+        if (method_exists($paginator, 'lastPage')) {
+            $meta['last_page'] = $paginator->lastPage();
+            $meta['total'] = $paginator->total();
+        }
+
+        return $this->successResponse($data, $message, 200, $meta);
     }
 
     protected function noContentResponse(string $message = 'No content'): JsonResponse
