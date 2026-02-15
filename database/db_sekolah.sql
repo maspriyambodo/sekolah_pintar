@@ -11,7 +11,7 @@
  Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 15/02/2026 18:33:37
+ Date: 15/02/2026 19:04:17
 */
 
 SET NAMES utf8mb4;
@@ -107,6 +107,9 @@ DROP TABLE IF EXISTS `mst_bk_jenis`;
 CREATE TABLE `mst_bk_jenis` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
@@ -117,6 +120,9 @@ DROP TABLE IF EXISTS `mst_bk_kategori`;
 CREATE TABLE `mst_bk_kategori` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
@@ -152,6 +158,8 @@ CREATE TABLE `mst_guru` (
   `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `no_hp` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `nip` (`nip`) USING BTREE,
   KEY `sys_user_id` (`sys_user_id`) USING BTREE,
@@ -166,6 +174,9 @@ CREATE TABLE `mst_guru_mapel` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `mst_guru_id` bigint unsigned DEFAULT NULL,
   `mst_mapel_id` bigint unsigned DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `uq_gm` (`mst_guru_id`,`mst_mapel_id`) USING BTREE,
   KEY `mst_mapel_id` (`mst_mapel_id`) USING BTREE,
@@ -185,6 +196,7 @@ CREATE TABLE `mst_kelas` (
   `wali_guru_id` bigint unsigned DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
@@ -197,6 +209,8 @@ CREATE TABLE `mst_mapel` (
   `kode_mapel` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `nama_mapel` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `kode_mapel` (`kode_mapel`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
@@ -216,6 +230,8 @@ CREATE TABLE `mst_siswa` (
   `mst_kelas_id` bigint unsigned DEFAULT NULL,
   `status` enum('aktif','lulus','pindah') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'aktif',
   `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `nis` (`nis`) USING BTREE,
   KEY `sys_user_id` (`sys_user_id`) USING BTREE,
@@ -236,6 +252,9 @@ CREATE TABLE `mst_siswa_wali` (
   `mst_siswa_id` bigint unsigned DEFAULT NULL,
   `mst_wali_id` bigint unsigned DEFAULT NULL,
   `hubungan` enum('ayah','ibu','wali') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `uq_sw` (`mst_siswa_id`,`mst_wali_id`) USING BTREE,
   KEY `mst_wali_id` (`mst_wali_id`) USING BTREE,
@@ -271,6 +290,8 @@ CREATE TABLE `mst_wali` (
   `no_hp` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `sys_user_id` (`sys_user_id`) USING BTREE,
   CONSTRAINT `mst_wali_ibfk_1` FOREIGN KEY (`sys_user_id`) REFERENCES `sys_users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -385,9 +406,10 @@ CREATE TABLE `sys_permissions` (
   `name` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `module` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `code` (`code`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Table structure for sys_role_permissions
@@ -418,7 +440,7 @@ CREATE TABLE `sys_roles` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `code` (`code`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Table structure for sys_user_roles
@@ -465,6 +487,9 @@ CREATE TABLE `trx_absensi_guru` (
   `tanggal` date DEFAULT NULL,
   `status` enum('hadir','izin','sakit','alpha') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `keterangan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `uq_ag` (`mst_guru_id`,`tanggal`) USING BTREE,
   CONSTRAINT `trx_absensi_guru_ibfk_1` FOREIGN KEY (`mst_guru_id`) REFERENCES `mst_guru` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -481,6 +506,8 @@ CREATE TABLE `trx_absensi_siswa` (
   `status` enum('hadir','izin','sakit','alpha') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `keterangan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `uq_as` (`mst_siswa_id`,`tanggal`) USING BTREE,
   KEY `idx_absensi_siswa_tanggal` (`mst_siswa_id`,`tanggal`),
@@ -497,6 +524,9 @@ CREATE TABLE `trx_bk_hasil` (
   `trx_bk_kasus_id` bigint unsigned DEFAULT NULL,
   `hasil` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `rekomendasi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `trx_bk_kasus_id` (`trx_bk_kasus_id`) USING BTREE,
   CONSTRAINT `trx_bk_hasil_ibfk_1` FOREIGN KEY (`trx_bk_kasus_id`) REFERENCES `trx_bk_kasus` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -518,6 +548,8 @@ CREATE TABLE `trx_bk_kasus` (
   `tanggal_mulai` date DEFAULT NULL,
   `tanggal_selesai` date DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `mst_siswa_id` (`mst_siswa_id`) USING BTREE,
   KEY `mst_guru_id` (`mst_guru_id`) USING BTREE,
@@ -541,6 +573,8 @@ CREATE TABLE `trx_bk_lampiran` (
   `file_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `keterangan` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `fk_bk_lampiran_kasus` (`trx_bk_kasus_id`) USING BTREE,
   CONSTRAINT `fk_bk_lampiran_kasus` FOREIGN KEY (`trx_bk_kasus_id`) REFERENCES `trx_bk_kasus` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
@@ -556,6 +590,9 @@ CREATE TABLE `trx_bk_sesi` (
   `tanggal` date DEFAULT NULL,
   `metode` enum('tatap_muka','online','telepon') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `catatan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `trx_bk_kasus_id` (`trx_bk_kasus_id`) USING BTREE,
   CONSTRAINT `trx_bk_sesi_ibfk_1` FOREIGN KEY (`trx_bk_kasus_id`) REFERENCES `trx_bk_kasus` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -569,6 +606,9 @@ CREATE TABLE `trx_bk_tindakan` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `trx_bk_kasus_id` bigint unsigned DEFAULT NULL,
   `deskripsi_tindakan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `trx_bk_kasus_id` (`trx_bk_kasus_id`) USING BTREE,
   CONSTRAINT `trx_bk_tindakan_ibfk_1` FOREIGN KEY (`trx_bk_kasus_id`) REFERENCES `trx_bk_kasus` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -584,6 +624,8 @@ CREATE TABLE `trx_bk_wali` (
   `mst_wali_murid_id` bigint unsigned NOT NULL,
   `peran` enum('dipanggil','pendamping','informasi') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `fk_bk_wali_kasus` (`trx_bk_kasus_id`) USING BTREE,
   KEY `fk_bk_wali_mst_wali` (`mst_wali_murid_id`) USING BTREE,
@@ -601,6 +643,8 @@ CREATE TABLE `trx_nilai` (
   `mst_siswa_id` bigint unsigned DEFAULT NULL,
   `nilai` decimal(5,2) DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `uq_nilai` (`trx_ujian_id`,`mst_siswa_id`) USING BTREE,
   KEY `mst_siswa_id` (`mst_siswa_id`) USING BTREE,
@@ -651,6 +695,7 @@ CREATE TABLE `trx_peminjaman_buku` (
   `status` enum('dipinjam','dikembalikan','hilang') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'dipinjam',
   `created_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `fk_trx_pinjam_buku` (`mst_buku_id`) USING BTREE,
   KEY `fk_trx_pinjam_siswa` (`mst_siswa_id`) USING BTREE,
@@ -669,6 +714,9 @@ CREATE TABLE `trx_ranking` (
   `trx_rapor_id` bigint unsigned DEFAULT NULL,
   `mst_kelas_id` bigint unsigned DEFAULT NULL,
   `peringkat` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `trx_rapor_id` (`trx_rapor_id`) USING BTREE,
   KEY `mst_kelas_id` (`mst_kelas_id`) USING BTREE,
@@ -687,6 +735,9 @@ CREATE TABLE `trx_rapor` (
   `tahun_ajaran` varchar(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `total_nilai` decimal(6,2) DEFAULT NULL,
   `rata_rata` decimal(5,2) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `mst_siswa_id` (`mst_siswa_id`) USING BTREE,
   KEY `idx_rapor_siswa_semester` (`mst_siswa_id`,`semester`,`tahun_ajaran`),
@@ -702,6 +753,9 @@ CREATE TABLE `trx_rapor_detail` (
   `trx_rapor_id` bigint unsigned DEFAULT NULL,
   `mst_mapel_id` bigint unsigned DEFAULT NULL,
   `nilai_akhir` decimal(5,2) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `uq_rd` (`trx_rapor_id`,`mst_mapel_id`) USING BTREE,
   KEY `mst_mapel_id` (`mst_mapel_id`) USING BTREE,
@@ -720,6 +774,9 @@ CREATE TABLE `trx_ujian` (
   `jenis` enum('harian','uts','uas') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `semester` enum('ganjil','genap') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `mst_mapel_id` (`mst_mapel_id`) USING BTREE,
   KEY `mst_kelas_id` (`mst_kelas_id`) USING BTREE,
