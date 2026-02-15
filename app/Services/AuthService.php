@@ -51,15 +51,9 @@ class AuthService
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
-                'role' => $data['role'] ?? 4, // Default to 'siswa' role
+                'role' => $data['role'],
                 'is_active' => true,
             ]);
-
-            // Assign default role
-            $defaultRole = \App\Models\System\SysRole::where('code', $data['role'] ?? 'siswa')->first();
-            if ($defaultRole) {
-                $this->userRepository->assignRole($user->id, $defaultRole->id);
-            }
 
             return $user;
         });
