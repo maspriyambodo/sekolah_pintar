@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('keterangan', 255)->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
 
             $table->foreign('mst_kelas_id')->references('id')->on('mst_kelas')->onDelete('restrict')->onUpdate('restrict');
         });
