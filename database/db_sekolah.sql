@@ -274,6 +274,7 @@ CREATE TABLE `mst_tarif_spp` (
   `keterangan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `mst_kelas_id` (`mst_kelas_id`) USING BTREE,
   CONSTRAINT `mst_tarif_spp_ibfk_1` FOREIGN KEY (`mst_kelas_id`) REFERENCES `mst_kelas` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -420,6 +421,7 @@ CREATE TABLE `sys_role_permissions` (
   `sys_role_id` bigint unsigned NOT NULL,
   `sys_permission_id` bigint unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `uq_role_permission` (`sys_role_id`,`sys_permission_id`) USING BTREE,
   KEY `fk_rp_permission` (`sys_permission_id`) USING BTREE,
