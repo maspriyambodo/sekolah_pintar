@@ -21,7 +21,7 @@ class UserResource extends JsonResource
                 'id' => $role->id,
                 'code' => $role->code,
                 'name' => $role->name,
-                'permissions' => $role->whenLoaded('permissions', fn () => $role->permissions->map(fn ($perm) => [
+                'permissions' => $this->whenLoaded('roles.permissions', fn () => $role->permissions->map(fn ($perm) => [
                     'id' => $perm->id,
                     'code' => $perm->code,
                     'name' => $perm->name,
