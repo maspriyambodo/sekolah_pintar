@@ -322,10 +322,10 @@ Route::prefix('v1')->group(function () {
             Route::prefix('menus')->group(function () {
                 Route::get('/', [SysMenuController::class, 'index'])->name('api.v1.admin.menus.index');
                 Route::post('/', [SysMenuController::class, 'store'])->name('api.v1.admin.menus.store');
+                Route::get('/tree', [SysMenuController::class, 'getTree'])->name('api.v1.admin.menus.tree');
                 Route::get('/{id}', [SysMenuController::class, 'show'])->name('api.v1.admin.menus.show');
                 Route::put('/{id}', [SysMenuController::class, 'update'])->name('api.v1.admin.menus.update');
                 Route::delete('/{id}', [SysMenuController::class, 'destroy'])->name('api.v1.admin.menus.destroy');
-                Route::get('/tree', [SysMenuController::class, 'getTree'])->name('api.v1.admin.menus.tree');
             });
 
             // Activity Logs management
