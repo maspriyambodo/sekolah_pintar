@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
+use App\Models\System\SysMenu;
 use App\Models\System\SysPermission;
 use App\Models\System\SysRole;
 use App\Models\System\SysUser;
@@ -109,6 +110,125 @@ class RbacSeeder extends Seeder
             );
         }
 
+        // Create menus
+        $menus = [
+            // Dashboard
+            [
+                'nama_menu' => 'Dashboard',
+                'url' => '/dashboard',
+                'icon' => 'bi-grid-1x2',
+                'urutan' => 1,
+                'is_active' => true,
+                'children' => [
+                    ['nama_menu' => 'Dashboard', 'url' => '/dashboard', 'icon' => 'bi-grid-1x2', 'urutan' => 1, 'is_active' => true],
+                ],
+            ],
+            // Data Master
+            [
+                'nama_menu' => 'Data Master',
+                'url' => '#',
+                'icon' => 'bi-database',
+                'urutan' => 2,
+                'is_active' => true,
+                'children' => [
+                    ['nama_menu' => 'Siswa', 'url' => '/siswa', 'icon' => 'bi-people', 'urutan' => 1, 'is_active' => true],
+                    ['nama_menu' => 'Guru', 'url' => '/guru', 'icon' => 'bi-person-badge', 'urutan' => 2, 'is_active' => true],
+                    ['nama_menu' => 'Kelas', 'url' => '/kelas', 'icon' => 'bi-door-open', 'urutan' => 3, 'is_active' => true],
+                ],
+            ],
+            // Akademik
+            [
+                'nama_menu' => 'Akademik',
+                'url' => '#',
+                'icon' => 'bi-book',
+                'urutan' => 3,
+                'is_active' => true,
+                'children' => [
+                    ['nama_menu' => 'Nilai', 'url' => '/nilai', 'icon' => 'bi-clipboard-data', 'urutan' => 1, 'is_active' => true],
+                    ['nama_menu' => 'Absensi', 'url' => '/absensi', 'icon' => 'bi-calendar-check', 'urutan' => 2, 'is_active' => true],
+                ],
+            ],
+            // Bimbingan Konseling
+            [
+                'nama_menu' => 'Bimbingan Konseling',
+                'url' => '/bk',
+                'icon' => 'bi-heart-pulse',
+                'urutan' => 4,
+                'is_active' => true,
+                'children' => [
+                    ['nama_menu' => 'BK', 'url' => '/bk', 'icon' => 'bi-heart-pulse', 'urutan' => 1, 'is_active' => true],
+                ],
+            ],
+            // Perpustakaan
+            [
+                'nama_menu' => 'Perpustakaan',
+                'url' => '/perpustakaan',
+                'icon' => 'bi-bookshelf',
+                'urutan' => 5,
+                'is_active' => true,
+                'children' => [
+                    ['nama_menu' => 'Perpustakaan', 'url' => '/perpustakaan', 'icon' => 'bi-bookshelf', 'urutan' => 1, 'is_active' => true],
+                ],
+            ],
+            // Settings
+            [
+                'nama_menu' => 'Pengaturan',
+                'url' => '#',
+                'icon' => 'bi-gear',
+                'urutan' => 6,
+                'is_active' => true,
+                'children' => [
+                    ['nama_menu' => 'Users', 'url' => '/users', 'icon' => 'bi-person', 'urutan' => 1, 'is_active' => true],
+                    ['nama_menu' => 'Roles', 'url' => '/roles', 'icon' => 'bi-shield', 'urutan' => 2, 'is_active' => true],
+                ],
+            ],
+        ];
+
+        foreach ($menus as $menuData) {
+            $children = $menuData['children'] ?? [];
+            unset($menuData['children']);
+
+            // Get permission ID based on menu name
+            $permissionCode = match ($menuData['nama_menu']) {
+                'Dashboard' => 'dashboard.view',
+                'Data Master' => 'siswa.view',
+                'Akademik' => 'nilai.view',
+                'Bimbingan Konseling' => 'bk.view',
+                'Perpustakaan' => 'perpustakaan.view',
+                'Pengaturan' => 'users.view',
+                default => null,
+            };
+            $permission = $permissionCode ? SysPermission::where('code', $permissionCode)->first() : null;
+
+            $menu = SysMenu::firstOrCreate(
+                ['nama_menu' => $menuData['nama_menu'], 'parent_id' => null],
+                array_merge($menuData, ['sys_permission_id' => $permission?->id])
+            );
+
+            // Create children menus
+            foreach ($children as $childData) {
+                $childPermissionCode = match ($childData['nama_menu']) {
+                    'Siswa' => 'siswa.view',
+                    'Guru' => 'guru.view',
+                    'Kelas' => 'kelas.view',
+                    'Nilai' => 'nilai.view',
+                    'Absensi' => 'absensi.view',
+                    'BK' => 'bk.view',
+                    'Perpustakaan' => 'perpustakaan.view',
+                    'Users' => 'users.view',
+                    'Roles' => 'roles.view',
+                    'Dashboard' => 'dashboard.view',
+                    default => null,
+                };
+                $childPermission = $childPermissionCode ? SysPermission::where('code', $childPermissionCode)->first() : null;
+
+                SysMenu::firstOrCreate(
+                    ['nama_menu' => $childData['nama_menu'], 'parent_id' => $menu->id],
+                    array_merge($childData, ['sys_permission_id' => $childPermission?->id])
+                );
+            }
+        }
+
         // Assign permissions to roles
         $adminRole = SysRole::where('code', 'admin')->first();
         $guruRole = SysRole::where('code', 'guru')->first();
@@ -118,6 +238,7 @@ class RbacSeeder extends Seeder
         // Admin gets all permissions
         $allPermissions = SysPermission::all();
         $adminRole->permissions()->sync($allPermissions->pluck('id'));
+
 
         // Guru permissions
         $guruPermissions = SysPermission::whereIn('module', [
