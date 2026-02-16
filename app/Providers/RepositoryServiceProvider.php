@@ -6,8 +6,10 @@ namespace App\Providers;
 
 use App\Repositories\Contracts\SiswaRepositoryInterface;
 use App\Repositories\Contracts\UserRepositoryInterface;
+use App\Repositories\Contracts\WaliRepositoryInterface;
 use App\Repositories\Eloquent\SiswaRepository;
 use App\Repositories\Eloquent\UserRepository;
+use App\Repositories\Eloquent\WaliRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -19,6 +21,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(SiswaRepositoryInterface::class, SiswaRepository::class);
+        $this->app->bind(WaliRepositoryInterface::class, WaliRepository::class);
     }
 
     /**
