@@ -13,9 +13,8 @@ class MapelResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'kode' => $this->kode,
-            'nama' => $this->nama,
-            'deskripsi' => $this->deskripsi,
+            'kode' => $this->kode_mapel,
+            'nama' => $this->nama_mapel,
             'created_at' => $this->created_at?->toIso8601String(),
             'updated_at' => $this->updated_at?->toIso8601String(),
         ];
