@@ -11,7 +11,7 @@
  Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 16/02/2026 19:21:24
+ Date: 17/02/2026 00:38:14
 */
 
 SET NAMES utf8mb4;
@@ -145,6 +145,21 @@ CREATE TABLE `mst_buku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
+-- Table structure for mst_golongan
+-- ----------------------------
+DROP TABLE IF EXISTS `mst_golongan`;
+CREATE TABLE `mst_golongan` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `pangkat` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Contoh: Penata Muda, Pembina',
+  `golongan_ruang` char(5) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Contoh: III/a, IV/b',
+  `jabatan` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Contoh: Guru Ahli Pertama, Guru Ahli Madya',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
 -- Table structure for mst_guru
 -- ----------------------------
 DROP TABLE IF EXISTS `mst_guru`;
@@ -152,10 +167,13 @@ CREATE TABLE `mst_guru` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `sys_user_id` bigint unsigned NOT NULL,
   `nip` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nuptk` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `jenis_kelamin` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori jenis_kelamin',
   `tanggal_lahir` date DEFAULT NULL,
   `alamat` text COLLATE utf8mb4_unicode_ci,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pendidikan_terakhir` tinyint DEFAULT NULL COMMENT 'Referensi ke sys_references dengan kategori pendidikan_terakhir',
   `no_hp` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -270,16 +288,16 @@ DROP TABLE IF EXISTS `mst_soal`;
 CREATE TABLE `mst_soal` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `mst_mapel_id` bigint unsigned NOT NULL,
-  `pertanyaan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tipe` enum('pilihan_ganda','essay') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'pilihan_ganda',
-  `tingkat_kesulitan` enum('mudah','sedang','sulit') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'sedang',
-  `media_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Path untuk gambar/audio soal',
+  `pertanyaan` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipe` enum('pilihan_ganda','essay') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pilihan_ganda',
+  `tingkat_kesulitan` enum('mudah','sedang','sulit') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'sedang',
+  `media_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Path untuk gambar/audio soal',
+  `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `mst_soal_mst_mapel_id_foreign` (`mst_mapel_id`),
-  CONSTRAINT `mst_soal_mst_mapel_id_foreign` FOREIGN KEY (`mst_mapel_id`) REFERENCES `mst_mapel` (`id`) ON DELETE CASCADE
+  CONSTRAINT `mst_soal_mst_mapel_id_foreign` FOREIGN KEY (`mst_mapel_id`) REFERENCES `mst_mapel` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
@@ -289,12 +307,14 @@ DROP TABLE IF EXISTS `mst_soal_opsi`;
 CREATE TABLE `mst_soal_opsi` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `mst_soal_id` bigint unsigned NOT NULL,
-  `teks_opsi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `is_jawaban` tinyint(1) NOT NULL DEFAULT '0' COMMENT '1 jika ini kunci jawaban',
-  `urutan` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'A, B, C, D, atau E',
+  `teks_opsi` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_jawaban` tinyint NOT NULL DEFAULT '0' COMMENT '1 jika ini kunci jawaban',
+  `urutan` char(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'A, B, C, D, atau E',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `mst_soal_opsi_mst_soal_id_foreign` (`mst_soal_id`),
-  CONSTRAINT `mst_soal_opsi_mst_soal_id_foreign` FOREIGN KEY (`mst_soal_id`) REFERENCES `mst_soal` (`id`) ON DELETE CASCADE
+  CONSTRAINT `mst_soal_opsi_mst_soal_id_foreign` FOREIGN KEY (`mst_soal_id`) REFERENCES `mst_soal` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
@@ -438,9 +458,9 @@ CREATE TABLE `sys_menus` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` bigint unsigned DEFAULT NULL COMMENT 'ID menu induk untuk sub-menu',
   `sys_permission_id` bigint unsigned DEFAULT NULL COMMENT 'Relasi ke permission untuk akses menu',
-  `nama_menu` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `icon` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Class icon (misal: fa-user, bi-grid)',
+  `nama_menu` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icon` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Class icon (misal: fa-user, bi-grid)',
   `urutan` int NOT NULL DEFAULT '0',
   `is_active` tinyint NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -448,8 +468,8 @@ CREATE TABLE `sys_menus` (
   PRIMARY KEY (`id`),
   KEY `sys_menus_parent_id_foreign` (`parent_id`),
   KEY `sys_menus_sys_permission_id_foreign` (`sys_permission_id`),
-  CONSTRAINT `sys_menus_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `sys_menus` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `sys_menus_sys_permission_id_foreign` FOREIGN KEY (`sys_permission_id`) REFERENCES `sys_permissions` (`id`) ON DELETE SET NULL
+  CONSTRAINT `sys_menus_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `sys_menus` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `sys_menus_sys_permission_id_foreign` FOREIGN KEY (`sys_permission_id`) REFERENCES `sys_permissions` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
@@ -861,15 +881,16 @@ CREATE TABLE `trx_ujian_jawaban` (
   `trx_ujian_user_id` bigint unsigned NOT NULL,
   `mst_soal_id` bigint unsigned NOT NULL,
   `mst_soal_opsi_id` bigint unsigned DEFAULT NULL COMMENT 'ID opsi yang dipilih jika pilihan ganda',
-  `jawaban_teks` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT 'Jika soal essay',
-  `is_benar` tinyint(1) DEFAULT '0',
-  `ragu_ragu` tinyint(1) DEFAULT '0',
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `jawaban_teks` text COLLATE utf8mb4_unicode_ci COMMENT 'Jika soal essay',
+  `is_benar` tinyint NOT NULL DEFAULT '0',
+  `ragu_ragu` tinyint NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `trx_ujian_jawaban_trx_ujian_user_id_foreign` (`trx_ujian_user_id`),
   KEY `trx_ujian_jawaban_mst_soal_id_foreign` (`mst_soal_id`),
-  CONSTRAINT `trx_ujian_jawaban_mst_soal_id_foreign` FOREIGN KEY (`mst_soal_id`) REFERENCES `mst_soal` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `trx_ujian_jawaban_trx_ujian_user_id_foreign` FOREIGN KEY (`trx_ujian_user_id`) REFERENCES `trx_ujian_user` (`id`) ON DELETE CASCADE
+  CONSTRAINT `trx_ujian_jawaban_mst_soal_id_foreign` FOREIGN KEY (`mst_soal_id`) REFERENCES `mst_soal` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `trx_ujian_jawaban_trx_ujian_user_id_foreign` FOREIGN KEY (`trx_ujian_user_id`) REFERENCES `trx_ujian_user` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
@@ -880,18 +901,20 @@ CREATE TABLE `trx_ujian_user` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `trx_ujian_id` bigint unsigned NOT NULL,
   `mst_siswa_id` bigint unsigned NOT NULL,
-  `waktu_mulai` datetime DEFAULT NULL,
-  `waktu_selesai` datetime DEFAULT NULL,
+  `waktu_mulai` timestamp NULL DEFAULT NULL,
+  `waktu_selesai` timestamp NULL DEFAULT NULL,
   `status` tinyint unsigned NOT NULL DEFAULT '1' COMMENT '1: Belum mulai, 2: Mengerjakan, 3: Selesai',
   `sisa_waktu` int DEFAULT NULL COMMENT 'Dalam hitungan detik',
-  `total_benar` int DEFAULT '0',
-  `total_salah` int DEFAULT '0',
-  `nilai_akhir` decimal(5,2) DEFAULT '0.00',
+  `total_benar` int NOT NULL DEFAULT '0',
+  `total_salah` int NOT NULL DEFAULT '0',
+  `nilai_akhir` decimal(5,2) NOT NULL DEFAULT '0.00',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `uq_ujian_siswa` (`trx_ujian_id`,`mst_siswa_id`),
+  KEY `trx_ujian_user_trx_ujian_id_foreign` (`trx_ujian_id`),
   KEY `trx_ujian_user_mst_siswa_id_foreign` (`mst_siswa_id`),
-  CONSTRAINT `trx_ujian_user_mst_siswa_id_foreign` FOREIGN KEY (`mst_siswa_id`) REFERENCES `mst_siswa` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `trx_ujian_user_trx_ujian_id_foreign` FOREIGN KEY (`trx_ujian_id`) REFERENCES `trx_ujian` (`id`) ON DELETE CASCADE
+  CONSTRAINT `trx_ujian_user_mst_siswa_id_foreign` FOREIGN KEY (`mst_siswa_id`) REFERENCES `mst_siswa` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `trx_ujian_user_trx_ujian_id_foreign` FOREIGN KEY (`trx_ujian_id`) REFERENCES `trx_ujian` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 SET FOREIGN_KEY_CHECKS = 1;
