@@ -22,15 +22,14 @@ class GuruResource extends JsonResource
             'no_hp' => $this->no_hp,
             'email' => $this->email,
             'pendidikan_terakhir' => $this->pendidikan_terakhir,
-            'jabatan' => $this->jabatan,
             'user' => $this->whenLoaded('user', fn () => [
                 'id' => $this->user->id,
                 'email' => $this->user->email,
             ]),
             'mapel' => $this->whenLoaded('mapel', fn () => $this->mapel->map(fn ($m) => [
                 'id' => $m->id,
-                'kode' => $m->kode,
-                'nama' => $m->nama,
+                'kode' => $m->kode_mapel,
+                'nama' => $m->nama_mapel,
             ])),
             'created_at' => $this->created_at?->toIso8601String(),
             'updated_at' => $this->updated_at?->toIso8601String(),
