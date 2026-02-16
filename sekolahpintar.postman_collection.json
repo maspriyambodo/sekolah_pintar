@@ -1233,6 +1233,338 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "Activity Logs",
+      "item": [
+        {
+          "name": "index",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search",
+                  "value": "",
+                  "description": "nullable|string",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "sys_user_id",
+                  "value": "",
+                  "description": "nullable|integer",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "action",
+                  "value": "",
+                  "description": "nullable|string",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "module",
+                  "value": "",
+                  "description": "nullable|string",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "date_from",
+                  "value": "",
+                  "description": "nullable|date",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "date_to",
+                  "value": "",
+                  "description": "nullable|date",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "per_page",
+                  "value": "15",
+                  "description": "nullable|integer",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/admin/activity-logs/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "activity-logs",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/admin/activity-logs/1",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "activity-logs",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "byUser",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/activity-logs/user/1",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "activity-logs",
+                "user",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "byModule",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/activity-logs/module/list?module=users",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "activity-logs",
+                "module",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "module",
+                  "value": "users"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "statistics",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/activity-logs/statistics",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "activity-logs",
+                "statistics"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/activity-logs/1",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "activity-logs",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "clearOld",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "days",
+                  "value": "30",
+                  "description": "required|integer|min:1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/admin/activity-logs/clear-old",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "activity-logs",
+                "clear-old"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     }
   ],
   "event": [
