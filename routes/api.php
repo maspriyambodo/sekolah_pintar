@@ -136,6 +136,8 @@ Route::prefix('v1')->group(function () {
                 Route::get('/{id}/siswa', [WaliController::class, 'siswa'])->name('api.v1.wali.siswa');
             });
 
+        });
+
         // Transaction Routes - All authenticated users
         // Absensi Guru
         Route::prefix('absensi-guru')->group(function () {
