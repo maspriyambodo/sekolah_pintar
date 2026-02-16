@@ -1,36 +1,367 @@
-# Sekolah API - Backend RESTful API
+# Sekolah Pintar API - Backend RESTful API
 
-Backend RESTful API untuk sistem informasi sekolah dengan arsitektur Clean Architecture, JWT Authentication, Redis Caching, dan MinIO File Storage.
+Backend RESTful API untuk sistem informasi sekolah lengkap dengan arsitektur Clean Architecture, JWT Authentication, Redis Caching, dan MinIO File Storage.
 
-## Fitur Utama
+## 📋 Daftar Isi
 
-- ✅ **Clean Architecture** - Controller → Service → Repository → Model
-- ✅ **JWT Authentication** - php-open-source-saver/jwt-auth dengan Redis blacklist
-- ✅ **RBAC (Role-Based Access Control)** - Admin, Guru, Siswa, Wali
-- ✅ **Redis Optimization** - Cache, Queue, Session, Rate Limiting
-- ✅ **MinIO/S3 Integration** - File upload dengan presigned URL
-- ✅ **Performance Optimization** - Eager loading, cursor pagination, indexing
-- ✅ **API Versioning** - /api/v1
-- ✅ **Standardized Response** - Consistent JSON response format
+- [Fitur Utama](#fitur-utama)
+- [Teknologi](#teknologi)
+- [Arsitektur](#arsitektur)
+- [Modul Sistem](#modul-sistem)
+- [Struktur Database](#struktur-database)
+- [Instalasi](#instalasi)
+- [API Endpoints](#api-endpoints)
+- [Dokumentasi](#dokumentasi)
 
-## Teknologi
+---
 
-- **Backend**: Laravel 11 + PHP 8.2
-- **Database**: MySQL 8.0+ / MariaDB 10.6+
-- **Cache/Queue**: Redis 6.0+
-- **Storage**: MinIO / S3
-- **Container**: Docker & Docker Compose
+## ✨ Fitur Utama
 
-## Persyaratan Sistem
+### Clean Architecture
+Arsitektur berlapis dengan pemisahan tanggung jawab yang jelas:
+- **Controller** - Menangani HTTP request/response
+- **Service** - Business logic layer
+- **Repository** - Data access layer
+- **Model** - Data entities
 
-- PHP 8.2+
-- MySQL 8.0+ / MariaDB 10.6+
-- Redis 6.0+
-- Composer 2.0+
-- Docker & Docker Compose (opsional)
-- MinIO (opsional, untuk file storage)
+### JWT Authentication
+- php-open-source-saver/jwt-auth untuk token-based auth
+- Redis blacklist untuk token invalidation
+- Refresh token mechanism
+- Role-based access control
 
-## Instalasi
+### RBAC (Role-Based Access Control)
+Sistem izin akses berbasis peran dengan 4 role utama:
+| Role | Deskripsi |
+|------|-----------|
+| Admin | Akses penuh ke semua fitur sistem |
+| Guru | Akses ke fitur akademik dan absensi |
+| Siswa | Akses ke data pribadi (nilai, absensi, rapor) |
+| Wali | Akses ke data anak (nilai, absensi, pembayaran) |
+
+### Redis Optimization
+- **Cache** - Caching query dan response
+- **Queue** - Job processing (email, notifikasi)
+- **Session** - Session management
+- **Rate Limiting** - API rate limiting
+
+### MinIO/S3 Integration
+- File upload dengan presigned URL
+- Support untuk gambar, dokumen, dan file multimedia
+- Organized bucket structure
+
+### Performance Optimization
+- Eager loading untuk menghindari N+1 query
+- Cursor pagination untuk data besar
+- Database indexing untuk query optimization
+- Query caching
+
+---
+
+## 🛠 Teknologi
+
+| Komponen | Teknologi |
+|----------|-----------|
+| Backend | Laravel 11 + PHP 8.2 |
+| Database | MySQL 8.0+ / MariaDB 10.6+ |
+| Cache/Queue | Redis 6.0+ |
+| Storage | MinIO / S3 |
+| Container | Docker & Docker Compose |
+| Web Server | Nginx |
+
+---
+
+## 🏗 Arsitektur
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        API Layer                            │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐ │
+│  │ Controllers │  │  Middleware │  │  Request Validation │ │
+│  └──────┬──────┘  └─────────────┘  └─────────────────────┘ │
+└─────────┼───────────────────────────────────────────────────┘
+          │
+          ▼
+┌─────────────────────────────────────────────────────────────┐
+│                     Service Layer                           │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │ Business Logic: Auth, Siswa, Guru, Kelas, Mapel, dll │  │
+│  └───────────────────────────────────────────────────────┘  │
+└─────────┬───────────────────────────────────────────────────┘
+          │
+          ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Repository Layer                         │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │ Data Access: Eloquent ORM + Repository Pattern        │  │
+│  └───────────────────────────────────────────────────────┘  │
+└─────────┬───────────────────────────────────────────────────┘
+          │
+          ▼
+┌─────────────────────────────────────────────────────────────┐
+│                      Model Layer                            │
+│  ┌──────────┐  ┌──────────┐  ┌──────────────────────────┐  │
+│  │  Master  │  │ System   │  │      Transaction         │  │
+│  │  Data    │  │ Tables   │  │      Tables              │  │
+│  └──────────┘  └──────────┘  └──────────────────────────┘  │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📦 Modul Sistem
+
+### 1. Modul Master Data
+
+Modul ini mengelola data referensi utama dalam sistem sekolah.
+
+#### 1.1 Data Siswa (`SiswaService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| CRUD Siswa | Create, Read, Update, Delete data siswa |
+| Kelas Management | Penempatan siswa ke kelas |
+| Wali Murid | Relasi siswa dengan wali |
+| Status Siswa | Aktif, Naik Kelas, Lulus, Keluar |
+| Riwayat Kelas | Tracking perpindahan kelas |
+
+#### 1.2 Data Guru (`GuruService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| CRUD Guru | Create, Read, Update, Delete data guru |
+| Mapel Diajar | Relasi guru dengan mata pelajaran |
+| Wali Kelas | Penugasan sebagai wali kelas |
+
+#### 1.3 Data Kelas (`KelasService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| CRUD Kelas | Create, Read, Update, Delete kelas |
+| Wali Kelas | Penugasan wali kelas |
+| Kapasitas | Monitoring kapasitas kelas |
+
+#### 1.4 Mata Pelajaran (`MapelService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| CRUD Mapel | Create, Read, Update, Delete mata pelajaran |
+| Guru Mapel | Relasi mapel dengan guru pengajar |
+
+#### 1.5 Perpustakaan (`BukuService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| CRUD Buku | Create, Read, Update, Delete buku |
+| Kategori | Pengelompokan buku |
+| Peminjaman | Transaksi peminjaman buku |
+
+#### 1.6 Tarif SPP (`TarifSppService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| Konfigurasi Tarif | Setup tarif SPP per tingkat/kelas |
+| Periode | Validitas tarif per tahun ajaran |
+
+---
+
+### 2. Modul Akademik
+
+Modul ini mengelola seluruh aktivitas akademik sekolah.
+
+#### 2.1 Ujian (`UjianService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| CRUD Ujian | Create, Read, Update, Delete ujian |
+| Bank Soal | Manajemen soal ujian |
+| Opsi Jawaban | Multiple choice dengan opsi |
+| Ujian Siswa | Tracking ujian per siswa |
+| Penilaian | Auto-grading dan scoring |
+
+#### 2.2 Nilai (`NilaiService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| Input Nilai | Entry nilai per siswa per mapel |
+| Jenis Nilai | UH, UTS, UAS, Tugas, dll |
+| Rata-rata | Kalkulasi nilai rata-rata |
+| Konversi | Konversi nilai ke skala 1-100 |
+
+#### 2.3 Rapor (`RaporService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| Generate Rapor | Pembuatan rapor otomatis |
+| Detail Rapor | Nilai per mata pelajaran |
+| Catatan Guru | Input catatan untuk rapor |
+| Prestasi | Pencatatan prestasi siswa |
+| Absensi Rapor | Rekap absensi untuk rapor |
+
+#### 2.4 Ranking (`RankingService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| Peringkat Kelas | Ranking berdasarkan nilai |
+| Peringkat Umum | Ranking sekolah-wide |
+| Rekapitulasi | Summary ranking per periode |
+
+---
+
+### 3. Modul Absensi
+
+#### 3.1 Absensi Guru (`AbsensiGuruService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| Input Absensi | Recording kehadiran guru |
+| Rekap Bulanan | Summary absensi per bulan |
+| Status | Hadir, Izin, Sakit, Alpha |
+
+#### 3.2 Absensi Siswa (`AbsensiSiswaService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| Input Absensi | Recording kehadiran siswa per kelas |
+| Rekap Harian | Summary absensi harian |
+| Rekap Bulanan | Summary absensi per bulan |
+| Status | Hadir, Izin, Sakit, Alpha, Bolos |
+| Summary | Dashboard ringkasan absensi |
+
+---
+
+### 4. Modul Keuangan
+
+#### 4.1 Pembayaran SPP (`PembayaranSppService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| Input Pembayaran | Recording pembayaran SPP |
+| Riwayat | History pembayaran per siswa |
+| Status Lunas | Tracking kelunasan |
+| Laporan | Rekap keuangan SPP |
+| Tunggakan | Monitoring tunggakan pembayaran |
+
+---
+
+### 5. Modul Perpustakaan
+
+#### 5.1 Peminjaman Buku (`PeminjamanBukuService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| Peminjaman | Recording pinjam buku |
+| Pengembalian | Recording kembali buku |
+| Denda | Kalkulasi denda keterlambatan |
+| Status | Tersedia, Dipinjam, Hilang |
+| Riwayat | History peminjaman per siswa |
+
+---
+
+### 6. Modul Bimbingan Konseling
+
+#### 6.1 BK (`BkJenisService`, `BkKasusService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| Jenis Kasus | Kategori masalah siswa |
+| Kasus | Recording kasus siswa |
+| Sesi BK | Jadwal dan catatan sesi konseling |
+| Hasil | Outcome dari penanganan kasus |
+| Tindakan | Tindakan yang diambil |
+| Lampiran | File pendukung (dokumen, foto) |
+| Involving Wali | Keterlibatan wali dalam penanganan |
+
+---
+
+### 7. Modul Autentikasi & Otorisasi
+
+#### 7.1 Auth (`AuthService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| Login | Autentikasi user |
+| Register | Pendaftaran user baru |
+| Logout | Invalidasi token |
+| Refresh Token | Perpanjangan akses token |
+| Me | Get current user info |
+
+#### 7.2 User (`UserService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| CRUD User | Create, Read, Update, Delete user |
+| Profile | Management profil user |
+| Password | Reset dan change password |
+
+#### 7.3 Role & Permission (`RoleService`, `PermissionService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| CRUD Role | Create, Read, Update, Delete role |
+| CRUD Permission | Create, Read, Update, Delete permission |
+| User Role | Assignment role ke user |
+| Role Permission | Assignment permission ke role |
+
+---
+
+### 8. Modul Sistem
+
+#### 8.1 File Upload (`FileUploadService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| Upload File | Upload file ke storage |
+| Presigned URL | Generate URL untuk direct upload |
+| Delete File | Hapus file dari storage |
+
+#### 8.2 Logging
+| Fitur | Deskripsi |
+|-------|-----------|
+| Activity Log | Logging aktivitas user |
+| Error Log | Recording error sistem |
+| Login Log | Tracking login attempts |
+
+---
+
+## 📊 Struktur Database
+
+### Master Tables
+| Table | Deskripsi |
+|-------|-----------|
+| `mst_kelas` | Data kelas |
+| `mst_mapel` | Data mata pelajaran |
+| `mst_guru` | Data guru |
+| `mst_guru_mapel` | Relasi guru-mapel |
+| `mst_siswa` | Data siswa |
+| `mst_wali` | Data wali murid |
+| `mst_wali_murid` | Relasi wali-murid |
+| `mst_tarif_spp` | Konfigurasi tarif SPP |
+| `mst_buku` | Data buku perpustakaan |
+| `mst_bk_jenis` | Jenis kasus BK |
+| `mst_bk_kategori` | Kategori BK |
+| `mst_soal` | Bank soal ujian |
+| `mst_soal_opsi` | Opsi jawaban soal |
+
+### Transaction Tables
+| Table | Deskripsi |
+|-------|-----------|
+| `trx_ujian` | Data ujian |
+| `trx_ujian_user` | Partisipasi siswa dalam ujian |
+| `trx_ujian_jawaban` | Jawaban siswa |
+| `trx_nilai` | Nilai siswa |
+| `trx_rapor` | Data rapor |
+| `trx_rapor_detail` | Detail nilai rapor |
+| `trx_ranking` | Peringkat siswa |
+| `trx_absensi_guru` | Absensi guru |
+| `trx_absensi_siswa` | Absensi siswa |
+| `trx_pembayaran_spp` | Pembayaran SPP |
+| `trx_peminjaman_buku` | Peminjaman buku |
+| `trx_bk_kasus` | Kasus BK |
+| `trx_bk_hasil` | Hasil penanganan BK |
+| `trx_bk_sesi` | Sesi konseling |
+| `trx_bk_tindakan` | Tindakan BK |
+| `trx_bk_lampiran` | Lampiran kasus BK |
+| `trx_bk_wali` | Keterlibatan wali dalam BK |
+
+### System Tables
+| Table | Deskripsi |
+|-------|-----------|
+| `sys_users` | User accounts |
+| `sys_roles` | Role definitions |
+| `sys_permissions` | Permission definitions |
+| `sys_user_roles` | User-role mapping |
+| `sys_role_permissions` | Role-permission mapping |
+| `sys_activity_logs` | Activity logging |
+| `sys_error_logs` | Error logging |
+| `sys_login_logs` | Login history |
+| `sys_menus` | Menu definitions |
+| `sys_references` | Reference data |
+
+---
+
+## 🚀 Instalasi
 
 ### Menggunakan Docker (Recommended)
 
@@ -79,53 +410,9 @@ php artisan route:cache
 php artisan view:cache
 ```
 
-## Konfigurasi Environment
+---
 
-### Database (.env)
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=db_sekolah
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-### JWT (.env)
-```env
-JWT_SECRET=your-secret-key
-JWT_TTL=30                    # Access token: 30 menit
-JWT_REFRESH_TTL=10080         # Refresh token: 7 hari
-JWT_BLACKLIST_ENABLED=true
-```
-
-### Redis (.env)
-```env
-CACHE_STORE=redis
-QUEUE_CONNECTION=redis
-SESSION_DRIVER=redis
-REDIS_HOST=127.0.0.1
-REDIS_PORT=6379
-```
-
-### MinIO/S3 (.env)
-```env
-FILESYSTEM_DISK=s3
-AWS_ACCESS_KEY_ID=your-key
-AWS_SECRET_ACCESS_KEY=your-secret
-AWS_BUCKET=sekolah-files
-AWS_ENDPOINT=http://localhost:9000
-AWS_USE_PATH_STYLE_ENDPOINT=true
-```
-
-## Default Credentials
-
-```
-Email: admin@sekolah.com
-Password: password
-```
-
-## API Endpoints
+## 🔗 API Endpoints
 
 ### Authentication
 | Method | Endpoint | Description |
@@ -136,7 +423,7 @@ Password: password
 | POST | `/api/v1/auth/logout` | Logout (auth required) |
 | GET | `/api/v1/auth/me` | Get current user (auth required) |
 
-### Siswa (Admin & Guru only)
+### Siswa
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/api/v1/siswa` | List all siswa |
@@ -149,7 +436,59 @@ Password: password
 | POST | `/api/v1/siswa/{id}/naik-kelas` | Naik kelas |
 | POST | `/api/v1/siswa/{id}/lulus` | Lulus |
 
-### File Upload (Auth required)
+### Guru
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/guru` | List all guru |
+| POST | `/api/v1/guru` | Create guru |
+| GET | `/api/v1/guru/{id}` | Get single guru |
+| PUT | `/api/v1/guru/{id}` | Update guru |
+| DELETE | `/api/v1/guru/{id}` | Delete guru |
+
+### Kelas
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/kelas` | List all kelas |
+| POST | `/api/v1/kelas` | Create kelas |
+| GET | `/api/v1/kelas/{id}` | Get single kelas |
+| PUT | `/api/v1/kelas/{id}` | Update kelas |
+| DELETE | `/api/v1/kelas/{id}` | Delete kelas |
+
+### Mapel
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/mapel` | List all mapel |
+| POST | `/api/v1/mapel` | Create mapel |
+| GET | `/api/v1/mapel/{id}` | Get single mapel |
+| PUT | `/api/v1/mapel/{id}` | Update mapel |
+| DELETE | `/api/v1/mapel/{id}` | Delete mapel |
+
+### Absensi
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/absensi/siswa` | List absensi siswa |
+| POST | `/api/v1/absensi/siswa` | Create absensi siswa |
+| GET | `/api/v1/absensi/guru` | List absensi guru |
+| POST | `/api/v1/absensi/guru` | Create absensi guru |
+
+### Nilai & Ujian
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/nilai` | List nilai |
+| POST | `/api/v1/nilai` | Create nilai |
+| GET | `/api/v1/ujian` | List ujian |
+| POST | `/api/v1/ujian` | Create ujian |
+| GET | `/api/v1/rapor` | List rapor |
+| POST | `/api/v1/rapor` | Create rapor |
+
+### Pembayaran
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/pembayaran` | List pembayaran |
+| POST | `/api/v1/pembayaran` | Create pembayaran |
+| GET | `/api/v1/pembayaran/siswa/{id}` | Get pembayaran by siswa |
+
+### File Upload
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | POST | `/api/v1/files/upload` | Upload file |
@@ -163,79 +502,20 @@ Password: password
 
 Lihat [API_DOCUMENTATION.md](API_DOCUMENTATION.md) untuk dokumentasi lengkap.
 
-## Struktur Folder
+---
 
-```
-sekolah/
-├── app/
-│   ├── Console/Commands/       # Custom CLI commands
-│   ├── Http/
-│   │   ├── Controllers/Api/    # API Controllers
-│   │   ├── Middleware/         # Custom middleware
-│   │   ├── Requests/Api/       # Form request validation
-│   │   └── Resources/Api/      # API resources
-│   ├── Models/
-│   │   ├── Master/             # Master data (siswa, guru, kelas, mapel, etc)
-│   │   ├── System/             # System models (users, roles, permissions, logs)
-│   │   └── Transaction/        # Transaction models (nilai, absensi, pembayaran, etc)
-│   ├── Providers/              # Service providers
-│   ├── Repositories/            # Repository pattern
-│   │   ├── Contracts/          # Interfaces
-│   │   └── Eloquent/           # Implementations
-│   ├── Services/               # Business logic layer
-│   └── Traits/                 # Reusable traits
-├── bootstrap/                  # Laravel bootstrap files
-├── config/                     # Configuration files
-├── database/
-│   ├── migrations/             # Database migrations
-│   ├── seeders/                # Database seeders
-│   └── db_sekolah.sql          # Database schema dump
-├── docker/                     # Docker configuration
-│   ├── nginx/                  # Nginx config
-│   └── php/                    # PHP config
-├── http/                       # HTTP request files (API testing)
-├── resources/
-│   ├── css/                    # Stylesheets
-│   ├── js/                     # JavaScript
-│   └── views/                  # Blade templates
-├── routes/                     # Route definitions
-├── storage/                    # Storage (logs, cache, uploads)
-└── tests/                      # Unit & Feature tests
-```
+## 📚 Dokumentasi
 
-Lihat [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) untuk detail lengkap.
+| Dokumen | Deskripsi |
+|---------|-----------|
+| [API_DOCUMENTATION.md](API_DOCUMENTATION.md) | Dokumentasi lengkap endpoint API |
+| [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) | Penjelasan struktur project |
+| [OPTIMIZATION_RECOMMENDATIONS.md](OPTIMIZATION_RECOMMENDATIONS.md) | Rekomendasi optimasi |
+| [AGENTS.md](AGENTS.md) | AI Agents configuration |
 
-## Modul Sistem
+---
 
-### Master Data
-- **Siswa** - Data siswa dan wali
-- **Guru** - Data guru dan mapel yang diajar
-- **Kelas** - Data kelas dan wali kelas
-- **Mapel** - Data mata pelajaran
-- **Buku** - Data perpustakaan
-- **Tarif SPP** - Konfigurasi pembayaran SPP
-
-### Transaksi
-- **Absensi** - Absensi siswa dan guru
-- **Nilai** - Penilaian dan ujian
-- **Rapor** - Raport siswa
-- **Pembayaran SPP** - Pembayaran sekolah
-- **Peminjaman Buku** - Perpustakaan
-- **BK (Bimbingan Konseling)** - Kasus dan penanganan
-
-### Sistem
-- **RBAC** - Role & Permission management
-- **Activity Log** - Log aktivitas pengguna
-- **Error Log** - Log error sistem
-
-## Dokumentasi
-
-- [API_DOCUMENTATION.md](API_DOCUMENTATION.md) - Dokumentasi lengkap endpoint API
-- [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) - Penjelasan struktur project
-- [OPTIMIZATION_RECOMMENDATIONS.md](OPTIMIZATION_RECOMMENDATIONS.md) - Rekomendasi optimasi
-- [AGENTS.md](AGENTS.md) - AI Agents configuration
-
-## Development
+## 🔧 Development
 
 ### Commands
 ```bash
@@ -261,7 +541,9 @@ Gunakan file di folder `http/` untuk testing dengan REST Client:
 - `http/siswa.http` - Siswa endpoints
 - `http/dashboard.http` - Dashboard endpoints
 
-## Performance Targets
+---
+
+## 📈 Performance Targets
 
 | Operation | Target Response Time |
 |-----------|---------------------|
@@ -271,7 +553,9 @@ Gunakan file di folder `http/` untuk testing dengan REST Client:
 | Complex queries | < 500ms |
 | File upload | < 2s |
 
-## Deployment Checklist
+---
+
+## 📋 Deployment Checklist
 
 - [ ] Run migrations: `php artisan migrate --force`
 - [ ] Seed RBAC data: `php artisan db:seed --class=RbacSeeder`
@@ -284,10 +568,23 @@ Gunakan file di folder `http/` untuk testing dengan REST Client:
 - [ ] Enable HTTPS
 - [ ] Set up monitoring & logging
 
-## License
+---
+
+## 🔐 Default Credentials
+
+```
+Email: admin@sekolah.com
+Password: password
+```
+
+---
+
+## 📄 License
 
 [MIT License](LICENSE)
 
-## Author
+---
+
+## 👥 Author
 
 Development Team
