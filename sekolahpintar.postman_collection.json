@@ -1854,6 +1854,213 @@
       ]
     },
     {
+      "name": "Mapel",
+      "item": [
+        {
+          "name": "getAllMapel",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/mapel/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "mapel",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "createMapel",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "kode",
+                  "value": "",
+                  "description": "'required', 'string', 'max:20', 'unique:mst_mapel,kode'",
+                  "type": "text",
+                  "uuid": "f00d4c49-e373-4811-a1ac-d1ae8b3825b0"
+                },
+                {
+                  "key": "nama",
+                  "value": "",
+                  "description": "'required', 'string', 'max:100'",
+                  "type": "text",
+                  "uuid": "04c81761-168e-41bc-bd3b-8bd00b325ca8"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/mapel/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "mapel",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getMapelById",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/mapel/2",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "mapel",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateMapel",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/mapel/2?nama=PPKN",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "mapel",
+                "2"
+              ],
+              "query": [
+                {
+                  "key": "kode",
+                  "value": null,
+                  "description": "'nullable', 'string', 'max:20', 'unique:mst_mapel,kode_mapel,' . $id",
+                  "disabled": true
+                },
+                {
+                  "key": "nama",
+                  "value": "PPKN",
+                  "description": "'nullable', 'string', 'max:100'"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteMapel",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/mapel/2",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "mapel",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getGurusByMapel",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/mapel/2/gurus/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "mapel",
+                "2",
+                "gurus",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "name": "healthcheck",
       "request": {
         "method": "GET",
