@@ -70,6 +70,42 @@ class RbacSeeder extends Seeder
             ['code' => 'roles.create', 'name' => 'Create Roles', 'module' => 'roles'],
             ['code' => 'roles.update', 'name' => 'Update Roles', 'module' => 'roles'],
             ['code' => 'roles.delete', 'name' => 'Delete Roles', 'module' => 'roles'],
+
+            // Mapel permissions
+            ['code' => 'mapel.view', 'name' => 'View Mata Pelajaran', 'module' => 'mapel'],
+            ['code' => 'mapel.create', 'name' => 'Create Mata Pelajaran', 'module' => 'mapel'],
+            ['code' => 'mapel.update', 'name' => 'Update Mata Pelajaran', 'module' => 'mapel'],
+            ['code' => 'mapel.delete', 'name' => 'Delete Mata Pelajaran', 'module' => 'mapel'],
+
+            // Pembayaran/SPP permissions
+            ['code' => 'pembayaran.view', 'name' => 'View Pembayaran', 'module' => 'pembayaran'],
+            ['code' => 'pembayaran.create', 'name' => 'Create Pembayaran', 'module' => 'pembayaran'],
+            ['code' => 'pembayaran.update', 'name' => 'Update Pembayaran', 'module' => 'pembayaran'],
+            ['code' => 'pembayaran.delete', 'name' => 'Delete Pembayaran', 'module' => 'pembayaran'],
+
+            // Ujian permissions
+            ['code' => 'ujian.view', 'name' => 'View Ujian', 'module' => 'ujian'],
+            ['code' => 'ujian.create', 'name' => 'Create Ujian', 'module' => 'ujian'],
+            ['code' => 'ujian.update', 'name' => 'Update Ujian', 'module' => 'ujian'],
+            ['code' => 'ujian.delete', 'name' => 'Delete Ujian', 'module' => 'ujian'],
+
+            // Rapor permissions
+            ['code' => 'rapor.view', 'name' => 'View Rapor', 'module' => 'rapor'],
+            ['code' => 'rapor.create', 'name' => 'Create Rapor', 'module' => 'rapor'],
+            ['code' => 'rapor.update', 'name' => 'Update Rapor', 'module' => 'rapor'],
+            ['code' => 'rapor.delete', 'name' => 'Delete Rapor', 'module' => 'rapor'],
+
+            // Peminjaman permissions
+            ['code' => 'peminjaman.view', 'name' => 'View Peminjaman', 'module' => 'peminjaman'],
+            ['code' => 'peminjaman.create', 'name' => 'Create Peminjaman', 'module' => 'peminjaman'],
+            ['code' => 'peminjaman.update', 'name' => 'Update Peminjaman', 'module' => 'peminjaman'],
+            ['code' => 'peminjaman.delete', 'name' => 'Delete Peminjaman', 'module' => 'peminjaman'],
+
+            // Menu management permissions
+            ['code' => 'menus.view', 'name' => 'View Menus', 'module' => 'menus'],
+            ['code' => 'menus.create', 'name' => 'Create Menus', 'module' => 'menus'],
+            ['code' => 'menus.update', 'name' => 'Update Menus', 'module' => 'menus'],
+            ['code' => 'menus.delete', 'name' => 'Delete Menus', 'module' => 'menus'],
         ];
 
         foreach ($permissions as $permission) {
@@ -134,6 +170,7 @@ class RbacSeeder extends Seeder
                     ['nama_menu' => 'Siswa', 'url' => '/siswa', 'icon' => 'bi-people', 'urutan' => 1, 'is_active' => true],
                     ['nama_menu' => 'Guru', 'url' => '/guru', 'icon' => 'bi-person-badge', 'urutan' => 2, 'is_active' => true],
                     ['nama_menu' => 'Kelas', 'url' => '/kelas', 'icon' => 'bi-door-open', 'urutan' => 3, 'is_active' => true],
+                    ['nama_menu' => 'Mata Pelajaran', 'url' => '/mapel', 'icon' => 'bi-book', 'urutan' => 4, 'is_active' => true],
                 ],
             ],
             // Akademik
@@ -146,6 +183,8 @@ class RbacSeeder extends Seeder
                 'children' => [
                     ['nama_menu' => 'Nilai', 'url' => '/nilai', 'icon' => 'bi-clipboard-data', 'urutan' => 1, 'is_active' => true],
                     ['nama_menu' => 'Absensi', 'url' => '/absensi', 'icon' => 'bi-calendar-check', 'urutan' => 2, 'is_active' => true],
+                    ['nama_menu' => 'Ujian', 'url' => '/ujian', 'icon' => 'bi-file-earmark-text', 'urutan' => 3, 'is_active' => true],
+                    ['nama_menu' => 'Rapor', 'url' => '/rapor', 'icon' => 'bi-file-earmark-ruled', 'urutan' => 4, 'is_active' => true],
                 ],
             ],
             // Bimbingan Konseling
@@ -168,6 +207,18 @@ class RbacSeeder extends Seeder
                 'is_active' => true,
                 'children' => [
                     ['nama_menu' => 'Perpustakaan', 'url' => '/perpustakaan', 'icon' => 'bi-bookshelf', 'urutan' => 1, 'is_active' => true],
+                    ['nama_menu' => 'Peminjaman', 'url' => '/peminjaman', 'icon' => 'bi-arrow-left-right', 'urutan' => 2, 'is_active' => true],
+                ],
+            ],
+            // Pembayaran
+            [
+                'nama_menu' => 'Pembayaran',
+                'url' => '/pembayaran',
+                'icon' => 'bi-credit-card',
+                'urutan' => 6,
+                'is_active' => true,
+                'children' => [
+                    ['nama_menu' => 'Pembayaran SPP', 'url' => '/pembayaran', 'icon' => 'bi-credit-card', 'urutan' => 1, 'is_active' => true],
                 ],
             ],
             // Settings
@@ -175,11 +226,12 @@ class RbacSeeder extends Seeder
                 'nama_menu' => 'Pengaturan',
                 'url' => '#',
                 'icon' => 'bi-gear',
-                'urutan' => 6,
+                'urutan' => 7,
                 'is_active' => true,
                 'children' => [
                     ['nama_menu' => 'Users', 'url' => '/users', 'icon' => 'bi-person', 'urutan' => 1, 'is_active' => true],
                     ['nama_menu' => 'Roles', 'url' => '/roles', 'icon' => 'bi-shield', 'urutan' => 2, 'is_active' => true],
+                    ['nama_menu' => 'Menu Management', 'url' => '/menus', 'icon' => 'bi-list', 'urutan' => 3, 'is_active' => true]
                 ],
             ],
         ];
@@ -195,6 +247,7 @@ class RbacSeeder extends Seeder
                 'Akademik' => 'nilai.view',
                 'Bimbingan Konseling' => 'bk.view',
                 'Perpustakaan' => 'perpustakaan.view',
+                'Pembayaran' => 'pembayaran.view',
                 'Pengaturan' => 'users.view',
                 default => null,
             };
@@ -211,10 +264,15 @@ class RbacSeeder extends Seeder
                     'Siswa' => 'siswa.view',
                     'Guru' => 'guru.view',
                     'Kelas' => 'kelas.view',
+                    'Mata Pelajaran' => 'mapel.view',
                     'Nilai' => 'nilai.view',
                     'Absensi' => 'absensi.view',
+                    'Ujian' => 'ujian.view',
+                    'Rapor' => 'rapor.view',
                     'BK' => 'bk.view',
                     'Perpustakaan' => 'perpustakaan.view',
+                    'Peminjaman' => 'peminjaman.view',
+                    'Pembayaran SPP' => 'pembayaran.view',
                     'Users' => 'users.view',
                     'Roles' => 'roles.view',
                     'Dashboard' => 'dashboard.view',
@@ -242,15 +300,20 @@ class RbacSeeder extends Seeder
 
         // Guru permissions
         $guruPermissions = SysPermission::whereIn('module', [
-            'siswa', 'guru', 'kelas', 'nilai', 'absensi', 'bk', 'perpustakaan'
+            'siswa', 'guru', 'kelas', 'mapel', 'nilai', 'absensi', 'ujian', 'rapor', 'bk', 'perpustakaan', 'peminjaman', 'pembayaran'
         ])->whereIn('code', [
             'siswa.view', 'siswa.create', 'siswa.update',
             'guru.view',
             'kelas.view',
+            'mapel.view', 'mapel.create', 'mapel.update',
             'nilai.view', 'nilai.create', 'nilai.update',
             'absensi.view', 'absensi.create', 'absensi.update',
+            'ujian.view', 'ujian.create', 'ujian.update',
+            'rapor.view', 'rapor.create', 'rapor.update',
             'bk.view', 'bk.create', 'bk.update',
             'perpustakaan.view', 'perpustakaan.create', 'perpustakaan.update',
+            'peminjaman.view', 'peminjaman.create', 'peminjaman.update',
+            'pembayaran.view', 'pembayaran.create', 'pembayaran.update',
         ])->get();
         $guruRole->permissions()->sync($guruPermissions->pluck('id'));
 
