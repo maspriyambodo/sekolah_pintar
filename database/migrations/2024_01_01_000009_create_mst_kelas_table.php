@@ -17,8 +17,6 @@ return new class extends Migration
             $table->timestamp('created_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
             $table->timestamp('updated_at')->nullable();
-
-            $table->foreign('wali_guru_id')->references('id')->on('mst_guru')->onDelete('restrict')->onUpdate('restrict');
         });
     }
 
