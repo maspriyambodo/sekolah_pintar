@@ -22,6 +22,7 @@ use App\Http\Controllers\Api\V1\RaporController;
 use App\Http\Controllers\Api\V1\RoleController;
 use App\Http\Controllers\Api\V1\SiswaController;
 use App\Http\Controllers\Api\V1\SoalsController;
+use App\Http\Controllers\Api\V1\SysActivityLogController;
 use App\Http\Controllers\Api\V1\SysMenuController;
 use App\Http\Controllers\Api\V1\TarifSppController;
 use App\Http\Controllers\Api\V1\UjianController;
@@ -325,6 +326,17 @@ Route::prefix('v1')->group(function () {
                 Route::put('/{id}', [SysMenuController::class, 'update'])->name('api.v1.admin.menus.update');
                 Route::delete('/{id}', [SysMenuController::class, 'destroy'])->name('api.v1.admin.menus.destroy');
                 Route::get('/tree', [SysMenuController::class, 'getTree'])->name('api.v1.admin.menus.tree');
+            });
+
+            // Activity Logs management
+            Route::prefix('activity-logs')->group(function () {
+                Route::get('/', [SysActivityLogController::class, 'index'])->name('api.v1.admin.activity-logs.index');
+                Route::get('/{id}', [SysActivityLogController::class, 'show'])->name('api.v1.admin.activity-logs.show');
+                Route::delete('/{id}', [SysActivityLogController::class, 'destroy'])->name('api.v1.admin.activity-logs.destroy');
+                Route::get('/user/{userId}', [SysActivityLogController::class, 'byUser'])->name('api.v1.admin.activity-logs.by-user');
+                Route::get('/module/list', [SysActivityLogController::class, 'byModule'])->name('api.v1.admin.activity-logs.by-module');
+                Route::delete('/clear-old', [SysActivityLogController::class, 'clearOld'])->name('api.v1.admin.activity-logs.clear-old');
+                Route::get('/statistics', [SysActivityLogController::class, 'statistics'])->name('api.v1.admin.activity-logs.statistics');
             });
         });
 
