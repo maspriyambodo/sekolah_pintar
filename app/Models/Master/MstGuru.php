@@ -24,18 +24,14 @@ class MstGuru extends Model
     protected $fillable = [
         'sys_user_id',
         'nip',
-        'nama',
         'nuptk',
-        'email',
-        'pendidikan_terakhir',
-        'jabatan',
+        'nama',
         'jenis_kelamin',
         'tanggal_lahir',
         'alamat',
+        'email',
+        'pendidikan_terakhir',
         'no_hp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
     ];
 
     protected $casts = [

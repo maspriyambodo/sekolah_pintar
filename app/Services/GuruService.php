@@ -51,7 +51,6 @@ class GuruService
                 'no_hp' => $data['no_hp'] ?? null,
                 'email' => $data['email'] ?? null,
                 'pendidikan_terakhir' => $data['pendidikan_terakhir'] ?? null,
-                'jabatan' => $data['jabatan'] ?? null,
             ]);
 
             if (!empty($data['mapel_ids'])) {
@@ -77,7 +76,6 @@ class GuruService
                 'no_hp' => $data['no_hp'] ?? $guru->no_hp,
                 'email' => $data['email'] ?? $guru->email,
                 'pendidikan_terakhir' => $data['pendidikan_terakhir'] ?? $guru->pendidikan_terakhir,
-                'jabatan' => $data['jabatan'] ?? $guru->jabatan,
             ]);
 
             if (!empty($data['mapel_ids'])) {

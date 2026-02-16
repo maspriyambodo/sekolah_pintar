@@ -17,16 +17,15 @@ class CreateGuruRequest extends FormRequest
     {
         return [
             'sys_user_id' => ['nullable', 'integer', 'exists:sys_users,id'],
-            'nip' => ['nullable', 'string', 'max:30', 'unique:mst_guru,nip'],
-            'nuptk' => ['nullable', 'string', 'max:30', 'unique:mst_guru,nuptk'],
+            'nip' => ['nullable', 'string', 'max:20', 'unique:mst_guru,nip'],
+            'nuptk' => ['nullable', 'string', 'max:20'],
             'nama' => ['required', 'string', 'max:100'],
             'jenis_kelamin' => ['required', 'integer', 'min:1', 'max:2'],
             'tanggal_lahir' => ['nullable', 'date', 'before:today'],
             'alamat' => ['nullable', 'string'],
-            'no_hp' => ['nullable', 'string', 'max:15'],
+            'no_hp' => ['nullable', 'string', 'max:20'],
             'email' => ['nullable', 'email', 'max:100'],
-            'pendidikan_terakhir' => ['nullable', 'string', 'max:50'],
-            'jabatan' => ['nullable', 'string', 'max:50'],
+            'pendidikan_terakhir' => ['nullable', 'integer'],
             'mapel_ids' => ['nullable', 'array'],
             'mapel_ids.*' => ['integer', 'exists:mst_mapel,id'],
         ];

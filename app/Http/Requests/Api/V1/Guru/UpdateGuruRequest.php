@@ -17,16 +17,15 @@ class UpdateGuruRequest extends FormRequest
     {
         $id = $this->route('id');
         return [
-            'nip' => ['nullable', 'string', 'max:30', 'unique:mst_guru,nip,' . $id],
-            'nuptk' => ['nullable', 'string', 'max:30', 'unique:mst_guru,nuptk,' . $id],
+            'nip' => ['nullable', 'string', 'max:20', 'unique:mst_guru,nip,' . $id],
+            'nuptk' => ['nullable', 'string', 'max:20'],
             'nama' => ['nullable', 'string', 'max:100'],
             'jenis_kelamin' => ['nullable', 'integer', 'min:1', 'max:2'],
             'tanggal_lahir' => ['nullable', 'date', 'before:today'],
             'alamat' => ['nullable', 'string'],
-            'no_hp' => ['nullable', 'string', 'max:15'],
+            'no_hp' => ['nullable', 'string', 'max:20'],
             'email' => ['nullable', 'email', 'max:100'],
-            'pendidikan_terakhir' => ['nullable', 'string', 'max:50'],
-            'jabatan' => ['nullable', 'string', 'max:50'],
+            'pendidikan_terakhir' => ['nullable', 'integer'],
             'mapel_ids' => ['nullable', 'array'],
             'mapel_ids.*' => ['integer', 'exists:mst_mapel,id'],
         ];
