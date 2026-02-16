@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Resources\Api\V1;
 
+use App\Models\System\SysReference;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -11,14 +12,16 @@ class SiswaResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
+        $jenisKelamin = SysReference::getByKode('jenis_kelamin', (string) $this->jenis_kelamin);
+        $statusSiswa = SysReference::getByKode('status_siswa', (string) $this->status);
         return [
             'id' => $this->id,
             'nis' => $this->nis,
             'nama' => $this->nama,
-            'jenis_kelamin' => $this->jenis_kelamin,
+            'jenis_kelamin' => $jenisKelamin?->nama ?? $this->jenis_kelamin,
             'tanggal_lahir' => $this->tanggal_lahir?->format('Y-m-d'),
             'alamat' => $this->alamat,
-            'status' => $this->status,
+            'status' => $statusSiswa?->nama ?? $this->status,
             'user' => $this->whenLoaded('user', fn () => [
                 'id' => $this->user->id,
                 'email' => $this->user->email,

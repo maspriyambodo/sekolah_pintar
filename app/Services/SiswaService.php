@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Services;
 
 use App\Models\Master\MstSiswa;
+use App\Models\System\SysReference;
 use App\Repositories\Contracts\SiswaRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\CursorPaginator;
@@ -131,9 +132,13 @@ class SiswaService
 
     public function lulus(int $siswaId): MstSiswa
     {
-        return DB::transaction(function () use ($siswaId) {
+        $statusLulus = SysReference::where('kategori', 'status_siswa')->where('nama', 'Lulus')->first()?->kode;
+        if (!$statusLulus) {
+            throw new \Exception('Status lulus not found in sys_reference');
+        }
+        return DB::transaction(function () use ($siswaId, $statusLulus) {
             $siswa = $this->siswaRepository->update($siswaId, [
-                'status' => 'lulus',
+                'status' => $statusLulus,
                 'mst_kelas_id' => null,
             ]);
 

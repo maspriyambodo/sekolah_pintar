@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Resources\Api\V1;
 
+use App\Models\System\SysReference;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -11,12 +12,13 @@ class GuruResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
+        $jenisKelamin = SysReference::getByKode('jenis_kelamin', (string) $this->jenis_kelamin);
         return [
             'id' => $this->id,
             'nip' => $this->nip,
             'nuptk' => $this->nuptk,
             'nama' => $this->nama,
-            'jenis_kelamin' => $this->jenis_kelamin,
+            'jenis_kelamin' => $jenisKelamin?->nama ?? $this->jenis_kelamin,
             'tanggal_lahir' => $this->tanggal_lahir?->format('Y-m-d'),
             'alamat' => $this->alamat,
             'no_hp' => $this->no_hp,
