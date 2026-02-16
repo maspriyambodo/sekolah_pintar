@@ -6,8 +6,8 @@
       "kode": "1",
       "nama": "Laki-Laki",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -16,8 +16,8 @@
       "kode": "2",
       "nama": "Perempuan",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -26,8 +26,8 @@
       "kode": "1",
       "nama": "Aktif",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -36,8 +36,8 @@
       "kode": "2",
       "nama": "Lulus",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -46,8 +46,8 @@
       "kode": "3",
       "nama": "Pindah",
       "urutan": 3,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -56,8 +56,8 @@
       "kode": "1",
       "nama": "Ayah",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -66,8 +66,8 @@
       "kode": "2",
       "nama": "Ibu",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -76,8 +76,8 @@
       "kode": "3",
       "nama": "Wali",
       "urutan": 3,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -86,8 +86,8 @@
       "kode": "1",
       "nama": "info",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -96,8 +96,8 @@
       "kode": "2",
       "nama": "warning",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -106,8 +106,8 @@
       "kode": "3",
       "nama": "error",
       "urutan": 3,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -116,8 +116,8 @@
       "kode": "4",
       "nama": "critical",
       "urutan": 4,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -126,8 +126,8 @@
       "kode": "1",
       "nama": "success",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -136,8 +136,8 @@
       "kode": "2",
       "nama": "failed",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -146,8 +146,8 @@
       "kode": "1",
       "nama": "hadir",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -156,8 +156,8 @@
       "kode": "2",
       "nama": "izin",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -166,8 +166,8 @@
       "kode": "3",
       "nama": "sakit",
       "urutan": 3,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -176,8 +176,8 @@
       "kode": "4",
       "nama": "alpha",
       "urutan": 4,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -186,8 +186,8 @@
       "kode": "1",
       "nama": "dibuka",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -196,8 +196,8 @@
       "kode": "2",
       "nama": "proses",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -206,8 +206,8 @@
       "kode": "3",
       "nama": "selesai",
       "urutan": 3,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -216,8 +216,8 @@
       "kode": "4",
       "nama": "dirujuk",
       "urutan": 4,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -226,8 +226,8 @@
       "kode": "1",
       "nama": "Tatap Muka",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -236,8 +236,8 @@
       "kode": "2",
       "nama": "Online",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -246,8 +246,8 @@
       "kode": "3",
       "nama": "Telepon",
       "urutan": 3,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -256,8 +256,8 @@
       "kode": "1",
       "nama": "dipanggil",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -266,8 +266,8 @@
       "kode": "2",
       "nama": "pendamping",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -276,8 +276,8 @@
       "kode": "3",
       "nama": "informasi",
       "urutan": 3,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -286,8 +286,8 @@
       "kode": "1",
       "nama": "Lunas",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -296,8 +296,8 @@
       "kode": "2",
       "nama": "Belum Lunas",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -306,8 +306,8 @@
       "kode": "3",
       "nama": "Pending",
       "urutan": 3,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -316,8 +316,8 @@
       "kode": "4",
       "nama": "Batal",
       "urutan": 4,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -326,8 +326,8 @@
       "kode": "1",
       "nama": "Tunai",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -336,8 +336,8 @@
       "kode": "2",
       "nama": "Transfer",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -346,8 +346,8 @@
       "kode": "3",
       "nama": "Virtual Account",
       "urutan": 3,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     },
     {
@@ -356,8 +356,8 @@
       "kode": "4",
       "nama": "QRIS",
       "urutan": 4,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:37",
+      "updated_at": "2026-2-16 14:09:37",
       "deleted_at": null
     },
     {
@@ -366,8 +366,8 @@
       "kode": "1",
       "nama": "dipinjam",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:37",
+      "updated_at": "2026-2-16 14:09:37",
       "deleted_at": null
     },
     {
@@ -376,8 +376,8 @@
       "kode": "2",
       "nama": "dikembalikan",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:37",
+      "updated_at": "2026-2-16 14:09:37",
       "deleted_at": null
     },
     {
@@ -386,8 +386,8 @@
       "kode": "3",
       "nama": "hilang",
       "urutan": 3,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:37",
+      "updated_at": "2026-2-16 14:09:37",
       "deleted_at": null
     },
     {
@@ -396,8 +396,8 @@
       "kode": "1",
       "nama": "ganjil",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:37",
+      "updated_at": "2026-2-16 14:09:37",
       "deleted_at": null
     },
     {
@@ -406,8 +406,8 @@
       "kode": "2",
       "nama": "genap",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:37",
+      "updated_at": "2026-2-16 14:09:37",
       "deleted_at": null
     },
     {
@@ -416,8 +416,8 @@
       "kode": "1",
       "nama": "Harian",
       "urutan": 1,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:37",
+      "updated_at": "2026-2-16 14:09:37",
       "deleted_at": null
     },
     {
@@ -426,8 +426,8 @@
       "kode": "2",
       "nama": "UTS",
       "urutan": 2,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:37",
+      "updated_at": "2026-2-16 14:09:37",
       "deleted_at": null
     },
     {
@@ -436,8 +436,48 @@
       "kode": "3",
       "nama": "UAS",
       "urutan": 3,
-      "created_at": "2026-2-15 13:45:17",
-      "updated_at": "2026-2-15 13:45:17",
+      "created_at": "2026-2-16 14:09:37",
+      "updated_at": "2026-2-16 14:09:37",
+      "deleted_at": null
+    },
+    {
+      "id": 45,
+      "kategori": "status_kepegawaian",
+      "kode": "1",
+      "nama": "PNS",
+      "urutan": 1,
+      "created_at": "2026-2-16 16:59:44",
+      "updated_at": "2026-2-16 16:59:44",
+      "deleted_at": null
+    },
+    {
+      "id": 46,
+      "kategori": "status_kepegawaian",
+      "kode": "2",
+      "nama": "PPPK",
+      "urutan": 2,
+      "created_at": "2026-2-16 16:59:57",
+      "updated_at": "2026-2-16 16:59:57",
+      "deleted_at": null
+    },
+    {
+      "id": 47,
+      "kategori": "status_kepegawaian",
+      "kode": "3",
+      "nama": "Guru Tetap",
+      "urutan": 3,
+      "created_at": "2026-2-16 17:00:36",
+      "updated_at": "2026-2-16 17:00:36",
+      "deleted_at": null
+    },
+    {
+      "id": 48,
+      "kategori": "status_kepegawaian",
+      "kode": "4",
+      "nama": "Guru Tidak Tetap",
+      "urutan": 4,
+      "created_at": "2026-2-16 17:00:56",
+      "updated_at": "2026-2-16 17:00:56",
       "deleted_at": null
     }
   ]
