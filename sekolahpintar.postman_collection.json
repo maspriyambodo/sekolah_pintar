@@ -1051,14 +1051,14 @@
               "formdata": [
                 {
                   "key": "name",
-                  "value": "Panji Pragiwaksono",
+                  "value": "Brian Dominic",
                   "description": "'required', 'string', 'max:100'",
                   "type": "text",
                   "uuid": "838a75e7-c214-4be4-bd38-59998076109c"
                 },
                 {
                   "key": "email",
-                  "value": "panjiprag@gmail.com",
+                  "value": "brido@gmail.com",
                   "description": "'required', 'email', 'max:100', 'unique:sys_users,email'",
                   "type": "text",
                   "uuid": "62a69dc4-9acf-46c1-b470-ff7a6b57e09d"
@@ -1072,7 +1072,7 @@
                 },
                 {
                   "key": "role",
-                  "value": "2",
+                  "value": "4",
                   "description": "'nullable', 'array'",
                   "type": "text",
                   "uuid": "89a0d411-4bc1-4155-b120-15c1a9f1be6a"
@@ -2292,6 +2292,387 @@
                   "value": "2026-02-29",
                   "type": "text"
                 }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Siswa",
+      "item": [
+        {
+          "name": "getAllSiswa",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/siswa/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "siswa",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "createSiswa",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "sys_user_id",
+                  "value": "3",
+                  "description": "'required', 'integer', 'exists:sys_users,id'",
+                  "type": "text",
+                  "uuid": "819ec8dc-1823-40de-9f82-fb68f8b9e4a8"
+                },
+                {
+                  "key": "nis",
+                  "value": "12314231",
+                  "description": "'required', 'string', 'max:20', 'unique:mst_siswa,nis'",
+                  "type": "text",
+                  "uuid": "06653dfb-1d09-44ae-80c6-563dc239f307"
+                },
+                {
+                  "key": "nama",
+                  "value": "Brian Dominic",
+                  "description": "'required', 'string', 'max:100'",
+                  "type": "text",
+                  "uuid": "1cfe3d0e-a639-41a8-ac56-3777c304ad0f"
+                },
+                {
+                  "key": "jenis_kelamin",
+                  "value": "1",
+                  "description": "'required', 'integer', 'min:1', 'max:2'",
+                  "type": "text",
+                  "uuid": "b3637eb0-a832-4d71-99ca-e70d6c29371b"
+                },
+                {
+                  "key": "tanggal_lahir",
+                  "value": "2003-01-02",
+                  "description": "'nullable', 'date', 'before:today'",
+                  "type": "text",
+                  "uuid": "9914830e-9f0d-4c7d-b153-67ac77d88d09"
+                },
+                {
+                  "key": "alamat",
+                  "value": "Jl. Raya Dummy No. 45",
+                  "description": "'nullable', 'string'",
+                  "type": "text",
+                  "uuid": "a2cf9c42-e4ac-485b-9af3-8b7fa62131d6"
+                },
+                {
+                  "key": "mst_kelas_id",
+                  "value": "1",
+                  "description": "'nullable', 'integer', 'exists:mst_kelas,id'",
+                  "type": "text",
+                  "uuid": "1b2c619d-049c-4fd7-ab4a-a53b9cbcd7a3"
+                },
+                {
+                  "key": "status",
+                  "value": "1",
+                  "description": "'nullable', 'integer', 'min:1', 'max:3'",
+                  "type": "text",
+                  "uuid": "9c052db7-b3f4-4207-ab57-8f66970d9eb1"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/siswa/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "siswa",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "byKelas",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/siswa/kelas/1",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "siswa",
+                "kelas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getSiswaById",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/siswa/1",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "siswa",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateSiswa",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/siswa/1?nis=12314231&nama=Bryan Dominic&jenis_kelamin=1&status=1",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "siswa",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "nis",
+                  "value": "12314231",
+                  "description": "'nullable', 'string', 'max:20', Rule::unique('mst_siswa', 'nis')->ignore($siswaId)",
+                  "type": "text"
+                },
+                {
+                  "key": "nama",
+                  "value": "Bryan Dominic",
+                  "description": "'nullable', 'string', 'max:100'"
+                },
+                {
+                  "key": "jenis_kelamin",
+                  "value": "1",
+                  "description": "'nullable', 'integer', 'min:1', 'max:2'",
+                  "type": "text"
+                },
+                {
+                  "key": "tanggal_lahir",
+                  "value": null,
+                  "description": "'nullable', 'date', 'before:today'",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "alamat",
+                  "value": null,
+                  "description": "'nullable', 'string'",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mst_kelas_id",
+                  "value": null,
+                  "description": "'nullable', 'integer', 'exists:mst_kelas,id'",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "status",
+                  "value": "1",
+                  "description": "'nullable', 'integer', 'min:1', 'max:3'",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteSiswa",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/siswa/1",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "siswa",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "absensiSummary",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/siswa/1/absensi-summary",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "siswa",
+                "1",
+                "absensi-summary"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "naikKelas",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"kelas_id\": 2 // required|integer|exists:mst_kelas,id\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/siswa/1/naik-kelas",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "siswa",
+                "1",
+                "naik-kelas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "lulus",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"kelas_id\": 2 // required|integer|exists:mst_kelas,id\n}"
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/siswa/1/lulus",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "siswa",
+                "1",
+                "lulus"
               ]
             }
           },
