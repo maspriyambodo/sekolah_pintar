@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Resources\Api\V1;
 
+use App\Models\System\SysReference;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -11,6 +12,7 @@ class RaporResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
+        $semester = SysReference::getByKode('kategori_semester', (string) $this->semester);
         return [
             'id' => $this->id,
             'siswa' => $this->whenLoaded('siswa', fn () => [
@@ -22,7 +24,7 @@ class RaporResource extends JsonResource
                 'id' => $this->kelas->id,
                 'nama_kelas' => $this->kelas->nama_kelas,
             ]),
-            'semester' => $this->semester,
+            'semester' => $semester?->nama ?? $this->semester,
             'tahun_ajaran' => $this->tahun_ajaran,
             'catatan_wali' => $this->catatan_wali,
             'kehadiran' => [

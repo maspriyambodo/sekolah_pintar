@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Resources\Api\V1;
 
+use App\Models\System\SysReference;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -11,6 +12,7 @@ class UjianResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
+        $semester = SysReference::getByKode('kategori_semester', (string) $this->semester);
         return [
             'id' => $this->id,
             'mapel' => $this->whenLoaded('mapel', fn () => [
@@ -25,7 +27,7 @@ class UjianResource extends JsonResource
             'jenis' => $this->jenis,
             'nama' => $this->nama,
             'tanggal' => $this->tanggal?->format('Y-m-d'),
-            'semester' => $this->semester,
+            'semester' => $semester?->nama ?? $this->semester,
             'tahun_ajaran' => $this->tahun_ajaran,
             'keterangan' => $this->keterangan,
             'created_at' => $this->created_at?->toIso8601String(),
