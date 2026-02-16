@@ -1000,6 +1000,221 @@
       ]
     },
     {
+      "name": "User Management",
+      "item": [
+        {
+          "name": "getAllUsers",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/users/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "users",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "createUser",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Jon Hanif",
+                  "description": "'required', 'string', 'max:100'",
+                  "type": "text",
+                  "uuid": "838a75e7-c214-4be4-bd38-59998076109c"
+                },
+                {
+                  "key": "email",
+                  "value": "jekjon@gmail.com",
+                  "description": "'required', 'email', 'max:100', 'unique:sys_users,email'",
+                  "type": "text",
+                  "uuid": "62a69dc4-9acf-46c1-b470-ff7a6b57e09d"
+                },
+                {
+                  "key": "password",
+                  "value": "8qd9j2e@#",
+                  "description": "'required', 'string', 'min:8'",
+                  "type": "text",
+                  "uuid": "d7f0162e-0da5-42be-a58f-9a4da6670f5e"
+                },
+                {
+                  "key": "role",
+                  "value": "2",
+                  "description": "'nullable', 'array'",
+                  "type": "text",
+                  "uuid": "89a0d411-4bc1-4155-b120-15c1a9f1be6a"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/admin/users/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "users",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getUserById",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/users/2",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "users",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateUser",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/users/2?name=Doddi Kurniawan&email&password&is_active",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "users",
+                "2"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Doddi Kurniawan",
+                  "description": "'nullable', 'string', 'max:100'",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": null,
+                  "description": "'nullable', 'email', 'max:100', 'unique:sys_users,email,' . $id",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": null,
+                  "description": "'nullable', 'string', 'min:8'",
+                  "type": "text"
+                },
+                {
+                  "key": "is_active",
+                  "value": null,
+                  "description": "'nullable', 'boolean'",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteUser",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/users/2",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "users",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "name": "healthcheck",
       "request": {
         "method": "GET",
