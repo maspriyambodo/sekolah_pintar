@@ -28,7 +28,7 @@ class MapelService
 
     public function getMapelById(int $id): ?MstMapel
     {
-        return MstMapel::with('guru')->find($id);
+        return MstMapel::with('gurus')->find($id);
     }
 
     public function createMapel(array $data): MstMapel
