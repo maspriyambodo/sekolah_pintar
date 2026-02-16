@@ -11,7 +11,7 @@
  Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 16/02/2026 17:51:36
+ Date: 16/02/2026 19:21:24
 */
 
 SET NAMES utf8mb4;
@@ -98,7 +98,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for mst_bk_jenis
@@ -111,7 +111,7 @@ CREATE TABLE `mst_bk_jenis` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for mst_bk_kategori
@@ -124,7 +124,7 @@ CREATE TABLE `mst_bk_kategori` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for mst_buku
@@ -164,7 +164,7 @@ CREATE TABLE `mst_guru` (
   UNIQUE KEY `mst_guru_nip_unique` (`nip`),
   KEY `mst_guru_sys_user_id_foreign` (`sys_user_id`),
   CONSTRAINT `mst_guru_sys_user_id_foreign` FOREIGN KEY (`sys_user_id`) REFERENCES `sys_users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for mst_guru_mapel
@@ -200,7 +200,7 @@ CREATE TABLE `mst_kelas` (
   PRIMARY KEY (`id`),
   KEY `mst_kelas_wali_guru_id_foreign` (`wali_guru_id`),
   CONSTRAINT `mst_kelas_wali_guru_id_foreign` FOREIGN KEY (`wali_guru_id`) REFERENCES `mst_guru` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for mst_mapel
@@ -215,7 +215,7 @@ CREATE TABLE `mst_mapel` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `mst_mapel_kode_mapel_unique` (`kode_mapel`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for mst_siswa
@@ -242,7 +242,7 @@ CREATE TABLE `mst_siswa` (
   KEY `mst_siswa_sys_user_id_foreign` (`sys_user_id`),
   CONSTRAINT `mst_siswa_mst_kelas_id_foreign` FOREIGN KEY (`mst_kelas_id`) REFERENCES `mst_kelas` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `mst_siswa_sys_user_id_foreign` FOREIGN KEY (`sys_user_id`) REFERENCES `sys_users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for mst_siswa_wali
@@ -396,7 +396,7 @@ CREATE TABLE `sys_activity_logs` (
   KEY `idx_logs_user` (`sys_user_id`,`created_at`),
   KEY `idx_logs_module` (`module`,`created_at`),
   CONSTRAINT `sys_activity_logs_sys_user_id_foreign` FOREIGN KEY (`sys_user_id`) REFERENCES `sys_users` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for sys_error_logs
@@ -428,7 +428,7 @@ CREATE TABLE `sys_login_logs` (
   PRIMARY KEY (`id`),
   KEY `sys_login_logs_sys_user_id_foreign` (`sys_user_id`),
   CONSTRAINT `sys_login_logs_sys_user_id_foreign` FOREIGN KEY (`sys_user_id`) REFERENCES `sys_users` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for sys_menus
@@ -465,7 +465,7 @@ CREATE TABLE `sys_permissions` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `sys_permissions_code_unique` (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for sys_references
@@ -482,7 +482,7 @@ CREATE TABLE `sys_references` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `sys_references_kategori_index` (`kategori`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for sys_role_permissions
@@ -499,7 +499,7 @@ CREATE TABLE `sys_role_permissions` (
   KEY `sys_role_permissions_sys_permission_id_foreign` (`sys_permission_id`),
   CONSTRAINT `sys_role_permissions_sys_permission_id_foreign` FOREIGN KEY (`sys_permission_id`) REFERENCES `sys_permissions` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `sys_role_permissions_sys_role_id_foreign` FOREIGN KEY (`sys_role_id`) REFERENCES `sys_roles` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for sys_roles
@@ -514,7 +514,7 @@ CREATE TABLE `sys_roles` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `sys_roles_code_unique` (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for sys_user_roles
@@ -531,7 +531,7 @@ CREATE TABLE `sys_user_roles` (
   KEY `sys_user_roles_sys_role_id_foreign` (`sys_role_id`),
   CONSTRAINT `sys_user_roles_sys_role_id_foreign` FOREIGN KEY (`sys_role_id`) REFERENCES `sys_roles` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `sys_user_roles_sys_user_id_foreign` FOREIGN KEY (`sys_user_id`) REFERENCES `sys_users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for sys_users
@@ -549,7 +549,7 @@ CREATE TABLE `sys_users` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `sys_users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for trx_absensi_guru
