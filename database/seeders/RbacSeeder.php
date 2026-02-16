@@ -165,6 +165,12 @@ class RbacSeeder extends Seeder
             ['code' => 'menus.update', 'name' => 'Update Menus', 'module' => 'menus'],
             ['code' => 'menus.delete', 'name' => 'Delete Menus', 'module' => 'menus'],
 
+            // Activity Logs permissions
+            ['code' => 'activity-logs.view', 'name' => 'View Activity Logs', 'module' => 'activity-logs'],
+            ['code' => 'activity-logs.delete', 'name' => 'Delete Activity Logs', 'module' => 'activity-logs'],
+            ['code' => 'activity-logs.clear-old', 'name' => 'Clear Old Activity Logs', 'module' => 'activity-logs'],
+            ['code' => 'activity-logs.statistics', 'name' => 'View Activity Logs Statistics', 'module' => 'activity-logs'],
+
             // Tarif SPP permissions
             ['code' => 'tarif-spp.view', 'name' => 'View Tarif SPP', 'module' => 'tarif-spp'],
             ['code' => 'tarif-spp.create', 'name' => 'Create Tarif SPP', 'module' => 'tarif-spp'],
@@ -325,7 +331,8 @@ class RbacSeeder extends Seeder
                     ['nama_menu' => 'Users', 'url' => '/admin/users', 'icon' => 'bi-person', 'urutan' => 1, 'is_active' => true],
                     ['nama_menu' => 'Roles', 'url' => '/admin/roles', 'icon' => 'bi-shield', 'urutan' => 2, 'is_active' => true],
                     ['nama_menu' => 'Permissions', 'url' => '/admin/permissions', 'icon' => 'bi-key', 'urutan' => 3, 'is_active' => true],
-                    ['nama_menu' => 'Menu Management', 'url' => '/admin/menus', 'icon' => 'bi-list', 'urutan' => 4, 'is_active' => true]
+                    ['nama_menu' => 'Menu Management', 'url' => '/admin/menus', 'icon' => 'bi-list', 'urutan' => 4, 'is_active' => true],
+                    ['nama_menu' => 'Activity Logs', 'url' => '/admin/activity-logs', 'icon' => 'bi-clock-history', 'urutan' => 5, 'is_active' => true],
                 ],
             ],
         ];
@@ -380,6 +387,7 @@ class RbacSeeder extends Seeder
                     'Roles' => 'roles.view',
                     'Permissions' => 'permissions.view',
                     'Menu Management' => 'menus.view',
+                    'Activity Logs' => 'activity-logs.view',
                     default => null,
                 };
                 $childPermission = $childPermissionCode ? SysPermission::where('code', $childPermissionCode)->first() : null;
