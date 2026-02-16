@@ -444,7 +444,7 @@
       "id": 45,
       "kategori": "status_kepegawaian",
       "kode": "1",
-      "nama": "PNS",
+      "nama": "Guru Tetap",
       "urutan": 1,
       "created_at": "2026-2-16 16:59:44",
       "updated_at": "2026-2-16 16:59:44",
@@ -454,30 +454,10 @@
       "id": 46,
       "kategori": "status_kepegawaian",
       "kode": "2",
-      "nama": "PPPK",
+      "nama": "Guru Tidak Tetap",
       "urutan": 2,
       "created_at": "2026-2-16 16:59:57",
       "updated_at": "2026-2-16 16:59:57",
-      "deleted_at": null
-    },
-    {
-      "id": 47,
-      "kategori": "status_kepegawaian",
-      "kode": "3",
-      "nama": "Guru Tetap",
-      "urutan": 3,
-      "created_at": "2026-2-16 17:00:36",
-      "updated_at": "2026-2-16 17:00:36",
-      "deleted_at": null
-    },
-    {
-      "id": 48,
-      "kategori": "status_kepegawaian",
-      "kode": "4",
-      "nama": "Guru Tidak Tetap",
-      "urutan": 4,
-      "created_at": "2026-2-16 17:00:56",
-      "updated_at": "2026-2-16 17:00:56",
       "deleted_at": null
     }
   ]
