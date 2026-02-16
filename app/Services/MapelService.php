@@ -72,7 +72,7 @@ class MapelService
 
     public function getGurusByMapel(int $id): array
     {
-        $mapel = MstMapel::with('guru')->find($id);
+        $mapel = MstMapel::with('gurus')->find($id);
 
         if (!$mapel) {
             return [];
