@@ -21,8 +21,12 @@ use App\Http\Controllers\Api\V1\RankingController;
 use App\Http\Controllers\Api\V1\RaporController;
 use App\Http\Controllers\Api\V1\RoleController;
 use App\Http\Controllers\Api\V1\SiswaController;
+use App\Http\Controllers\Api\V1\SoalsController;
+use App\Http\Controllers\Api\V1\SysMenuController;
 use App\Http\Controllers\Api\V1\TarifSppController;
 use App\Http\Controllers\Api\V1\UjianController;
+use App\Http\Controllers\Api\V1\UjianJawabanController;
+use App\Http\Controllers\Api\V1\UjianUserController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\WaliController;
 use App\Http\Middleware\RoleMiddleware;
@@ -217,6 +221,34 @@ Route::prefix('v1')->group(function () {
                 Route::get('/kelas/{kelasId}', [UjianController::class, 'byKelas'])->name('api.v1.ujian.by-kelas');
             });
 
+            // Ujian User (Peserta Ujian)
+            Route::prefix('ujian-user')->group(function () {
+                Route::get('/', [UjianUserController::class, 'index'])->name('api.v1.ujian-user.index');
+                Route::post('/', [UjianUserController::class, 'store'])->name('api.v1.ujian-user.store');
+                Route::get('/{id}', [UjianUserController::class, 'show'])->name('api.v1.ujian-user.show');
+                Route::delete('/{id}', [UjianUserController::class, 'destroy'])->name('api.v1.ujian-user.destroy');
+                Route::post('/{id}/mulai', [UjianUserController::class, 'mulaiUjian'])->name('api.v1.ujian-user.mulai');
+                Route::post('/{id}/selesaikan', [UjianUserController::class, 'selesaikanUjian'])->name('api.v1.ujian-user.selesaikan');
+            });
+
+            // Ujian Jawaban (Jawaban Siswa)
+            Route::prefix('ujian-jawaban')->group(function () {
+                Route::get('/', [UjianJawabanController::class, 'index'])->name('api.v1.ujian-jawaban.index');
+                Route::post('/', [UjianJawabanController::class, 'store'])->name('api.v1.ujian-jawaban.store');
+                Route::get('/{id}', [UjianJawabanController::class, 'show'])->name('api.v1.ujian-jawaban.show');
+                Route::put('/{id}', [UjianJawabanController::class, 'update'])->name('api.v1.ujian-jawaban.update');
+                Route::delete('/{id}', [UjianJawabanController::class, 'destroy'])->name('api.v1.ujian-jawaban.destroy');
+            });
+
+            // Soals (Bank Soal)
+            Route::prefix('soals')->group(function () {
+                Route::get('/', [SoalsController::class, 'index'])->name('api.v1.soals.index');
+                Route::post('/', [SoalsController::class, 'store'])->name('api.v1.soals.store');
+                Route::get('/{id}', [SoalsController::class, 'show'])->name('api.v1.soals.show');
+                Route::put('/{id}', [SoalsController::class, 'update'])->name('api.v1.soals.update');
+                Route::delete('/{id}', [SoalsController::class, 'destroy'])->name('api.v1.soals.destroy');
+            });
+
             // Nilai
             Route::prefix('nilai')->group(function () {
                 Route::get('/', [NilaiController::class, 'index'])->name('api.v1.nilai.index');
@@ -283,6 +315,16 @@ Route::prefix('v1')->group(function () {
                 Route::get('/{id}', [PermissionController::class, 'show'])->name('api.v1.admin.permissions.show');
                 Route::put('/{id}', [PermissionController::class, 'update'])->name('api.v1.admin.permissions.update');
                 Route::delete('/{id}', [PermissionController::class, 'destroy'])->name('api.v1.admin.permissions.destroy');
+            });
+
+            // Menu management
+            Route::prefix('menus')->group(function () {
+                Route::get('/', [SysMenuController::class, 'index'])->name('api.v1.admin.menus.index');
+                Route::post('/', [SysMenuController::class, 'store'])->name('api.v1.admin.menus.store');
+                Route::get('/{id}', [SysMenuController::class, 'show'])->name('api.v1.admin.menus.show');
+                Route::put('/{id}', [SysMenuController::class, 'update'])->name('api.v1.admin.menus.update');
+                Route::delete('/{id}', [SysMenuController::class, 'destroy'])->name('api.v1.admin.menus.destroy');
+                Route::get('/tree', [SysMenuController::class, 'getTree'])->name('api.v1.admin.menus.tree');
             });
         });
 
