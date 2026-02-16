@@ -145,21 +145,6 @@ CREATE TABLE `mst_buku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
--- Table structure for mst_golongan
--- ----------------------------
-DROP TABLE IF EXISTS `mst_golongan`;
-CREATE TABLE `mst_golongan` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `pangkat` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Contoh: Penata Muda, Pembina',
-  `golongan_ruang` char(5) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Contoh: III/a, IV/b',
-  `jabatan` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Contoh: Guru Ahli Pertama, Guru Ahli Madya',
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ----------------------------
 -- Table structure for mst_guru
 -- ----------------------------
 DROP TABLE IF EXISTS `mst_guru`;
