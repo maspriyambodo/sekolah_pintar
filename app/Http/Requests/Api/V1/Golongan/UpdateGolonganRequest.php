@@ -1,0 +1,32 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Http\Requests\Api\V1\Golongan;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class UpdateGolonganRequest extends FormRequest
+{
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    public function rules(): array
+    {
+        return [
+            'pangkat' => ['sometimes', 'string', 'max:50'],
+            'golongan_ruang' => ['sometimes', 'string', 'max:5'],
+            'jabatan' => ['nullable', 'string', 'max:50'],
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'pangkat.required' => 'Pangkat wajib diisi',
+            'golongan_ruang.required' => 'Golongan/Ruang wajib diisi',
+        ];
+    }
+}

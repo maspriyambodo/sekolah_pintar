@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\V1\BkKasusController;
 use App\Http\Controllers\Api\V1\BukuController;
 use App\Http\Controllers\Api\V1\DashboardController;
 use App\Http\Controllers\Api\V1\FileUploadController;
+use App\Http\Controllers\Api\V1\GolonganController;
 use App\Http\Controllers\Api\V1\GuruController;
 use App\Http\Controllers\Api\V1\KelasController;
 use App\Http\Controllers\Api\V1\MapelController;
@@ -134,6 +135,16 @@ Route::prefix('v1')->group(function () {
                 Route::put('/{id}', [WaliController::class, 'update'])->name('api.v1.wali.update');
                 Route::delete('/{id}', [WaliController::class, 'destroy'])->name('api.v1.wali.destroy');
                 Route::get('/{id}/siswa', [WaliController::class, 'siswa'])->name('api.v1.wali.siswa');
+            });
+
+            // Golongan routes
+            Route::prefix('golongan')->group(function () {
+                Route::get('/', [GolonganController::class, 'index'])->name('api.v1.golongan.index');
+                Route::post('/', [GolonganController::class, 'store'])->name('api.v1.golongan.store');
+                Route::get('/list', [GolonganController::class, 'list'])->name('api.v1.golongan.list');
+                Route::get('/{id}', [GolonganController::class, 'show'])->name('api.v1.golongan.show');
+                Route::put('/{id}', [GolonganController::class, 'update'])->name('api.v1.golongan.update');
+                Route::delete('/{id}', [GolonganController::class, 'destroy'])->name('api.v1.golongan.destroy');
             });
         });
 
