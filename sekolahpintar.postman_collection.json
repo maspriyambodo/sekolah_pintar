@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "a09d6c16-2d67-4602-b65a-5f8d59768834",
+    "_postman_id": "abd2c191-29a6-4c9f-8d83-33b55d860f15",
     "name": "sekolahpintar",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "7492476",
-    "_collection_link": "https://go.postman.co/collection/7492476-a09d6c16-2d67-4602-b65a-5f8d59768834?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/7492476-abd2c191-29a6-4c9f-8d83-33b55d860f15?source=collection_link"
   },
   "item": [
     {
@@ -1215,26 +1215,6 @@
       ]
     },
     {
-      "name": "healthcheck",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:8002/api/health",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8002",
-          "path": [
-            "api",
-            "health"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
       "name": "Activity Logs",
       "item": [
         {
@@ -1565,6 +1545,333 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "MenuManagement",
+      "item": [
+        {
+          "name": "getAllMenu",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/menus/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "menus",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "createMenu",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "parent_id",
+                  "value": "",
+                  "description": "nullable|exists:sys_menus,id",
+                  "type": "text",
+                  "uuid": "6dae6179-a5ac-4c6e-a978-2722d172b0d8"
+                },
+                {
+                  "key": "sys_permission_id",
+                  "value": "",
+                  "description": "nullable|exists:sys_permissions,id",
+                  "type": "text",
+                  "uuid": "96f99323-efcf-4d00-84e9-1c8515e6ffab"
+                },
+                {
+                  "key": "nama_menu",
+                  "value": "",
+                  "description": "required|string|max:100",
+                  "type": "text",
+                  "uuid": "f5b40aad-1937-43e0-b84b-dea2c5f2e060"
+                },
+                {
+                  "key": "url",
+                  "value": "",
+                  "description": "nullable|string|max:100",
+                  "type": "text",
+                  "uuid": "852c7ea6-b9f2-4262-8aef-f66ac7fffeca"
+                },
+                {
+                  "key": "icon",
+                  "value": "",
+                  "description": "nullable|string|max:50",
+                  "type": "text",
+                  "uuid": "ace69aba-c961-4ff2-8bf4-8b63faf4e171"
+                },
+                {
+                  "key": "urutan",
+                  "value": "",
+                  "description": "nullable|integer",
+                  "type": "text",
+                  "uuid": "eab4d82d-278c-4537-80b9-8b2f40efe955"
+                },
+                {
+                  "key": "is_active",
+                  "value": "",
+                  "description": "nullable|boolean",
+                  "type": "text",
+                  "uuid": "be3b69ca-98e8-4472-9700-9e8da8aa399b"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/admin/menus/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "menus",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "showMenu",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/menus/2",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "menus",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/menus/2?nama_menu=Home",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "menus",
+                "2"
+              ],
+              "query": [
+                {
+                  "key": "parent_id",
+                  "value": null,
+                  "description": "nullable|exists:sys_menus,id",
+                  "disabled": true
+                },
+                {
+                  "key": "sys_permission_id",
+                  "value": null,
+                  "description": "nullable|exists:sys_permissions,id",
+                  "disabled": true
+                },
+                {
+                  "key": "nama_menu",
+                  "value": "Home",
+                  "description": "sometimes|required|string|max:100"
+                },
+                {
+                  "key": "url",
+                  "value": null,
+                  "description": "nullable|string|max:100",
+                  "disabled": true
+                },
+                {
+                  "key": "icon",
+                  "value": null,
+                  "description": "nullable|string|max:50",
+                  "disabled": true
+                },
+                {
+                  "key": "urutan",
+                  "value": null,
+                  "description": "nullable|integer",
+                  "disabled": true
+                },
+                {
+                  "key": "is_active",
+                  "value": null,
+                  "description": "nullable|boolean",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteMenu",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/menus/2",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "menus",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getTree",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url_sekolah}}/admin/menus/tree/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "admin",
+                "menus",
+                "tree",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "healthcheck",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8002/api/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8002",
+          "path": [
+            "api",
+            "health"
+          ]
+        }
+      },
+      "response": []
     }
   ],
   "event": [
