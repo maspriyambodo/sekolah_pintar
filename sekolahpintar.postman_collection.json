@@ -1051,14 +1051,14 @@
               "formdata": [
                 {
                   "key": "name",
-                  "value": "Jon Hanif",
+                  "value": "Panji Pragiwaksono",
                   "description": "'required', 'string', 'max:100'",
                   "type": "text",
                   "uuid": "838a75e7-c214-4be4-bd38-59998076109c"
                 },
                 {
                   "key": "email",
-                  "value": "jekjon@gmail.com",
+                  "value": "panjiprag@gmail.com",
                   "description": "'required', 'email', 'max:100', 'unique:sys_users,email'",
                   "type": "text",
                   "uuid": "62a69dc4-9acf-46c1-b470-ff7a6b57e09d"
@@ -2053,6 +2053,245 @@
                 "2",
                 "gurus",
                 ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Guru",
+      "item": [
+        {
+          "name": "getAllGuru",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/guru/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "guru",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "createGuru",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "sys_user_id",
+                  "value": "2",
+                  "description": "'nullable', 'integer', 'exists:sys_users,id'",
+                  "type": "text",
+                  "uuid": "e1467f4a-4ab9-413d-876a-43e2cf628745"
+                },
+                {
+                  "key": "nip",
+                  "value": "12345678901293",
+                  "description": "'nullable', 'string', 'max:30', 'unique:mst_guru,nip'",
+                  "type": "text",
+                  "uuid": "f1054561-963a-488c-ab04-bf218f8aa4e5"
+                },
+                {
+                  "key": "nuptk",
+                  "value": "123689",
+                  "description": "'nullable', 'string', 'max:30', 'unique:mst_guru,nuptk'",
+                  "type": "text",
+                  "uuid": "e749e107-d378-477b-b88d-9d3d5f4352e5"
+                },
+                {
+                  "key": "nama",
+                  "value": "Panji Pragiwaksono",
+                  "description": "'required', 'string', 'max:100'",
+                  "type": "text",
+                  "uuid": "bcec8a85-a9e8-44a2-812b-a39094548f04"
+                },
+                {
+                  "key": "jenis_kelamin",
+                  "value": "1",
+                  "description": "'required', 'integer', 'min:1', 'max:2'",
+                  "type": "text",
+                  "uuid": "813f71cb-574f-4106-8256-7d5b079c75b3"
+                },
+                {
+                  "key": "tanggal_lahir",
+                  "value": "1999-03-12",
+                  "description": "'nullable', 'date', 'before:today'",
+                  "type": "text",
+                  "uuid": "ab5cc2b5-9b31-4ef0-bde2-f0262cd552f5"
+                },
+                {
+                  "key": "alamat",
+                  "value": "Jl. Raya Dummy No. 123",
+                  "description": "'nullable', 'string'",
+                  "type": "text",
+                  "uuid": "fa97bd8e-83be-4ede-8b7e-9c0fd5ad054c"
+                },
+                {
+                  "key": "no_hp",
+                  "value": "081283029019",
+                  "description": "'nullable', 'string', 'max:15'",
+                  "type": "text",
+                  "uuid": "d545b44c-2444-4e14-8174-b6af91df5f34"
+                },
+                {
+                  "key": "email",
+                  "value": "panjiprag@gmail.com",
+                  "description": "'nullable', 'email', 'max:100'",
+                  "type": "text",
+                  "uuid": "007a59d9-4045-49ba-9c36-76308eb45e05"
+                },
+                {
+                  "key": "pendidikan_terakhir",
+                  "value": "1",
+                  "description": "'nullable', 'integer'",
+                  "type": "text",
+                  "uuid": "cd7bd063-b766-4552-a3bc-00410982fc2d"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/guru/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "guru",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateGuru",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/guru/1?nuptk=23456789",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "guru",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "nuptk",
+                  "value": "23456789"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteGuru",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/guru/1",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "guru",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "absensiSummary",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/guru/1/absensi-summary?start_date=2026-01-01&end_date=2026-02-29",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "guru",
+                "1",
+                "absensi-summary"
+              ],
+              "query": [
+                {
+                  "key": "start_date",
+                  "value": "2026-01-01",
+                  "type": "text"
+                },
+                {
+                  "key": "end_date",
+                  "value": "2026-02-29",
+                  "type": "text"
+                }
               ]
             }
           },
