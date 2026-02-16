@@ -18,12 +18,12 @@ class MapelService
 
         if (!empty($filters['search'])) {
             $query->where(function ($q) use ($filters) {
-                $q->where('nama', 'like', '%' . $filters['search'] . '%')
-                    ->orWhere('kode', 'like', '%' . $filters['search'] . '%');
+                $q->where('nama_mapel', 'like', '%' . $filters['search'] . '%')
+                    ->orWhere('kode_mapel', 'like', '%' . $filters['search'] . '%');
             });
         }
 
-        return $query->orderBy('nama')->cursorPaginate($perPage);
+        return $query->orderBy('nama_mapel')->cursorPaginate($perPage);
     }
 
     public function getMapelById(int $id): ?MstMapel
@@ -35,9 +35,8 @@ class MapelService
     {
         return DB::transaction(function () use ($data) {
             $mapel = MstMapel::create([
-                'kode' => $data['kode'],
-                'nama' => $data['nama'],
-                'deskripsi' => $data['deskripsi'] ?? null,
+                'kode_mapel' => $data['kode'],
+                'nama_mapel' => $data['nama'],
             ]);
 
             Log::info('Mapel created', ['mapel_id' => $mapel->id]);
@@ -50,9 +49,8 @@ class MapelService
         return DB::transaction(function () use ($id, $data) {
             $mapel = MstMapel::findOrFail($id);
             $mapel->update([
-                'kode' => $data['kode'] ?? $mapel->kode,
-                'nama' => $data['nama'] ?? $mapel->nama,
-                'deskripsi' => $data['deskripsi'] ?? $mapel->deskripsi,
+                'kode_mapel' => $data['kode'] ?? $mapel->kode_mapel,
+                'nama_mapel' => $data['nama'] ?? $mapel->nama_mapel,
             ]);
 
             Log::info('Mapel updated', ['mapel_id' => $id]);
@@ -83,8 +81,8 @@ class MapelService
         return [
             'mapel' => [
                 'id' => $mapel->id,
-                'kode' => $mapel->kode,
-                'nama' => $mapel->nama,
+                'kode' => $mapel->kode_mapel,
+                'nama' => $mapel->nama_mapel,
             ],
             'guru' => $mapel->guru->map(function ($g) {
                 return [
