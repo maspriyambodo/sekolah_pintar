@@ -49,10 +49,11 @@ class UserService
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'is_active' => $data['is_active'] ?? true,
+                'role' => $data['role'] ?? null,
             ]);
 
-            if (!empty($data['role_ids'])) {
-                $user->roles()->sync($data['role_ids']);
+            if (!empty($data['role'])) {
+                $user->roles()->sync([$data['role']]);
             }
 
             Log::info('User created', ['user_id' => $user->id]);
