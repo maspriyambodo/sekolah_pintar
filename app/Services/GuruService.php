@@ -108,7 +108,7 @@ class GuruService
 
     public function getAbsensiSummary(int $id, string $startDate, string $endDate): array
     {
-        $absensi = TrxAbsensiGuru::where('guru_id', $id)
+        $absensi = TrxAbsensiGuru::where('mst_guru_id', $id)
             ->whereBetween('tanggal', [$startDate, $endDate])
             ->get();
 
