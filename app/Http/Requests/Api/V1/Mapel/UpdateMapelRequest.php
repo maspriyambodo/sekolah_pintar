@@ -17,9 +17,8 @@ class UpdateMapelRequest extends FormRequest
     {
         $id = $this->route('id');
         return [
-            'kode' => ['nullable', 'string', 'max:20', 'unique:mst_mapel,kode,' . $id],
+            'kode' => ['nullable', 'string', 'max:20', 'unique:mst_mapel,kode_mapel,' . $id],
             'nama' => ['nullable', 'string', 'max:100'],
-            'deskripsi' => ['nullable', 'string'],
         ];
     }
 
