@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Resources\Api\V1;
 
+use App\Models\System\SysReference;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -11,6 +12,7 @@ class AbsensiGuruResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
+        $statusAbsensi = SysReference::getByKode('status_absensi', (string) $this->status);
         return [
             'id' => $this->id,
             'guru' => $this->whenLoaded('guru', fn () => [
@@ -19,7 +21,7 @@ class AbsensiGuruResource extends JsonResource
                 'nip' => $this->guru->nip,
             ]),
             'tanggal' => $this->tanggal?->format('Y-m-d'),
-            'status' => $this->status,
+            'status_absensi' => $statusAbsensi?->nama ?? $this->status,
             'keterangan' => $this->keterangan,
             'jam_masuk' => $this->jam_masuk,
             'jam_keluar' => $this->jam_keluar,
