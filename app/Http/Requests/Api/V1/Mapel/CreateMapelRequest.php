@@ -16,9 +16,8 @@ class CreateMapelRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'kode' => ['required', 'string', 'max:20', 'unique:mst_mapel,kode'],
+            'kode' => ['required', 'string', 'max:20', 'unique:mst_mapel,kode_mapel'],
             'nama' => ['required', 'string', 'max:100'],
-            'deskripsi' => ['nullable', 'string'],
         ];
     }
 
