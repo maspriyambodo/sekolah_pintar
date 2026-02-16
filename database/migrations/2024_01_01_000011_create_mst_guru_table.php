@@ -12,10 +12,13 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('sys_user_id');
             $table->string('nip', 20)->unique();
+            $table->string('nuptk', 20)->nullable();
             $table->string('nama', 100);
             $table->unsignedTinyInteger('jenis_kelamin')->comment('Referensi ke sys_references dengan kategori jenis_kelamin');
             $table->date('tanggal_lahir')->nullable();
             $table->text('alamat')->nullable();
+            $table->string('email', 100)->nullable();
+            $table->unsignedTinyInteger('pendidikan_terakhir')->nullable()->comment('Referensi ke sys_references dengan kategori pendidikan_terakhir');
             $table->string('no_hp', 20)->nullable();
             $table->timestamp('deleted_at')->nullable();
             $table->timestamp('created_at')->nullable();
