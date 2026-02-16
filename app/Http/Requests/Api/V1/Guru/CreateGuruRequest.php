@@ -16,7 +16,7 @@ class CreateGuruRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'sys_user_id' => ['nullable', 'integer', 'exists:sys_users,id'],
+            'sys_user_id' => ['required', 'integer', 'exists:sys_users,id'],
             'nip' => ['nullable', 'string', 'max:20', 'unique:mst_guru,nip'],
             'nuptk' => ['nullable', 'string', 'max:20'],
             'nama' => ['required', 'string', 'max:100'],
