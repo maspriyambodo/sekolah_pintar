@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Resources\Api\V1;
 
+use App\Models\System\SysReference;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -11,6 +12,7 @@ class PembayaranSppResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
+        $metodePembayaran = SysReference::getByKode('metode_pembayaran', (string) $this->metode_pembayaran);
         return [
             'id' => $this->id,
             'siswa' => $this->whenLoaded('siswa', fn () => [
@@ -32,7 +34,7 @@ class PembayaranSppResource extends JsonResource
             'tanggal_bayar' => $this->tanggal_bayar?->format('Y-m-d'),
             'jumlah_bayar' => $this->jumlah_bayar,
             'status' => $this->status,
-            'metode_pembayaran' => $this->metode_pembayaran,
+            'metode_pembayaran' => $metodePembayaran?->nama ?? $this->metode_pembayaran,
             'keterangan' => $this->keterangan,
             'petugas' => $this->whenLoaded('petugas', fn () => [
                 'id' => $this->petugas->id,
