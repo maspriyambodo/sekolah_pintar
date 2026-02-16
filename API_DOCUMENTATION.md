@@ -200,11 +200,13 @@ Content-Type: application/json
 }
 ```
 
-### Delete Siswa
+### Delete Siswa (Soft Delete)
 ```http
 DELETE /api/v1/siswa/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 ### Get Siswa by Kelas
 ```http
@@ -293,11 +295,13 @@ Content-Type: application/json
 }
 ```
 
-### Delete Kelas
+### Delete Kelas (Soft Delete)
 ```http
 DELETE /api/v1/kelas/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 ### Get Siswa in Kelas
 ```http
@@ -353,11 +357,13 @@ Content-Type: application/json
 }
 ```
 
-### Delete Mapel
+### Delete Mapel (Soft Delete)
 ```http
 DELETE /api/v1/mapel/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 ### Get Gurus Teaching Mapel
 ```http
@@ -411,11 +417,13 @@ Content-Type: application/json
 }
 ```
 
-### Delete Guru
+### Delete Guru (Soft Delete)
 ```http
 DELETE /api/v1/guru/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 ### Get Guru by Mapel
 ```http
@@ -472,11 +480,13 @@ Content-Type: application/json
 }
 ```
 
-### Delete Wali
+### Delete Wali (Soft Delete)
 ```http
 DELETE /api/v1/wali/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 ### Get Siswa by Wali
 ```http
@@ -527,11 +537,13 @@ Content-Type: application/json
 }
 ```
 
-### Delete Absensi Guru
+### Delete Absensi Guru (Soft Delete)
 ```http
 DELETE /api/v1/absensi-guru/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 ### Get Absensi by Guru
 ```http
@@ -588,11 +600,13 @@ Content-Type: application/json
 }
 ```
 
-### Delete Absensi Siswa
+### Delete Absensi Siswa (Soft Delete)
 ```http
 DELETE /api/v1/absensi-siswa/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 ### Get Absensi by Siswa
 ```http
@@ -662,11 +676,13 @@ Content-Type: application/json
 }
 ```
 
-#### Delete BK Jenis
+#### Delete BK Jenis (Soft Delete)
 ```http
 DELETE /api/v1/bk/jenis/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 ### BK Kasus Endpoints
 
@@ -710,11 +726,13 @@ Content-Type: application/json
 }
 ```
 
-#### Delete BK Kasus
+#### Delete BK Kasus (Soft Delete)
 ```http
 DELETE /api/v1/bk/kasus/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 #### Get Kasus by Siswa
 ```http
@@ -775,11 +793,13 @@ Content-Type: application/json
 }
 ```
 
-#### Delete Buku
+#### Delete Buku (Soft Delete)
 ```http
 DELETE /api/v1/perpustakaan/buku/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 #### Get Peminjaman by Buku
 ```http
@@ -834,11 +854,13 @@ Content-Type: application/json
 }
 ```
 
-#### Delete Peminjaman
+#### Delete Peminjaman (Soft Delete)
 ```http
 DELETE /api/v1/perpustakaan/peminjaman/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 #### Pengembalian Buku
 ```http
@@ -899,11 +921,13 @@ Content-Type: application/json
 }
 ```
 
-#### Delete Ujian
+#### Delete Ujian (Soft Delete)
 ```http
 DELETE /api/v1/akademik/ujian/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 #### Get Nilai by Ujian
 ```http
@@ -914,6 +938,209 @@ Authorization: Bearer {access_token}
 #### Get Ujian by Kelas
 ```http
 GET /api/v1/akademik/ujian/kelas/{kelasId}
+Authorization: Bearer {access_token}
+```
+
+### Soals (Bank Soal) Endpoints
+
+Requires authentication. Role: admin, guru
+
+#### List All Soals
+```http
+GET /api/v1/akademik/soals
+Authorization: Bearer {access_token}
+```
+
+**Query Parameters:**
+- `mapel_id` - Filter by mapel
+- `tipe` - Filter by tipe (pilihan_ganda, essay)
+- `tingkat_kesulitan` - Filter by tingkat_kesulitan (mudah, sedang, sulit)
+- `per_page` - Items per page (default: 15)
+
+#### Create Soal
+```http
+POST /api/v1/akademik/soals
+Authorization: Bearer {access_token}
+Content-Type: application/json
+
+{
+    "mst_mapel_id": 1,
+    "pertanyaan": "Apa ibu kota Indonesia?",
+    "tipe": "pilihan_ganda",
+    "tingkat_kesulitan": "mudah",
+    "media_path": null,
+    "opsi": [
+        {"teks_opsi": "Jakarta", "is_jawaban": true, "urutan": "A"},
+        {"teks_opsi": "Bandung", "is_jawaban": false, "urutan": "B"},
+        {"teks_opsi": "Surabaya", "is_jawaban": false, "urutan": "C"},
+        {"teks_opsi": "Yogyakarta", "is_jawaban": false, "urutan": "D"}
+    ]
+}
+```
+
+#### Get Single Soal
+```http
+GET /api/v1/akademik/soals/{id}
+Authorization: Bearer {access_token}
+```
+
+#### Update Soal
+```http
+PUT /api/v1/akademik/soals/{id}
+Authorization: Bearer {access_token}
+Content-Type: application/json
+
+{
+    "pertanyaan": "Apa ibu kota negara Indonesia?",
+    "tingkat_kesulitan": "sedang"
+}
+```
+
+#### Delete Soal (Soft Delete)
+```http
+DELETE /api/v1/akademik/soals/{id}
+Authorization: Bearer {access_token}
+```
+
+### Ujian User (Peserta Ujian) Endpoints
+
+Requires authentication.
+
+#### List All Ujian User
+```http
+GET /api/v1/akademik/ujian-user
+Authorization: Bearer {access_token}
+```
+
+**Query Parameters:**
+- `trx_ujian_id` - Filter by ujian
+- `mst_siswa_id` - Filter by siswa
+- `status` - Filter by status (1: Belum mulai, 2: Mengerjakan, 3: Selesai)
+- `per_page` - Items per page (default: 15)
+
+#### Create Ujian User (Register Siswa ke Ujian)
+```http
+POST /api/v1/akademik/ujian-user
+Authorization: Bearer {access_token}
+Content-Type: application/json
+
+{
+    "trx_ujian_id": 1,
+    "mst_siswa_id": 1
+}
+```
+
+#### Get Single Ujian User
+```http
+GET /api/v1/akademik/ujian-user/{id}
+Authorization: Bearer {access_token}
+```
+
+#### Mulai Ujian
+```http
+POST /api/v1/akademik/ujian-user/{id}/mulai
+Authorization: Bearer {access_token}
+```
+
+**Response:**
+```json
+{
+    "success": true,
+    "message": "Ujian started successfully",
+    "data": {
+        "id": 1,
+        "trx_ujian_id": 1,
+        "mst_siswa_id": 1,
+        "waktu_mulai": "2024-01-15T10:00:00.000000Z",
+        "status": 2,
+        "sisa_waktu": 5400
+    }
+}
+```
+
+#### Selesaikan Ujian
+```http
+POST /api/v1/akademik/ujian-user/{id}/selesaikan
+Authorization: Bearer {access_token}
+```
+
+**Response:**
+```json
+{
+    "success": true,
+    "message": "Ujian completed successfully",
+    "data": {
+        "id": 1,
+        "trx_ujian_id": 1,
+        "mst_siswa_id": 1,
+        "waktu_mulai": "2024-01-15T10:00:00.000000Z",
+        "waktu_selesai": "2024-01-15T11:30:00.000000Z",
+        "status": 3,
+        "total_benar": 8,
+        "total_salah": 2,
+        "nilai_akhir": 80.00
+    }
+}
+```
+
+#### Delete Ujian User (Soft Delete)
+```http
+DELETE /api/v1/akademik/ujian-user/{id}
+Authorization: Bearer {access_token}
+```
+
+### Ujian Jawaban (Jawaban Siswa) Endpoints
+
+Requires authentication.
+
+#### List All Ujian Jawaban
+```http
+GET /api/v1/akademik/ujian-jawaban
+Authorization: Bearer {access_token}
+```
+
+**Query Parameters:**
+- `trx_ujian_user_id` - Filter by ujian user
+- `mst_soal_id` - Filter by soal
+- `per_page` - Items per page (default: 15)
+
+#### Create/Update Jawaban
+```http
+POST /api/v1/akademik/ujian-jawaban
+Authorization: Bearer {access_token}
+Content-Type: application/json
+
+{
+    "trx_ujian_user_id": 1,
+    "mst_soal_id": 1,
+    "mst_soal_opsi_id": 1,
+    "ragu_ragu": false
+}
+```
+
+**Note:** If answer already exists for the same question, it will be updated.
+
+#### Get Single Jawaban
+```http
+GET /api/v1/akademik/ujian-jawaban/{id}
+Authorization: Bearer {access_token}
+```
+
+#### Update Jawaban
+```http
+PUT /api/v1/akademik/ujian-jawaban/{id}
+Authorization: Bearer {access_token}
+Content-Type: application/json
+
+{
+    "mst_soal_opsi_id": 2,
+    "ragu_ragu": true
+}
+```
+
+#### Delete Jawaban (Soft Delete)
+```http
+DELETE /api/v1/akademik/ujian-jawaban/{id}
 Authorization: Bearer {access_token}
 ```
 
@@ -958,11 +1185,13 @@ Content-Type: application/json
 }
 ```
 
-#### Delete Nilai
+#### Delete Nilai (Soft Delete)
 ```http
 DELETE /api/v1/akademik/nilai/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 #### Get Nilai by Siswa
 ```http
@@ -1036,11 +1265,13 @@ Content-Type: application/json
 }
 ```
 
-#### Delete Ranking
+#### Delete Ranking (Soft Delete)
 ```http
 DELETE /api/v1/akademik/ranking/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 #### Get Ranking by Kelas
 ```http
@@ -1089,11 +1320,13 @@ Content-Type: application/json
 }
 ```
 
-#### Delete Rapor
+#### Delete Rapor (Soft Delete)
 ```http
 DELETE /api/v1/akademik/rapor/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 #### Get Rapor by Siswa
 ```http
@@ -1152,11 +1385,13 @@ Content-Type: application/json
 }
 ```
 
-#### Delete User
+#### Delete User (Soft Delete)
 ```http
 DELETE /api/v1/admin/users/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 #### Toggle User Active Status
 ```http
@@ -1213,11 +1448,13 @@ Content-Type: application/json
 }
 ```
 
-#### Delete Role
+#### Delete Role (Soft Delete)
 ```http
 DELETE /api/v1/admin/roles/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 #### Get Role Permissions
 ```http
@@ -1274,10 +1511,112 @@ Content-Type: application/json
 }
 ```
 
-#### Delete Permission
+#### Delete Permission (Soft Delete)
 ```http
 DELETE /api/v1/admin/permissions/{id}
 Authorization: Bearer {access_token}
+```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
+
+### Menu Management
+
+#### List All Menus
+```http
+GET /api/v1/admin/menus
+Authorization: Bearer {access_token}
+```
+
+**Query Parameters:**
+- `is_active` - Filter by active status
+- `root_only` - Get only root menus (no parent)
+- `with_children` - Get menu tree with children
+- `per_page` - Items per page (default: 15)
+
+#### Create Menu
+```http
+POST /api/v1/admin/menus
+Authorization: Bearer {access_token}
+Content-Type: application/json
+
+{
+    "parent_id": null,
+    "sys_permission_id": 1,
+    "nama_menu": "Manajemen Users",
+    "url": "/admin/users",
+    "icon": "fa-users",
+    "urutan": 1,
+    "is_active": true
+}
+```
+
+#### Get Single Menu
+```http
+GET /api/v1/admin/menus/{id}
+Authorization: Bearer {access_token}
+```
+
+#### Update Menu
+```http
+PUT /api/v1/admin/menus/{id}
+Authorization: Bearer {access_token}
+Content-Type: application/json
+
+{
+    "nama_menu": "Manajemen Users Updated",
+    "urutan": 2
+}
+```
+
+#### Delete Menu (Soft Delete)
+```http
+DELETE /api/v1/admin/menus/{id}
+Authorization: Bearer {access_token}
+```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
+
+#### Get Menu Tree
+```http
+GET /api/v1/admin/menus/tree
+Authorization: Bearer {access_token}
+```
+
+**Response:**
+```json
+{
+    "success": true,
+    "message": "Menu tree retrieved successfully",
+    "data": [
+        {
+            "id": 1,
+            "nama_menu": "Dashboard",
+            "url": "/dashboard",
+            "icon": "fa-home",
+            "urutan": 1,
+            "is_active": true,
+            "sub_menus": []
+        },
+        {
+            "id": 2,
+            "nama_menu": "Akademik",
+            "url": "/akademik",
+            "icon": "fa-book",
+            "urutan": 2,
+            "is_active": true,
+            "sub_menus": [
+                {
+                    "id": 3,
+                    "nama_menu": "Ujian",
+                    "url": "/akademik/ujian",
+                    "icon": "fa-clipboard",
+                    "urutan": 1,
+                    "is_active": true
+                }
+            ]
+        }
+    ]
+}
 ```
 
 ---
@@ -1331,11 +1670,13 @@ Content-Type: application/json
 }
 ```
 
-#### Delete Tarif SPP
+#### Delete Tarif SPP (Soft Delete)
 ```http
 DELETE /api/v1/keuangan/tarif-spp/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 ### Pembayaran SPP Endpoints
 
@@ -1404,11 +1745,13 @@ Content-Type: application/json
 }
 ```
 
-#### Delete Pembayaran SPP
+#### Delete Pembayaran SPP (Soft Delete)
 ```http
 DELETE /api/v1/keuangan/pembayaran-spp/{id}
 Authorization: Bearer {access_token}
 ```
+
+> Records are soft-deleted (marked as deleted_at timestamp) and can be restored.
 
 ---
 
