@@ -16,6 +16,7 @@ use App\Http\Controllers\Api\V1\MapelController;
 use App\Http\Controllers\Api\V1\NilaiController;
 use App\Http\Controllers\Api\V1\PembayaranSppController;
 use App\Http\Controllers\Api\V1\PeminjamanBukuController;
+use App\Http\Controllers\Api\V1\PresensiController;
 use App\Http\Controllers\Api\V1\PermissionController;
 use App\Http\Controllers\Api\V1\RankingController;
 use App\Http\Controllers\Api\V1\RaporController;
@@ -309,6 +310,20 @@ Route::prefix('v1')->group(function () {
                 Route::get('/siswa/{siswaId}', [TugasSiswaController::class, 'bySiswa'])->name('api.v1.tugas-siswa.by-siswa');
                 Route::post('/{id}/nilai', [TugasSiswaController::class, 'nilai'])->name('api.v1.tugas-siswa.nilai');
                 Route::post('/siswa/{siswaId}/tugas/{tugasId}/kumpulkan', [TugasSiswaController::class, 'kumpulkan'])->name('api.v1.tugas-siswa.kumpulkan');
+            });
+
+            // Presensi (Presensi Siswa per Mapel)
+            Route::prefix('presensi')->group(function () {
+                Route::get('/', [PresensiController::class, 'index'])->name('api.v1.presensi.index');
+                Route::post('/', [PresensiController::class, 'store'])->name('api.v1.presensi.store');
+                Route::get('/{id}', [PresensiController::class, 'show'])->name('api.v1.presensi.show');
+                Route::put('/{id}', [PresensiController::class, 'update'])->name('api.v1.presensi.update');
+                Route::delete('/{id}', [PresensiController::class, 'destroy'])->name('api.v1.presensi.destroy');
+                Route::get('/siswa/{siswaId}', [PresensiController::class, 'bySiswa'])->name('api.v1.presensi.by-siswa');
+                Route::get('/guru-mapel/{guruMapelId}', [PresensiController::class, 'byGuruMapel'])->name('api.v1.presensi.by-guru-mapel');
+                Route::get('/date', [PresensiController::class, 'byDate'])->name('api.v1.presensi.by-date');
+                Route::get('/siswa/{siswaId}/summary', [PresensiController::class, 'summary'])->name('api.v1.presensi.summary');
+                Route::post('/bulk', [PresensiController::class, 'bulkStore'])->name('api.v1.presensi.bulk');
             });
         });
 
