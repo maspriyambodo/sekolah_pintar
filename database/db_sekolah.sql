@@ -11,7 +11,7 @@
  Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 17/02/2026 22:53:52
+ Date: 17/02/2026 23:31:40
 */
 
 SET NAMES utf8mb4;
@@ -193,8 +193,8 @@ CREATE TABLE `mst_guru_mapel` (
 DROP TABLE IF EXISTS `mst_kelas`;
 CREATE TABLE `mst_kelas` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `nama_kelas` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tingkat` int DEFAULT NULL,
+  `nama_kelas` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tingkat` tinyint unsigned DEFAULT NULL COMMENT '1-12 untuk Kelas X-XII',
   `tahun_ajaran` varchar(9) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `wali_guru_id` bigint unsigned DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -211,7 +211,7 @@ CREATE TABLE `mst_kelas` (
 DROP TABLE IF EXISTS `mst_mapel`;
 CREATE TABLE `mst_mapel` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `kode_mapel` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode_mapel` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `nama_mapel` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -314,14 +314,14 @@ CREATE TABLE `mst_soal_opsi` (
   `mst_soal_id` bigint unsigned NOT NULL,
   `teks_opsi` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_jawaban` tinyint NOT NULL DEFAULT '0' COMMENT '1 jika ini kunci jawaban',
-  `urutan` char(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'A, B, C, D, atau E',
+  `urutan` tinyint unsigned DEFAULT NULL COMMENT '1=A, 2=B, 3=C, dst',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `mst_soal_opsi_mst_soal_id_foreign` (`mst_soal_id`),
   CONSTRAINT `mst_soal_opsi_mst_soal_id_foreign` FOREIGN KEY (`mst_soal_id`) REFERENCES `mst_soal` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT  =49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for mst_tarif_spp
@@ -881,7 +881,7 @@ CREATE TABLE `trx_pembayaran_spp` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `mst_siswa_id` bigint unsigned NOT NULL,
   `mst_tarif_spp_id` bigint unsigned NOT NULL,
-  `bulan` tinyint NOT NULL COMMENT '1=Januari, 12=Desember',
+  `bulan` tinyint unsigned NOT NULL COMMENT '1=Januari, 12=Desember',
   `tahun` year NOT NULL,
   `tanggal_bayar` date NOT NULL,
   `jumlah_bayar` decimal(10,2) NOT NULL,
@@ -1079,7 +1079,7 @@ CREATE TABLE `trx_ujian_user` (
   `waktu_mulai` timestamp NULL DEFAULT NULL,
   `waktu_selesai` timestamp NULL DEFAULT NULL,
   `status` tinyint unsigned NOT NULL DEFAULT '1' COMMENT '1: Belum mulai, 2: Mengerjakan, 3: Selesai',
-  `sisa_waktu` int DEFAULT NULL COMMENT 'Dalam hitungan detik',
+  `sisa_waktu` int unsigned DEFAULT NULL COMMENT 'Dalam hitungan detik',
   `total_benar` int NOT NULL DEFAULT '0',
   `total_salah` int NOT NULL DEFAULT '0',
   `nilai_akhir` decimal(5,2) NOT NULL DEFAULT '0.00',
