@@ -11,7 +11,7 @@
  Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 17/02/2026 00:38:14
+ Date: 17/02/2026 17:33:17
 */
 
 SET NAMES utf8mb4;
@@ -22,8 +22,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `cache`;
 CREATE TABLE `cache` (
-  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `key` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `expiration` int NOT NULL,
   PRIMARY KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -33,8 +33,8 @@ CREATE TABLE `cache` (
 -- ----------------------------
 DROP TABLE IF EXISTS `cache_locks`;
 CREATE TABLE `cache_locks` (
-  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `owner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `key` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `owner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `expiration` int NOT NULL,
   PRIMARY KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -45,11 +45,11 @@ CREATE TABLE `cache_locks` (
 DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE `failed_jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
@@ -60,13 +60,13 @@ CREATE TABLE `failed_jobs` (
 -- ----------------------------
 DROP TABLE IF EXISTS `job_batches`;
 CREATE TABLE `job_batches` (
-  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `total_jobs` int NOT NULL,
   `pending_jobs` int NOT NULL,
   `failed_jobs` int NOT NULL,
-  `failed_job_ids` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `options` text COLLATE utf8mb4_unicode_ci,
+  `failed_job_ids` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `options` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `cancelled_at` int DEFAULT NULL,
   `created_at` int NOT NULL,
   `finished_at` int DEFAULT NULL,
@@ -79,8 +79,8 @@ CREATE TABLE `job_batches` (
 DROP TABLE IF EXISTS `jobs`;
 CREATE TABLE `jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `queue` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `attempts` tinyint unsigned NOT NULL,
   `reserved_at` int unsigned DEFAULT NULL,
   `available_at` int unsigned NOT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE `jobs` (
 DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -106,7 +106,7 @@ CREATE TABLE `migrations` (
 DROP TABLE IF EXISTS `mst_bk_jenis`;
 CREATE TABLE `mst_bk_jenis` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE `mst_bk_jenis` (
 DROP TABLE IF EXISTS `mst_bk_kategori`;
 CREATE TABLE `mst_bk_kategori` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -132,10 +132,10 @@ CREATE TABLE `mst_bk_kategori` (
 DROP TABLE IF EXISTS `mst_buku`;
 CREATE TABLE `mst_buku` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `isbn` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `judul` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `penulis` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `penerbit` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `isbn` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `judul` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `penulis` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `penerbit` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tahun` int DEFAULT NULL,
   `stok` int NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -151,15 +151,15 @@ DROP TABLE IF EXISTS `mst_guru`;
 CREATE TABLE `mst_guru` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `sys_user_id` bigint unsigned NOT NULL,
-  `nip` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nuptk` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nip` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nuptk` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `jenis_kelamin` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori jenis_kelamin',
   `tanggal_lahir` date DEFAULT NULL,
-  `alamat` text COLLATE utf8mb4_unicode_ci,
+  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pendidikan_terakhir` tinyint DEFAULT NULL COMMENT 'Referensi ke sys_references dengan kategori pendidikan_terakhir',
-  `no_hp` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_hp` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -193,9 +193,9 @@ CREATE TABLE `mst_guru_mapel` (
 DROP TABLE IF EXISTS `mst_kelas`;
 CREATE TABLE `mst_kelas` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `nama_kelas` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nama_kelas` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tingkat` int DEFAULT NULL,
-  `tahun_ajaran` varchar(9) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tahun_ajaran` varchar(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `wali_guru_id` bigint unsigned DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -211,8 +211,8 @@ CREATE TABLE `mst_kelas` (
 DROP TABLE IF EXISTS `mst_mapel`;
 CREATE TABLE `mst_mapel` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `kode_mapel` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nama_mapel` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode_mapel` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_mapel` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -227,11 +227,11 @@ DROP TABLE IF EXISTS `mst_siswa`;
 CREATE TABLE `mst_siswa` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `sys_user_id` bigint unsigned NOT NULL,
-  `nis` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nis` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `jenis_kelamin` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori jenis_kelamin',
   `tanggal_lahir` date DEFAULT NULL,
-  `alamat` text COLLATE utf8mb4_unicode_ci,
+  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `mst_kelas_id` bigint unsigned DEFAULT NULL,
   `status` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori status_siswa',
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -273,10 +273,10 @@ DROP TABLE IF EXISTS `mst_soal`;
 CREATE TABLE `mst_soal` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `mst_mapel_id` bigint unsigned NOT NULL,
-  `pertanyaan` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tipe` enum('pilihan_ganda','essay') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pilihan_ganda',
-  `tingkat_kesulitan` enum('mudah','sedang','sulit') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'sedang',
-  `media_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Path untuk gambar/audio soal',
+  `pertanyaan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipe` enum('pilihan_ganda','essay') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pilihan_ganda',
+  `tingkat_kesulitan` enum('mudah','sedang','sulit') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'sedang',
+  `media_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Path untuk gambar/audio soal',
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -292,9 +292,9 @@ DROP TABLE IF EXISTS `mst_soal_opsi`;
 CREATE TABLE `mst_soal_opsi` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `mst_soal_id` bigint unsigned NOT NULL,
-  `teks_opsi` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `teks_opsi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_jawaban` tinyint NOT NULL DEFAULT '0' COMMENT '1 jika ini kunci jawaban',
-  `urutan` char(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'A, B, C, D, atau E',
+  `urutan` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'A, B, C, D, atau E',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -309,9 +309,9 @@ DROP TABLE IF EXISTS `mst_tarif_spp`;
 CREATE TABLE `mst_tarif_spp` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `mst_kelas_id` bigint unsigned DEFAULT NULL,
-  `tahun_ajaran` varchar(9) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Contoh: 2023/2024',
+  `tahun_ajaran` varchar(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Contoh: 2023/2024',
   `nominal` decimal(10,2) NOT NULL DEFAULT '0.00',
-  `keterangan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `keterangan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -321,15 +321,38 @@ CREATE TABLE `mst_tarif_spp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
+-- Table structure for mst_tugas
+-- ----------------------------
+DROP TABLE IF EXISTS `mst_tugas`;
+CREATE TABLE `mst_tugas` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `mst_guru_mapel_id` bigint unsigned NOT NULL COMMENT 'Relasi ke guru & mapel',
+  `mst_kelas_id` bigint unsigned NOT NULL COMMENT 'Target kelas',
+  `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deskripsi` text COLLATE utf8mb4_unicode_ci COMMENT 'Instruksi tugas',
+  `file_lampiran` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Path file soal jika ada',
+  `tenggat_waktu` datetime NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1: Aktif, 0: Draft/Selesai',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `mst_tugas_guru_mapel_foreign` (`mst_guru_mapel_id`),
+  KEY `mst_tugas_kelas_foreign` (`mst_kelas_id`),
+  CONSTRAINT `mst_tugas_guru_mapel_foreign` FOREIGN KEY (`mst_guru_mapel_id`) REFERENCES `mst_guru_mapel` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `mst_tugas_kelas_foreign` FOREIGN KEY (`mst_kelas_id`) REFERENCES `mst_kelas` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
 -- Table structure for mst_wali
 -- ----------------------------
 DROP TABLE IF EXISTS `mst_wali`;
 CREATE TABLE `mst_wali` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `sys_user_id` bigint unsigned NOT NULL,
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `no_hp` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `alamat` text COLLATE utf8mb4_unicode_ci,
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_hp` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -345,9 +368,9 @@ DROP TABLE IF EXISTS `mst_wali_murid`;
 CREATE TABLE `mst_wali_murid` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `sys_user_id` bigint unsigned NOT NULL,
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `no_hp` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `alamat` text COLLATE utf8mb4_unicode_ci,
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_hp` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -361,8 +384,8 @@ CREATE TABLE `mst_wali_murid` (
 -- ----------------------------
 DROP TABLE IF EXISTS `password_reset_tokens`;
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -372,11 +395,11 @@ CREATE TABLE `password_reset_tokens` (
 -- ----------------------------
 DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE `sessions` (
-  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint unsigned DEFAULT NULL,
-  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_agent` text COLLATE utf8mb4_unicode_ci,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ip_address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_activity` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `sessions_user_id_index` (`user_id`)
@@ -389,13 +412,13 @@ DROP TABLE IF EXISTS `sys_activity_logs`;
 CREATE TABLE `sys_activity_logs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `sys_user_id` bigint unsigned DEFAULT NULL,
-  `action` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `module` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `reference_table` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `action` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `module` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `reference_table` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `reference_id` bigint unsigned DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_agent` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `ip_address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_logs_user` (`sys_user_id`,`created_at`),
@@ -410,10 +433,10 @@ DROP TABLE IF EXISTS `sys_error_logs`;
 CREATE TABLE `sys_error_logs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `level` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori level_error',
-  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `line` int DEFAULT NULL,
-  `trace` text COLLATE utf8mb4_unicode_ci,
+  `trace` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -425,10 +448,10 @@ DROP TABLE IF EXISTS `sys_login_logs`;
 CREATE TABLE `sys_login_logs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `sys_user_id` bigint unsigned DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori status_login',
-  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_agent` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ip_address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `login_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `sys_login_logs_sys_user_id_foreign` (`sys_user_id`),
@@ -443,9 +466,9 @@ CREATE TABLE `sys_menus` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` bigint unsigned DEFAULT NULL COMMENT 'ID menu induk untuk sub-menu',
   `sys_permission_id` bigint unsigned DEFAULT NULL COMMENT 'Relasi ke permission untuk akses menu',
-  `nama_menu` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `icon` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Class icon (misal: fa-user, bi-grid)',
+  `nama_menu` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icon` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Class icon (misal: fa-user, bi-grid)',
   `urutan` int NOT NULL DEFAULT '0',
   `is_active` tinyint NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -463,9 +486,9 @@ CREATE TABLE `sys_menus` (
 DROP TABLE IF EXISTS `sys_permissions`;
 CREATE TABLE `sys_permissions` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `code` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `module` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `code` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `module` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -478,9 +501,9 @@ CREATE TABLE `sys_permissions` (
 DROP TABLE IF EXISTS `sys_references`;
 CREATE TABLE `sys_references` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `kategori` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Contoh: JENIS_KELAMIN, STATUS_SISWA, STATUS_BAYAR',
-  `kode` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Contoh: L, P, aktif, lunas',
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Label yang muncul di UI',
+  `kategori` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Contoh: JENIS_KELAMIN, STATUS_SISWA, STATUS_BAYAR',
+  `kode` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Contoh: L, P, aktif, lunas',
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Label yang muncul di UI',
   `urutan` int NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -512,9 +535,9 @@ CREATE TABLE `sys_role_permissions` (
 DROP TABLE IF EXISTS `sys_roles`;
 CREATE TABLE `sys_roles` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `code` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
+  `code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -544,9 +567,9 @@ CREATE TABLE `sys_user_roles` (
 DROP TABLE IF EXISTS `sys_users`;
 CREATE TABLE `sys_users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `role` tinyint NOT NULL DEFAULT '3' COMMENT 'Referensi ke sys_roles dengan id 2=guru, 3=siswa, 4=wali',
   `is_active` tinyint NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -565,7 +588,7 @@ CREATE TABLE `trx_absensi_guru` (
   `mst_guru_id` bigint unsigned DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `status` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori status_absensi',
-  `keterangan` text COLLATE utf8mb4_unicode_ci,
+  `keterangan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -583,7 +606,7 @@ CREATE TABLE `trx_absensi_siswa` (
   `mst_siswa_id` bigint unsigned DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `status` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori status_absensi',
-  `keterangan` text COLLATE utf8mb4_unicode_ci,
+  `keterangan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -601,8 +624,8 @@ DROP TABLE IF EXISTS `trx_bk_hasil`;
 CREATE TABLE `trx_bk_hasil` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `trx_bk_kasus_id` bigint unsigned DEFAULT NULL,
-  `hasil` text COLLATE utf8mb4_unicode_ci,
-  `rekomendasi` text COLLATE utf8mb4_unicode_ci,
+  `hasil` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `rekomendasi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -621,8 +644,8 @@ CREATE TABLE `trx_bk_kasus` (
   `mst_guru_id` bigint unsigned DEFAULT NULL,
   `mst_bk_kategori_id` bigint unsigned DEFAULT NULL,
   `mst_bk_jenis_id` bigint unsigned DEFAULT NULL,
-  `judul_kasus` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `deskripsi_masalah` text COLLATE utf8mb4_unicode_ci,
+  `judul_kasus` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `deskripsi_masalah` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `status` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori status_bk',
   `tanggal_mulai` date DEFAULT NULL,
   `tanggal_selesai` date DEFAULT NULL,
@@ -647,8 +670,8 @@ DROP TABLE IF EXISTS `trx_bk_lampiran`;
 CREATE TABLE `trx_bk_lampiran` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `trx_bk_kasus_id` bigint unsigned NOT NULL,
-  `file_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `keterangan` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `keterangan` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -666,7 +689,7 @@ CREATE TABLE `trx_bk_sesi` (
   `trx_bk_kasus_id` bigint unsigned DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `metode` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori metode_bk',
-  `catatan` text COLLATE utf8mb4_unicode_ci,
+  `catatan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -682,7 +705,7 @@ DROP TABLE IF EXISTS `trx_bk_tindakan`;
 CREATE TABLE `trx_bk_tindakan` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `trx_bk_kasus_id` bigint unsigned DEFAULT NULL,
-  `deskripsi_tindakan` text COLLATE utf8mb4_unicode_ci,
+  `deskripsi_tindakan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -744,7 +767,7 @@ CREATE TABLE `trx_pembayaran_spp` (
   `jumlah_bayar` decimal(10,2) NOT NULL,
   `status` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori status_bayar',
   `metode_pembayaran` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori metode_pembayaran',
-  `keterangan` text COLLATE utf8mb4_unicode_ci,
+  `keterangan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `petugas_id` bigint unsigned DEFAULT NULL COMMENT 'User yang mencatat pembayaran',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -806,7 +829,7 @@ CREATE TABLE `trx_rapor` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `mst_siswa_id` bigint unsigned DEFAULT NULL,
   `semester` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori semester',
-  `tahun_ajaran` varchar(9) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tahun_ajaran` varchar(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `total_nilai` decimal(6,2) DEFAULT NULL,
   `rata_rata` decimal(5,2) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -834,6 +857,30 @@ CREATE TABLE `trx_rapor_detail` (
   KEY `trx_rapor_detail_mst_mapel_id_foreign` (`mst_mapel_id`),
   CONSTRAINT `trx_rapor_detail_mst_mapel_id_foreign` FOREIGN KEY (`mst_mapel_id`) REFERENCES `mst_mapel` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `trx_rapor_detail_trx_rapor_id_foreign` FOREIGN KEY (`trx_rapor_id`) REFERENCES `trx_rapor` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for trx_tugas_siswa
+-- ----------------------------
+DROP TABLE IF EXISTS `trx_tugas_siswa`;
+CREATE TABLE `trx_tugas_siswa` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `mst_tugas_id` bigint unsigned NOT NULL,
+  `mst_siswa_id` bigint unsigned NOT NULL,
+  `jawaban_teks` text COLLATE utf8mb4_unicode_ci COMMENT 'Jika tugas diketik langsung',
+  `file_siswa` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Path file jawaban siswa',
+  `waktu_kumpul` timestamp NULL DEFAULT NULL,
+  `nilai` decimal(5,2) DEFAULT '0.00',
+  `catatan_guru` text COLLATE utf8mb4_unicode_ci COMMENT 'Feedback dari guru',
+  `status_kumpul` tinyint unsigned NOT NULL DEFAULT '0' COMMENT '0: Belum, 1: Tepat Waktu, 2: Terlambat',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `trx_tugas_siswa_tugas_foreign` (`mst_tugas_id`),
+  KEY `trx_tugas_siswa_siswa_foreign` (`mst_siswa_id`),
+  CONSTRAINT `trx_tugas_siswa_siswa_foreign` FOREIGN KEY (`mst_siswa_id`) REFERENCES `mst_siswa` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `trx_tugas_siswa_tugas_foreign` FOREIGN KEY (`mst_tugas_id`) REFERENCES `mst_tugas` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
@@ -866,7 +913,7 @@ CREATE TABLE `trx_ujian_jawaban` (
   `trx_ujian_user_id` bigint unsigned NOT NULL,
   `mst_soal_id` bigint unsigned NOT NULL,
   `mst_soal_opsi_id` bigint unsigned DEFAULT NULL COMMENT 'ID opsi yang dipilih jika pilihan ganda',
-  `jawaban_teks` text COLLATE utf8mb4_unicode_ci COMMENT 'Jika soal essay',
+  `jawaban_teks` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT 'Jika soal essay',
   `is_benar` tinyint NOT NULL DEFAULT '0',
   `ragu_ragu` tinyint NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
