@@ -26,6 +26,9 @@ use App\Http\Controllers\Api\V1\RaporController;
 use App\Http\Controllers\Api\V1\RoleController;
 use App\Http\Controllers\Api\V1\SiswaController;
 use App\Http\Controllers\Api\V1\SoalsController;
+use App\Http\Controllers\Api\V1\SpkHasilController;
+use App\Http\Controllers\Api\V1\SpkKriteriaController;
+use App\Http\Controllers\Api\V1\SpkPenilaianController;
 use App\Http\Controllers\Api\V1\SysActivityLogController;
 use App\Http\Controllers\Api\V1\SysMenuController;
 use App\Http\Controllers\Api\V1\TarifSppController;
@@ -440,6 +443,40 @@ Route::prefix('v1')->group(function () {
                 Route::get('/{id}', [PembayaranSppController::class, 'show'])->name('api.v1.keuangan.pembayaran-spp.show');
                 Route::put('/{id}', [PembayaranSppController::class, 'update'])->name('api.v1.keuangan.pembayaran-spp.update');
                 Route::delete('/{id}', [PembayaranSppController::class, 'destroy'])->name('api.v1.keuangan.pembayaran-spp.destroy');
+            });
+        });
+
+        // SPK Routes - Admin & Guru access
+        Route::middleware([RoleMiddleware::class . ':admin,guru'])->group(function () {
+            // SPK Kriteria
+            Route::prefix('spk/kriteria')->group(function () {
+                Route::get('/', [SpkKriteriaController::class, 'index'])->name('api.v1.spk.kriteria.index');
+                Route::post('/', [SpkKriteriaController::class, 'store'])->name('api.v1.spk.kriteria.store');
+                Route::get('/{id}', [SpkKriteriaController::class, 'show'])->name('api.v1.spk.kriteria.show');
+                Route::put('/{id}', [SpkKriteriaController::class, 'update'])->name('api.v1.spk.kriteria.update');
+                Route::delete('/{id}', [SpkKriteriaController::class, 'destroy'])->name('api.v1.spk.kriteria.destroy');
+                Route::get('/total-bobot', [SpkKriteriaController::class, 'totalBobot'])->name('api.v1.spk.kriteria.total-bobot');
+            });
+
+            // SPK Penilaian
+            Route::prefix('spk/penilaian')->group(function () {
+                Route::get('/', [SpkPenilaianController::class, 'index'])->name('api.v1.spk.penilaian.index');
+                Route::post('/', [SpkPenilaianController::class, 'store'])->name('api.v1.spk.penilaian.store');
+                Route::get('/{id}', [SpkPenilaianController::class, 'show'])->name('api.v1.spk.penilaian.show');
+                Route::put('/{id}', [SpkPenilaianController::class, 'update'])->name('api.v1.spk.penilaian.update');
+                Route::delete('/{id}', [SpkPenilaianController::class, 'destroy'])->name('api.v1.spk.penilaian.destroy');
+                Route::get('/siswa/{siswaId}', [SpkPenilaianController::class, 'bySiswa'])->name('api.v1.spk.penilaian.by-siswa');
+                Route::get('/kriteria/{kriteriaId}', [SpkPenilaianController::class, 'byKriteria'])->name('api.v1.spk.penilaian.by-kriteria');
+            });
+
+            // SPK Hasil
+            Route::prefix('spk/hasil')->group(function () {
+                Route::get('/', [SpkHasilController::class, 'index'])->name('api.v1.spk.hasil.index');
+                Route::post('/calculate', [SpkHasilController::class, 'calculate'])->name('api.v1.spk.hasil.calculate');
+                Route::get('/{id}', [SpkHasilController::class, 'show'])->name('api.v1.spk.hasil.show');
+                Route::delete('/{id}', [SpkHasilController::class, 'destroy'])->name('api.v1.spk.hasil.destroy');
+                Route::get('/periode/{periode}', [SpkHasilController::class, 'byPeriode'])->name('api.v1.spk.hasil.by-periode');
+                Route::get('/siswa/{siswaId}', [SpkHasilController::class, 'bySiswa'])->name('api.v1.spk.hasil.by-siswa');
             });
         });
     });
