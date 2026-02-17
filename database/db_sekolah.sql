@@ -11,7 +11,7 @@
  Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 17/02/2026 17:33:17
+ Date: 17/02/2026 17:56:10
 */
 
 SET NAMES utf8mb4;
@@ -219,6 +219,22 @@ CREATE TABLE `mst_mapel` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `mst_mapel_kode_mapel_unique` (`kode_mapel`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for mst_materi
+-- ----------------------------
+DROP TABLE IF EXISTS `mst_materi`;
+CREATE TABLE `mst_materi` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `mst_guru_mapel_id` bigint unsigned NOT NULL,
+  `judul` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `konten` text COLLATE utf8mb4_general_ci,
+  `file_path` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `mst_guru_mapel_id` (`mst_guru_mapel_id`),
+  CONSTRAINT `mst_materi_ibfk_1` FOREIGN KEY (`mst_guru_mapel_id`) REFERENCES `mst_guru_mapel` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- ----------------------------
 -- Table structure for mst_siswa
