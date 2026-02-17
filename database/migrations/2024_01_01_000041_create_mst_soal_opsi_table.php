@@ -13,7 +13,7 @@ return new class extends Migration
             $table->unsignedBigInteger('mst_soal_id');
             $table->text('teks_opsi');
             $table->tinyInteger('is_jawaban')->default(0)->comment('1 jika ini kunci jawaban');
-            $table->char('urutan', 1)->nullable()->comment('A, B, C, D, atau E');
+            $table->unsignedTinyInteger('urutan')->nullable()->comment('1=A, 2=B, 3=C, dst');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();

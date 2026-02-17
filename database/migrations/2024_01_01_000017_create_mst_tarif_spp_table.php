@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('mst_tarif_spp', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('mst_kelas_id')->nullable();
-            $table->string('tahun_ajaran', 9)->comment('Contoh: 2023/2024');
+            $table->string('tahun_ajaran', 9)->notNull()->comment('Contoh: 2023/2024');
             $table->decimal('nominal', 10, 2)->default(0.00);
             $table->string('keterangan', 255)->nullable();
             $table->timestamp('created_at')->nullable();

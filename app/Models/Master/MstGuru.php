@@ -37,6 +37,9 @@ class MstGuru extends Model
     protected $casts = [
         'tanggal_lahir' => 'date',
         'jenis_kelamin' => 'integer',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'deleted_at' => 'datetime',
     ];
 
     public function user(): BelongsTo

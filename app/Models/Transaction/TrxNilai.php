@@ -28,6 +28,9 @@ class TrxNilai extends Model
 
     protected $casts = [
         'nilai' => 'decimal:2',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'deleted_at' => 'datetime',
     ];
 
     public function ujian(): BelongsTo

@@ -10,8 +10,8 @@ return new class extends Migration
     {
         Schema::create('mst_kelas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_kelas', 20)->nullable();
-            $table->integer('tingkat')->nullable();
+            $table->string('nama_kelas', 50)->nullable();
+            $table->unsignedTinyInteger('tingkat')->nullable()->comment('1-12 untuk Kelas X-XII');
             $table->string('tahun_ajaran', 9)->nullable();
             $table->unsignedBigInteger('wali_guru_id')->nullable();
             $table->timestamp('created_at')->nullable();
