@@ -9,6 +9,7 @@ use App\Models\Master\MstBkKategori;
 use App\Models\Master\MstKelas;
 use App\Models\Master\MstMapel;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class MasterDataSeeder extends Seeder
 {
@@ -19,102 +20,114 @@ class MasterDataSeeder extends Seeder
         $this->seedBkJenis();
         $this->seedBkKategori();
 
-        $this->command->info('Master data seeded successfully!');
+        $this->command->info('Master data seeded successfully from JSON files!');
+    }
+
+    /**
+     * Load data from JSON file
+     */
+    private function loadJsonData(string $filename): array
+    {
+        $jsonPath = database_path('seeders/' . $filename);
+        
+        if (!File::exists($jsonPath)) {
+            $this->command->warn("Warning: {$filename} file not found!");
+            return [];
+        }
+
+        $jsonData = File::get($jsonPath);
+        $data = json_decode($jsonData, true);
+
+        if (!isset($data['RECORDS']) || !is_array($data['RECORDS'])) {
+            $this->command->warn("Warning: Invalid JSON format in {$filename}!");
+            return [];
+        }
+
+        return $data['RECORDS'];
     }
 
     private function seedKelas(): void
     {
-        $kelas = [
-            ['nama_kelas' => 'X IPA 1', 'tingkat' => 10, 'tahun_ajaran' => '2024/2025'],
-            ['nama_kelas' => 'X IPA 2', 'tingkat' => 10, 'tahun_ajaran' => '2024/2025'],
-            ['nama_kelas' => 'X IPS 1', 'tingkat' => 10, 'tahun_ajaran' => '2024/2025'],
-            ['nama_kelas' => 'XI IPA 1', 'tingkat' => 11, 'tahun_ajaran' => '2024/2025'],
-            ['nama_kelas' => 'XI IPA 2', 'tingkat' => 11, 'tahun_ajaran' => '2024/2025'],
-            ['nama_kelas' => 'XI IPS 1', 'tingkat' => 11, 'tahun_ajaran' => '2024/2025'],
-            ['nama_kelas' => 'XII IPA 1', 'tingkat' => 12, 'tahun_ajaran' => '2024/2025'],
-            ['nama_kelas' => 'XII IPA 2', 'tingkat' => 12, 'tahun_ajaran' => '2024/2025'],
-            ['nama_kelas' => 'XII IPS 1', 'tingkat' => 12, 'tahun_ajaran' => '2024/2025'],
-        ];
+        $records = $this->loadJsonData('mst_kelas.json');
+        
+        if (empty($records)) {
+            $this->command->info('No kelas data to seed (JSON file not found or empty)');
+            return;
+        }
 
-        foreach ($kelas as $k) {
+        foreach ($records as $k) {
             MstKelas::firstOrCreate(
                 ['nama_kelas' => $k['nama_kelas'], 'tahun_ajaran' => $k['tahun_ajaran']],
-                $k
+                [
+                    'nama_kelas' => $k['nama_kelas'],
+                    'tingkat' => $k['tingkat'],
+                    'tahun_ajaran' => $k['tahun_ajaran'],
+                    'wali_guru_id' => $k['wali_guru_id'] ?? null,
+                ]
             );
         }
 
-        $this->command->info('Kelas seeded!');
+        $this->command->info('Kelas seeded from JSON!');
     }
 
     private function seedMapel(): void
     {
-        $mapel = [
-            ['kode_mapel' => 'PAI', 'nama_mapel' => 'Pendidikan Agama Islam'],
-            ['kode_mapel' => 'PKN', 'nama_mapel' => 'Pendidikan Kewarganegaraan'],
-            ['kode_mapel' => 'BI', 'nama_mapel' => 'Bahasa Indonesia'],
-            ['kode_mapel' => 'BIG', 'nama_mapel' => 'Bahasa Inggris'],
-            ['kode_mapel' => 'MTK', 'nama_mapel' => 'Matematika'],
-            ['kode_mapel' => 'FIS', 'nama_mapel' => 'Fisika'],
-            ['kode_mapel' => 'KIM', 'nama_mapel' => 'Kimia'],
-            ['kode_mapel' => 'BIO', 'nama_mapel' => 'Biologi'],
-            ['kode_mapel' => 'SEJ', 'nama_mapel' => 'Sejarah'],
-            ['kode_mapel' => 'SOS', 'nama_mapel' => 'Sosiologi'],
-            ['kode_mapel' => 'EKO', 'nama_mapel' => 'Ekonomi'],
-            ['kode_mapel' => 'GEO', 'nama_mapel' => 'Geografi'],
-            ['kode_mapel' => 'SNB', 'nama_mapel' => 'Seni Budaya'],
-            ['kode_mapel' => 'PJOK', 'nama_mapel' => 'Pendidikan Jasmani dan Kesehatan'],
-            ['kode_mapel' => 'PKK', 'nama_mapel' => 'Prakarya dan Kewirausahaan'],
-            ['kode_mapel' => 'TIK', 'nama_mapel' => 'Teknologi Informasi dan Komunikasi'],
-        ];
+        $records = $this->loadJsonData('mst_mapel.json');
+        
+        if (empty($records)) {
+            $this->command->info('No mapel data to seed (JSON file not found or empty)');
+            return;
+        }
 
-        foreach ($mapel as $m) {
+        foreach ($records as $m) {
             MstMapel::firstOrCreate(
                 ['kode_mapel' => $m['kode_mapel']],
-                $m
+                [
+                    'kode_mapel' => $m['kode_mapel'],
+                    'nama_mapel' => $m['nama_mapel'],
+                ]
             );
         }
 
-        $this->command->info('Mata pelajaran seeded!');
+        $this->command->info('Mata pelajaran seeded from JSON!');
     }
 
     private function seedBkJenis(): void
     {
-        $jenis = [
-            ['nama' => 'Akademik'],
-            ['nama' => 'Perilaku'],
-            ['nama' => 'Sosial'],
-            ['nama' => 'Karakter'],
-            ['nama' => 'Karier'],
-            ['nama' => 'Pribadi'],
-        ];
-
-        foreach ($jenis as $j) {
-            MstBkJenis::firstOrCreate(['nama' => $j['nama']], $j);
+        $records = $this->loadJsonData('mst_bk_jenis.json');
+        
+        if (empty($records)) {
+            $this->command->info('No BK Jenis data to seed (JSON file not found or empty)');
+            return;
         }
 
-        $this->command->info('BK Jenis seeded!');
+        foreach ($records as $j) {
+            MstBkJenis::firstOrCreate(
+                ['nama' => $j['nama']],
+                ['nama' => $j['nama']]
+            );
+        }
+
+        $this->command->info('BK Jenis seeded from JSON!');
     }
 
     private function seedBkKategori(): void
     {
-        $kategori = [
-            ['nama' => 'Kesulitan Belajar'],
-            ['nama' => 'Masalah Disiplin'],
-            ['nama' => 'Kasus Bullying'],
-            ['nama' => 'Masalah Keluarga'],
-            ['nama' => 'Kecanduan Gadget'],
-            ['nama' => 'Masalah Teman Sebaya'],
-            ['nama' => 'Kecemasan'],
-            ['nama' => 'Depresi'],
-            ['nama' => 'Karier dan Masa Depan'],
-            ['nama' => 'Lainnya'],
-        ];
-
-        foreach ($kategori as $k) {
-            MstBkKategori::firstOrCreate(['nama' => $k['nama']], $k);
+        $records = $this->loadJsonData('mst_bk_kategori.json');
+        
+        if (empty($records)) {
+            $this->command->info('No BK Kategori data to seed (JSON file not found or empty)');
+            return;
         }
 
-        $this->command->info('BK Kategori seeded!');
+        foreach ($records as $k) {
+            MstBkKategori::firstOrCreate(
+                ['nama' => $k['nama']],
+                ['nama' => $k['nama']]
+            );
+        }
+
+        $this->command->info('BK Kategori seeded from JSON!');
     }
 
 }
