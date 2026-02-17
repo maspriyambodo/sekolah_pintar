@@ -26,6 +26,7 @@ use App\Http\Controllers\Api\V1\SysActivityLogController;
 use App\Http\Controllers\Api\V1\SysMenuController;
 use App\Http\Controllers\Api\V1\TarifSppController;
 use App\Http\Controllers\Api\V1\TugasController;
+use App\Http\Controllers\Api\V1\TugasSiswaController;
 use App\Http\Controllers\Api\V1\UjianController;
 use App\Http\Controllers\Api\V1\UjianJawabanController;
 use App\Http\Controllers\Api\V1\UjianUserController;
@@ -295,6 +296,19 @@ Route::prefix('v1')->group(function () {
                 Route::delete('/{id}', [TugasController::class, 'destroy'])->name('api.v1.tugas.destroy');
                 Route::get('/kelas/{kelasId}', [TugasController::class, 'byKelas'])->name('api.v1.tugas.by-kelas');
                 Route::get('/guru-mapel/{guruMapelId}', [TugasController::class, 'byGuruMapel'])->name('api.v1.tugas.by-guru-mapel');
+            });
+
+            // Tugas Siswa (Pengumpulan Tugas)
+            Route::prefix('tugas-siswa')->group(function () {
+                Route::get('/', [TugasSiswaController::class, 'index'])->name('api.v1.tugas-siswa.index');
+                Route::post('/', [TugasSiswaController::class, 'store'])->name('api.v1.tugas-siswa.store');
+                Route::get('/{id}', [TugasSiswaController::class, 'show'])->name('api.v1.tugas-siswa.show');
+                Route::put('/{id}', [TugasSiswaController::class, 'update'])->name('api.v1.tugas-siswa.update');
+                Route::delete('/{id}', [TugasSiswaController::class, 'destroy'])->name('api.v1.tugas-siswa.destroy');
+                Route::get('/tugas/{tugasId}', [TugasSiswaController::class, 'byTugas'])->name('api.v1.tugas-siswa.by-tugas');
+                Route::get('/siswa/{siswaId}', [TugasSiswaController::class, 'bySiswa'])->name('api.v1.tugas-siswa.by-siswa');
+                Route::post('/{id}/nilai', [TugasSiswaController::class, 'nilai'])->name('api.v1.tugas-siswa.nilai');
+                Route::post('/siswa/{siswaId}/tugas/{tugasId}/kumpulkan', [TugasSiswaController::class, 'kumpulkan'])->name('api.v1.tugas-siswa.kumpulkan');
             });
         });
 
