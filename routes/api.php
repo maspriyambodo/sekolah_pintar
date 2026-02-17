@@ -13,6 +13,8 @@ use App\Http\Controllers\Api\V1\FileUploadController;
 use App\Http\Controllers\Api\V1\ForumController;
 use App\Http\Controllers\Api\V1\GuruController;
 use App\Http\Controllers\Api\V1\KelasController;
+use App\Http\Controllers\Api\V1\LogAksesMateriController;
+use App\Http\Controllers\Api\V1\MateriController;
 use App\Http\Controllers\Api\V1\MapelController;
 use App\Http\Controllers\Api\V1\NilaiController;
 use App\Http\Controllers\Api\V1\PembayaranSppController;
@@ -337,6 +339,27 @@ Route::prefix('v1')->group(function () {
                 Route::get('/guru-mapel/{guruMapelId}/topics', [ForumController::class, 'topics'])->name('api.v1.forum.topics');
                 Route::get('/{id}/replies', [ForumController::class, 'replies'])->name('api.v1.forum.replies');
                 Route::get('/user/{userId}', [ForumController::class, 'byUser'])->name('api.v1.forum.by-user');
+            });
+
+            // Materi Pembelajaran
+            Route::prefix('materi')->group(function () {
+                Route::get('/', [MateriController::class, 'index'])->name('api.v1.materi.index');
+                Route::post('/', [MateriController::class, 'store'])->name('api.v1.materi.store');
+                Route::get('/{id}', [MateriController::class, 'show'])->name('api.v1.materi.show');
+                Route::put('/{id}', [MateriController::class, 'update'])->name('api.v1.materi.update');
+                Route::delete('/{id}', [MateriController::class, 'destroy'])->name('api.v1.materi.destroy');
+                Route::get('/guru-mapel/{guruMapelId}', [MateriController::class, 'byGuruMapel'])->name('api.v1.materi.by-guru-mapel');
+            });
+
+            // Log Akses Materi
+            Route::prefix('log-akses-materi')->group(function () {
+                Route::get('/', [LogAksesMateriController::class, 'index'])->name('api.v1.log-akses-materi.index');
+                Route::post('/', [LogAksesMateriController::class, 'store'])->name('api.v1.log-akses-materi.store');
+                Route::get('/{id}', [LogAksesMateriController::class, 'show'])->name('api.v1.log-akses-materi.show');
+                Route::put('/{id}/durasi', [LogAksesMateriController::class, 'updateDurasi'])->name('api.v1.log-akses-materi.update-durasi');
+                Route::get('/materi/{materiId}', [LogAksesMateriController::class, 'byMateri'])->name('api.v1.log-akses-materi.by-materi');
+                Route::get('/siswa/{siswaId}', [LogAksesMateriController::class, 'bySiswa'])->name('api.v1.log-akses-materi.by-siswa');
+                Route::get('/popular', [LogAksesMateriController::class, 'popular'])->name('api.v1.log-akses-materi.popular');
             });
         });
 
