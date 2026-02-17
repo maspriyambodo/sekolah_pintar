@@ -183,6 +183,42 @@ class RbacSeeder extends Seeder
             ['code' => 'pembayaran-spp.update', 'name' => 'Update Pembayaran SPP', 'module' => 'pembayaran-spp'],
             ['code' => 'pembayaran-spp.delete', 'name' => 'Delete Pembayaran SPP', 'module' => 'pembayaran-spp'],
             ['code' => 'pembayaran-spp.bayar', 'name' => 'Bayar SPP', 'module' => 'pembayaran-spp'],
+
+            // Forum permissions
+            ['code' => 'forum.view', 'name' => 'View Forum', 'module' => 'forum'],
+            ['code' => 'forum.create', 'name' => 'Create Forum', 'module' => 'forum'],
+            ['code' => 'forum.update', 'name' => 'Update Forum', 'module' => 'forum'],
+            ['code' => 'forum.delete', 'name' => 'Delete Forum', 'module' => 'forum'],
+
+            // Materi permissions
+            ['code' => 'materi.view', 'name' => 'View Materi', 'module' => 'materi'],
+            ['code' => 'materi.create', 'name' => 'Create Materi', 'module' => 'materi'],
+            ['code' => 'materi.update', 'name' => 'Update Materi', 'module' => 'materi'],
+            ['code' => 'materi.delete', 'name' => 'Delete Materi', 'module' => 'materi'],
+
+            // Log Akses Materi permissions
+            ['code' => 'log-akses-materi.view', 'name' => 'View Log Akses Materi', 'module' => 'log-akses-materi'],
+            ['code' => 'log-akses-materi.create', 'name' => 'Create Log Akses Materi', 'module' => 'log-akses-materi'],
+            ['code' => 'log-akses-materi.update', 'name' => 'Update Log Akses Materi', 'module' => 'log-akses-materi'],
+            ['code' => 'log-akses-materi.delete', 'name' => 'Delete Log Akses Materi', 'module' => 'log-akses-materi'],
+
+            // SPK Kriteria permissions
+            ['code' => 'spk-kriteria.view', 'name' => 'View SPK Kriteria', 'module' => 'spk-kriteria'],
+            ['code' => 'spk-kriteria.create', 'name' => 'Create SPK Kriteria', 'module' => 'spk-kriteria'],
+            ['code' => 'spk-kriteria.update', 'name' => 'Update SPK Kriteria', 'module' => 'spk-kriteria'],
+            ['code' => 'spk-kriteria.delete', 'name' => 'Delete SPK Kriteria', 'module' => 'spk-kriteria'],
+
+            // SPK Penilaian permissions
+            ['code' => 'spk-penilaian.view', 'name' => 'View SPK Penilaian', 'module' => 'spk-penilaian'],
+            ['code' => 'spk-penilaian.create', 'name' => 'Create SPK Penilaian', 'module' => 'spk-penilaian'],
+            ['code' => 'spk-penilaian.update', 'name' => 'Update SPK Penilaian', 'module' => 'spk-penilaian'],
+            ['code' => 'spk-penilaian.delete', 'name' => 'Delete SPK Penilaian', 'module' => 'spk-penilaian'],
+
+            // SPK Hasil permissions
+            ['code' => 'spk-hasil.view', 'name' => 'View SPK Hasil', 'module' => 'spk-hasil'],
+            ['code' => 'spk-hasil.create', 'name' => 'Create SPK Hasil', 'module' => 'spk-hasil'],
+            ['code' => 'spk-hasil.delete', 'name' => 'Delete SPK Hasil', 'module' => 'spk-hasil'],
+            ['code' => 'spk-hasil.calculate', 'name' => 'Calculate SPK Hasil', 'module' => 'spk-hasil'],
         ];
 
         foreach ($permissions as $permission) {
@@ -417,7 +453,9 @@ class RbacSeeder extends Seeder
             'bk-jenis', 'bk-kasus',
             'buku', 'peminjaman',
             'ujian', 'ujian-user', 'ujian-jawaban', 'soals',
-            'nilai', 'ranking', 'rapor'
+            'nilai', 'ranking', 'rapor',
+            'forum', 'materi', 'log-akses-materi',
+            'spk-kriteria', 'spk-penilaian', 'spk-hasil'
         ])->whereIn('code', [
             // Dashboard
             'dashboard.view', 'dashboard.summary', 'dashboard.financial', 'dashboard.academic',
@@ -443,6 +481,14 @@ class RbacSeeder extends Seeder
             'nilai.view', 'nilai.create', 'nilai.update',
             'ranking.view', 'ranking.create', 'ranking.generate',
             'rapor.view', 'rapor.create', 'rapor.update',
+            // Forum & Materi
+            'forum.view', 'forum.create', 'forum.update', 'forum.delete',
+            'materi.view', 'materi.create', 'materi.update', 'materi.delete',
+            'log-akses-materi.view',
+            // SPK
+            'spk-kriteria.view', 'spk-kriteria.create', 'spk-kriteria.update', 'spk-kriteria.delete',
+            'spk-penilaian.view', 'spk-penilaian.create', 'spk-penilaian.update', 'spk-penilaian.delete',
+            'spk-hasil.view', 'spk-hasil.create', 'spk-hasil.delete', 'spk-hasil.calculate',
         ])->get();
         $guruRole->permissions()->sync($guruPermissions->pluck('id'));
 
@@ -467,6 +513,9 @@ class RbacSeeder extends Seeder
             'ujian-user.view', 'ujian-user.mulai', 'ujian-user.selesaikan',
             'ujian-jawaban.view', 'ujian-jawaban.create', 'ujian-jawaban.update',
             'peminjaman.view', 'peminjaman.create',
+            'forum.view', 'forum.create',
+            'materi.view',
+            'log-akses-materi.view', 'log-akses-materi.create',
         ])->get();
         $siswaRole->permissions()->sync($siswaPermissions->pluck('id'));
 
@@ -479,6 +528,8 @@ class RbacSeeder extends Seeder
             'rapor.view',
             'bk-kasus.view',
             'pembayaran-spp.view',
+            'forum.view', 'forum.create',
+            'materi.view',
         ])->get();
         $waliRole->permissions()->sync($waliPermissions->pluck('id'));
 
