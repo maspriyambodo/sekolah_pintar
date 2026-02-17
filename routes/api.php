@@ -25,6 +25,7 @@ use App\Http\Controllers\Api\V1\SoalsController;
 use App\Http\Controllers\Api\V1\SysActivityLogController;
 use App\Http\Controllers\Api\V1\SysMenuController;
 use App\Http\Controllers\Api\V1\TarifSppController;
+use App\Http\Controllers\Api\V1\TugasController;
 use App\Http\Controllers\Api\V1\UjianController;
 use App\Http\Controllers\Api\V1\UjianJawabanController;
 use App\Http\Controllers\Api\V1\UjianUserController;
@@ -283,6 +284,17 @@ Route::prefix('v1')->group(function () {
                 Route::delete('/{id}', [RaporController::class, 'destroy'])->name('api.v1.rapor.destroy');
                 Route::get('/siswa/{siswaId}', [RaporController::class, 'bySiswa'])->name('api.v1.rapor.by-siswa');
                 Route::get('/{id}/detail', [RaporController::class, 'detail'])->name('api.v1.rapor.detail');
+            });
+
+            // Tugas
+            Route::prefix('tugas')->group(function () {
+                Route::get('/', [TugasController::class, 'index'])->name('api.v1.tugas.index');
+                Route::post('/', [TugasController::class, 'store'])->name('api.v1.tugas.store');
+                Route::get('/{id}', [TugasController::class, 'show'])->name('api.v1.tugas.show');
+                Route::put('/{id}', [TugasController::class, 'update'])->name('api.v1.tugas.update');
+                Route::delete('/{id}', [TugasController::class, 'destroy'])->name('api.v1.tugas.destroy');
+                Route::get('/kelas/{kelasId}', [TugasController::class, 'byKelas'])->name('api.v1.tugas.by-kelas');
+                Route::get('/guru-mapel/{guruMapelId}', [TugasController::class, 'byGuruMapel'])->name('api.v1.tugas.by-guru-mapel');
             });
         });
 
