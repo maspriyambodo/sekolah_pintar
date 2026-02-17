@@ -1,0 +1,112 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "sys_user_id": 1,
+      "email": "admin@sekolah.com",
+      "status": 1,
+      "ip_address": "192.168.1.100",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+      "login_at": "2026-2-17 12:19:37"
+    },
+    {
+      "id": 2,
+      "sys_user_id": 2,
+      "email": "ahmad.wijaya@sekolah.com",
+      "status": 1,
+      "ip_address": "192.168.1.101",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+      "login_at": "2026-2-17 11:19:37"
+    },
+    {
+      "id": 3,
+      "sys_user_id": 3,
+      "email": "siti.rahayu@sekolah.com",
+      "status": 1,
+      "ip_address": "192.168.1.102",
+      "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0)",
+      "login_at": "2026-2-17 10:19:37"
+    },
+    {
+      "id": 4,
+      "sys_user_id": 1,
+      "email": "admin@sekolah.com",
+      "status": 1,
+      "ip_address": "192.168.1.100",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+      "login_at": "2026-2-17 09:19:37"
+    },
+    {
+      "id": 5,
+      "sys_user_id": 4,
+      "email": "budi.santoso@sekolah.com",
+      "status": 2,
+      "ip_address": "192.168.1.103",
+      "user_agent": "Mozilla/5.0 (Linux; Android 11)",
+      "login_at": "2026-2-17 08:19:37"
+    },
+    {
+      "id": 6,
+      "sys_user_id": 2,
+      "email": "ahmad.wijaya@sekolah.com",
+      "status": 1,
+      "ip_address": "192.168.1.101",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+      "login_at": "2026-2-17 07:19:37"
+    },
+    {
+      "id": 7,
+      "sys_user_id": 5,
+      "email": "martini@sekolah.com",
+      "status": 1,
+      "ip_address": "192.168.1.104",
+      "user_agent": "Chrome/110.0.5481.77",
+      "login_at": "2026-2-17 06:19:37"
+    },
+    {
+      "id": 8,
+      "sys_user_id": 1,
+      "email": "admin@sekolah.com",
+      "status": 1,
+      "ip_address": "192.168.1.100",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+      "login_at": "2026-2-17 05:19:37"
+    },
+    {
+      "id": 9,
+      "sys_user_id": 6,
+      "email": "hadi.prasetyo@sekolah.com",
+      "status": 1,
+      "ip_address": "192.168.1.105",
+      "user_agent": "Safari/15.1",
+      "login_at": "2026-2-17 04:19:37"
+    },
+    {
+      "id": 10,
+      "sys_user_id": 3,
+      "email": "siti.rahayu@sekolah.com",
+      "status": 1,
+      "ip_address": "192.168.1.102",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+      "login_at": "2026-2-17 03:19:37"
+    },
+    {
+      "id": 11,
+      "sys_user_id": 20,
+      "email": "aditya.pratama@sekolah.com",
+      "status": 1,
+      "ip_address": "192.168.1.106",
+      "user_agent": "Chrome Mobile/88",
+      "login_at": "2026-2-17 02:19:37"
+    },
+    {
+      "id": 12,
+      "sys_user_id": 21,
+      "email": "siti.nurhaliza@sekolah.com",
+      "status": 1,
+      "ip_address": "192.168.1.107",
+      "user_agent": "Mozilla/5.0 (iPad; CPU OS 14_0)",
+      "login_at": "2026-2-17 01:19:37"
+    }
+  ]
+}

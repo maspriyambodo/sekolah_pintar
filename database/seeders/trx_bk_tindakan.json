@@ -1,0 +1,60 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "trx_bk_kasus_id": 1,
+      "deskripsi_tindakan": "Memberikan les tambahan matematika setiap hari Selasa",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "trx_bk_kasus_id": 1,
+      "deskripsi_tindakan": "Teknik pembelajaran yang lebih efektif",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "trx_bk_kasus_id": 2,
+      "deskripsi_tindakan": "Memanggil pelaku untuk memberikan pengertian",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "trx_bk_kasus_id": 2,
+      "deskripsi_tindakan": "Memberikan sanksi sesuai aturan sekolah",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "trx_bk_kasus_id": 3,
+      "deskripsi_tindakan": "Batasan waktu penggunaan gadget di rumah",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "trx_bk_kasus_id": 4,
+      "deskripsi_tindakan": "Pemberian tugas tambahan sebagai pengganti kelas",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "trx_bk_kasus_id": 5,
+      "deskripsi_tindakan": "Teknik relaksasi dan motivasi",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    }
+  ]
+}

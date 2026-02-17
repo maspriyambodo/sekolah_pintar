@@ -1,0 +1,169 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "trx_ujian_user_id": 1,
+      "mst_soal_id": 1,
+      "mst_soal_opsi_id": 3,
+      "jawaban_teks": null,
+      "is_benar": 1,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 2,
+      "trx_ujian_user_id": 1,
+      "mst_soal_id": 2,
+      "mst_soal_opsi_id": 2,
+      "jawaban_teks": null,
+      "is_benar": 1,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 3,
+      "trx_ujian_user_id": 1,
+      "mst_soal_id": 3,
+      "mst_soal_opsi_id": 1,
+      "jawaban_teks": null,
+      "is_benar": 1,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 4,
+      "trx_ujian_user_id": 1,
+      "mst_soal_id": 4,
+      "mst_soal_opsi_id": 1,
+      "jawaban_teks": null,
+      "is_benar": 1,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 5,
+      "trx_ujian_user_id": 1,
+      "mst_soal_id": 5,
+      "mst_soal_opsi_id": 4,
+      "jawaban_teks": null,
+      "is_benar": 0,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 6,
+      "trx_ujian_user_id": 1,
+      "mst_soal_id": 6,
+      "mst_soal_opsi_id": null,
+      "jawaban_teks": "Fungsi kuadrat adalah fungsi polinom dengan pangkat tertinggi dua...",
+      "is_benar": 1,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 7,
+      "trx_ujian_user_id": 1,
+      "mst_soal_id": 7,
+      "mst_soal_opsi_id": 1,
+      "jawaban_teks": null,
+      "is_benar": 1,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 8,
+      "trx_ujian_user_id": 1,
+      "mst_soal_id": 8,
+      "mst_soal_opsi_id": null,
+      "jawaban_teks": "Hukum Newton 1: Benda diam tetap diam, benda bergerak lurus beraturan...",
+      "is_benar": 1,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 9,
+      "trx_ujian_user_id": 1,
+      "mst_soal_id": 9,
+      "mst_soal_opsi_id": 4,
+      "jawaban_teks": null,
+      "is_benar": 0,
+      "ragu_ragu": 1,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 10,
+      "trx_ujian_user_id": 1,
+      "mst_soal_id": 10,
+      "mst_soal_opsi_id": null,
+      "jawaban_teks": "Perubahan kecepatan per satuan waktu",
+      "is_benar": 1,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 11,
+      "trx_ujian_user_id": 2,
+      "mst_soal_id": 1,
+      "mst_soal_opsi_id": 3,
+      "jawaban_teks": null,
+      "is_benar": 1,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 12,
+      "trx_ujian_user_id": 2,
+      "mst_soal_id": 2,
+      "mst_soal_opsi_id": 1,
+      "jawaban_teks": null,
+      "is_benar": 0,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 13,
+      "trx_ujian_user_id": 2,
+      "mst_soal_id": 3,
+      "mst_soal_opsi_id": 2,
+      "jawaban_teks": null,
+      "is_benar": 0,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 14,
+      "trx_ujian_user_id": 2,
+      "mst_soal_id": 4,
+      "mst_soal_opsi_id": 1,
+      "jawaban_teks": null,
+      "is_benar": 1,
+      "ragu_ragu": 0,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    },
+    {
+      "id": 15,
+      "trx_ujian_user_id": 2,
+      "mst_soal_id": 5,
+      "mst_soal_opsi_id": 4,
+      "jawaban_teks": null,
+      "is_benar": 0,
+      "ragu_ragu": 1,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37"
+    }
+  ]
+}

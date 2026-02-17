@@ -1,0 +1,84 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "mst_materi_id": 1,
+      "mst_siswa_id": 1,
+      "waktu_akses": "2026-2-15 10:30:00",
+      "durasi_detik": 1200,
+      "perangkat": "Chrome/Windows"
+    },
+    {
+      "id": 2,
+      "mst_materi_id": 1,
+      "mst_siswa_id": 2,
+      "waktu_akses": "2026-2-15 14:00:00",
+      "durasi_detik": 900,
+      "perangkat": "Mozilla Firefox/Windows"
+    },
+    {
+      "id": 3,
+      "mst_materi_id": 1,
+      "mst_siswa_id": 3,
+      "waktu_akses": "2026-2-16 08:15:00",
+      "durasi_detik": 1500,
+      "perangkat": "Safari/MacOS"
+    },
+    {
+      "id": 4,
+      "mst_materi_id": 2,
+      "mst_siswa_id": 1,
+      "waktu_akses": "2026-2-16 11:00:00",
+      "durasi_detik": 800,
+      "perangkat": "Chrome/Windows"
+    },
+    {
+      "id": 5,
+      "mst_materi_id": 2,
+      "mst_siswa_id": 4,
+      "waktu_akses": "2026-2-16 13:30:00",
+      "durasi_detik": 600,
+      "perangkat": "Edge/Windows"
+    },
+    {
+      "id": 6,
+      "mst_materi_id": 3,
+      "mst_siswa_id": 12,
+      "waktu_akses": "2026-2-17 09:00:00",
+      "durasi_detik": 1800,
+      "perangkat": "Chrome/Windows"
+    },
+    {
+      "id": 7,
+      "mst_materi_id": 3,
+      "mst_siswa_id": 13,
+      "waktu_akses": "2026-2-17 09:30:00",
+      "durasi_detik": 1200,
+      "perangkat": "Safari/iOS"
+    },
+    {
+      "id": 8,
+      "mst_materi_id": 4,
+      "mst_siswa_id": 12,
+      "waktu_akses": "2026-2-17 10:00:00",
+      "durasi_detik": 900,
+      "perangkat": "Chrome/Windows"
+    },
+    {
+      "id": 9,
+      "mst_materi_id": 5,
+      "mst_siswa_id": 22,
+      "waktu_akses": "2026-2-17 15:00:00",
+      "durasi_detik": 1100,
+      "perangkat": "Mozilla Firefox/Windows"
+    },
+    {
+      "id": 10,
+      "mst_materi_id": 6,
+      "mst_siswa_id": 23,
+      "waktu_akses": "2026-2-17 16:00:00",
+      "durasi_detik": 750,
+      "perangkat": "Chrome/Android"
+    }
+  ]
+}

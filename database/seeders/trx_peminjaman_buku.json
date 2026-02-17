@@ -1,0 +1,136 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "mst_buku_id": 1,
+      "mst_siswa_id": 1,
+      "tanggal_pinjam": "2026-2-1",
+      "tanggal_kembali": "2026-2-15",
+      "status": 2,
+      "created_at": "2026-2-17 13:15:32",
+      "deleted_at": null,
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 2,
+      "mst_buku_id": 2,
+      "mst_siswa_id": 2,
+      "tanggal_pinjam": "2026-2-3",
+      "tanggal_kembali": "2026-2-17",
+      "status": 2,
+      "created_at": "2026-2-17 13:15:32",
+      "deleted_at": null,
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 3,
+      "mst_buku_id": 3,
+      "mst_siswa_id": 3,
+      "tanggal_pinjam": "2026-2-5",
+      "tanggal_kembali": "2026-2-19",
+      "status": 2,
+      "created_at": "2026-2-17 13:15:32",
+      "deleted_at": null,
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 4,
+      "mst_buku_id": 4,
+      "mst_siswa_id": 4,
+      "tanggal_pinjam": "2026-2-7",
+      "tanggal_kembali": "2026-2-21",
+      "status": 1,
+      "created_at": "2026-2-17 13:15:32",
+      "deleted_at": null,
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 5,
+      "mst_buku_id": 5,
+      "mst_siswa_id": 5,
+      "tanggal_pinjam": "2026-2-8",
+      "tanggal_kembali": "2026-2-22",
+      "status": 1,
+      "created_at": "2026-2-17 13:15:32",
+      "deleted_at": null,
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 6,
+      "mst_buku_id": 6,
+      "mst_siswa_id": 6,
+      "tanggal_pinjam": "2026-2-10",
+      "tanggal_kembali": "2026-2-24",
+      "status": 1,
+      "created_at": "2026-2-17 13:15:32",
+      "deleted_at": null,
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 7,
+      "mst_buku_id": 7,
+      "mst_siswa_id": 7,
+      "tanggal_pinjam": "2026-2-12",
+      "tanggal_kembali": null,
+      "status": 1,
+      "created_at": "2026-2-17 13:15:32",
+      "deleted_at": null,
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 8,
+      "mst_buku_id": 8,
+      "mst_siswa_id": 8,
+      "tanggal_pinjam": "2026-2-13",
+      "tanggal_kembali": null,
+      "status": 1,
+      "created_at": "2026-2-17 13:15:32",
+      "deleted_at": null,
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 9,
+      "mst_buku_id": 9,
+      "mst_siswa_id": 9,
+      "tanggal_pinjam": "2026-2-14",
+      "tanggal_kembali": "2026-2-28",
+      "status": 1,
+      "created_at": "2026-2-17 13:15:32",
+      "deleted_at": null,
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 10,
+      "mst_buku_id": 10,
+      "mst_siswa_id": 10,
+      "tanggal_pinjam": "2026-2-15",
+      "tanggal_kembali": null,
+      "status": 1,
+      "created_at": "2026-2-17 13:15:32",
+      "deleted_at": null,
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 11,
+      "mst_buku_id": 11,
+      "mst_siswa_id": 11,
+      "tanggal_pinjam": "2026-2-16",
+      "tanggal_kembali": "2026-3-2",
+      "status": 1,
+      "created_at": "2026-2-17 13:15:32",
+      "deleted_at": null,
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 12,
+      "mst_buku_id": 12,
+      "mst_siswa_id": 12,
+      "tanggal_pinjam": "2026-2-17",
+      "tanggal_kembali": null,
+      "status": 1,
+      "created_at": "2026-2-17 13:15:32",
+      "deleted_at": null,
+      "updated_at": "2026-2-17 13:15:32"
+    }
+  ]
+}

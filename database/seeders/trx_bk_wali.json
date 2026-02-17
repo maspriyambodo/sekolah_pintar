@@ -1,0 +1,58 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "trx_bk_kasus_id": 1,
+      "mst_wali_murid_id": 9,
+      "peran": 3,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "trx_bk_kasus_id": 2,
+      "mst_wali_murid_id": 5,
+      "peran": 1,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "trx_bk_kasus_id": 2,
+      "mst_wali_murid_id": 6,
+      "peran": 2,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "trx_bk_kasus_id": 3,
+      "mst_wali_murid_id": 17,
+      "peran": 2,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "trx_bk_kasus_id": 4,
+      "mst_wali_murid_id": 13,
+      "peran": 1,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "trx_bk_kasus_id": 6,
+      "mst_wali_murid_id": 1,
+      "peran": 2,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    }
+  ]
+}

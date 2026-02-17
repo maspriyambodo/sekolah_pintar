@@ -1,0 +1,132 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "kode_mapel": "PAI",
+      "nama_mapel": "Pendidikan Agama Islam",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 2,
+      "kode_mapel": "PKN",
+      "nama_mapel": "Pendidikan Kewarganegaraan",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 3,
+      "kode_mapel": "BI",
+      "nama_mapel": "Bahasa Indonesia",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 4,
+      "kode_mapel": "BIG",
+      "nama_mapel": "Bahasa Inggris",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 5,
+      "kode_mapel": "MTK",
+      "nama_mapel": "Matematika",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 6,
+      "kode_mapel": "FIS",
+      "nama_mapel": "Fisika",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 7,
+      "kode_mapel": "KIM",
+      "nama_mapel": "Kimia",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 8,
+      "kode_mapel": "BIO",
+      "nama_mapel": "Biologi",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 9,
+      "kode_mapel": "SEJ",
+      "nama_mapel": "Sejarah",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 10,
+      "kode_mapel": "SOS",
+      "nama_mapel": "Sosiologi",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 11,
+      "kode_mapel": "EKO",
+      "nama_mapel": "Ekonomi",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 12,
+      "kode_mapel": "GEO",
+      "nama_mapel": "Geografi",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 13,
+      "kode_mapel": "SNB",
+      "nama_mapel": "Seni Budaya",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 14,
+      "kode_mapel": "PJOK",
+      "nama_mapel": "Pendidikan Jasmani dan Kesehatan",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 15,
+      "kode_mapel": "PKK",
+      "nama_mapel": "Prakarya dan Kewirausahaan",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    },
+    {
+      "id": 16,
+      "kode_mapel": "TIK",
+      "nama_mapel": "Teknologi Informasi dan Komunikasi",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21"
+    }
+  ]
+}

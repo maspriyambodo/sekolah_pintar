@@ -1,0 +1,244 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "sys_user_id": 50,
+      "nama": "Hendra Wijaya",
+      "no_hp": "081345678901",
+      "alamat": "Jl. Merdeka No. 10 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 2,
+      "sys_user_id": 51,
+      "nama": "Hj. Siti Komariah",
+      "no_hp": "081345678902",
+      "alamat": "Jl. Sudirman No. 15 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 3,
+      "sys_user_id": 52,
+      "nama": "Bpk. Herman",
+      "no_hp": "081345678903",
+      "alamat": "Jl. Thamrin No. 20 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 4,
+      "sys_user_id": 53,
+      "nama": "Ibu Dewi",
+      "no_hp": "081345678904",
+      "alamat": "Jl. Gatot Subroto No. 25 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 5,
+      "sys_user_id": 54,
+      "nama": "Bpk. Ahmad",
+      "no_hp": "081345678905",
+      "alamat": "Jl. Asia Afrika No. 30 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 6,
+      "sys_user_id": 55,
+      "nama": "Ibu Maryati",
+      "no_hp": "081345678906",
+      "alamat": "Jl. Diponegoro No. 35 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 7,
+      "sys_user_id": 56,
+      "nama": "Bpk. Toni",
+      "no_hp": "081345678907",
+      "alamat": "Jl. Panjaitan No. 40 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 8,
+      "sys_user_id": 57,
+      "nama": "Ibu Hapsah",
+      "no_hp": "081345678908",
+      "alamat": "Jl. Cempaka Putih No. 45 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 9,
+      "sys_user_id": 58,
+      "nama": "Bpk. Rudi",
+      "no_hp": "081345678909",
+      "alamat": "Jl. Palmerah No. 50 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 10,
+      "sys_user_id": 59,
+      "nama": "Ibu Yanti",
+      "no_hp": "081345678910",
+      "alamat": "Jl. Tomang No. 55 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 11,
+      "sys_user_id": 60,
+      "nama": "Bpk. Sugeng",
+      "no_hp": "081345678911",
+      "alamat": "Jl. Kemang No. 60 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 12,
+      "sys_user_id": 61,
+      "nama": "Ibu Ratna",
+      "no_hp": "081345678912",
+      "alamat": "Jl. Menteng No. 65 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 13,
+      "sys_user_id": 62,
+      "nama": "Bpk. Salim",
+      "no_hp": "081345678913",
+      "alamat": "Jl. Kebon Jeruk No. 70 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 14,
+      "sys_user_id": 63,
+      "nama": "Ibu Wati",
+      "no_hp": "081345678914",
+      "alamat": "Jl. Kelapa Gading No. 75 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 15,
+      "sys_user_id": 64,
+      "nama": "Bpk. Umar",
+      "no_hp": "081345678915",
+      "alamat": "Jl. Sunter No. 80 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 16,
+      "sys_user_id": 65,
+      "nama": "Ibu Rina",
+      "no_hp": "081345678916",
+      "alamat": "Jl. Pluit No. 85 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 17,
+      "sys_user_id": 66,
+      "nama": "Bpk. Anwar",
+      "no_hp": "081345678917",
+      "alamat": "Jl. Penjaringan No. 90 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 18,
+      "sys_user_id": 67,
+      "nama": "Ibu Susi",
+      "no_hp": "081345678918",
+      "alamat": "Jl. Tanah Abang No. 95 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 19,
+      "sys_user_id": 68,
+      "nama": "Bpk. Yono",
+      "no_hp": "081345678919",
+      "alamat": "Jl. Kebayoran Lama No. 100 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 20,
+      "sys_user_id": 69,
+      "nama": "Ibu Erni",
+      "no_hp": "081345678920",
+      "alamat": "Jl. Cilandak No. 105 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 21,
+      "sys_user_id": 70,
+      "nama": "Bpk. Ferry",
+      "no_hp": "081345678921",
+      "alamat": "Jl. Lebak Bulus No. 110 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 22,
+      "sys_user_id": 71,
+      "nama": "Ibu Maya",
+      "no_hp": "081345678922",
+      "alamat": "Jl. pondok Indah No. 115 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 23,
+      "sys_user_id": 72,
+      "nama": "Bpk. Iwan",
+      "no_hp": "081345678923",
+      "alamat": "Jl. Permata Hijau No. 120 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    },
+    {
+      "id": 24,
+      "sys_user_id": 73,
+      "nama": "Ibu Dian",
+      "no_hp": "081345678924",
+      "alamat": "Jl. Senayan No. 125 Jakarta",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "mst_siswa_id": 1,
+      "semester": 1,
+      "tahun_ajaran": "2024/2025",
+      "total_nilai": 1020.0,
+      "rata_rata": 85.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "mst_siswa_id": 2,
+      "semester": 1,
+      "tahun_ajaran": "2024/2025",
+      "total_nilai": 960.0,
+      "rata_rata": 80.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "mst_siswa_id": 3,
+      "semester": 1,
+      "tahun_ajaran": "2024/2025",
+      "total_nilai": 1050.0,
+      "rata_rata": 87.5,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "mst_siswa_id": 4,
+      "semester": 1,
+      "tahun_ajaran": "2024/2025",
+      "total_nilai": 1080.0,
+      "rata_rata": 90.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "mst_siswa_id": 5,
+      "semester": 1,
+      "tahun_ajaran": "2024/2025",
+      "total_nilai": 930.0,
+      "rata_rata": 77.5,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "mst_siswa_id": 6,
+      "semester": 1,
+      "tahun_ajaran": "2024/2025",
+      "total_nilai": 945.0,
+      "rata_rata": 78.75,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "mst_siswa_id": 7,
+      "semester": 1,
+      "tahun_ajaran": "2024/2025",
+      "total_nilai": 1095.0,
+      "rata_rata": 91.25,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 8,
+      "mst_siswa_id": 8,
+      "semester": 1,
+      "tahun_ajaran": "2024/2025",
+      "total_nilai": 975.0,
+      "rata_rata": 81.25,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 9,
+      "mst_siswa_id": 9,
+      "semester": 1,
+      "tahun_ajaran": "2024/2025",
+      "total_nilai": 900.0,
+      "rata_rata": 75.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 10,
+      "mst_siswa_id": 10,
+      "semester": 1,
+      "tahun_ajaran": "2024/2025",
+      "total_nilai": 1065.0,
+      "rata_rata": 88.75,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 11,
+      "mst_siswa_id": 11,
+      "semester": 1,
+      "tahun_ajaran": "2024/2025",
+      "total_nilai": 1035.0,
+      "rata_rata": 86.25,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 12,
+      "mst_siswa_id": 12,
+      "semester": 1,
+      "tahun_ajaran": "2024/2025",
+      "total_nilai": 1080.0,
+      "rata_rata": 90.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "level": 2,
+      "message": "Undefined variable: nama_siswa",
+      "file": "/app/Http/Controllers/SiswaController.php",
+      "line": 45,
+      "trace": "Error pada baris 45",
+      "created_at": "2026-2-16 13:19:37"
+    },
+    {
+      "id": 2,
+      "level": 3,
+      "message": "Database connection failed",
+      "file": "/config/database.php",
+      "line": 20,
+      "trace": "Connection timeout",
+      "created_at": "2026-2-15 13:19:37"
+    },
+    {
+      "id": 3,
+      "level": 1,
+      "message": "User session expired",
+      "file": "/app/Http/Middleware/Authenticate.php",
+      "line": 15,
+      "trace": "Session expired for user id 5",
+      "created_at": "2026-2-14 13:19:37"
+    },
+    {
+      "id": 4,
+      "level": 2,
+      "message": "File not found: /uploads/buku/123.pdf",
+      "file": "/app/Http/Controllers/BukuController.php",
+      "line": 78,
+      "trace": "File tidak ditemukan",
+      "created_at": "2026-2-13 13:19:37"
+    },
+    {
+      "id": 5,
+      "level": 3,
+      "message": "SQL Error: Duplicate entry",
+      "file": "/app/Models/Siswa.php",
+      "line": 30,
+      "trace": "Duplicate NIS",
+      "created_at": "2026-2-12 13:19:37"
+    },
+    {
+      "id": 6,
+      "level": 2,
+      "message": "Validation failed: email required",
+      "file": "/app/Http/Requests/StoreUserRequest.php",
+      "line": 12,
+      "trace": "Email field is required",
+      "created_at": "2026-2-11 13:19:37"
+    },
+    {
+      "id": 7,
+      "level": 1,
+      "message": "Cache cleared successfully",
+      "file": "/app/Console/Commands/ClearCache.php",
+      "line": 5,
+      "trace": "Cache cleared",
+      "created_at": "2026-2-10 13:19:37"
+    },
+    {
+      "id": 8,
+      "level": 2,
+      "message": "Memory limit exceeded",
+      "file": "/app/Http/Controllers/ExportController.php",
+      "line": 50,
+      "trace": "Memory limit 128M exceeded",
+      "created_at": "2026-2-9 13:19:37"
+    },
+    {
+      "id": 9,
+      "level": 3,
+      "message": "Permission denied: admin.users",
+      "file": "/app/Http/Middleware/Permission.php",
+      "line": 25,
+      "trace": "User tidak punya akses",
+      "created_at": "2026-2-8 13:19:37"
+    },
+    {
+      "id": 10,
+      "level": 1,
+      "message": "Backup completed successfully",
+      "file": "/app/Console/Commands/BackupDatabase.php",
+      "line": 15,
+      "trace": "Database backup success",
+      "created_at": "2026-2-7 13:19:37"
+    }
+  ]
+}

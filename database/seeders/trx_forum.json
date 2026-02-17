@@ -1,0 +1,124 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "mst_guru_mapel_id": 1,
+      "sys_user_id": 2,
+      "parent_id": null,
+      "judul": "Pertanyaan tentang Aljabar",
+      "pesan": "Ada yang bingung dengan materi aljabar hari ini? Silakan bertanya di sini.",
+      "file_lampiran": null,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "mst_guru_mapel_id": 1,
+      "sys_user_id": 20,
+      "parent_id": 1,
+      "judul": null,
+      "pesan": "Pak, saya masih bingung cara menyelesaikan persamaan kuadrat",
+      "file_lampiran": null,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "mst_guru_mapel_id": 1,
+      "sys_user_id": 2,
+      "parent_id": 1,
+      "judul": null,
+      "pesan": "Kamu bisa menggunakan faktorisasi. Coba kerjakan soal latian di bawah ini:",
+      "file_lampiran": null,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "mst_guru_mapel_id": 2,
+      "sys_user_id": 3,
+      "parent_id": null,
+      "judul": "Diskusi Fisika",
+      "pesan": "Mari kita diskusikan tentang hukum Newton!",
+      "file_lampiran": null,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "mst_guru_mapel_id": 2,
+      "sys_user_id": 21,
+      "parent_id": 4,
+      "judul": null,
+      "pesan": "Pak, apa contoh nyata dari hukum Newton 3?",
+      "file_lampiran": null,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "mst_guru_mapel_id": 2,
+      "sys_user_id": 3,
+      "parent_id": 4,
+      "judul": null,
+      "pesan": "Contohnya adalah saat kamu berjalan, kaki kamu mendorong lantai dan lantai mendorong kamu",
+      "file_lampiran": null,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "mst_guru_mapel_id": 5,
+      "sys_user_id": 5,
+      "parent_id": null,
+      "judul": "Tugas Puisi",
+      "pesan": "Tugas puisi sudah diupload, deadline 1 Maret ya!",
+      "file_lampiran": null,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 8,
+      "mst_guru_mapel_id": 5,
+      "sys_user_id": 22,
+      "parent_id": 7,
+      "judul": null,
+      "pesan": "Bu, apakah boleh membuat puisi dengan tema bebas?",
+      "file_lampiran": null,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 9,
+      "mst_guru_mapel_id": 5,
+      "sys_user_id": 5,
+      "parent_id": 7,
+      "judul": null,
+      "pesan": "Boleh, selama sesuai dengan ketentuan yang ada",
+      "file_lampiran": null,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 10,
+      "mst_guru_mapel_id": 1,
+      "sys_user_id": 23,
+      "parent_id": 1,
+      "judul": null,
+      "pesan": "Terima kasih pak, sekarang saya mengerti",
+      "file_lampiran": null,
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    }
+  ]
+}

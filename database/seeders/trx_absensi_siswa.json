@@ -1,0 +1,204 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "mst_siswa_id": 1,
+      "tanggal": "2026-2-17",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 2,
+      "mst_siswa_id": 2,
+      "tanggal": "2026-2-17",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 3,
+      "mst_siswa_id": 3,
+      "tanggal": "2026-2-17",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 4,
+      "mst_siswa_id": 4,
+      "tanggal": "2026-2-17",
+      "status": 2,
+      "keterangan": "Izin sakit",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 5,
+      "mst_siswa_id": 5,
+      "tanggal": "2026-2-17",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 6,
+      "mst_siswa_id": 6,
+      "tanggal": "2026-2-17",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 7,
+      "mst_siswa_id": 7,
+      "tanggal": "2026-2-17",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 8,
+      "mst_siswa_id": 8,
+      "tanggal": "2026-2-17",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 9,
+      "mst_siswa_id": 9,
+      "tanggal": "2026-2-17",
+      "status": 3,
+      "keterangan": "Izin mengikuti ujian",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 10,
+      "mst_siswa_id": 10,
+      "tanggal": "2026-2-17",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 11,
+      "mst_siswa_id": 1,
+      "tanggal": "2026-2-18",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 12,
+      "mst_siswa_id": 2,
+      "tanggal": "2026-2-18",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 13,
+      "mst_siswa_id": 3,
+      "tanggal": "2026-2-18",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 14,
+      "mst_siswa_id": 4,
+      "tanggal": "2026-2-18",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 15,
+      "mst_siswa_id": 5,
+      "tanggal": "2026-2-18",
+      "status": 4,
+      "keterangan": "Alpha",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 16,
+      "mst_siswa_id": 6,
+      "tanggal": "2026-2-18",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 17,
+      "mst_siswa_id": 7,
+      "tanggal": "2026-2-18",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 18,
+      "mst_siswa_id": 8,
+      "tanggal": "2026-2-18",
+      "status": 2,
+      "keterangan": "Izin keluarga",
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 19,
+      "mst_siswa_id": 9,
+      "tanggal": "2026-2-18",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    },
+    {
+      "id": 20,
+      "mst_siswa_id": 10,
+      "tanggal": "2026-2-18",
+      "status": 1,
+      "keterangan": null,
+      "deleted_at": null,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32"
+    }
+  ]
+}

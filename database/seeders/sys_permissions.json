@@ -1,0 +1,1220 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "code": "dashboard.view",
+      "name": "View Dashboard",
+      "module": "dashboard",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 2,
+      "code": "dashboard.summary",
+      "name": "View Dashboard Summary",
+      "module": "dashboard",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 3,
+      "code": "dashboard.financial",
+      "name": "View Financial Analytics",
+      "module": "dashboard",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 4,
+      "code": "dashboard.academic",
+      "name": "View Academic Analytics",
+      "module": "dashboard",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 5,
+      "code": "files.upload",
+      "name": "Upload Files",
+      "module": "files",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 6,
+      "code": "files.delete",
+      "name": "Delete Files",
+      "module": "files",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 7,
+      "code": "siswa.view",
+      "name": "View Siswa",
+      "module": "siswa",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 8,
+      "code": "siswa.create",
+      "name": "Create Siswa",
+      "module": "siswa",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 9,
+      "code": "siswa.update",
+      "name": "Update Siswa",
+      "module": "siswa",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 10,
+      "code": "siswa.delete",
+      "name": "Delete Siswa",
+      "module": "siswa",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 11,
+      "code": "siswa.naik-kelas",
+      "name": "Naik Kelas Siswa",
+      "module": "siswa",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 12,
+      "code": "siswa.lulus",
+      "name": "Mark Siswa Lulus",
+      "module": "siswa",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 13,
+      "code": "guru.view",
+      "name": "View Guru",
+      "module": "guru",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 14,
+      "code": "guru.create",
+      "name": "Create Guru",
+      "module": "guru",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 15,
+      "code": "guru.update",
+      "name": "Update Guru",
+      "module": "guru",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 16,
+      "code": "guru.delete",
+      "name": "Delete Guru",
+      "module": "guru",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 17,
+      "code": "wali.view",
+      "name": "View Wali Murid",
+      "module": "wali",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 18,
+      "code": "wali.create",
+      "name": "Create Wali Murid",
+      "module": "wali",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 19,
+      "code": "wali.update",
+      "name": "Update Wali Murid",
+      "module": "wali",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 20,
+      "code": "wali.delete",
+      "name": "Delete Wali Murid",
+      "module": "wali",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 21,
+      "code": "kelas.view",
+      "name": "View Kelas",
+      "module": "kelas",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 22,
+      "code": "kelas.create",
+      "name": "Create Kelas",
+      "module": "kelas",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 23,
+      "code": "kelas.update",
+      "name": "Update Kelas",
+      "module": "kelas",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 24,
+      "code": "kelas.delete",
+      "name": "Delete Kelas",
+      "module": "kelas",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 25,
+      "code": "mapel.view",
+      "name": "View Mata Pelajaran",
+      "module": "mapel",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 26,
+      "code": "mapel.create",
+      "name": "Create Mata Pelajaran",
+      "module": "mapel",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 27,
+      "code": "mapel.update",
+      "name": "Update Mata Pelajaran",
+      "module": "mapel",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 28,
+      "code": "mapel.delete",
+      "name": "Delete Mata Pelajaran",
+      "module": "mapel",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 29,
+      "code": "absensi-guru.view",
+      "name": "View Absensi Guru",
+      "module": "absensi-guru",
+      "created_at": "2026-2-17 13:10:18",
+      "updated_at": "2026-2-17 13:10:18"
+    },
+    {
+      "id": 30,
+      "code": "absensi-guru.create",
+      "name": "Create Absensi Guru",
+      "module": "absensi-guru",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 31,
+      "code": "absensi-guru.update",
+      "name": "Update Absensi Guru",
+      "module": "absensi-guru",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 32,
+      "code": "absensi-guru.delete",
+      "name": "Delete Absensi Guru",
+      "module": "absensi-guru",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 33,
+      "code": "absensi-siswa.view",
+      "name": "View Absensi Siswa",
+      "module": "absensi-siswa",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 34,
+      "code": "absensi-siswa.create",
+      "name": "Create Absensi Siswa",
+      "module": "absensi-siswa",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 35,
+      "code": "absensi-siswa.update",
+      "name": "Update Absensi Siswa",
+      "module": "absensi-siswa",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 36,
+      "code": "absensi-siswa.delete",
+      "name": "Delete Absensi Siswa",
+      "module": "absensi-siswa",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 37,
+      "code": "bk-jenis.view",
+      "name": "View BK Jenis",
+      "module": "bk-jenis",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 38,
+      "code": "bk-jenis.create",
+      "name": "Create BK Jenis",
+      "module": "bk-jenis",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 39,
+      "code": "bk-jenis.update",
+      "name": "Update BK Jenis",
+      "module": "bk-jenis",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 40,
+      "code": "bk-jenis.delete",
+      "name": "Delete BK Jenis",
+      "module": "bk-jenis",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 41,
+      "code": "bk-kasus.view",
+      "name": "View BK Kasus",
+      "module": "bk-kasus",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 42,
+      "code": "bk-kasus.create",
+      "name": "Create BK Kasus",
+      "module": "bk-kasus",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 43,
+      "code": "bk-kasus.update",
+      "name": "Update BK Kasus",
+      "module": "bk-kasus",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 44,
+      "code": "bk-kasus.delete",
+      "name": "Delete BK Kasus",
+      "module": "bk-kasus",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 45,
+      "code": "buku.view",
+      "name": "View Buku",
+      "module": "buku",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 46,
+      "code": "buku.create",
+      "name": "Create Buku",
+      "module": "buku",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 47,
+      "code": "buku.update",
+      "name": "Update Buku",
+      "module": "buku",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 48,
+      "code": "buku.delete",
+      "name": "Delete Buku",
+      "module": "buku",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 49,
+      "code": "peminjaman.view",
+      "name": "View Peminjaman",
+      "module": "peminjaman",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 50,
+      "code": "peminjaman.create",
+      "name": "Create Peminjaman",
+      "module": "peminjaman",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 51,
+      "code": "peminjaman.update",
+      "name": "Update Peminjaman",
+      "module": "peminjaman",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 52,
+      "code": "peminjaman.delete",
+      "name": "Delete Peminjaman",
+      "module": "peminjaman",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 53,
+      "code": "peminjaman.pengembalian",
+      "name": "Pengembalian Buku",
+      "module": "peminjaman",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 54,
+      "code": "ujian.view",
+      "name": "View Ujian",
+      "module": "ujian",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 55,
+      "code": "ujian.create",
+      "name": "Create Ujian",
+      "module": "ujian",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 56,
+      "code": "ujian.update",
+      "name": "Update Ujian",
+      "module": "ujian",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 57,
+      "code": "ujian.delete",
+      "name": "Delete Ujian",
+      "module": "ujian",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 58,
+      "code": "ujian-user.view",
+      "name": "View Ujian User",
+      "module": "ujian-user",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 59,
+      "code": "ujian-user.create",
+      "name": "Create Ujian User",
+      "module": "ujian-user",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 60,
+      "code": "ujian-user.update",
+      "name": "Update Ujian User",
+      "module": "ujian-user",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 61,
+      "code": "ujian-user.delete",
+      "name": "Delete Ujian User",
+      "module": "ujian-user",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 62,
+      "code": "ujian-user.mulai",
+      "name": "Mulai Ujian",
+      "module": "ujian-user",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 63,
+      "code": "ujian-user.selesaikan",
+      "name": "Selesaikan Ujian",
+      "module": "ujian-user",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 64,
+      "code": "ujian-jawaban.view",
+      "name": "View Ujian Jawaban",
+      "module": "ujian-jawaban",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 65,
+      "code": "ujian-jawaban.create",
+      "name": "Create Ujian Jawaban",
+      "module": "ujian-jawaban",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 66,
+      "code": "ujian-jawaban.update",
+      "name": "Update Ujian Jawaban",
+      "module": "ujian-jawaban",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 67,
+      "code": "ujian-jawaban.delete",
+      "name": "Delete Ujian Jawaban",
+      "module": "ujian-jawaban",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 68,
+      "code": "soals.view",
+      "name": "View Bank Soal",
+      "module": "soals",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 69,
+      "code": "soals.create",
+      "name": "Create Bank Soal",
+      "module": "soals",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 70,
+      "code": "soals.update",
+      "name": "Update Bank Soal",
+      "module": "soals",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 71,
+      "code": "soals.delete",
+      "name": "Delete Bank Soal",
+      "module": "soals",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 72,
+      "code": "nilai.view",
+      "name": "View Nilai",
+      "module": "nilai",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 73,
+      "code": "nilai.create",
+      "name": "Create Nilai",
+      "module": "nilai",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 74,
+      "code": "nilai.update",
+      "name": "Update Nilai",
+      "module": "nilai",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 75,
+      "code": "nilai.delete",
+      "name": "Delete Nilai",
+      "module": "nilai",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 76,
+      "code": "ranking.view",
+      "name": "View Ranking",
+      "module": "ranking",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 77,
+      "code": "ranking.create",
+      "name": "Create Ranking",
+      "module": "ranking",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 78,
+      "code": "ranking.update",
+      "name": "Update Ranking",
+      "module": "ranking",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 79,
+      "code": "ranking.delete",
+      "name": "Delete Ranking",
+      "module": "ranking",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 80,
+      "code": "ranking.generate",
+      "name": "Generate Ranking",
+      "module": "ranking",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 81,
+      "code": "rapor.view",
+      "name": "View Rapor",
+      "module": "rapor",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 82,
+      "code": "rapor.create",
+      "name": "Create Rapor",
+      "module": "rapor",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 83,
+      "code": "rapor.update",
+      "name": "Update Rapor",
+      "module": "rapor",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 84,
+      "code": "rapor.delete",
+      "name": "Delete Rapor",
+      "module": "rapor",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 85,
+      "code": "presensi.view",
+      "name": "View Presensi",
+      "module": "presensi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 86,
+      "code": "presensi.create",
+      "name": "Create Presensi",
+      "module": "presensi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 87,
+      "code": "presensi.update",
+      "name": "Update Presensi",
+      "module": "presensi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 88,
+      "code": "presensi.delete",
+      "name": "Delete Presensi",
+      "module": "presensi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 89,
+      "code": "presensi.bulk",
+      "name": "Bulk Create Presensi",
+      "module": "presensi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 90,
+      "code": "tugas.view",
+      "name": "View Tugas",
+      "module": "tugas",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 91,
+      "code": "tugas.create",
+      "name": "Create Tugas",
+      "module": "tugas",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 92,
+      "code": "tugas.update",
+      "name": "Update Tugas",
+      "module": "tugas",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 93,
+      "code": "tugas.delete",
+      "name": "Delete Tugas",
+      "module": "tugas",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 94,
+      "code": "tugas-siswa.view",
+      "name": "View Tugas Siswa",
+      "module": "tugas-siswa",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 95,
+      "code": "tugas-siswa.create",
+      "name": "Create Tugas Siswa",
+      "module": "tugas-siswa",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 96,
+      "code": "tugas-siswa.update",
+      "name": "Update Tugas Siswa",
+      "module": "tugas-siswa",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 97,
+      "code": "tugas-siswa.delete",
+      "name": "Delete Tugas Siswa",
+      "module": "tugas-siswa",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 98,
+      "code": "tugas-siswa.nilai",
+      "name": "Nilai Tugas Siswa",
+      "module": "tugas-siswa",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 99,
+      "code": "tugas-siswa.kumpulkan",
+      "name": "Kumpulkan Tugas",
+      "module": "tugas-siswa",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 100,
+      "code": "users.view",
+      "name": "View Users",
+      "module": "users",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 101,
+      "code": "users.create",
+      "name": "Create Users",
+      "module": "users",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 102,
+      "code": "users.update",
+      "name": "Update Users",
+      "module": "users",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 103,
+      "code": "users.delete",
+      "name": "Delete Users",
+      "module": "users",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 104,
+      "code": "roles.view",
+      "name": "View Roles",
+      "module": "roles",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 105,
+      "code": "roles.create",
+      "name": "Create Roles",
+      "module": "roles",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 106,
+      "code": "roles.update",
+      "name": "Update Roles",
+      "module": "roles",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 107,
+      "code": "roles.delete",
+      "name": "Delete Roles",
+      "module": "roles",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 108,
+      "code": "permissions.view",
+      "name": "View Permissions",
+      "module": "permissions",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 109,
+      "code": "permissions.create",
+      "name": "Create Permissions",
+      "module": "permissions",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 110,
+      "code": "permissions.update",
+      "name": "Update Permissions",
+      "module": "permissions",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 111,
+      "code": "permissions.delete",
+      "name": "Delete Permissions",
+      "module": "permissions",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 112,
+      "code": "menus.view",
+      "name": "View Menus",
+      "module": "menus",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 113,
+      "code": "menus.create",
+      "name": "Create Menus",
+      "module": "menus",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 114,
+      "code": "menus.update",
+      "name": "Update Menus",
+      "module": "menus",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 115,
+      "code": "menus.delete",
+      "name": "Delete Menus",
+      "module": "menus",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 116,
+      "code": "activity-logs.view",
+      "name": "View Activity Logs",
+      "module": "activity-logs",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 117,
+      "code": "activity-logs.delete",
+      "name": "Delete Activity Logs",
+      "module": "activity-logs",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 118,
+      "code": "activity-logs.clear-old",
+      "name": "Clear Old Activity Logs",
+      "module": "activity-logs",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 119,
+      "code": "activity-logs.statistics",
+      "name": "View Activity Logs Statistics",
+      "module": "activity-logs",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 120,
+      "code": "tarif-spp.view",
+      "name": "View Tarif SPP",
+      "module": "tarif-spp",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 121,
+      "code": "tarif-spp.create",
+      "name": "Create Tarif SPP",
+      "module": "tarif-spp",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 122,
+      "code": "tarif-spp.update",
+      "name": "Update Tarif SPP",
+      "module": "tarif-spp",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 123,
+      "code": "tarif-spp.delete",
+      "name": "Delete Tarif SPP",
+      "module": "tarif-spp",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 124,
+      "code": "pembayaran-spp.view",
+      "name": "View Pembayaran SPP",
+      "module": "pembayaran-spp",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 125,
+      "code": "pembayaran-spp.create",
+      "name": "Create Pembayaran SPP",
+      "module": "pembayaran-spp",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 126,
+      "code": "pembayaran-spp.update",
+      "name": "Update Pembayaran SPP",
+      "module": "pembayaran-spp",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 127,
+      "code": "pembayaran-spp.delete",
+      "name": "Delete Pembayaran SPP",
+      "module": "pembayaran-spp",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 128,
+      "code": "pembayaran-spp.bayar",
+      "name": "Bayar SPP",
+      "module": "pembayaran-spp",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 129,
+      "code": "forum.view",
+      "name": "View Forum",
+      "module": "forum",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 130,
+      "code": "forum.create",
+      "name": "Create Forum",
+      "module": "forum",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 131,
+      "code": "forum.update",
+      "name": "Update Forum",
+      "module": "forum",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 132,
+      "code": "forum.delete",
+      "name": "Delete Forum",
+      "module": "forum",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 133,
+      "code": "materi.view",
+      "name": "View Materi",
+      "module": "materi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 134,
+      "code": "materi.create",
+      "name": "Create Materi",
+      "module": "materi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 135,
+      "code": "materi.update",
+      "name": "Update Materi",
+      "module": "materi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 136,
+      "code": "materi.delete",
+      "name": "Delete Materi",
+      "module": "materi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 137,
+      "code": "log-akses-materi.view",
+      "name": "View Log Akses Materi",
+      "module": "log-akses-materi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 138,
+      "code": "log-akses-materi.create",
+      "name": "Create Log Akses Materi",
+      "module": "log-akses-materi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 139,
+      "code": "log-akses-materi.update",
+      "name": "Update Log Akses Materi",
+      "module": "log-akses-materi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 140,
+      "code": "log-akses-materi.delete",
+      "name": "Delete Log Akses Materi",
+      "module": "log-akses-materi",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 141,
+      "code": "spk-kriteria.view",
+      "name": "View SPK Kriteria",
+      "module": "spk-kriteria",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 142,
+      "code": "spk-kriteria.create",
+      "name": "Create SPK Kriteria",
+      "module": "spk-kriteria",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 143,
+      "code": "spk-kriteria.update",
+      "name": "Update SPK Kriteria",
+      "module": "spk-kriteria",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 144,
+      "code": "spk-kriteria.delete",
+      "name": "Delete SPK Kriteria",
+      "module": "spk-kriteria",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 145,
+      "code": "spk-penilaian.view",
+      "name": "View SPK Penilaian",
+      "module": "spk-penilaian",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 146,
+      "code": "spk-penilaian.create",
+      "name": "Create SPK Penilaian",
+      "module": "spk-penilaian",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 147,
+      "code": "spk-penilaian.update",
+      "name": "Update SPK Penilaian",
+      "module": "spk-penilaian",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 148,
+      "code": "spk-penilaian.delete",
+      "name": "Delete SPK Penilaian",
+      "module": "spk-penilaian",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 149,
+      "code": "spk-hasil.view",
+      "name": "View SPK Hasil",
+      "module": "spk-hasil",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 150,
+      "code": "spk-hasil.create",
+      "name": "Create SPK Hasil",
+      "module": "spk-hasil",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 151,
+      "code": "spk-hasil.delete",
+      "name": "Delete SPK Hasil",
+      "module": "spk-hasil",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 152,
+      "code": "spk-hasil.calculate",
+      "name": "Calculate SPK Hasil",
+      "module": "spk-hasil",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    }
+  ]
+}

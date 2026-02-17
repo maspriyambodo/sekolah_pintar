@@ -1,0 +1,166 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "trx_rapor_id": 1,
+      "mst_mapel_id": 5,
+      "nilai_akhir": 85.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "trx_rapor_id": 1,
+      "mst_mapel_id": 6,
+      "nilai_akhir": 88.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "trx_rapor_id": 1,
+      "mst_mapel_id": 7,
+      "nilai_akhir": 82.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "trx_rapor_id": 1,
+      "mst_mapel_id": 8,
+      "nilai_akhir": 90.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "trx_rapor_id": 1,
+      "mst_mapel_id": 3,
+      "nilai_akhir": 87.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "trx_rapor_id": 1,
+      "mst_mapel_id": 4,
+      "nilai_akhir": 78.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "trx_rapor_id": 2,
+      "mst_mapel_id": 5,
+      "nilai_akhir": 80.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 8,
+      "trx_rapor_id": 2,
+      "mst_mapel_id": 6,
+      "nilai_akhir": 85.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 9,
+      "trx_rapor_id": 2,
+      "mst_mapel_id": 7,
+      "nilai_akhir": 75.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 10,
+      "trx_rapor_id": 2,
+      "mst_mapel_id": 8,
+      "nilai_akhir": 82.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 11,
+      "trx_rapor_id": 2,
+      "mst_mapel_id": 3,
+      "nilai_akhir": 88.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 12,
+      "trx_rapor_id": 2,
+      "mst_mapel_id": 4,
+      "nilai_akhir": 80.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 13,
+      "trx_rapor_id": 3,
+      "mst_mapel_id": 5,
+      "nilai_akhir": 90.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 14,
+      "trx_rapor_id": 3,
+      "mst_mapel_id": 6,
+      "nilai_akhir": 88.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 15,
+      "trx_rapor_id": 3,
+      "mst_mapel_id": 7,
+      "nilai_akhir": 85.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 16,
+      "trx_rapor_id": 3,
+      "mst_mapel_id": 8,
+      "nilai_akhir": 92.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 17,
+      "trx_rapor_id": 3,
+      "mst_mapel_id": 3,
+      "nilai_akhir": 87.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    },
+    {
+      "id": 18,
+      "trx_rapor_id": 3,
+      "mst_mapel_id": 4,
+      "nilai_akhir": 88.0,
+      "created_at": "2026-2-17 13:15:32",
+      "updated_at": "2026-2-17 13:15:32",
+      "deleted_at": null
+    }
+  ]
+}

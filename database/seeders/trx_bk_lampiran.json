@@ -1,0 +1,31 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "trx_bk_kasus_id": 2,
+      "file_path": "bk/lampiran/foto_bullying_001.jpg",
+      "keterangan": "Bukti kekerasan fisik",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "trx_bk_kasus_id": 2,
+      "file_path": "bk/lampiran/surat_pernyataan.pdf",
+      "keterangan": "Surat pernyataan pelaku",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "trx_bk_kasus_id": 6,
+      "file_path": "bk/lampiran/dokumen_keluarga.pdf",
+      "keterangan": "Dokumen perceraian",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    }
+  ]
+}

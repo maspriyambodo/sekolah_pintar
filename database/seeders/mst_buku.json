@@ -1,0 +1,148 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "isbn": "978-979-690-xxx-1",
+      "judul": "Matematika untuk SMA Kelas X",
+      "penulis": "Sri Kurnianingsih",
+      "penerbit": "Erlangga",
+      "tahun": 2021,
+      "stok": 25,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "isbn": "978-979-690-xxx-2",
+      "judul": "Fisika SMA/MA Kelas X",
+      "penulis": "Mikrajuddin Abdullah",
+      "penerbit": "Erlangga",
+      "tahun": 2021,
+      "stok": 20,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "isbn": "978-979-690-xxx-3",
+      "judul": "Kimia SMA/MA Kelas X",
+      "penulis": "Mochtar Effendy",
+      "penerbit": "Erlangga",
+      "tahun": 2021,
+      "stok": 18,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "isbn": "978-979-690-xxx-4",
+      "judul": "Biologi SMA/MA Kelas X",
+      "penulis": "Suryo Subroto",
+      "penerbit": "Erlangga",
+      "tahun": 2021,
+      "stok": 22,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "isbn": "978-979-690-xxx-5",
+      "judul": "Bahasa Indonesia SMA Kelas X",
+      "penulis": "Sarwiji Suwandi",
+      "penerbit": "Erlangga",
+      "tahun": 2021,
+      "stok": 30,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "isbn": "978-979-690-xxx-6",
+      "judul": "English on Stage Grade X",
+      "penulis": "Tim BSNP",
+      "penerbit": "Erlangga",
+      "tahun": 2021,
+      "stok": 28,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "isbn": "978-979-690-xxx-7",
+      "judul": "Sejarah Indonesia SMA Kelas X",
+      "penulis": "Sri Wahyuni",
+      "penerbit": "Erlangga",
+      "tahun": 2021,
+      "stok": 15,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 8,
+      "isbn": "978-979-690-xxx-8",
+      "judul": "Geografi SMA/MA Kelas X",
+      "penulis": "Nurul Qamar",
+      "penerbit": "Erlangga",
+      "tahun": 2021,
+      "stok": 17,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 9,
+      "isbn": "978-979-690-xxx-9",
+      "judul": "Ekonomi SMA/MA Kelas X",
+      "penulis": "Siti Zubaidah",
+      "penerbit": "Erlangga",
+      "tahun": 2021,
+      "stok": 19,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 10,
+      "isbn": "978-979-690-xxx-10",
+      "judul": "Sosiologi SMA/MA Kelas X",
+      "penulis": "Kusnadi",
+      "penerbit": "Erlangga",
+      "tahun": 2021,
+      "stok": 16,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 11,
+      "isbn": "978-979-690-xxx-11",
+      "judul": "Pendidikan Kewarganegaraan SMA",
+      "penulis": "M. Nurdin",
+      "penerbit": "Erlangga",
+      "tahun": 2021,
+      "stok": 24,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 12,
+      "isbn": "978-979-690-xxx-12",
+      "judul": "Prakarya dan Kewirausahaan",
+      "penulis": "Nur Rahmah",
+      "penerbit": "Erlangga",
+      "tahun": 2021,
+      "stok": 21,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    }
+  ]
+}

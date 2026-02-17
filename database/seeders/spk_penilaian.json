@@ -1,0 +1,484 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "mst_siswa_id": 1,
+      "spk_kriteria_id": 1,
+      "nilai": 85.5,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 2,
+      "mst_siswa_id": 1,
+      "spk_kriteria_id": 2,
+      "nilai": 90.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 3,
+      "mst_siswa_id": 1,
+      "spk_kriteria_id": 3,
+      "nilai": 75.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 4,
+      "mst_siswa_id": 1,
+      "spk_kriteria_id": 4,
+      "nilai": 80.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 5,
+      "mst_siswa_id": 1,
+      "spk_kriteria_id": 5,
+      "nilai": 70.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 6,
+      "mst_siswa_id": 1,
+      "spk_kriteria_id": 6,
+      "nilai": 95.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 7,
+      "mst_siswa_id": 2,
+      "spk_kriteria_id": 1,
+      "nilai": 88.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 8,
+      "mst_siswa_id": 2,
+      "spk_kriteria_id": 2,
+      "nilai": 85.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 9,
+      "mst_siswa_id": 2,
+      "spk_kriteria_id": 3,
+      "nilai": 80.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 10,
+      "mst_siswa_id": 2,
+      "spk_kriteria_id": 4,
+      "nilai": 75.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 11,
+      "mst_siswa_id": 2,
+      "spk_kriteria_id": 5,
+      "nilai": 85.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 12,
+      "mst_siswa_id": 2,
+      "spk_kriteria_id": 6,
+      "nilai": 92.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 13,
+      "mst_siswa_id": 3,
+      "spk_kriteria_id": 1,
+      "nilai": 82.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 14,
+      "mst_siswa_id": 3,
+      "spk_kriteria_id": 2,
+      "nilai": 78.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 15,
+      "mst_siswa_id": 3,
+      "spk_kriteria_id": 3,
+      "nilai": 85.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 16,
+      "mst_siswa_id": 3,
+      "spk_kriteria_id": 4,
+      "nilai": 90.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 17,
+      "mst_siswa_id": 3,
+      "spk_kriteria_id": 5,
+      "nilai": 75.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 18,
+      "mst_siswa_id": 3,
+      "spk_kriteria_id": 6,
+      "nilai": 88.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 19,
+      "mst_siswa_id": 4,
+      "spk_kriteria_id": 1,
+      "nilai": 90.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 20,
+      "mst_siswa_id": 4,
+      "spk_kriteria_id": 2,
+      "nilai": 92.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 21,
+      "mst_siswa_id": 4,
+      "spk_kriteria_id": 3,
+      "nilai": 70.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 22,
+      "mst_siswa_id": 4,
+      "spk_kriteria_id": 4,
+      "nilai": 65.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 23,
+      "mst_siswa_id": 4,
+      "spk_kriteria_id": 5,
+      "nilai": 80.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 24,
+      "mst_siswa_id": 4,
+      "spk_kriteria_id": 6,
+      "nilai": 94.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 25,
+      "mst_siswa_id": 5,
+      "spk_kriteria_id": 1,
+      "nilai": 87.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 26,
+      "mst_siswa_id": 5,
+      "spk_kriteria_id": 2,
+      "nilai": 80.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 27,
+      "mst_siswa_id": 5,
+      "spk_kriteria_id": 3,
+      "nilai": 88.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 28,
+      "mst_siswa_id": 5,
+      "spk_kriteria_id": 4,
+      "nilai": 85.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 29,
+      "mst_siswa_id": 5,
+      "spk_kriteria_id": 5,
+      "nilai": 90.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 30,
+      "mst_siswa_id": 5,
+      "spk_kriteria_id": 6,
+      "nilai": 91.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 31,
+      "mst_siswa_id": 6,
+      "spk_kriteria_id": 1,
+      "nilai": 84.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 32,
+      "mst_siswa_id": 6,
+      "spk_kriteria_id": 2,
+      "nilai": 75.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 33,
+      "mst_siswa_id": 6,
+      "spk_kriteria_id": 3,
+      "nilai": 82.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 34,
+      "mst_siswa_id": 6,
+      "spk_kriteria_id": 4,
+      "nilai": 78.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 35,
+      "mst_siswa_id": 6,
+      "spk_kriteria_id": 5,
+      "nilai": 88.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 36,
+      "mst_siswa_id": 6,
+      "spk_kriteria_id": 6,
+      "nilai": 86.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 37,
+      "mst_siswa_id": 7,
+      "spk_kriteria_id": 1,
+      "nilai": 86.5,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 38,
+      "mst_siswa_id": 7,
+      "spk_kriteria_id": 2,
+      "nilai": 88.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 39,
+      "mst_siswa_id": 7,
+      "spk_kriteria_id": 3,
+      "nilai": 75.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 40,
+      "mst_siswa_id": 7,
+      "spk_kriteria_id": 4,
+      "nilai": 70.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 41,
+      "mst_siswa_id": 7,
+      "spk_kriteria_id": 5,
+      "nilai": 82.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 42,
+      "mst_siswa_id": 7,
+      "spk_kriteria_id": 6,
+      "nilai": 90.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 43,
+      "mst_siswa_id": 8,
+      "spk_kriteria_id": 1,
+      "nilai": 91.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 44,
+      "mst_siswa_id": 8,
+      "spk_kriteria_id": 2,
+      "nilai": 89.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 45,
+      "mst_siswa_id": 8,
+      "spk_kriteria_id": 3,
+      "nilai": 68.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 46,
+      "mst_siswa_id": 8,
+      "spk_kriteria_id": 4,
+      "nilai": 72.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 47,
+      "mst_siswa_id": 8,
+      "spk_kriteria_id": 5,
+      "nilai": 78.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 48,
+      "mst_siswa_id": 8,
+      "spk_kriteria_id": 6,
+      "nilai": 93.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 49,
+      "mst_siswa_id": 9,
+      "spk_kriteria_id": 1,
+      "nilai": 83.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 50,
+      "mst_siswa_id": 9,
+      "spk_kriteria_id": 2,
+      "nilai": 77.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 51,
+      "mst_siswa_id": 9,
+      "spk_kriteria_id": 3,
+      "nilai": 90.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 52,
+      "mst_siswa_id": 9,
+      "spk_kriteria_id": 4,
+      "nilai": 95.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 53,
+      "mst_siswa_id": 9,
+      "spk_kriteria_id": 5,
+      "nilai": 72.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 54,
+      "mst_siswa_id": 9,
+      "spk_kriteria_id": 6,
+      "nilai": 85.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 55,
+      "mst_siswa_id": 10,
+      "spk_kriteria_id": 1,
+      "nilai": 89.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 56,
+      "mst_siswa_id": 10,
+      "spk_kriteria_id": 2,
+      "nilai": 91.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 57,
+      "mst_siswa_id": 10,
+      "spk_kriteria_id": 3,
+      "nilai": 72.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 58,
+      "mst_siswa_id": 10,
+      "spk_kriteria_id": 4,
+      "nilai": 68.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 59,
+      "mst_siswa_id": 10,
+      "spk_kriteria_id": 5,
+      "nilai": 85.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    },
+    {
+      "id": 60,
+      "mst_siswa_id": 10,
+      "spk_kriteria_id": 6,
+      "nilai": 92.0,
+      "tahun_ajaran": "2024/2025",
+      "created_at": null
+    }
+  ]
+}

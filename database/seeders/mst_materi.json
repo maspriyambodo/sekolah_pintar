@@ -1,0 +1,148 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "mst_guru_mapel_id": 1,
+      "judul": "Bab 1: Aljabar Dasar",
+      "deskripsi": "Materi tentang konsep dasar aljabar termasuk variabel, konstanta, dan operasi aljabar",
+      "file_materi": "materi/matematika/bab1_aljabar.pdf",
+      "link_video": "https://youtube.com/watch?v=abc123",
+      "status": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "mst_guru_mapel_id": 1,
+      "judul": "Bab 2: Persamaan Linear",
+      "deskripsi": "Materi persamaan linear satu variabel",
+      "file_materi": "materi/matematika/bab2_persamaan_linear.pdf",
+      "link_video": "https://youtube.com/watch?v=def456",
+      "status": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "mst_guru_mapel_id": 2,
+      "judul": "Bab 1: Gerak Lurus",
+      "deskripsi": "Konsep GLB dan GLBB dalam fisika",
+      "file_materi": "materi/fisika/bab1_glb_glbb.pdf",
+      "link_video": "https://youtube.com/watch?v=ghi789",
+      "status": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "mst_guru_mapel_id": 2,
+      "judul": "Bab 2: Hukum Newton",
+      "deskripsi": "Ketiga hukum Newton dan penerapannya",
+      "file_materi": "materi/fisika/bab2_hukum_newton.pdf",
+      "link_video": "https://youtube.com/watch?v=jkl012",
+      "status": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "mst_guru_mapel_id": 3,
+      "judul": "Bab 1: Struktur Atom",
+      "deskripsi": "Materi tentang struktur atom dan sistem periodik",
+      "file_materi": "materi/kimia/bab1_struktur_atom.pdf",
+      "link_video": "https://youtube.com/watch?v=mno345",
+      "status": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "mst_guru_mapel_id": 4,
+      "judul": "Bab 1: Sel dan Jaringan",
+      "deskripsi": "Materi tentang sel, jaringan hewan dan tumbuhan",
+      "file_materi": "materi/biologi/bab1_sel_jaringan.pdf",
+      "link_video": "https://youtube.com/watch?v=pqr678",
+      "status": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "mst_guru_mapel_id": 5,
+      "judul": "Bab 1: Paragraf",
+      "deskripsi": "Materi tentang jenis-jenis paragraf",
+      "file_materi": "materi/b_indonesia/bab1_paragraf.pdf",
+      "link_video": "https://youtube.com/watch?v=stu901",
+      "status": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 8,
+      "mst_guru_mapel_id": 6,
+      "judul": "Bab 1: Grammar tenses",
+      "deskripsi": "Materi dasar tenses dalam bahasa Inggris",
+      "file_materi": "materi/b_inggris/bab1_tenses.pdf",
+      "link_video": "https://youtube.com/watch?v=vwy234",
+      "status": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 9,
+      "mst_guru_mapel_id": 7,
+      "judul": "Bab 1: Sejarah Indonesia Klasik",
+      "deskripsi": "Materi tentang kerajaan Hindu-Buddha di Indonesia",
+      "file_materi": "materi/sejarah/bab1_kerajaan_klasik.pdf",
+      "link_video": "https://youtube.com/watch?v=xyz567",
+      "status": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 10,
+      "mst_guru_mapel_id": 8,
+      "judul": "Bab 1: Peta Indonesia",
+      "deskripsi": "Materi tentang letak geografis Indonesia",
+      "file_materi": "materi/geografi/bab1_peta_indonesia.pdf",
+      "link_video": "https://youtube.com/watch?v=abc890",
+      "status": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 11,
+      "mst_guru_mapel_id": 9,
+      "judul": "Bab 1: Ekonomi Mikro",
+      "deskripsi": "Konsep ekonomi mikro dan pasar",
+      "file_materi": "materi/ekonomi/bab1_mikro.pdf",
+      "link_video": "https://youtube.com/watch?v=def123",
+      "status": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 12,
+      "mst_guru_mapel_id": 10,
+      "judul": "Bab 1: Interaksi Sosial",
+      "deskripsi": "Materi tentang interaksi dan proses sosial",
+      "file_materi": "materi/sosiologi/bab1_interaksi.pdf",
+      "link_video": "https://youtube.com/watch?v=ghi456",
+      "status": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "nama": "Kesulitan Belajar",
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "nama": "Masalah Disiplin",
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "nama": "Kasus Bullying",
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "nama": "Masalah Keluarga",
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "nama": "Kecanduan Gadget",
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "nama": "Masalah Teman Sebaya",
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "nama": "Kecemasan",
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 8,
+      "nama": "Depresi",
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 9,
+      "nama": "Karier dan Masa Depan",
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 10,
+      "nama": "Lainnya",
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    }
+  ]
+}

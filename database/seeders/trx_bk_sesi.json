@@ -1,0 +1,104 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "trx_bk_kasus_id": 1,
+      "tanggal": "2026-1-20",
+      "metode": 1,
+      "catatan": "Sesi awal, siswa bersedia bercerita tentang kesulitannya",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "trx_bk_kasus_id": 1,
+      "tanggal": "2026-1-27",
+      "metode": 1,
+      "catatan": "Sesi kedua, memberikan teknik belajar yang lebih efektif",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "trx_bk_kasus_id": 2,
+      "tanggal": "2025-12-15",
+      "metode": 1,
+      "catatan": "Wawancara dengan siswa korban",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "trx_bk_kasus_id": 2,
+      "tanggal": "2025-12-22",
+      "metode": 3,
+      "catatan": "Konfirmasi dengan orang tua pelaku",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "trx_bk_kasus_id": 3,
+      "tanggal": "2026-2-5",
+      "metode": 1,
+      "catatan": "Diskusi tentang bahaya kecanduan gadget",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "trx_bk_kasus_id": 3,
+      "tanggal": "2026-2-12",
+      "metode": 2,
+      "catatan": "Konsultasi online dengan orang tua",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "trx_bk_kasus_id": 4,
+      "tanggal": "2026-1-28",
+      "metode": 1,
+      "catatan": "Pemberian sanksi dan bimbingan",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 8,
+      "trx_bk_kasus_id": 5,
+      "tanggal": "2026-2-12",
+      "metode": 1,
+      "catatan": "Teknik relaksasi untuk mengurangi kecemasan",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 9,
+      "trx_bk_kasus_id": 6,
+      "tanggal": "2026-2-8",
+      "metode": 3,
+      "catatan": "Telepon dengan orang tua",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    },
+    {
+      "id": 10,
+      "trx_bk_kasus_id": 7,
+      "tanggal": "2026-1-5",
+      "metode": 1,
+      "catatan": "Mediasi dengan temansekelas",
+      "created_at": "2026-2-17 13:19:37",
+      "updated_at": "2026-2-17 13:19:37",
+      "deleted_at": null
+    }
+  ]
+}

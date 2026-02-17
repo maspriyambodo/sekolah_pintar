@@ -1,0 +1,328 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "mst_siswa_id": 1,
+      "mst_wali_id": 1,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "mst_siswa_id": 1,
+      "mst_wali_id": 2,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "mst_siswa_id": 2,
+      "mst_wali_id": 3,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "mst_siswa_id": 2,
+      "mst_wali_id": 4,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "mst_siswa_id": 3,
+      "mst_wali_id": 5,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "mst_siswa_id": 3,
+      "mst_wali_id": 6,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "mst_siswa_id": 4,
+      "mst_wali_id": 7,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 8,
+      "mst_siswa_id": 4,
+      "mst_wali_id": 8,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 9,
+      "mst_siswa_id": 5,
+      "mst_wali_id": 9,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 10,
+      "mst_siswa_id": 5,
+      "mst_wali_id": 10,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 11,
+      "mst_siswa_id": 6,
+      "mst_wali_id": 11,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 12,
+      "mst_siswa_id": 6,
+      "mst_wali_id": 12,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 13,
+      "mst_siswa_id": 7,
+      "mst_wali_id": 13,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 14,
+      "mst_siswa_id": 7,
+      "mst_wali_id": 14,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 15,
+      "mst_siswa_id": 8,
+      "mst_wali_id": 15,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 16,
+      "mst_siswa_id": 8,
+      "mst_wali_id": 16,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 17,
+      "mst_siswa_id": 9,
+      "mst_wali_id": 17,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 18,
+      "mst_siswa_id": 9,
+      "mst_wali_id": 18,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 19,
+      "mst_siswa_id": 10,
+      "mst_wali_id": 19,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 20,
+      "mst_siswa_id": 10,
+      "mst_wali_id": 20,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 21,
+      "mst_siswa_id": 11,
+      "mst_wali_id": 21,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 22,
+      "mst_siswa_id": 11,
+      "mst_wali_id": 22,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 23,
+      "mst_siswa_id": 12,
+      "mst_wali_id": 1,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 24,
+      "mst_siswa_id": 12,
+      "mst_wali_id": 2,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 25,
+      "mst_siswa_id": 13,
+      "mst_wali_id": 3,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 26,
+      "mst_siswa_id": 14,
+      "mst_wali_id": 5,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 27,
+      "mst_siswa_id": 15,
+      "mst_wali_id": 7,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 28,
+      "mst_siswa_id": 16,
+      "mst_wali_id": 9,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 29,
+      "mst_siswa_id": 17,
+      "mst_wali_id": 11,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 30,
+      "mst_siswa_id": 18,
+      "mst_wali_id": 13,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 31,
+      "mst_siswa_id": 19,
+      "mst_wali_id": 15,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 32,
+      "mst_siswa_id": 20,
+      "mst_wali_id": 17,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 33,
+      "mst_siswa_id": 21,
+      "mst_wali_id": 19,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 34,
+      "mst_siswa_id": 22,
+      "mst_wali_id": 21,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 35,
+      "mst_siswa_id": 23,
+      "mst_wali_id": 1,
+      "hubungan": 1,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    },
+    {
+      "id": 36,
+      "mst_siswa_id": 24,
+      "mst_wali_id": 3,
+      "hubungan": 2,
+      "created_at": "2026-2-17 13:13:18",
+      "updated_at": "2026-2-17 13:13:18",
+      "deleted_at": null
+    }
+  ]
+}
