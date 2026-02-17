@@ -28,7 +28,7 @@ class MasterDataSeeder extends Seeder
      */
     private function loadJsonData(string $filename): array
     {
-        $jsonPath = database_path('seeders/' . $filename);
+        $jsonPath = database_path('seeders/json/' . $filename);
         
         if (!File::exists($jsonPath)) {
             $this->command->warn("Warning: {$filename} file not found!");
