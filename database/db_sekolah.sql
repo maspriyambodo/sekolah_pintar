@@ -11,7 +11,7 @@
  Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 17/02/2026 17:56:10
+ Date: 17/02/2026 18:09:07
 */
 
 SET NAMES utf8mb4;
@@ -750,6 +750,46 @@ CREATE TABLE `trx_bk_wali` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
+-- Table structure for trx_forum
+-- ----------------------------
+DROP TABLE IF EXISTS `trx_forum`;
+CREATE TABLE `trx_forum` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `mst_guru_mapel_id` bigint unsigned NOT NULL,
+  `sys_user_id` bigint unsigned NOT NULL COMMENT 'Pengirim pesan (Guru/Siswa)',
+  `parent_id` bigint unsigned DEFAULT NULL COMMENT 'ID pesan utama jika ini adalah balasan',
+  `judul` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Hanya diisi untuk topik baru',
+  `pesan` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file_lampiran` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `trx_forum_guru_mapel_foreign` (`mst_guru_mapel_id`),
+  KEY `trx_forum_user_foreign` (`sys_user_id`),
+  CONSTRAINT `trx_forum_guru_mapel_foreign` FOREIGN KEY (`mst_guru_mapel_id`) REFERENCES `mst_guru_mapel` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `trx_forum_user_foreign` FOREIGN KEY (`sys_user_id`) REFERENCES `sys_users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for trx_log_akses_materi
+-- ----------------------------
+DROP TABLE IF EXISTS `trx_log_akses_materi`;
+CREATE TABLE `trx_log_akses_materi` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `mst_materi_id` bigint unsigned NOT NULL,
+  `mst_siswa_id` bigint unsigned NOT NULL,
+  `waktu_akses` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `durasi_detik` int DEFAULT '0' COMMENT 'Lama siswa membaca materi',
+  `perangkat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Info browser/HP',
+  PRIMARY KEY (`id`),
+  KEY `log_materi_foreign` (`mst_materi_id`),
+  KEY `log_siswa_foreign` (`mst_siswa_id`),
+  CONSTRAINT `log_materi_foreign` FOREIGN KEY (`mst_materi_id`) REFERENCES `mst_materi` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `log_siswa_foreign` FOREIGN KEY (`mst_siswa_id`) REFERENCES `mst_siswa` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
 -- Table structure for trx_nilai
 -- ----------------------------
 DROP TABLE IF EXISTS `trx_nilai`;
@@ -816,6 +856,28 @@ CREATE TABLE `trx_peminjaman_buku` (
   KEY `idx_pinjam_buku_status` (`mst_buku_id`,`status`),
   CONSTRAINT `trx_peminjaman_buku_mst_buku_id_foreign` FOREIGN KEY (`mst_buku_id`) REFERENCES `mst_buku` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `trx_peminjaman_buku_mst_siswa_id_foreign` FOREIGN KEY (`mst_siswa_id`) REFERENCES `mst_siswa` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for trx_presensi
+-- ----------------------------
+DROP TABLE IF EXISTS `trx_presensi`;
+CREATE TABLE `trx_presensi` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `mst_guru_mapel_id` bigint unsigned NOT NULL,
+  `mst_siswa_id` bigint unsigned NOT NULL,
+  `tanggal` date NOT NULL,
+  `jam_masuk` time DEFAULT NULL,
+  `status` enum('Hadir','Izin','Sakit','Alfa') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Alfa',
+  `keterangan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `trx_presensi_guru_mapel_foreign` (`mst_guru_mapel_id`),
+  KEY `trx_presensi_siswa_foreign` (`mst_siswa_id`),
+  CONSTRAINT `trx_presensi_guru_mapel_foreign` FOREIGN KEY (`mst_guru_mapel_id`) REFERENCES `mst_guru_mapel` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `trx_presensi_siswa_foreign` FOREIGN KEY (`mst_siswa_id`) REFERENCES `mst_siswa` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
