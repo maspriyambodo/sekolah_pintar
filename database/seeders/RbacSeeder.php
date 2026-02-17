@@ -141,6 +141,27 @@ class RbacSeeder extends Seeder
             ['code' => 'rapor.update', 'name' => 'Update Rapor', 'module' => 'rapor'],
             ['code' => 'rapor.delete', 'name' => 'Delete Rapor', 'module' => 'rapor'],
 
+            // Presensi permissions
+            ['code' => 'presensi.view', 'name' => 'View Presensi', 'module' => 'presensi'],
+            ['code' => 'presensi.create', 'name' => 'Create Presensi', 'module' => 'presensi'],
+            ['code' => 'presensi.update', 'name' => 'Update Presensi', 'module' => 'presensi'],
+            ['code' => 'presensi.delete', 'name' => 'Delete Presensi', 'module' => 'presensi'],
+            ['code' => 'presensi.bulk', 'name' => 'Bulk Create Presensi', 'module' => 'presensi'],
+
+            // Tugas permissions
+            ['code' => 'tugas.view', 'name' => 'View Tugas', 'module' => 'tugas'],
+            ['code' => 'tugas.create', 'name' => 'Create Tugas', 'module' => 'tugas'],
+            ['code' => 'tugas.update', 'name' => 'Update Tugas', 'module' => 'tugas'],
+            ['code' => 'tugas.delete', 'name' => 'Delete Tugas', 'module' => 'tugas'],
+
+            // Tugas Siswa permissions
+            ['code' => 'tugas-siswa.view', 'name' => 'View Tugas Siswa', 'module' => 'tugas-siswa'],
+            ['code' => 'tugas-siswa.create', 'name' => 'Create Tugas Siswa', 'module' => 'tugas-siswa'],
+            ['code' => 'tugas-siswa.update', 'name' => 'Update Tugas Siswa', 'module' => 'tugas-siswa'],
+            ['code' => 'tugas-siswa.delete', 'name' => 'Delete Tugas Siswa', 'module' => 'tugas-siswa'],
+            ['code' => 'tugas-siswa.nilai', 'name' => 'Nilai Tugas Siswa', 'module' => 'tugas-siswa'],
+            ['code' => 'tugas-siswa.kumpulkan', 'name' => 'Kumpulkan Tugas', 'module' => 'tugas-siswa'],
+
             // User management permissions
             ['code' => 'users.view', 'name' => 'View Users', 'module' => 'users'],
             ['code' => 'users.create', 'name' => 'Create Users', 'module' => 'users'],
@@ -301,11 +322,14 @@ class RbacSeeder extends Seeder
                 'is_active' => true,
                 'children' => [
                     ['nama_menu' => 'Nilai', 'url' => '/akademik/nilai', 'icon' => 'bi-clipboard-data', 'urutan' => 1, 'is_active' => true],
-                    ['nama_menu' => 'Absensi', 'url' => '/akademik/absensi', 'icon' => 'bi-calendar-check', 'urutan' => 2, 'is_active' => true],
+                    ['nama_menu' => 'Presensi', 'url' => '/akademik/presensi', 'icon' => 'bi-calendar-check', 'urutan' => 2, 'is_active' => true],
                     ['nama_menu' => 'Ujian', 'url' => '/akademik/ujian', 'icon' => 'bi-file-earmark-text', 'urutan' => 3, 'is_active' => true],
                     ['nama_menu' => 'Bank Soals', 'url' => '/akademik/soals', 'icon' => 'bi-question-circle', 'urutan' => 4, 'is_active' => true],
-                    ['nama_menu' => 'Ranking', 'url' => '/akademik/ranking', 'icon' => 'bi-trophy', 'urutan' => 5, 'is_active' => true],
-                    ['nama_menu' => 'Rapor', 'url' => '/akademik/rapor', 'icon' => 'bi-file-earmark-ruled', 'urutan' => 6, 'is_active' => true],
+                    ['nama_menu' => 'Tugas', 'url' => '/akademik/tugas', 'icon' => 'bi-file-earmark-check', 'urutan' => 5, 'is_active' => true],
+                    ['nama_menu' => 'Ranking', 'url' => '/akademik/ranking', 'icon' => 'bi-trophy', 'urutan' => 6, 'is_active' => true],
+                    ['nama_menu' => 'Rapor', 'url' => '/akademik/rapor', 'icon' => 'bi-file-earmark-ruled', 'urutan' => 7, 'is_active' => true],
+                    ['nama_menu' => 'Forum', 'url' => '/akademik/forum', 'icon' => 'bi-chat-dots', 'urutan' => 8, 'is_active' => true],
+                    ['nama_menu' => 'Materi', 'url' => '/akademik/materi', 'icon' => 'bi-collection-play', 'urutan' => 9, 'is_active' => true],
                 ],
             ],
             // Absensi
@@ -356,12 +380,25 @@ class RbacSeeder extends Seeder
                     ['nama_menu' => 'Pembayaran SPP', 'url' => '/keuangan/pembayaran-spp', 'icon' => 'bi-receipt', 'urutan' => 2, 'is_active' => true],
                 ],
             ],
+            // SPK (Sistem Pendukung Keputusan)
+            [
+                'nama_menu' => 'SPK',
+                'url' => '#',
+                'icon' => 'bi-graph-up',
+                'urutan' => 8,
+                'is_active' => true,
+                'children' => [
+                    ['nama_menu' => 'Kriteria', 'url' => '/spk/kriteria', 'icon' => 'bi-list-check', 'urutan' => 1, 'is_active' => true],
+                    ['nama_menu' => 'Penilaian', 'url' => '/spk/penilaian', 'icon' => 'bi-pencil-square', 'urutan' => 2, 'is_active' => true],
+                    ['nama_menu' => 'Hasil', 'url' => '/spk/hasil', 'icon' => 'bi-bar-chart-line', 'urutan' => 3, 'is_active' => true],
+                ],
+            ],
             // Settings
             [
                 'nama_menu' => 'Pengaturan',
                 'url' => '#',
                 'icon' => 'bi-gear',
-                'urutan' => 8,
+                'urutan' => 9,
                 'is_active' => true,
                 'children' => [
                     ['nama_menu' => 'Users', 'url' => '/admin/users', 'icon' => 'bi-person', 'urutan' => 1, 'is_active' => true],
@@ -406,11 +443,14 @@ class RbacSeeder extends Seeder
                     'Kelas' => 'kelas.view',
                     'Mata Pelajaran' => 'mapel.view',
                     'Nilai' => 'nilai.view',
-                    'Absensi' => 'absensi-siswa.view',
+                    'Presensi' => 'presensi.view',
                     'Ujian' => 'ujian.view',
                     'Bank Soals' => 'soals.view',
+                    'Tugas' => 'tugas.view',
                     'Ranking' => 'ranking.view',
                     'Rapor' => 'rapor.view',
+                    'Forum' => 'forum.view',
+                    'Materi' => 'materi.view',
                     'Absensi Guru' => 'absensi-guru.view',
                     'Absensi Siswa' => 'absensi-siswa.view',
                     'BK Jenis' => 'bk-jenis.view',
@@ -419,6 +459,9 @@ class RbacSeeder extends Seeder
                     'Peminjaman' => 'peminjaman.view',
                     'Tarif SPP' => 'tarif-spp.view',
                     'Pembayaran SPP' => 'pembayaran-spp.view',
+                    'Kriteria' => 'spk-kriteria.view',
+                    'Penilaian' => 'spk-penilaian.view',
+                    'Hasil' => 'spk-hasil.view',
                     'Users' => 'users.view',
                     'Roles' => 'roles.view',
                     'Permissions' => 'permissions.view',
