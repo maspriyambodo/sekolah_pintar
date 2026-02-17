@@ -15,6 +15,8 @@ return new class extends Migration
             $table->integer('peringkat')->nullable();
             $table->string('periode', 50)->nullable()->comment('Contoh: Beasiswa Semester Ganjil 2026');
             $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->foreign('mst_siswa_id')->references('id')->on('mst_siswa')->onDelete('cascade')->onUpdate('cascade');
         });

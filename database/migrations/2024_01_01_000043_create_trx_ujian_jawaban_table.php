@@ -18,6 +18,7 @@ return new class extends Migration
             $table->tinyInteger('ragu_ragu')->default(0);
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->foreign('trx_ujian_user_id')->references('id')->on('trx_ujian_user')->onDelete('cascade')->onUpdate('restrict');
             $table->foreign('mst_soal_id')->references('id')->on('mst_soal')->onDelete('cascade')->onUpdate('restrict');

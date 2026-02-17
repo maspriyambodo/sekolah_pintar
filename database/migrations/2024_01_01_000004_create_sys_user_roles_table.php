@@ -14,6 +14,7 @@ return new class extends Migration
             $table->unsignedBigInteger('sys_role_id');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->unique(['sys_user_id', 'sys_role_id'], 'uq_user_role');
             $table->foreign('sys_user_id')->references('id')->on('sys_users')->onDelete('cascade')->onUpdate('restrict');

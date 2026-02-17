@@ -21,6 +21,7 @@ return new class extends Migration
             $table->decimal('nilai_akhir', 5, 2)->default(0.00);
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->foreign('trx_ujian_id')->references('id')->on('trx_ujian')->onDelete('cascade')->onUpdate('restrict');
             $table->foreign('mst_siswa_id')->references('id')->on('mst_siswa')->onDelete('cascade')->onUpdate('restrict');

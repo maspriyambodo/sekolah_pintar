@@ -16,6 +16,7 @@ return new class extends Migration
             $table->char('urutan', 1)->nullable()->comment('A, B, C, D, atau E');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->foreign('mst_soal_id')->references('id')->on('mst_soal')->onDelete('cascade')->onUpdate('restrict');
         });

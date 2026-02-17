@@ -15,6 +15,9 @@ return new class extends Migration
             $table->timestamp('waktu_akses')->useCurrent();
             $table->integer('durasi_detik')->default(0)->comment('Lama siswa membaca materi');
             $table->string('perangkat', 255)->nullable()->comment('Info browser/HP');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->foreign('mst_materi_id')->references('id')->on('mst_materi')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('mst_siswa_id')->references('id')->on('mst_siswa')->onDelete('cascade')->onUpdate('cascade');
