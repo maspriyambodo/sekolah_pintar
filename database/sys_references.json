@@ -1,7 +1,6 @@
 {
   "RECORDS": [
     {
-      "id": 1,
       "kategori": "jenis_kelamin",
       "kode": "1",
       "nama": "Laki-Laki",
@@ -11,7 +10,6 @@
       "deleted_at": null
     },
     {
-      "id": 2,
       "kategori": "jenis_kelamin",
       "kode": "2",
       "nama": "Perempuan",
@@ -21,7 +19,6 @@
       "deleted_at": null
     },
     {
-      "id": 3,
       "kategori": "status_siswa",
       "kode": "1",
       "nama": "Aktif",
@@ -31,7 +28,6 @@
       "deleted_at": null
     },
     {
-      "id": 4,
       "kategori": "status_siswa",
       "kode": "2",
       "nama": "Lulus",
@@ -41,7 +37,6 @@
       "deleted_at": null
     },
     {
-      "id": 5,
       "kategori": "status_siswa",
       "kode": "3",
       "nama": "Pindah",
@@ -51,7 +46,6 @@
       "deleted_at": null
     },
     {
-      "id": 6,
       "kategori": "hubungan_wali",
       "kode": "1",
       "nama": "Ayah",
@@ -61,7 +55,6 @@
       "deleted_at": null
     },
     {
-      "id": 7,
       "kategori": "hubungan_wali",
       "kode": "2",
       "nama": "Ibu",
@@ -71,7 +64,6 @@
       "deleted_at": null
     },
     {
-      "id": 8,
       "kategori": "hubungan_wali",
       "kode": "3",
       "nama": "Wali",
@@ -81,7 +73,6 @@
       "deleted_at": null
     },
     {
-      "id": 9,
       "kategori": "level_error",
       "kode": "1",
       "nama": "info",
@@ -91,7 +82,6 @@
       "deleted_at": null
     },
     {
-      "id": 10,
       "kategori": "level_error",
       "kode": "2",
       "nama": "warning",
@@ -101,7 +91,6 @@
       "deleted_at": null
     },
     {
-      "id": 11,
       "kategori": "level_error",
       "kode": "3",
       "nama": "error",
@@ -111,7 +100,6 @@
       "deleted_at": null
     },
     {
-      "id": 12,
       "kategori": "level_error",
       "kode": "4",
       "nama": "critical",
@@ -121,7 +109,6 @@
       "deleted_at": null
     },
     {
-      "id": 13,
       "kategori": "status_login",
       "kode": "1",
       "nama": "success",
@@ -131,7 +118,6 @@
       "deleted_at": null
     },
     {
-      "id": 14,
       "kategori": "status_login",
       "kode": "2",
       "nama": "failed",
@@ -141,7 +127,6 @@
       "deleted_at": null
     },
     {
-      "id": 15,
       "kategori": "status_absensi",
       "kode": "1",
       "nama": "hadir",
@@ -151,7 +136,6 @@
       "deleted_at": null
     },
     {
-      "id": 16,
       "kategori": "status_absensi",
       "kode": "2",
       "nama": "izin",
@@ -161,7 +145,6 @@
       "deleted_at": null
     },
     {
-      "id": 17,
       "kategori": "status_absensi",
       "kode": "3",
       "nama": "sakit",
@@ -171,7 +154,6 @@
       "deleted_at": null
     },
     {
-      "id": 18,
       "kategori": "status_absensi",
       "kode": "4",
       "nama": "alpha",
@@ -181,7 +163,6 @@
       "deleted_at": null
     },
     {
-      "id": 19,
       "kategori": "status_bk",
       "kode": "1",
       "nama": "dibuka",
@@ -191,7 +172,6 @@
       "deleted_at": null
     },
     {
-      "id": 20,
       "kategori": "status_bk",
       "kode": "2",
       "nama": "proses",
@@ -201,7 +181,6 @@
       "deleted_at": null
     },
     {
-      "id": 21,
       "kategori": "status_bk",
       "kode": "3",
       "nama": "selesai",
@@ -211,7 +190,6 @@
       "deleted_at": null
     },
     {
-      "id": 22,
       "kategori": "status_bk",
       "kode": "4",
       "nama": "dirujuk",
@@ -221,7 +199,6 @@
       "deleted_at": null
     },
     {
-      "id": 23,
       "kategori": "metode_bk",
       "kode": "1",
       "nama": "Tatap Muka",
@@ -231,7 +208,6 @@
       "deleted_at": null
     },
     {
-      "id": 24,
       "kategori": "metode_bk",
       "kode": "2",
       "nama": "Online",
@@ -241,7 +217,6 @@
       "deleted_at": null
     },
     {
-      "id": 25,
       "kategori": "metode_bk",
       "kode": "3",
       "nama": "Telepon",
@@ -251,7 +226,6 @@
       "deleted_at": null
     },
     {
-      "id": 26,
       "kategori": "peran_wali_bk",
       "kode": "1",
       "nama": "dipanggil",
@@ -261,7 +235,6 @@
       "deleted_at": null
     },
     {
-      "id": 27,
       "kategori": "peran_wali_bk",
       "kode": "2",
       "nama": "pendamping",
@@ -271,7 +244,6 @@
       "deleted_at": null
     },
     {
-      "id": 28,
       "kategori": "peran_wali_bk",
       "kode": "3",
       "nama": "informasi",
@@ -281,7 +253,6 @@
       "deleted_at": null
     },
     {
-      "id": 29,
       "kategori": "status_bayar",
       "kode": "1",
       "nama": "Lunas",
@@ -291,7 +262,6 @@
       "deleted_at": null
     },
     {
-      "id": 30,
       "kategori": "status_bayar",
       "kode": "2",
       "nama": "Belum Lunas",
@@ -301,7 +271,6 @@
       "deleted_at": null
     },
     {
-      "id": 31,
       "kategori": "status_bayar",
       "kode": "3",
       "nama": "Pending",
@@ -311,7 +280,6 @@
       "deleted_at": null
     },
     {
-      "id": 32,
       "kategori": "status_bayar",
       "kode": "4",
       "nama": "Batal",
@@ -321,7 +289,6 @@
       "deleted_at": null
     },
     {
-      "id": 33,
       "kategori": "metode_pembayaran",
       "kode": "1",
       "nama": "Tunai",
@@ -331,7 +298,6 @@
       "deleted_at": null
     },
     {
-      "id": 34,
       "kategori": "metode_pembayaran",
       "kode": "2",
       "nama": "Transfer",
@@ -341,7 +307,6 @@
       "deleted_at": null
     },
     {
-      "id": 35,
       "kategori": "metode_pembayaran",
       "kode": "3",
       "nama": "Virtual Account",
@@ -351,7 +316,6 @@
       "deleted_at": null
     },
     {
-      "id": 36,
       "kategori": "metode_pembayaran",
       "kode": "4",
       "nama": "QRIS",
@@ -361,7 +325,6 @@
       "deleted_at": null
     },
     {
-      "id": 37,
       "kategori": "status_pinjam",
       "kode": "1",
       "nama": "dipinjam",
@@ -371,7 +334,6 @@
       "deleted_at": null
     },
     {
-      "id": 38,
       "kategori": "status_pinjam",
       "kode": "2",
       "nama": "dikembalikan",
@@ -381,7 +343,6 @@
       "deleted_at": null
     },
     {
-      "id": 39,
       "kategori": "status_pinjam",
       "kode": "3",
       "nama": "hilang",
@@ -391,7 +352,6 @@
       "deleted_at": null
     },
     {
-      "id": 40,
       "kategori": "kategori_semester",
       "kode": "1",
       "nama": "ganjil",
@@ -401,7 +361,6 @@
       "deleted_at": null
     },
     {
-      "id": 41,
       "kategori": "kategori_semester",
       "kode": "2",
       "nama": "genap",
@@ -411,7 +370,6 @@
       "deleted_at": null
     },
     {
-      "id": 42,
       "kategori": "jenis_ujian",
       "kode": "1",
       "nama": "Harian",
@@ -421,17 +379,15 @@
       "deleted_at": null
     },
     {
-      "id": 43,
       "kategori": "jenis_ujian",
       "kode": "2",
-      "nama": "UTS",
+      "nama": "Penilaian Tengah Semester",
       "urutan": 2,
       "created_at": "2026-2-16 14:09:37",
       "updated_at": "2026-2-16 14:09:37",
       "deleted_at": null
     },
     {
-      "id": 44,
       "kategori": "jenis_ujian",
       "kode": "3",
       "nama": "UAS",
@@ -441,23 +397,66 @@
       "deleted_at": null
     },
     {
-      "id": 45,
       "kategori": "status_kepegawaian",
       "kode": "1",
       "nama": "Guru Tetap",
       "urutan": 1,
-      "created_at": "2026-2-16 16:59:44",
-      "updated_at": "2026-2-16 16:59:44",
+      "created_at": "2026-2-16 17:00:36",
+      "updated_at": "2026-2-16 17:00:36",
       "deleted_at": null
     },
     {
-      "id": 46,
       "kategori": "status_kepegawaian",
       "kode": "2",
       "nama": "Guru Tidak Tetap",
       "urutan": 2,
-      "created_at": "2026-2-16 16:59:57",
-      "updated_at": "2026-2-16 16:59:57",
+      "created_at": "2026-2-16 17:00:56",
+      "updated_at": "2026-2-16 17:00:56",
+      "deleted_at": null
+    },
+    {
+      "kategori": "tingkat_kesulitan",
+      "kode": "1",
+      "nama": "mudah",
+      "urutan": 1,
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
+      "deleted_at": null
+    },
+    {
+      "kategori": "tingkat_kesulitan",
+      "kode": "2",
+      "nama": "sedang",
+      "urutan": 2,
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
+      "deleted_at": null
+    },
+    {
+      "kategori": "tingkat_kesulitan",
+      "kode": "3",
+      "nama": "sulit",
+      "urutan": 3,
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
+      "deleted_at": null
+    },
+    {
+      "kategori": "tipe_soal",
+      "kode": "1",
+      "nama": "Pilihan Ganda",
+      "urutan": 1,
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
+      "deleted_at": null
+    },
+    {
+      "kategori": "tipe_soal",
+      "kode": "2",
+      "nama": "Essay",
+      "urutan": 2,
+      "created_at": "2026-2-16 14:09:36",
+      "updated_at": "2026-2-16 14:09:36",
       "deleted_at": null
     }
   ]
