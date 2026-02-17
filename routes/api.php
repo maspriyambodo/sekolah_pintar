@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\V1\BkKasusController;
 use App\Http\Controllers\Api\V1\BukuController;
 use App\Http\Controllers\Api\V1\DashboardController;
 use App\Http\Controllers\Api\V1\FileUploadController;
+use App\Http\Controllers\Api\V1\ForumController;
 use App\Http\Controllers\Api\V1\GuruController;
 use App\Http\Controllers\Api\V1\KelasController;
 use App\Http\Controllers\Api\V1\MapelController;
@@ -324,6 +325,18 @@ Route::prefix('v1')->group(function () {
                 Route::get('/date', [PresensiController::class, 'byDate'])->name('api.v1.presensi.by-date');
                 Route::get('/siswa/{siswaId}/summary', [PresensiController::class, 'summary'])->name('api.v1.presensi.summary');
                 Route::post('/bulk', [PresensiController::class, 'bulkStore'])->name('api.v1.presensi.bulk');
+            });
+
+            // Forum Diskusi
+            Route::prefix('forum')->group(function () {
+                Route::get('/', [ForumController::class, 'index'])->name('api.v1.forum.index');
+                Route::post('/', [ForumController::class, 'store'])->name('api.v1.forum.store');
+                Route::get('/{id}', [ForumController::class, 'show'])->name('api.v1.forum.show');
+                Route::put('/{id}', [ForumController::class, 'update'])->name('api.v1.forum.update');
+                Route::delete('/{id}', [ForumController::class, 'destroy'])->name('api.v1.forum.destroy');
+                Route::get('/guru-mapel/{guruMapelId}/topics', [ForumController::class, 'topics'])->name('api.v1.forum.topics');
+                Route::get('/{id}/replies', [ForumController::class, 'replies'])->name('api.v1.forum.replies');
+                Route::get('/user/{userId}', [ForumController::class, 'byUser'])->name('api.v1.forum.by-user');
             });
         });
 
