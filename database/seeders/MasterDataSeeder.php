@@ -191,10 +191,10 @@ class MasterDataSeeder extends Seeder
 
         foreach ($records as $gm) {
             MstGuruMapel::firstOrCreate(
-                ['guru_id' => $gm['guru_id'], 'mapel_id' => $gm['mapel_id']],
+                ['mst_guru_id' => $gm['mst_guru_id'], 'mst_mapel_id' => $gm['mst_mapel_id']],
                 [
-                    'guru_id' => $gm['guru_id'],
-                    'mapel_id' => $gm['mapel_id'],
+                    'mst_guru_id' => $gm['mst_guru_id'],
+                    'mst_mapel_id' => $gm['mst_mapel_id'],
                 ]
             );
         }
@@ -213,11 +213,18 @@ class MasterDataSeeder extends Seeder
 
         foreach ($records as $g) {
             MstGuru::firstOrCreate(
-                ['nama' => $g['nama']],
+                ['sys_user_id' => $g['sys_user_id']],
                 [
-                    'nama' => $g['nama'],
+                    'sys_user_id' => $g['sys_user_id'],
                     'nip' => $g['nip'] ?? null,
+                    'nuptk' => $g['nuptk'] ?? null,
+                    'nama' => $g['nama'],
+                    'jenis_kelamin' => $g['jenis_kelamin'] ?? null,
+                    'tanggal_lahir' => $g['tanggal_lahir'] ?? null,
+                    'alamat' => $g['alamat'] ?? null,
                     'email' => $g['email'] ?? null,
+                    'pendidikan_terakhir' => $g['pendidikan_terakhir'] ?? null,
+                    'no_hp' => $g['no_hp'] ?? null,
                 ]
             );
         }
@@ -236,11 +243,14 @@ class MasterDataSeeder extends Seeder
 
         foreach ($records as $m) {
             MstMateri::firstOrCreate(
-                ['judul' => $m['judul'], 'mapel_id' => $m['mapel_id']],
+                ['judul' => $m['judul'], 'mst_guru_mapel_id' => $m['mst_guru_mapel_id']],
                 [
                     'judul' => $m['judul'],
-                    'mapel_id' => $m['mapel_id'],
+                    'mst_guru_mapel_id' => $m['mst_guru_mapel_id'],
                     'deskripsi' => $m['deskripsi'] ?? null,
+                    'file_materi' => $m['file_materi'] ?? null,
+                    'link_video' => $m['link_video'] ?? null,
+                    'status' => $m['status'] ?? 1,
                 ]
             );
         }
@@ -281,11 +291,16 @@ class MasterDataSeeder extends Seeder
 
         foreach ($records as $s) {
             MstSiswa::firstOrCreate(
-                ['nama' => $s['nama']],
+                ['sys_user_id' => $s['sys_user_id']],
                 [
-                    'nama' => $s['nama'],
+                    'sys_user_id' => $s['sys_user_id'],
                     'nis' => $s['nis'] ?? null,
-                    'email' => $s['email'] ?? null,
+                    'nama' => $s['nama'],
+                    'jenis_kelamin' => $s['jenis_kelamin'] ?? null,
+                    'tanggal_lahir' => $s['tanggal_lahir'] ?? null,
+                    'alamat' => $s['alamat'] ?? null,
+                    'mst_kelas_id' => $s['mst_kelas_id'] ?? null,
+                    'status' => $s['status'] ?? 1,
                 ]
             );
         }
@@ -304,11 +319,11 @@ class MasterDataSeeder extends Seeder
 
         foreach ($records as $so) {
             MstSoalOpsi::firstOrCreate(
-                ['soal_id' => $so['soal_id'], 'opsi' => $so['opsi']],
+                ['soal_id' => $so['mst_soal_id'], 'opsi' => $so['teks_opsi']],
                 [
-                    'soal_id' => $so['soal_id'],
-                    'opsi' => $so['opsi'],
-                    'is_benar' => $so['is_benar'] ?? false,
+                    'soal_id' => $so['mst_soal_id'],
+                    'opsi' => $so['teks_opsi'],
+                    'is_benar' => $so['is_jawaban'] ?? false,
                 ]
             );
         }
@@ -327,11 +342,13 @@ class MasterDataSeeder extends Seeder
 
         foreach ($records as $s) {
             MstSoal::firstOrCreate(
-                ['materi_id' => $s['materi_id'], 'pertanyaan' => $s['pertanyaan']],
+                ['mst_mapel_id' => $s['mst_mapel_id'], 'pertanyaan' => $s['pertanyaan']],
                 [
-                    'materi_id' => $s['materi_id'],
+                    'mst_mapel_id' => $s['mst_mapel_id'],
                     'pertanyaan' => $s['pertanyaan'],
-                    'jenis_soal' => $s['jenis_soal'] ?? null,
+                    'tipe' => $s['tipe'] ?? 1,
+                    'tingkat_kesulitan' => $s['tingkat_kesulitan'] ?? 1,
+                    'media_path' => $s['media_path'] ?? null,
                 ]
             );
         }
@@ -350,11 +367,11 @@ class MasterDataSeeder extends Seeder
 
         foreach ($records as $t) {
             MstTarifSpp::firstOrCreate(
-                ['kelas_id' => $t['kelas_id'], 'tahun_ajaran' => $t['tahun_ajaran']],
+                ['kelas_id' => $t['mst_kelas_id'], 'tahun_ajaran' => $t['tahun_ajaran']],
                 [
-                    'kelas_id' => $t['kelas_id'],
+                    'kelas_id' => $t['mst_kelas_id'],
                     'tahun_ajaran' => $t['tahun_ajaran'],
-                    'tarif' => $t['tarif'],
+                    'tarif' => $t['nominal'],
                 ]
             );
         }
@@ -373,12 +390,15 @@ class MasterDataSeeder extends Seeder
 
         foreach ($records as $t) {
             MstTugas::firstOrCreate(
-                ['materi_id' => $t['materi_id'], 'judul' => $t['judul']],
+                ['mst_guru_mapel_id' => $t['mst_guru_mapel_id'], 'mst_kelas_id' => $t['mst_kelas_id'], 'judul' => $t['judul']],
                 [
-                    'materi_id' => $t['materi_id'],
+                    'mst_guru_mapel_id' => $t['mst_guru_mapel_id'],
+                    'mst_kelas_id' => $t['mst_kelas_id'],
                     'judul' => $t['judul'],
                     'deskripsi' => $t['deskripsi'] ?? null,
-                    'deadline' => $t['deadline'] ?? null,
+                    'file_lampiran' => $t['file_lampiran'] ?? null,
+                    'tenggat_waktu' => $t['tenggat_waktu'] ?? null,
+                    'status' => $t['status'] ?? 1,
                 ]
             );
         }
@@ -397,11 +417,13 @@ class MasterDataSeeder extends Seeder
 
         foreach ($records as $w) {
             MstWaliMurid::firstOrCreate(
-                ['nama' => $w['nama']],
+                ['sys_user_id' => $w['sys_user_id']],
                 [
+                    'sys_user_id' => $w['sys_user_id'],
                     'nama' => $w['nama'],
                     'email' => $w['email'] ?? null,
-                    'telepon' => $w['telepon'] ?? null,
+                    'no_hp' => $w['no_hp'] ?? null,
+                    'alamat' => $w['alamat'] ?? null,
                 ]
             );
         }
@@ -420,11 +442,13 @@ class MasterDataSeeder extends Seeder
 
         foreach ($records as $w) {
             MstWali::firstOrCreate(
-                ['nama' => $w['nama']],
+                ['sys_user_id' => $w['sys_user_id']],
                 [
+                    'sys_user_id' => $w['sys_user_id'],
                     'nama' => $w['nama'],
                     'email' => $w['email'] ?? null,
-                    'telepon' => $w['telepon'] ?? null,
+                    'no_hp' => $w['no_hp'] ?? null,
+                    'alamat' => $w['alamat'] ?? null,
                 ]
             );
         }
