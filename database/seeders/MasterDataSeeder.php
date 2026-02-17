@@ -165,13 +165,14 @@ class MasterDataSeeder extends Seeder
 
         foreach ($records as $b) {
             MstBuku::firstOrCreate(
-                ['kode_buku' => $b['kode_buku']],
+                ['isbn' => $b['isbn']],
                 [
-                    'kode_buku' => $b['kode_buku'],
+                    'isbn' => $b['isbn'],
                     'judul' => $b['judul'],
-                    'pengarang' => $b['pengarang'],
-                    'penerbit' => $b['penerbit'],
-                    'tahun_terbit' => $b['tahun_terbit'],
+                    'penulis' => $b['penulis'] ?? null,
+                    'penerbit' => $b['penerbit'] ?? null,
+                    'tahun' => $b['tahun'] ?? null,
+                    'stok' => $b['stok'] ?? 0,
                 ]
             );
         }
