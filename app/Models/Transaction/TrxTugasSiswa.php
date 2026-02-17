@@ -20,19 +20,19 @@ class TrxTugasSiswa extends Model
         'mst_siswa_id',
         'jawaban_teks',
         'file_siswa',
-        'waktu_kumul',
+        'waktu_kumpul',
         'nilai',
         'catatan_guru',
-        'status_kumpl',
+        'status_kumpul',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
     protected $casts = [
-        'waktu_kumpl' => 'datetime',
+        'waktu_kumpul' => 'datetime',
         'nilai' => 'decimal:2',
-        'status_kumpl' => 'integer',
+        'status_kumpul' => 'integer',
     ];
 
     public function tugas(): BelongsTo

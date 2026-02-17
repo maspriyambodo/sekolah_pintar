@@ -20,6 +20,8 @@ class SpkHasil extends Model
         'peringkat',
         'periode',
         'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
     protected $casts = [

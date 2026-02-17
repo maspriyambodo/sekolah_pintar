@@ -20,6 +20,8 @@ class SpkPenilaian extends Model
         'nilai',
         'tahun_ajaran',
         'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
     protected $casts = [
