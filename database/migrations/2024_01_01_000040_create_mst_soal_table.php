@@ -12,8 +12,8 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('mst_mapel_id');
             $table->text('pertanyaan');
-            $table->enum('tipe', ['pilihan_ganda', 'essay'])->default('pilihan_ganda');
-            $table->enum('tingkat_kesulitan', ['mudah', 'sedang', 'sulit'])->default('sedang');
+            $table->unsignedTinyInteger('tipe')->comment('Referensi ke sys_references dengan kategori tipe_soal (1: Pilihan Ganda, 2: Essay)');
+            $table->unsignedTinyInteger('tingkat_kesulitan')->comment('Referensi ke sys_references dengan kategori tingkat_kesulitan');
             $table->string('media_path', 255)->nullable()->comment('Path untuk gambar/audio soal');
             $table->timestamp('deleted_at')->nullable();
             $table->timestamp('created_at')->nullable();
