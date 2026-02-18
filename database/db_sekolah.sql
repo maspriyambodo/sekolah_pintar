@@ -11,7 +11,7 @@
  Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 17/02/2026 23:31:40
+ Date: 18/02/2026 11:29:44
 */
 
 SET NAMES utf8mb4;
@@ -238,6 +238,26 @@ CREATE TABLE `mst_materi` (
   PRIMARY KEY (`id`),
   KEY `mst_materi_mst_guru_mapel_id_foreign` (`mst_guru_mapel_id`),
   CONSTRAINT `mst_materi_mst_guru_mapel_id_foreign` FOREIGN KEY (`mst_guru_mapel_id`) REFERENCES `mst_guru_mapel` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for mst_sekolah
+-- ----------------------------
+DROP TABLE IF EXISTS `mst_sekolah`;
+CREATE TABLE `mst_sekolah` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `npsn` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nama_sekolah` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alamat` text COLLATE utf8mb4_unicode_ci,
+  `logo_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT '1',
+  `subscription_plan` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT 'free',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `mst_sekolah_uuid_unique` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
@@ -619,6 +639,20 @@ CREATE TABLE `sys_roles` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `sys_roles_code_unique` (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for sys_sekolah_settings
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_sekolah_settings`;
+CREATE TABLE `sys_sekolah_settings` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `mst_sekolah_id` bigint unsigned NOT NULL,
+  `key` varchar(100) NOT NULL,
+  `value` text,
+  PRIMARY KEY (`id`),
+  KEY `sys_settings_sekolah_id_foreign` (`mst_sekolah_id`),
+  CONSTRAINT `sys_settings_sekolah_id_foreign` FOREIGN KEY (`mst_sekolah_id`) REFERENCES `mst_sekolah` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Table structure for sys_user_roles
