@@ -1,1859 +1,305 @@
 {
   "RECORDS": [
-    {
-      "id": 1,
-      "sys_role_id": 1,
-      "sys_permission_id": 1,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 2,
-      "sys_role_id": 1,
-      "sys_permission_id": 2,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 3,
-      "sys_role_id": 1,
-      "sys_permission_id": 3,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 4,
-      "sys_role_id": 1,
-      "sys_permission_id": 4,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 5,
-      "sys_role_id": 1,
-      "sys_permission_id": 5,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 6,
-      "sys_role_id": 1,
-      "sys_permission_id": 6,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 7,
-      "sys_role_id": 1,
-      "sys_permission_id": 7,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 8,
-      "sys_role_id": 1,
-      "sys_permission_id": 8,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 9,
-      "sys_role_id": 1,
-      "sys_permission_id": 9,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 10,
-      "sys_role_id": 1,
-      "sys_permission_id": 10,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 11,
-      "sys_role_id": 1,
-      "sys_permission_id": 11,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 12,
-      "sys_role_id": 1,
-      "sys_permission_id": 12,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 13,
-      "sys_role_id": 1,
-      "sys_permission_id": 13,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 14,
-      "sys_role_id": 1,
-      "sys_permission_id": 14,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 15,
-      "sys_role_id": 1,
-      "sys_permission_id": 15,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 16,
-      "sys_role_id": 1,
-      "sys_permission_id": 16,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 17,
-      "sys_role_id": 1,
-      "sys_permission_id": 17,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 18,
-      "sys_role_id": 1,
-      "sys_permission_id": 18,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 19,
-      "sys_role_id": 1,
-      "sys_permission_id": 19,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 20,
-      "sys_role_id": 1,
-      "sys_permission_id": 20,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 21,
-      "sys_role_id": 1,
-      "sys_permission_id": 21,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 22,
-      "sys_role_id": 1,
-      "sys_permission_id": 22,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 23,
-      "sys_role_id": 1,
-      "sys_permission_id": 23,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 24,
-      "sys_role_id": 1,
-      "sys_permission_id": 24,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 25,
-      "sys_role_id": 1,
-      "sys_permission_id": 25,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 26,
-      "sys_role_id": 1,
-      "sys_permission_id": 26,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 27,
-      "sys_role_id": 1,
-      "sys_permission_id": 27,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 28,
-      "sys_role_id": 1,
-      "sys_permission_id": 28,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 29,
-      "sys_role_id": 1,
-      "sys_permission_id": 29,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 30,
-      "sys_role_id": 1,
-      "sys_permission_id": 30,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 31,
-      "sys_role_id": 1,
-      "sys_permission_id": 31,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 32,
-      "sys_role_id": 1,
-      "sys_permission_id": 32,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 33,
-      "sys_role_id": 1,
-      "sys_permission_id": 33,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 34,
-      "sys_role_id": 1,
-      "sys_permission_id": 34,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 35,
-      "sys_role_id": 1,
-      "sys_permission_id": 35,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 36,
-      "sys_role_id": 1,
-      "sys_permission_id": 36,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 37,
-      "sys_role_id": 1,
-      "sys_permission_id": 37,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 38,
-      "sys_role_id": 1,
-      "sys_permission_id": 38,
-      "created_at": "2026-2-17 13:10:19",
-      "updated_at": "2026-2-17 13:10:19"
-    },
-    {
-      "id": 39,
-      "sys_role_id": 1,
-      "sys_permission_id": 39,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 40,
-      "sys_role_id": 1,
-      "sys_permission_id": 40,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 41,
-      "sys_role_id": 1,
-      "sys_permission_id": 41,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 42,
-      "sys_role_id": 1,
-      "sys_permission_id": 42,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 43,
-      "sys_role_id": 1,
-      "sys_permission_id": 43,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 44,
-      "sys_role_id": 1,
-      "sys_permission_id": 44,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 45,
-      "sys_role_id": 1,
-      "sys_permission_id": 45,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 46,
-      "sys_role_id": 1,
-      "sys_permission_id": 46,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 47,
-      "sys_role_id": 1,
-      "sys_permission_id": 47,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 48,
-      "sys_role_id": 1,
-      "sys_permission_id": 48,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 49,
-      "sys_role_id": 1,
-      "sys_permission_id": 49,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 50,
-      "sys_role_id": 1,
-      "sys_permission_id": 50,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 51,
-      "sys_role_id": 1,
-      "sys_permission_id": 51,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 52,
-      "sys_role_id": 1,
-      "sys_permission_id": 52,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 53,
-      "sys_role_id": 1,
-      "sys_permission_id": 53,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 54,
-      "sys_role_id": 1,
-      "sys_permission_id": 54,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 55,
-      "sys_role_id": 1,
-      "sys_permission_id": 55,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 56,
-      "sys_role_id": 1,
-      "sys_permission_id": 56,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 57,
-      "sys_role_id": 1,
-      "sys_permission_id": 57,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 58,
-      "sys_role_id": 1,
-      "sys_permission_id": 58,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 59,
-      "sys_role_id": 1,
-      "sys_permission_id": 59,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 60,
-      "sys_role_id": 1,
-      "sys_permission_id": 60,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 61,
-      "sys_role_id": 1,
-      "sys_permission_id": 61,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 62,
-      "sys_role_id": 1,
-      "sys_permission_id": 62,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 63,
-      "sys_role_id": 1,
-      "sys_permission_id": 63,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 64,
-      "sys_role_id": 1,
-      "sys_permission_id": 64,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 65,
-      "sys_role_id": 1,
-      "sys_permission_id": 65,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 66,
-      "sys_role_id": 1,
-      "sys_permission_id": 66,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 67,
-      "sys_role_id": 1,
-      "sys_permission_id": 67,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 68,
-      "sys_role_id": 1,
-      "sys_permission_id": 68,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 69,
-      "sys_role_id": 1,
-      "sys_permission_id": 69,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 70,
-      "sys_role_id": 1,
-      "sys_permission_id": 70,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 71,
-      "sys_role_id": 1,
-      "sys_permission_id": 71,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 72,
-      "sys_role_id": 1,
-      "sys_permission_id": 72,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 73,
-      "sys_role_id": 1,
-      "sys_permission_id": 73,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 74,
-      "sys_role_id": 1,
-      "sys_permission_id": 74,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 75,
-      "sys_role_id": 1,
-      "sys_permission_id": 75,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 76,
-      "sys_role_id": 1,
-      "sys_permission_id": 76,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 77,
-      "sys_role_id": 1,
-      "sys_permission_id": 77,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 78,
-      "sys_role_id": 1,
-      "sys_permission_id": 78,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 79,
-      "sys_role_id": 1,
-      "sys_permission_id": 79,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 80,
-      "sys_role_id": 1,
-      "sys_permission_id": 80,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 81,
-      "sys_role_id": 1,
-      "sys_permission_id": 81,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 82,
-      "sys_role_id": 1,
-      "sys_permission_id": 82,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 83,
-      "sys_role_id": 1,
-      "sys_permission_id": 83,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 84,
-      "sys_role_id": 1,
-      "sys_permission_id": 84,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 85,
-      "sys_role_id": 1,
-      "sys_permission_id": 85,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 86,
-      "sys_role_id": 1,
-      "sys_permission_id": 86,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 87,
-      "sys_role_id": 1,
-      "sys_permission_id": 87,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 88,
-      "sys_role_id": 1,
-      "sys_permission_id": 88,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 89,
-      "sys_role_id": 1,
-      "sys_permission_id": 89,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 90,
-      "sys_role_id": 1,
-      "sys_permission_id": 90,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 91,
-      "sys_role_id": 1,
-      "sys_permission_id": 91,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 92,
-      "sys_role_id": 1,
-      "sys_permission_id": 92,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 93,
-      "sys_role_id": 1,
-      "sys_permission_id": 93,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 94,
-      "sys_role_id": 1,
-      "sys_permission_id": 94,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 95,
-      "sys_role_id": 1,
-      "sys_permission_id": 95,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 96,
-      "sys_role_id": 1,
-      "sys_permission_id": 96,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 97,
-      "sys_role_id": 1,
-      "sys_permission_id": 97,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 98,
-      "sys_role_id": 1,
-      "sys_permission_id": 98,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 99,
-      "sys_role_id": 1,
-      "sys_permission_id": 99,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 100,
-      "sys_role_id": 1,
-      "sys_permission_id": 100,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 101,
-      "sys_role_id": 1,
-      "sys_permission_id": 101,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 102,
-      "sys_role_id": 1,
-      "sys_permission_id": 102,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 103,
-      "sys_role_id": 1,
-      "sys_permission_id": 103,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 104,
-      "sys_role_id": 1,
-      "sys_permission_id": 104,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 105,
-      "sys_role_id": 1,
-      "sys_permission_id": 105,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 106,
-      "sys_role_id": 1,
-      "sys_permission_id": 106,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 107,
-      "sys_role_id": 1,
-      "sys_permission_id": 107,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 108,
-      "sys_role_id": 1,
-      "sys_permission_id": 108,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 109,
-      "sys_role_id": 1,
-      "sys_permission_id": 109,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 110,
-      "sys_role_id": 1,
-      "sys_permission_id": 110,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 111,
-      "sys_role_id": 1,
-      "sys_permission_id": 111,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 112,
-      "sys_role_id": 1,
-      "sys_permission_id": 112,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 113,
-      "sys_role_id": 1,
-      "sys_permission_id": 113,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 114,
-      "sys_role_id": 1,
-      "sys_permission_id": 114,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 115,
-      "sys_role_id": 1,
-      "sys_permission_id": 115,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 116,
-      "sys_role_id": 1,
-      "sys_permission_id": 116,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 117,
-      "sys_role_id": 1,
-      "sys_permission_id": 117,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 118,
-      "sys_role_id": 1,
-      "sys_permission_id": 118,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 119,
-      "sys_role_id": 1,
-      "sys_permission_id": 119,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 120,
-      "sys_role_id": 1,
-      "sys_permission_id": 120,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 121,
-      "sys_role_id": 1,
-      "sys_permission_id": 121,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 122,
-      "sys_role_id": 1,
-      "sys_permission_id": 122,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 123,
-      "sys_role_id": 1,
-      "sys_permission_id": 123,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 124,
-      "sys_role_id": 1,
-      "sys_permission_id": 124,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 125,
-      "sys_role_id": 1,
-      "sys_permission_id": 125,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 126,
-      "sys_role_id": 1,
-      "sys_permission_id": 126,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 127,
-      "sys_role_id": 1,
-      "sys_permission_id": 127,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 128,
-      "sys_role_id": 1,
-      "sys_permission_id": 128,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 129,
-      "sys_role_id": 1,
-      "sys_permission_id": 129,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 130,
-      "sys_role_id": 1,
-      "sys_permission_id": 130,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 131,
-      "sys_role_id": 1,
-      "sys_permission_id": 131,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 132,
-      "sys_role_id": 1,
-      "sys_permission_id": 132,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 133,
-      "sys_role_id": 1,
-      "sys_permission_id": 133,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 134,
-      "sys_role_id": 1,
-      "sys_permission_id": 134,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 135,
-      "sys_role_id": 1,
-      "sys_permission_id": 135,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 136,
-      "sys_role_id": 1,
-      "sys_permission_id": 136,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 137,
-      "sys_role_id": 1,
-      "sys_permission_id": 137,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 138,
-      "sys_role_id": 1,
-      "sys_permission_id": 138,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 139,
-      "sys_role_id": 1,
-      "sys_permission_id": 139,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 140,
-      "sys_role_id": 1,
-      "sys_permission_id": 140,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 141,
-      "sys_role_id": 1,
-      "sys_permission_id": 141,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 142,
-      "sys_role_id": 1,
-      "sys_permission_id": 142,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 143,
-      "sys_role_id": 1,
-      "sys_permission_id": 143,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 144,
-      "sys_role_id": 1,
-      "sys_permission_id": 144,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 145,
-      "sys_role_id": 1,
-      "sys_permission_id": 145,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 146,
-      "sys_role_id": 1,
-      "sys_permission_id": 146,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 147,
-      "sys_role_id": 1,
-      "sys_permission_id": 147,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 148,
-      "sys_role_id": 1,
-      "sys_permission_id": 148,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 149,
-      "sys_role_id": 1,
-      "sys_permission_id": 149,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 150,
-      "sys_role_id": 1,
-      "sys_permission_id": 150,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 151,
-      "sys_role_id": 1,
-      "sys_permission_id": 151,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 152,
-      "sys_role_id": 1,
-      "sys_permission_id": 152,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 153,
-      "sys_role_id": 2,
-      "sys_permission_id": 1,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 154,
-      "sys_role_id": 2,
-      "sys_permission_id": 2,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 155,
-      "sys_role_id": 2,
-      "sys_permission_id": 3,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 156,
-      "sys_role_id": 2,
-      "sys_permission_id": 4,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 157,
-      "sys_role_id": 2,
-      "sys_permission_id": 7,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 158,
-      "sys_role_id": 2,
-      "sys_permission_id": 8,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 159,
-      "sys_role_id": 2,
-      "sys_permission_id": 9,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 160,
-      "sys_role_id": 2,
-      "sys_permission_id": 11,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 161,
-      "sys_role_id": 2,
-      "sys_permission_id": 12,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 162,
-      "sys_role_id": 2,
-      "sys_permission_id": 13,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 163,
-      "sys_role_id": 2,
-      "sys_permission_id": 21,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 164,
-      "sys_role_id": 2,
-      "sys_permission_id": 25,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 165,
-      "sys_role_id": 2,
-      "sys_permission_id": 26,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 166,
-      "sys_role_id": 2,
-      "sys_permission_id": 27,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 167,
-      "sys_role_id": 2,
-      "sys_permission_id": 29,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 168,
-      "sys_role_id": 2,
-      "sys_permission_id": 30,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 169,
-      "sys_role_id": 2,
-      "sys_permission_id": 31,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 170,
-      "sys_role_id": 2,
-      "sys_permission_id": 33,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 171,
-      "sys_role_id": 2,
-      "sys_permission_id": 34,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 172,
-      "sys_role_id": 2,
-      "sys_permission_id": 35,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 173,
-      "sys_role_id": 2,
-      "sys_permission_id": 37,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 174,
-      "sys_role_id": 2,
-      "sys_permission_id": 38,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 175,
-      "sys_role_id": 2,
-      "sys_permission_id": 39,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 176,
-      "sys_role_id": 2,
-      "sys_permission_id": 41,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 177,
-      "sys_role_id": 2,
-      "sys_permission_id": 42,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 178,
-      "sys_role_id": 2,
-      "sys_permission_id": 43,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 179,
-      "sys_role_id": 2,
-      "sys_permission_id": 45,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 180,
-      "sys_role_id": 2,
-      "sys_permission_id": 46,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 181,
-      "sys_role_id": 2,
-      "sys_permission_id": 47,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 182,
-      "sys_role_id": 2,
-      "sys_permission_id": 49,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 183,
-      "sys_role_id": 2,
-      "sys_permission_id": 50,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 184,
-      "sys_role_id": 2,
-      "sys_permission_id": 51,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 185,
-      "sys_role_id": 2,
-      "sys_permission_id": 53,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 186,
-      "sys_role_id": 2,
-      "sys_permission_id": 54,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 187,
-      "sys_role_id": 2,
-      "sys_permission_id": 55,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 188,
-      "sys_role_id": 2,
-      "sys_permission_id": 56,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 189,
-      "sys_role_id": 2,
-      "sys_permission_id": 58,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 190,
-      "sys_role_id": 2,
-      "sys_permission_id": 59,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 191,
-      "sys_role_id": 2,
-      "sys_permission_id": 64,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 192,
-      "sys_role_id": 2,
-      "sys_permission_id": 65,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 193,
-      "sys_role_id": 2,
-      "sys_permission_id": 66,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 194,
-      "sys_role_id": 2,
-      "sys_permission_id": 68,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 195,
-      "sys_role_id": 2,
-      "sys_permission_id": 69,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 196,
-      "sys_role_id": 2,
-      "sys_permission_id": 70,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 197,
-      "sys_role_id": 2,
-      "sys_permission_id": 72,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 198,
-      "sys_role_id": 2,
-      "sys_permission_id": 73,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 199,
-      "sys_role_id": 2,
-      "sys_permission_id": 74,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 200,
-      "sys_role_id": 2,
-      "sys_permission_id": 76,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 201,
-      "sys_role_id": 2,
-      "sys_permission_id": 77,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 202,
-      "sys_role_id": 2,
-      "sys_permission_id": 80,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 203,
-      "sys_role_id": 2,
-      "sys_permission_id": 81,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 204,
-      "sys_role_id": 2,
-      "sys_permission_id": 82,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 205,
-      "sys_role_id": 2,
-      "sys_permission_id": 83,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 206,
-      "sys_role_id": 2,
-      "sys_permission_id": 129,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 207,
-      "sys_role_id": 2,
-      "sys_permission_id": 130,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 208,
-      "sys_role_id": 2,
-      "sys_permission_id": 131,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 209,
-      "sys_role_id": 2,
-      "sys_permission_id": 132,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 210,
-      "sys_role_id": 2,
-      "sys_permission_id": 133,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 211,
-      "sys_role_id": 2,
-      "sys_permission_id": 134,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 212,
-      "sys_role_id": 2,
-      "sys_permission_id": 135,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 213,
-      "sys_role_id": 2,
-      "sys_permission_id": 136,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 214,
-      "sys_role_id": 2,
-      "sys_permission_id": 137,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 215,
-      "sys_role_id": 2,
-      "sys_permission_id": 141,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 216,
-      "sys_role_id": 2,
-      "sys_permission_id": 142,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 217,
-      "sys_role_id": 2,
-      "sys_permission_id": 143,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 218,
-      "sys_role_id": 2,
-      "sys_permission_id": 144,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 219,
-      "sys_role_id": 2,
-      "sys_permission_id": 145,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 220,
-      "sys_role_id": 2,
-      "sys_permission_id": 146,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 221,
-      "sys_role_id": 2,
-      "sys_permission_id": 147,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 222,
-      "sys_role_id": 2,
-      "sys_permission_id": 148,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 223,
-      "sys_role_id": 2,
-      "sys_permission_id": 149,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 224,
-      "sys_role_id": 2,
-      "sys_permission_id": 150,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 225,
-      "sys_role_id": 2,
-      "sys_permission_id": 151,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 226,
-      "sys_role_id": 2,
-      "sys_permission_id": 152,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 227,
-      "sys_role_id": 3,
-      "sys_permission_id": 3,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 228,
-      "sys_role_id": 3,
-      "sys_permission_id": 2,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 229,
-      "sys_role_id": 3,
-      "sys_permission_id": 1,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 230,
-      "sys_role_id": 3,
-      "sys_permission_id": 21,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 231,
-      "sys_role_id": 3,
-      "sys_permission_id": 128,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 232,
-      "sys_role_id": 3,
-      "sys_permission_id": 125,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 233,
-      "sys_role_id": 3,
-      "sys_permission_id": 126,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 234,
-      "sys_role_id": 3,
-      "sys_permission_id": 124,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 235,
-      "sys_role_id": 3,
-      "sys_permission_id": 7,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 236,
-      "sys_role_id": 3,
-      "sys_permission_id": 121,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 237,
-      "sys_role_id": 3,
-      "sys_permission_id": 122,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 238,
-      "sys_role_id": 3,
-      "sys_permission_id": 120,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 239,
-      "sys_role_id": 4,
-      "sys_permission_id": 33,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 240,
-      "sys_role_id": 4,
-      "sys_permission_id": 1,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 241,
-      "sys_role_id": 4,
-      "sys_permission_id": 130,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 242,
-      "sys_role_id": 4,
-      "sys_permission_id": 129,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 243,
-      "sys_role_id": 4,
-      "sys_permission_id": 138,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 244,
-      "sys_role_id": 4,
-      "sys_permission_id": 137,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 245,
-      "sys_role_id": 4,
-      "sys_permission_id": 133,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 246,
-      "sys_role_id": 4,
-      "sys_permission_id": 72,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 247,
-      "sys_role_id": 4,
-      "sys_permission_id": 50,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 248,
-      "sys_role_id": 4,
-      "sys_permission_id": 49,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 249,
-      "sys_role_id": 4,
-      "sys_permission_id": 81,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 250,
-      "sys_role_id": 4,
-      "sys_permission_id": 65,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 251,
-      "sys_role_id": 4,
-      "sys_permission_id": 66,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 252,
-      "sys_role_id": 4,
-      "sys_permission_id": 64,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 253,
-      "sys_role_id": 4,
-      "sys_permission_id": 62,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 254,
-      "sys_role_id": 4,
-      "sys_permission_id": 63,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 255,
-      "sys_role_id": 4,
-      "sys_permission_id": 58,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 256,
-      "sys_role_id": 5,
-      "sys_permission_id": 33,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 257,
-      "sys_role_id": 5,
-      "sys_permission_id": 41,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 258,
-      "sys_role_id": 5,
-      "sys_permission_id": 1,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 259,
-      "sys_role_id": 5,
-      "sys_permission_id": 130,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 260,
-      "sys_role_id": 5,
-      "sys_permission_id": 129,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 261,
-      "sys_role_id": 5,
-      "sys_permission_id": 133,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 262,
-      "sys_role_id": 5,
-      "sys_permission_id": 72,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 263,
-      "sys_role_id": 5,
-      "sys_permission_id": 124,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 264,
-      "sys_role_id": 5,
-      "sys_permission_id": 81,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    },
-    {
-      "id": 265,
-      "sys_role_id": 5,
-      "sys_permission_id": 7,
-      "created_at": "2026-2-17 13:10:20",
-      "updated_at": "2026-2-17 13:10:20"
-    }
+    {"id": 1, "sys_role_id": 1, "sys_permission_id": 1, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 2, "sys_role_id": 1, "sys_permission_id": 2, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 3, "sys_role_id": 1, "sys_permission_id": 3, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 4, "sys_role_id": 1, "sys_permission_id": 4, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 5, "sys_role_id": 1, "sys_permission_id": 5, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 6, "sys_role_id": 1, "sys_permission_id": 6, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 7, "sys_role_id": 1, "sys_permission_id": 7, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 8, "sys_role_id": 1, "sys_permission_id": 8, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 9, "sys_role_id": 1, "sys_permission_id": 9, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 10, "sys_role_id": 1, "sys_permission_id": 10, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 11, "sys_role_id": 1, "sys_permission_id": 11, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 12, "sys_role_id": 1, "sys_permission_id": 12, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 13, "sys_role_id": 1, "sys_permission_id": 13, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 14, "sys_role_id": 1, "sys_permission_id": 14, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 15, "sys_role_id": 1, "sys_permission_id": 15, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 16, "sys_role_id": 1, "sys_permission_id": 16, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 17, "sys_role_id": 1, "sys_permission_id": 17, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 18, "sys_role_id": 1, "sys_permission_id": 18, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 19, "sys_role_id": 1, "sys_permission_id": 19, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 20, "sys_role_id": 1, "sys_permission_id": 20, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 21, "sys_role_id": 1, "sys_permission_id": 21, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 22, "sys_role_id": 1, "sys_permission_id": 22, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 23, "sys_role_id": 1, "sys_permission_id": 23, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 24, "sys_role_id": 1, "sys_permission_id": 24, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 25, "sys_role_id": 1, "sys_permission_id": 25, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 26, "sys_role_id": 1, "sys_permission_id": 26, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 27, "sys_role_id": 1, "sys_permission_id": 27, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 28, "sys_role_id": 1, "sys_permission_id": 28, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 29, "sys_role_id": 1, "sys_permission_id": 29, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 30, "sys_role_id": 1, "sys_permission_id": 30, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 31, "sys_role_id": 1, "sys_permission_id": 31, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 32, "sys_role_id": 1, "sys_permission_id": 32, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 33, "sys_role_id": 1, "sys_permission_id": 33, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 34, "sys_role_id": 1, "sys_permission_id": 34, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 35, "sys_role_id": 1, "sys_permission_id": 35, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 36, "sys_role_id": 1, "sys_permission_id": 36, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 37, "sys_role_id": 1, "sys_permission_id": 37, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 38, "sys_role_id": 1, "sys_permission_id": 38, "created_at": "2026-2-17 13:10:19", "updated_at": "2026-2-17 13:10:19"},
+    {"id": 39, "sys_role_id": 1, "sys_permission_id": 39, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 40, "sys_role_id": 1, "sys_permission_id": 40, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 41, "sys_role_id": 1, "sys_permission_id": 41, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 42, "sys_role_id": 1, "sys_permission_id": 42, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 43, "sys_role_id": 1, "sys_permission_id": 43, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 44, "sys_role_id": 1, "sys_permission_id": 44, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 45, "sys_role_id": 1, "sys_permission_id": 45, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 46, "sys_role_id": 1, "sys_permission_id": 46, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 47, "sys_role_id": 1, "sys_permission_id": 47, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 48, "sys_role_id": 1, "sys_permission_id": 48, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 49, "sys_role_id": 1, "sys_permission_id": 49, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 50, "sys_role_id": 1, "sys_permission_id": 50, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 51, "sys_role_id": 1, "sys_permission_id": 51, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 52, "sys_role_id": 1, "sys_permission_id": 52, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 53, "sys_role_id": 1, "sys_permission_id": 53, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 54, "sys_role_id": 1, "sys_permission_id": 54, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 55, "sys_role_id": 1, "sys_permission_id": 55, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 56, "sys_role_id": 1, "sys_permission_id": 56, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 57, "sys_role_id": 1, "sys_permission_id": 57, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 58, "sys_role_id": 1, "sys_permission_id": 58, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 59, "sys_role_id": 1, "sys_permission_id": 59, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 60, "sys_role_id": 1, "sys_permission_id": 60, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 61, "sys_role_id": 1, "sys_permission_id": 61, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 62, "sys_role_id": 1, "sys_permission_id": 62, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 63, "sys_role_id": 1, "sys_permission_id": 63, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 64, "sys_role_id": 1, "sys_permission_id": 64, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 65, "sys_role_id": 1, "sys_permission_id": 65, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 66, "sys_role_id": 1, "sys_permission_id": 66, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 67, "sys_role_id": 1, "sys_permission_id": 67, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 68, "sys_role_id": 1, "sys_permission_id": 68, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 69, "sys_role_id": 1, "sys_permission_id": 69, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 70, "sys_role_id": 1, "sys_permission_id": 70, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 71, "sys_role_id": 1, "sys_permission_id": 71, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 72, "sys_role_id": 1, "sys_permission_id": 72, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 73, "sys_role_id": 1, "sys_permission_id": 73, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 74, "sys_role_id": 1, "sys_permission_id": 74, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 75, "sys_role_id": 1, "sys_permission_id": 75, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 76, "sys_role_id": 1, "sys_permission_id": 76, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 77, "sys_role_id": 1, "sys_permission_id": 77, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 78, "sys_role_id": 1, "sys_permission_id": 78, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 79, "sys_role_id": 1, "sys_permission_id": 79, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 80, "sys_role_id": 1, "sys_permission_id": 80, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 81, "sys_role_id": 1, "sys_permission_id": 81, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 82, "sys_role_id": 1, "sys_permission_id": 82, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 83, "sys_role_id": 1, "sys_permission_id": 83, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 84, "sys_role_id": 1, "sys_permission_id": 84, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 85, "sys_role_id": 1, "sys_permission_id": 85, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 86, "sys_role_id": 1, "sys_permission_id": 86, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 87, "sys_role_id": 1, "sys_permission_id": 87, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 88, "sys_role_id": 1, "sys_permission_id": 88, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 89, "sys_role_id": 1, "sys_permission_id": 89, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 90, "sys_role_id": 1, "sys_permission_id": 90, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 91, "sys_role_id": 1, "sys_permission_id": 91, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 92, "sys_role_id": 1, "sys_permission_id": 92, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 93, "sys_role_id": 1, "sys_permission_id": 93, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 94, "sys_role_id": 1, "sys_permission_id": 94, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 95, "sys_role_id": 1, "sys_permission_id": 95, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 96, "sys_role_id": 1, "sys_permission_id": 96, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 97, "sys_role_id": 1, "sys_permission_id": 97, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 98, "sys_role_id": 1, "sys_permission_id": 98, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 99, "sys_role_id": 1, "sys_permission_id": 99, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 100, "sys_role_id": 1, "sys_permission_id": 100, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 101, "sys_role_id": 1, "sys_permission_id": 101, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 102, "sys_role_id": 1, "sys_permission_id": 102, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 103, "sys_role_id": 1, "sys_permission_id": 103, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 104, "sys_role_id": 1, "sys_permission_id": 104, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 105, "sys_role_id": 1, "sys_permission_id": 105, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 106, "sys_role_id": 1, "sys_permission_id": 106, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 107, "sys_role_id": 1, "sys_permission_id": 107, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 108, "sys_role_id": 1, "sys_permission_id": 108, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 109, "sys_role_id": 1, "sys_permission_id": 109, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 110, "sys_role_id": 1, "sys_permission_id": 110, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 111, "sys_role_id": 1, "sys_permission_id": 111, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 112, "sys_role_id": 1, "sys_permission_id": 112, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 113, "sys_role_id": 1, "sys_permission_id": 113, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 114, "sys_role_id": 1, "sys_permission_id": 114, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 115, "sys_role_id": 1, "sys_permission_id": 115, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 116, "sys_role_id": 1, "sys_permission_id": 116, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 117, "sys_role_id": 1, "sys_permission_id": 117, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 118, "sys_role_id": 1, "sys_permission_id": 118, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 119, "sys_role_id": 1, "sys_permission_id": 119, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 120, "sys_role_id": 1, "sys_permission_id": 120, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 121, "sys_role_id": 1, "sys_permission_id": 121, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 122, "sys_role_id": 1, "sys_permission_id": 122, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 123, "sys_role_id": 1, "sys_permission_id": 123, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 124, "sys_role_id": 1, "sys_permission_id": 124, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 125, "sys_role_id": 1, "sys_permission_id": 125, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 126, "sys_role_id": 1, "sys_permission_id": 126, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 127, "sys_role_id": 1, "sys_permission_id": 127, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 128, "sys_role_id": 1, "sys_permission_id": 128, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 129, "sys_role_id": 1, "sys_permission_id": 129, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 130, "sys_role_id": 1, "sys_permission_id": 130, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 131, "sys_role_id": 1, "sys_permission_id": 131, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 132, "sys_role_id": 1, "sys_permission_id": 132, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 133, "sys_role_id": 1, "sys_permission_id": 133, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 134, "sys_role_id": 1, "sys_permission_id": 134, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 135, "sys_role_id": 1, "sys_permission_id": 135, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 136, "sys_role_id": 1, "sys_permission_id": 136, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 137, "sys_role_id": 1, "sys_permission_id": 137, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 138, "sys_role_id": 1, "sys_permission_id": 138, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 139, "sys_role_id": 1, "sys_permission_id": 139, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 140, "sys_role_id": 1, "sys_permission_id": 140, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 141, "sys_role_id": 1, "sys_permission_id": 141, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 142, "sys_role_id": 1, "sys_permission_id": 142, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 143, "sys_role_id": 1, "sys_permission_id": 143, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 144, "sys_role_id": 1, "sys_permission_id": 144, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 145, "sys_role_id": 1, "sys_permission_id": 145, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 146, "sys_role_id": 1, "sys_permission_id": 146, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 147, "sys_role_id": 1, "sys_permission_id": 147, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 148, "sys_role_id": 1, "sys_permission_id": 148, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 149, "sys_role_id": 1, "sys_permission_id": 149, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 150, "sys_role_id": 1, "sys_permission_id": 150, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 151, "sys_role_id": 1, "sys_permission_id": 151, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 152, "sys_role_id": 1, "sys_permission_id": 152, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 266, "sys_role_id": 1, "sys_permission_id": 157, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 267, "sys_role_id": 1, "sys_permission_id": 158, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 268, "sys_role_id": 1, "sys_permission_id": 159, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 269, "sys_role_id": 1, "sys_permission_id": 160, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 270, "sys_role_id": 1, "sys_permission_id": 161, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 271, "sys_role_id": 1, "sys_permission_id": 162, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 272, "sys_role_id": 1, "sys_permission_id": 163, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 273, "sys_role_id": 1, "sys_permission_id": 164, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 274, "sys_role_id": 1, "sys_permission_id": 165, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 275, "sys_role_id": 1, "sys_permission_id": 166, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 276, "sys_role_id": 1, "sys_permission_id": 167, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 277, "sys_role_id": 1, "sys_permission_id": 168, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 278, "sys_role_id": 1, "sys_permission_id": 169, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 279, "sys_role_id": 1, "sys_permission_id": 170, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 280, "sys_role_id": 1, "sys_permission_id": 171, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 281, "sys_role_id": 1, "sys_permission_id": 172, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 282, "sys_role_id": 1, "sys_permission_id": 173, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 283, "sys_role_id": 1, "sys_permission_id": 174, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 284, "sys_role_id": 1, "sys_permission_id": 175, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 285, "sys_role_id": 1, "sys_permission_id": 176, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 286, "sys_role_id": 1, "sys_permission_id": 177, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 287, "sys_role_id": 1, "sys_permission_id": 178, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 288, "sys_role_id": 2, "sys_permission_id": 165, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 289, "sys_role_id": 2, "sys_permission_id": 166, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 290, "sys_role_id": 2, "sys_permission_id": 167, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 291, "sys_role_id": 2, "sys_permission_id": 168, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 292, "sys_role_id": 2, "sys_permission_id": 169, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 293, "sys_role_id": 2, "sys_permission_id": 170, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 294, "sys_role_id": 2, "sys_permission_id": 171, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 295, "sys_role_id": 2, "sys_permission_id": 172, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 296, "sys_role_id": 2, "sys_permission_id": 173, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 297, "sys_role_id": 2, "sys_permission_id": 174, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 298, "sys_role_id": 2, "sys_permission_id": 175, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 299, "sys_role_id": 2, "sys_permission_id": 176, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 300, "sys_role_id": 2, "sys_permission_id": 177, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 301, "sys_role_id": 2, "sys_permission_id": 178, "created_at": "2026-2-18 14:00:00", "updated_at": "2026-2-18 14:00:00"},
+    {"id": 302, "sys_role_id": 2, "sys_permission_id": 1, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 303, "sys_role_id": 2, "sys_permission_id": 2, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 304, "sys_role_id": 2, "sys_permission_id": 3, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 305, "sys_role_id": 2, "sys_permission_id": 4, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 306, "sys_role_id": 2, "sys_permission_id": 7, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 307, "sys_role_id": 2, "sys_permission_id": 8, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 308, "sys_role_id": 2, "sys_permission_id": 9, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 309, "sys_role_id": 2, "sys_permission_id": 11, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 310, "sys_role_id": 2, "sys_permission_id": 12, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 311, "sys_role_id": 2, "sys_permission_id": 13, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 312, "sys_role_id": 2, "sys_permission_id": 21, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 313, "sys_role_id": 2, "sys_permission_id": 25, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 314, "sys_role_id": 2, "sys_permission_id": 26, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 315, "sys_role_id": 2, "sys_permission_id": 27, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 316, "sys_role_id": 2, "sys_permission_id": 29, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 317, "sys_role_id": 2, "sys_permission_id": 30, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 318, "sys_role_id": 2, "sys_permission_id": 31, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 319, "sys_role_id": 2, "sys_permission_id": 33, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 320, "sys_role_id": 2, "sys_permission_id": 34, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 321, "sys_role_id": 2, "sys_permission_id": 35, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 322, "sys_role_id": 2, "sys_permission_id": 37, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 323, "sys_role_id": 2, "sys_permission_id": 38, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 324, "sys_role_id": 2, "sys_permission_id": 39, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 325, "sys_role_id": 2, "sys_permission_id": 41, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 326, "sys_role_id": 2, "sys_permission_id": 42, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 327, "sys_role_id": 2, "sys_permission_id": 43, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 328, "sys_role_id": 2, "sys_permission_id": 45, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 329, "sys_role_id": 2, "sys_permission_id": 46, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 330, "sys_role_id": 2, "sys_permission_id": 47, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 331, "sys_role_id": 2, "sys_permission_id": 49, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 332, "sys_role_id": 2, "sys_permission_id": 50, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 333, "sys_role_id": 2, "sys_permission_id": 51, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 334, "sys_role_id": 2, "sys_permission_id": 53, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 335, "sys_role_id": 2, "sys_permission_id": 54, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 336, "sys_role_id": 2, "sys_permission_id": 55, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 337, "sys_role_id": 2, "sys_permission_id": 56, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 338, "sys_role_id": 2, "sys_permission_id": 58, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 339, "sys_role_id": 2, "sys_permission_id": 59, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 340, "sys_role_id": 2, "sys_permission_id": 64, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 341, "sys_role_id": 2, "sys_permission_id": 65, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 342, "sys_role_id": 2, "sys_permission_id": 66, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 343, "sys_role_id": 2, "sys_permission_id": 68, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 344, "sys_role_id": 2, "sys_permission_id": 69, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 345, "sys_role_id": 2, "sys_permission_id": 70, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 346, "sys_role_id": 2, "sys_permission_id": 72, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 347, "sys_role_id": 2, "sys_permission_id": 73, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 348, "sys_role_id": 2, "sys_permission_id": 74, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 349, "sys_role_id": 2, "sys_permission_id": 76, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 350, "sys_role_id": 2, "sys_permission_id": 77, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 351, "sys_role_id": 2, "sys_permission_id": 80, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 352, "sys_role_id": 2, "sys_permission_id": 81, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 353, "sys_role_id": 2, "sys_permission_id": 82, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 354, "sys_role_id": 2, "sys_permission_id": 83, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 355, "sys_role_id": 2, "sys_permission_id": 129, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 356, "sys_role_id": 2, "sys_permission_id": 130, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 357, "sys_role_id": 2, "sys_permission_id": 131, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 358, "sys_role_id": 2, "sys_permission_id": 132, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 359, "sys_role_id": 2, "sys_permission_id": 133, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 360, "sys_role_id": 2, "sys_permission_id": 134, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 361, "sys_role_id": 2, "sys_permission_id": 135, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 362, "sys_role_id": 2, "sys_permission_id": 136, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 363, "sys_role_id": 2, "sys_permission_id": 137, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 364, "sys_role_id": 2, "sys_permission_id": 141, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 365, "sys_role_id": 2, "sys_permission_id": 142, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 366, "sys_role_id": 2, "sys_permission_id": 143, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 367, "sys_role_id": 2, "sys_permission_id": 144, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 368, "sys_role_id": 2, "sys_permission_id": 145, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 369, "sys_role_id": 2, "sys_permission_id": 146, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 370, "sys_role_id": 2, "sys_permission_id": 147, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 371, "sys_role_id": 2, "sys_permission_id": 148, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 372, "sys_role_id": 2, "sys_permission_id": 149, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 373, "sys_role_id": 2, "sys_permission_id": 150, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 374, "sys_role_id": 2, "sys_permission_id": 151, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 375, "sys_role_id": 2, "sys_permission_id": 152, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 376, "sys_role_id": 3, "sys_permission_id": 3, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 377, "sys_role_id": 3, "sys_permission_id": 2, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 378, "sys_role_id": 3, "sys_permission_id": 1, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 379, "sys_role_id": 3, "sys_permission_id": 21, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 380, "sys_role_id": 3, "sys_permission_id": 128, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 381, "sys_role_id": 3, "sys_permission_id": 125, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 382, "sys_role_id": 3, "sys_permission_id": 126, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 383, "sys_role_id": 3, "sys_permission_id": 124, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 384, "sys_role_id": 3, "sys_permission_id": 7, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 385, "sys_role_id": 3, "sys_permission_id": 121, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 386, "sys_role_id": 3, "sys_permission_id": 122, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 387, "sys_role_id": 3, "sys_permission_id": 120, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 388, "sys_role_id": 4, "sys_permission_id": 33, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 389, "sys_role_id": 4, "sys_permission_id": 1, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 390, "sys_role_id": 4, "sys_permission_id": 130, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 391, "sys_role_id": 4, "sys_permission_id": 129, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 392, "sys_role_id": 4, "sys_permission_id": 138, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 393, "sys_role_id": 4, "sys_permission_id": 137, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 394, "sys_role_id": 4, "sys_permission_id": 133, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 395, "sys_role_id": 4, "sys_permission_id": 72, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 396, "sys_role_id": 4, "sys_permission_id": 50, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 397, "sys_role_id": 4, "sys_permission_id": 49, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 398, "sys_role_id": 4, "sys_permission_id": 81, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 399, "sys_role_id": 4, "sys_permission_id": 65, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 400, "sys_role_id": 4, "sys_permission_id": 66, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 401, "sys_role_id": 4, "sys_permission_id": 64, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 402, "sys_role_id": 4, "sys_permission_id": 62, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 403, "sys_role_id": 4, "sys_permission_id": 63, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 404, "sys_role_id": 4, "sys_permission_id": 58, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 405, "sys_role_id": 5, "sys_permission_id": 33, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 406, "sys_role_id": 5, "sys_permission_id": 41, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 407, "sys_role_id": 5, "sys_permission_id": 1, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 408, "sys_role_id": 5, "sys_permission_id": 130, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 409, "sys_role_id": 5, "sys_permission_id": 129, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 410, "sys_role_id": 5, "sys_permission_id": 133, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 411, "sys_role_id": 5, "sys_permission_id": 72, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 412, "sys_role_id": 5, "sys_permission_id": 124, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 413, "sys_role_id": 5, "sys_permission_id": 81, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"},
+    {"id": 414, "sys_role_id": 5, "sys_permission_id": 7, "created_at": "2026-2-17 13:10:20", "updated_at": "2026-2-17 13:10:20"}
   ]
 }

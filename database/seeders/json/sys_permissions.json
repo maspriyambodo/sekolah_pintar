@@ -229,8 +229,8 @@
       "code": "absensi-guru.view",
       "name": "View Absensi Guru",
       "module": "absensi-guru",
-      "created_at": "2026-2-17 13:10:18",
-      "updated_at": "2026-2-17 13:10:18"
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
     },
     {
       "id": 30,
@@ -826,6 +826,22 @@
     },
     {
       "id": 104,
+      "code": "users.toggle-active",
+      "name": "Toggle User Active",
+      "module": "users",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 105,
+      "code": "users.assign-roles",
+      "name": "Assign Roles to Users",
+      "module": "users",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 106,
       "code": "roles.view",
       "name": "View Roles",
       "module": "roles",
@@ -833,7 +849,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 105,
+      "id": 107,
       "code": "roles.create",
       "name": "Create Roles",
       "module": "roles",
@@ -841,7 +857,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 106,
+      "id": 108,
       "code": "roles.update",
       "name": "Update Roles",
       "module": "roles",
@@ -849,7 +865,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 107,
+      "id": 109,
       "code": "roles.delete",
       "name": "Delete Roles",
       "module": "roles",
@@ -857,7 +873,23 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 108,
+      "id": 110,
+      "code": "roles.permissions",
+      "name": "View Role Permissions",
+      "module": "roles",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 111,
+      "code": "roles.assign-permissions",
+      "name": "Assign Permissions to Roles",
+      "module": "roles",
+      "created_at": "2026-2-17 13:10:19",
+      "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 112,
       "code": "permissions.view",
       "name": "View Permissions",
       "module": "permissions",
@@ -865,7 +897,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 109,
+      "id": 113,
       "code": "permissions.create",
       "name": "Create Permissions",
       "module": "permissions",
@@ -873,7 +905,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 110,
+      "id": 114,
       "code": "permissions.update",
       "name": "Update Permissions",
       "module": "permissions",
@@ -881,7 +913,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 111,
+      "id": 115,
       "code": "permissions.delete",
       "name": "Delete Permissions",
       "module": "permissions",
@@ -889,7 +921,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 112,
+      "id": 116,
       "code": "menus.view",
       "name": "View Menus",
       "module": "menus",
@@ -897,7 +929,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 113,
+      "id": 117,
       "code": "menus.create",
       "name": "Create Menus",
       "module": "menus",
@@ -905,7 +937,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 114,
+      "id": 118,
       "code": "menus.update",
       "name": "Update Menus",
       "module": "menus",
@@ -913,7 +945,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 115,
+      "id": 119,
       "code": "menus.delete",
       "name": "Delete Menus",
       "module": "menus",
@@ -921,7 +953,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 116,
+      "id": 120,
       "code": "activity-logs.view",
       "name": "View Activity Logs",
       "module": "activity-logs",
@@ -929,7 +961,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 117,
+      "id": 121,
       "code": "activity-logs.delete",
       "name": "Delete Activity Logs",
       "module": "activity-logs",
@@ -937,7 +969,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 118,
+      "id": 122,
       "code": "activity-logs.clear-old",
       "name": "Clear Old Activity Logs",
       "module": "activity-logs",
@@ -945,7 +977,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 119,
+      "id": 123,
       "code": "activity-logs.statistics",
       "name": "View Activity Logs Statistics",
       "module": "activity-logs",
@@ -953,7 +985,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 120,
+      "id": 124,
       "code": "tarif-spp.view",
       "name": "View Tarif SPP",
       "module": "tarif-spp",
@@ -961,7 +993,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 121,
+      "id": 125,
       "code": "tarif-spp.create",
       "name": "Create Tarif SPP",
       "module": "tarif-spp",
@@ -969,7 +1001,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 122,
+      "id": 126,
       "code": "tarif-spp.update",
       "name": "Update Tarif SPP",
       "module": "tarif-spp",
@@ -977,7 +1009,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 123,
+      "id": 127,
       "code": "tarif-spp.delete",
       "name": "Delete Tarif SPP",
       "module": "tarif-spp",
@@ -985,7 +1017,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 124,
+      "id": 128,
       "code": "pembayaran-spp.view",
       "name": "View Pembayaran SPP",
       "module": "pembayaran-spp",
@@ -993,7 +1025,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 125,
+      "id": 129,
       "code": "pembayaran-spp.create",
       "name": "Create Pembayaran SPP",
       "module": "pembayaran-spp",
@@ -1001,7 +1033,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 126,
+      "id": 130,
       "code": "pembayaran-spp.update",
       "name": "Update Pembayaran SPP",
       "module": "pembayaran-spp",
@@ -1009,7 +1041,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 127,
+      "id": 131,
       "code": "pembayaran-spp.delete",
       "name": "Delete Pembayaran SPP",
       "module": "pembayaran-spp",
@@ -1017,7 +1049,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 128,
+      "id": 132,
       "code": "pembayaran-spp.bayar",
       "name": "Bayar SPP",
       "module": "pembayaran-spp",
@@ -1025,7 +1057,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 129,
+      "id": 133,
       "code": "forum.view",
       "name": "View Forum",
       "module": "forum",
@@ -1033,7 +1065,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 130,
+      "id": 134,
       "code": "forum.create",
       "name": "Create Forum",
       "module": "forum",
@@ -1041,7 +1073,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 131,
+      "id": 135,
       "code": "forum.update",
       "name": "Update Forum",
       "module": "forum",
@@ -1049,7 +1081,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 132,
+      "id": 136,
       "code": "forum.delete",
       "name": "Delete Forum",
       "module": "forum",
@@ -1057,7 +1089,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 133,
+      "id": 137,
       "code": "materi.view",
       "name": "View Materi",
       "module": "materi",
@@ -1065,7 +1097,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 134,
+      "id": 138,
       "code": "materi.create",
       "name": "Create Materi",
       "module": "materi",
@@ -1073,7 +1105,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 135,
+      "id": 139,
       "code": "materi.update",
       "name": "Update Materi",
       "module": "materi",
@@ -1081,7 +1113,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 136,
+      "id": 140,
       "code": "materi.delete",
       "name": "Delete Materi",
       "module": "materi",
@@ -1089,7 +1121,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 137,
+      "id": 141,
       "code": "log-akses-materi.view",
       "name": "View Log Akses Materi",
       "module": "log-akses-materi",
@@ -1097,7 +1129,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 138,
+      "id": 142,
       "code": "log-akses-materi.create",
       "name": "Create Log Akses Materi",
       "module": "log-akses-materi",
@@ -1105,7 +1137,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 139,
+      "id": 143,
       "code": "log-akses-materi.update",
       "name": "Update Log Akses Materi",
       "module": "log-akses-materi",
@@ -1113,7 +1145,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 140,
+      "id": 144,
       "code": "log-akses-materi.delete",
       "name": "Delete Log Akses Materi",
       "module": "log-akses-materi",
@@ -1121,7 +1153,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 141,
+      "id": 145,
       "code": "spk-kriteria.view",
       "name": "View SPK Kriteria",
       "module": "spk-kriteria",
@@ -1129,7 +1161,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 142,
+      "id": 146,
       "code": "spk-kriteria.create",
       "name": "Create SPK Kriteria",
       "module": "spk-kriteria",
@@ -1137,7 +1169,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 143,
+      "id": 147,
       "code": "spk-kriteria.update",
       "name": "Update SPK Kriteria",
       "module": "spk-kriteria",
@@ -1145,7 +1177,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 144,
+      "id": 148,
       "code": "spk-kriteria.delete",
       "name": "Delete SPK Kriteria",
       "module": "spk-kriteria",
@@ -1153,7 +1185,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 145,
+      "id": 149,
       "code": "spk-penilaian.view",
       "name": "View SPK Penilaian",
       "module": "spk-penilaian",
@@ -1161,7 +1193,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 146,
+      "id": 150,
       "code": "spk-penilaian.create",
       "name": "Create SPK Penilaian",
       "module": "spk-penilaian",
@@ -1169,7 +1201,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 147,
+      "id": 151,
       "code": "spk-penilaian.update",
       "name": "Update SPK Penilaian",
       "module": "spk-penilaian",
@@ -1177,7 +1209,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 148,
+      "id": 152,
       "code": "spk-penilaian.delete",
       "name": "Delete SPK Penilaian",
       "module": "spk-penilaian",
@@ -1185,7 +1217,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 149,
+      "id": 153,
       "code": "spk-hasil.view",
       "name": "View SPK Hasil",
       "module": "spk-hasil",
@@ -1193,7 +1225,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 150,
+      "id": 154,
       "code": "spk-hasil.create",
       "name": "Create SPK Hasil",
       "module": "spk-hasil",
@@ -1201,7 +1233,7 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 151,
+      "id": 155,
       "code": "spk-hasil.delete",
       "name": "Delete SPK Hasil",
       "module": "spk-hasil",
@@ -1209,12 +1241,188 @@
       "updated_at": "2026-2-17 13:10:19"
     },
     {
-      "id": 152,
+      "id": 156,
       "code": "spk-hasil.calculate",
       "name": "Calculate SPK Hasil",
       "module": "spk-hasil",
       "created_at": "2026-2-17 13:10:19",
       "updated_at": "2026-2-17 13:10:19"
+    },
+    {
+      "id": 157,
+      "code": "sekolah.view",
+      "name": "View Sekolah",
+      "module": "sekolah",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 158,
+      "code": "sekolah.create",
+      "name": "Create Sekolah",
+      "module": "sekolah",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 159,
+      "code": "sekolah.update",
+      "name": "Update Sekolah",
+      "module": "sekolah",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 160,
+      "code": "sekolah.delete",
+      "name": "Delete Sekolah",
+      "module": "sekolah",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 161,
+      "code": "sekolah.settings.view",
+      "name": "View Sekolah Settings",
+      "module": "sekolah-settings",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 162,
+      "code": "sekolah.settings.create",
+      "name": "Create Sekolah Settings",
+      "module": "sekolah-settings",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 163,
+      "code": "sekolah.settings.update",
+      "name": "Update Sekolah Settings",
+      "module": "sekolah-settings",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 164,
+      "code": "sekolah.settings.delete",
+      "name": "Delete Sekolah Settings",
+      "module": "sekolah-settings",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 165,
+      "code": "ppdb.gelombang.view",
+      "name": "View PPDB Gelombang",
+      "module": "ppdb-gelombang",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 166,
+      "code": "ppdb.gelombang.create",
+      "name": "Create PPDB Gelombang",
+      "module": "ppdb-gelombang",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 167,
+      "code": "ppdb.gelombang.update",
+      "name": "Update PPDB Gelombang",
+      "module": "ppdb-gelombang",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 168,
+      "code": "ppdb.gelombang.delete",
+      "name": "Delete PPDB Gelombang",
+      "module": "ppdb-gelombang",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 169,
+      "code": "ppdb.gelombang.activate",
+      "name": "Activate PPDB Gelombang",
+      "module": "ppdb-gelombang",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 170,
+      "code": "ppdb.gelombang.deactivate",
+      "name": "Deactivate PPDB Gelombang",
+      "module": "ppdb-gelombang",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 171,
+      "code": "ppdb.pendaftaran.view",
+      "name": "View PPDB Pendaftaran",
+      "module": "ppdb-pendaftaran",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 172,
+      "code": "ppdb.pendaftaran.create",
+      "name": "Create PPDB Pendaftaran",
+      "module": "ppdb-pendaftaran",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 173,
+      "code": "ppdb.pendaftaran.update",
+      "name": "Update PPDB Pendaftaran",
+      "module": "ppdb-pendaftaran",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 174,
+      "code": "ppdb.pendaftaran.delete",
+      "name": "Delete PPDB Pendaftaran",
+      "module": "ppdb-pendaftaran",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 175,
+      "code": "ppdb.pendaftaran.update-status",
+      "name": "Update PPDB Pendaftaran Status",
+      "module": "ppdb-pendaftaran",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 176,
+      "code": "ppdb.pendaftaran.verify",
+      "name": "Verify PPDB Pendaftaran",
+      "module": "ppdb-pendaftaran",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 177,
+      "code": "ppdb.pendaftaran.accept",
+      "name": "Accept PPDB Pendaftaran",
+      "module": "ppdb-pendaftaran",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 178,
+      "code": "ppdb.pendaftaran.reject",
+      "name": "Reject PPDB Pendaftaran",
+      "module": "ppdb-pendaftaran",
+      "created_at": "2026-2-18 14:00:00",
+      "updated_at": "2026-2-18 14:00:00"
     }
   ]
 }
