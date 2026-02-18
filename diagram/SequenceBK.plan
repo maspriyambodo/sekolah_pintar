@@ -1,0 +1,80 @@
+@startuml Seq_BK
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 10
+
+actor "Guru BK" as GuruBK
+actor "Wali Murid" as Wali
+participant "Browser" as Browser
+participant "BKController" as BK
+database "trx_bk_kasus" as DB_Kasus
+database "trx_bk_sesi" as DB_Sesi
+database "trx_bk_tindakan" as DB_Tindakan
+database "trx_bk_lampiran" as DB_Lampiran
+database "trx_bk_wali" as DB_BKWali
+database "trx_bk_hasil" as DB_Hasil
+
+== Pembuatan Kasus BK ==
+
+GuruBK -> Browser : Buat kasus BK baru
+Browser -> BK : POST /bk/kasus/create\n{siswa_id, guru_id, kategori_id,\njenis_id, judul, deskripsi, tanggal_mulai}
+activate BK
+BK -> DB_Kasus : INSERT trx_bk_kasus\n(status=BERJALAN)
+DB_Kasus --> BK : kasus_id
+BK --> Browser : Kasus berhasil dibuat
+deactivate BK
+
+GuruBK -> Browser : Upload lampiran pendukung
+Browser -> BK : POST /bk/lampiran/upload\n{kasus_id, file, keterangan}
+activate BK
+BK -> BK : Simpan file ke storage
+BK -> DB_Lampiran : INSERT trx_bk_lampiran\n{kasus_id, file_path, keterangan}
+BK --> Browser : Lampiran tersimpan
+deactivate BK
+
+== Sesi Konseling ==
+
+GuruBK -> Browser : Input sesi konseling
+Browser -> BK : POST /bk/sesi/create\n{kasus_id, tanggal, metode, catatan}
+activate BK
+BK -> DB_Sesi : INSERT trx_bk_sesi
+BK --> Browser : Sesi tercatat
+deactivate BK
+
+== Libatkan Wali Murid ==
+
+GuruBK -> Browser : Tambah wali murid ke kasus
+Browser -> BK : POST /bk/wali/assign\n{kasus_id, wali_murid_id, peran}
+activate BK
+BK -> DB_BKWali : INSERT trx_bk_wali
+BK --> Browser : Wali terlibat di kasus
+deactivate BK
+
+note right of Wali : Wali mendapat\nnotifikasi
+
+Wali -> Browser : Login & lihat riwayat BK anak
+Browser -> BK : GET /bk/riwayat/{siswa_id}
+activate BK
+BK -> DB_Kasus : SELECT kasus by siswa_id
+BK -> DB_Sesi : SELECT sesi by kasus_id
+BK --> Browser : Tampilkan riwayat BK
+deactivate BK
+Browser --> Wali : Lihat detail konseling
+
+== Tindakan & Hasil ==
+
+GuruBK -> Browser : Input tindakan
+Browser -> BK : POST /bk/tindakan/create\n{kasus_id, deskripsi_tindakan}
+activate BK
+BK -> DB_Tindakan : INSERT trx_bk_tindakan
+BK --> Browser : Tindakan tercatat
+deactivate BK
+
+GuruBK -> Browser : Input hasil & rekomendasi\n(tutup kasus)
+Browser -> BK : POST /bk/hasil/create\n{kasus_id, hasil, rekomendasi}
+activate BK
+BK -> DB_Hasil : INSERT trx_bk_hasil
+BK -> DB_Kasus : UPDATE status=SELESAI,\ntanggal_selesai
+BK --> Browser : Kasus selesai
+deactivate BK
+Browser --> GuruBK : Kasus ditutup
+@enduml

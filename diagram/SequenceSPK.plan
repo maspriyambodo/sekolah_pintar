@@ -1,0 +1,64 @@
+@startuml Seq_SPK
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 10
+
+actor "Admin" as Admin
+participant "Browser" as Browser
+participant "SPKController" as SPK
+database "spk_kriteria" as DB_Kriteria
+database "spk_penilaian" as DB_Penilaian
+database "mst_siswa" as DB_Siswa
+database "spk_hasil" as DB_Hasil
+
+== Setup Kriteria ==
+
+Admin -> Browser : Kelola kriteria SPK
+Browser -> SPK : POST /spk/kriteria/create\n{kode, nama, bobot, tipe(benefit/cost)}
+activate SPK
+SPK -> DB_Kriteria : INSERT spk_kriteria
+SPK --> Browser : Kriteria tersimpan
+deactivate SPK
+
+note right of DB_Kriteria
+  Contoh Kriteria:
+  C1: Nilai Rata-rata (benefit, 0.30)
+  C2: Kehadiran (benefit, 0.25)
+  C3: Penghasilan Ortu (cost, 0.20)
+  C4: Prestasi (benefit, 0.15)
+  C5: Jarak Rumah (benefit, 0.10)
+end note
+
+== Input Penilaian Siswa ==
+
+Admin -> Browser : Input nilai tiap siswa per kriteria
+Browser -> SPK : POST /spk/penilaian/store\n{siswa_id, kriteria_id, nilai, tahun_ajaran}
+activate SPK
+loop Untuk setiap siswa x kriteria
+  SPK -> DB_Penilaian : INSERT/UPDATE spk_penilaian
+end
+SPK --> Browser : Penilaian tersimpan
+deactivate SPK
+
+== Proses Perhitungan SPK ==
+
+Admin -> Browser : Klik "Hitung Ranking SPK"
+Browser -> SPK : POST /spk/hitung\n{periode: "Beasiswa Sem. Ganjil 2026"}
+activate SPK
+
+SPK -> DB_Siswa : SELECT semua siswa kandidat
+SPK -> DB_Kriteria : SELECT semua kriteria + bobot
+SPK -> DB_Penilaian : SELECT semua nilai siswa
+
+SPK -> SPK : **Step 1: Buat Matriks Keputusan**\n(siswa × kriteria)
+SPK -> SPK : **Step 2: Normalisasi Matriks**\nbenefit: r = Xij / max(Xj)\ncost: r = min(Xj) / Xij
+SPK -> SPK : **Step 3: Hitung Skor Akhir**\nV = Σ(Wi × Rij)
+SPK -> SPK : **Step 4: Urutkan berdasarkan\nskor tertinggi → ranking**
+
+loop Untuk setiap siswa
+  SPK -> DB_Hasil : INSERT spk_hasil\n{siswa_id, total_skor, peringkat, periode}
+end
+
+SPK --> Browser : Perhitungan selesai!\nTampilkan ranking
+deactivate SPK
+Browser --> Admin : Tabel ranking SPK\ndengan skor & peringkat
+@enduml

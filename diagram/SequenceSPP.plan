@@ -1,0 +1,56 @@
+@startuml Seq_PembayaranSPP
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 10
+
+actor "Admin/Petugas" as Admin
+participant "Browser" as Browser
+participant "SPPController" as SPP
+database "mst_siswa" as DB_Siswa
+database "mst_tarif_spp" as DB_Tarif
+database "trx_pembayaran_spp" as DB_Bayar
+database "sys_activity_logs" as DB_Log
+
+Admin -> Browser : Buka halaman Pembayaran SPP
+Browser -> SPP : GET /spp/pembayaran
+activate SPP
+SPP --> Browser : Tampilkan form pembayaran
+deactivate SPP
+
+Admin -> Browser : Cari siswa (by NIS/nama)
+Browser -> SPP : GET /siswa/search?q=xxxx
+activate SPP
+SPP -> DB_Siswa : SELECT siswa + kelas
+DB_Siswa --> SPP : data siswa + kelas_id
+SPP -> DB_Tarif : SELECT tarif_spp\nWHERE kelas_id & tahun_ajaran
+DB_Tarif --> SPP : tarif (nominal)
+SPP -> DB_Bayar : SELECT riwayat pembayaran\nby siswa_id, tahun
+DB_Bayar --> SPP : bulan yang sudah lunas[]
+SPP --> Browser : Tampilkan info siswa,\ntarif, status per bulan
+deactivate SPP
+
+Admin -> Browser : Pilih bulan & input pembayaran\n{bulan, jumlah_bayar, metode}
+Browser -> SPP : POST /spp/pembayaran/store
+activate SPP
+
+SPP -> SPP : Validasi data\n(cek duplikasi bulan/tahun)
+
+alt Sudah dibayar bulan tersebut
+  SPP --> Browser : 422 "SPP bulan ini sudah lunas"
+  Browser --> Admin : Pesan error
+else Belum dibayar
+  SPP -> DB_Bayar : INSERT trx_pembayaran_spp\n{siswa_id, tarif_id, bulan, tahun,\ntanggal_bayar, jumlah_bayar,\nstatus=LUNAS, metode, petugas_id}
+  DB_Bayar --> SPP : pembayaran_id
+  SPP -> DB_Log : INSERT sys_activity_logs\n(action=CREATE, module=SPP)
+  SPP --> Browser : 200 Pembayaran berhasil\n+ link cetak kuitansi
+  Browser --> Admin : Tampilkan konfirmasi\n& tombol cetak
+end
+deactivate SPP
+
+Admin -> Browser : Klik "Cetak Kuitansi"
+Browser -> SPP : GET /spp/kuitansi/{pembayaran_id}
+activate SPP
+SPP -> DB_Bayar : SELECT pembayaran + siswa + tarif
+SPP --> Browser : Generate PDF kuitansi
+deactivate SPP
+Browser --> Admin : Download/Print kuitansi
+@enduml

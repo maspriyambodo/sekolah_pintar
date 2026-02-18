@@ -1,0 +1,117 @@
+@startuml Deployment_SistemSekolah_V2
+skinparam node {
+  BackgroundColor #F8F9FA
+  BorderColor #212529
+}
+skinparam component {
+  BackgroundColor #E3F2FD
+  BorderColor #1976D2
+}
+skinparam database {
+  BackgroundColor #E8F5E9
+  BorderColor #2E7D32
+}
+
+title Deployment Diagram: Sistem Sekolah (Dockerized Environment)
+
+' ===== EXTERNAL CLIENTS =====
+node "Client Devices" as Clients {
+  component [**React Frontend**\n(React Router 7 / v6)\nSPA Client-side] as ReactApp
+}
+
+cloud "Internet" as Internet
+
+' ===== DOCKER HOST =====
+node "Production Server" as DockerHost {
+  
+  node "Network: Frontend-Net" as NetFE {
+    ' --- NGINX REVERSE PROXY ---
+    node "Container: Nginx" as NginxNode {
+      component [**Nginx v1.27**\n(Static Files & API Gateway)] as Nginx
+    }
+  }
+
+  node "Network: Backend-Net" as NetBE {
+    
+    ' --- LARAVEL API ---
+    node "Container: Laravel-API" as LaravelNode {
+      component [**Laravel 12.x**\n(RESTful API)] as API
+      component [**JasperPHP** / **PHP-Java Bridge**\n(Jasper Report Engine)] as Jasper
+      note right of Jasper
+        Generates PDF Reports
+        (.jrxml templates)
+      end note
+    }
+
+    ' --- DATABASE ---
+    node "Container: MySQL" as MySQLNode {
+      database "MySQL 8.4 LTS" as MySQLDB
+    }
+
+    ' --- CACHE & SESSION ---
+    node "Container: Redis" as RedisNode {
+      database "Redis 7.4" as RedisDB
+      note bottom: Sessions, Cache,\n& Queue Broker
+    }
+
+    ' --- OBJECT STORAGE ---
+    node "Container: Minio" as MinioNode {
+      database "Minio S3" as MinioDB
+      note bottom: Assets, Materi PDF,\nPPDB Documents
+    }
+    
+    ' --- WORKER (Optional but recommended for Laravel) ---
+    node "Container: Laravel-Worker" as WorkerNode {
+      component [Queue Listener] as Worker
+    }
+  }
+}
+
+' ===== INTERACTION / PROTOCOLS =====
+
+' 1. Client to Proxy
+ReactApp -down-> Internet
+Internet -down-> Nginx : HTTPS (443)
+
+' 2. Nginx as Router
+Nginx -down-> ReactApp : Serve Static Assets (HTML/JS)
+Nginx -down-> API : Proxy Pass (FastCGI/PHP-FPM)
+
+' 3. API Logic
+API -down-> MySQLDB : SQL (3306)
+API -down-> RedisDB : Resp Protocol (6379)
+API -down-> MinioDB : S3 API (9000)
+API -right-> Jasper : Execute Report
+
+' 4. Background Processing
+Worker -up-> RedisDB : Pop Jobs
+Worker -up-> API : Process Context
+Worker -down-> MinioDB : Store Generated Reports
+
+' ===== VOLUMES (Persistent Data) =====
+node "Docker Volumes" as Vol {
+  [mysql_data] 
+  [minio_data]
+  [redis_data]
+}
+
+MySQLDB ..> [mysql_data]
+MinioDB ..> [minio_data]
+RedisDB ..> [redis_data]
+
+' ===== NOTES =====
+note right of LaravelNode
+  **Laravel 12 REST API**
+  - Sanctum/Passport Auth
+  - Resource Collections
+  - Jasper Integration
+end note
+
+note left of Nginx
+  **Reverse Proxy Strategy**
+  - / -> React Router SPA
+  - /api -> Laravel API
+  - /storage -> Minio Proxy
+end note
+
+@enduml

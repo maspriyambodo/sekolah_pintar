@@ -1,0 +1,86 @@
+@startuml Seq_PPDB
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 10
+
+actor "Calon Siswa" as Calon
+actor "Admin" as Admin
+participant "Browser" as Browser
+participant "PPDBController" as PPDB
+database "ppdb_gelombang" as DB_Gelombang
+database "ppdb_pendaftar" as DB_Pendaftar
+database "ppdb_dokumen" as DB_Dokumen
+
+== Admin Membuat Gelombang ==
+
+Admin -> Browser : Buat gelombang PPDB
+Browser -> PPDB : POST /ppdb/gelombang/create\n{sekolah_id, nama, tahun_ajaran,\ntgl_mulai, tgl_selesai, biaya}
+activate PPDB
+PPDB -> DB_Gelombang : INSERT ppdb_gelombang
+PPDB --> Browser : Gelombang aktif
+deactivate PPDB
+
+== Calon Siswa Mendaftar ==
+
+Calon -> Browser : Buka halaman PPDB
+Browser -> PPDB : GET /ppdb/register
+activate PPDB
+PPDB -> DB_Gelombang : SELECT gelombang aktif
+PPDB --> Browser : Form pendaftaran + info gelombang
+deactivate PPDB
+
+Calon -> Browser : Isi formulir & submit
+Browser -> PPDB : POST /ppdb/register\n{nama, email, password, nisn,\njenis_kelamin, asal_sekolah,\ngelombang_id, jurusan_id}
+activate PPDB
+PPDB -> PPDB : Generate no_pendaftaran
+PPDB -> DB_Pendaftar : INSERT ppdb_pendaftar\n(status=draft)
+DB_Pendaftar --> PPDB : pendaftar_id
+PPDB --> Browser : Pendaftaran berhasil\n+ No. Pendaftaran
+deactivate PPDB
+
+Calon -> Browser : Upload dokumen persyaratan
+loop Untuk setiap jenis dokumen
+  Browser -> PPDB : POST /ppdb/dokumen/upload\n{pendaftar_id, jenis_dokumen, file}
+  activate PPDB
+  PPDB -> PPDB : Simpan file
+  PPDB -> DB_Dokumen : INSERT ppdb_dokumen\n(verifikasi_status=0)
+  PPDB --> Browser : Dokumen terupload
+  deactivate PPDB
+end
+Browser --> Calon : Semua dokumen terupload
+
+== Admin Verifikasi ==
+
+Admin -> Browser : Buka daftar pendaftar
+Browser -> PPDB : GET /ppdb/pendaftar?status=draft
+activate PPDB
+PPDB -> DB_Pendaftar : SELECT pendaftar + dokumen
+PPDB --> Browser : Daftar pendaftar
+deactivate PPDB
+
+Admin -> Browser : Verifikasi dokumen
+Browser -> PPDB : PUT /ppdb/dokumen/{id}/verify\n{status=1, catatan}
+activate PPDB
+PPDB -> DB_Dokumen : UPDATE verifikasi_status=1
+PPDB -> DB_Pendaftar : UPDATE status=terverifikasi
+PPDB --> Browser : Dokumen terverifikasi
+deactivate PPDB
+
+== Seleksi & Pengumuman ==
+
+Admin -> Browser : Proses seleksi
+Browser -> PPDB : POST /ppdb/seleksi\n{pendaftar_ids[], status_baru}
+activate PPDB
+loop Untuk setiap pendaftar
+  PPDB -> DB_Pendaftar : UPDATE status_pendaftaran\n(diterima/cadangan/ditolak)
+end
+PPDB --> Browser : Seleksi selesai
+deactivate PPDB
+
+Calon -> Browser : Cek status pendaftaran
+Browser -> PPDB : GET /ppdb/status/{no_pendaftaran}
+activate PPDB
+PPDB -> DB_Pendaftar : SELECT by no_pendaftaran
+PPDB --> Browser : Status: DITERIMA ✓
+deactivate PPDB
+Browser --> Calon : Tampilkan status
+@enduml

@@ -1,0 +1,74 @@
+@startuml Seq_Ujian
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 10
+
+actor "Guru" as Guru
+actor "Siswa" as Siswa
+participant "Browser" as Browser
+participant "UjianController" as UC
+participant "SoalController" as SC
+database "trx_ujian" as DB_Ujian
+database "mst_soal\nmst_soal_opsi" as DB_Soal
+database "trx_ujian_user" as DB_UjianUser
+database "trx_ujian_jawaban" as DB_Jawaban
+database "trx_nilai" as DB_Nilai
+
+== Guru Membuat Ujian ==
+
+Guru -> Browser : Buka form buat ujian
+Browser -> UC : POST /ujian/create\n{mapel, kelas, jenis, semester, tanggal}
+activate UC
+UC -> DB_Ujian : INSERT trx_ujian
+DB_Ujian --> UC : ujian_id
+UC --> Browser : Ujian berhasil dibuat
+deactivate UC
+Browser --> Guru : Redirect ke halaman soal
+
+Guru -> Browser : Tambah soal ke bank soal
+Browser -> SC : POST /soal/create\n{mapel_id, pertanyaan, tipe, opsi[], jawaban}
+activate SC
+SC -> DB_Soal : INSERT mst_soal
+SC -> DB_Soal : INSERT mst_soal_opsi (batch)
+SC --> Browser : Soal berhasil ditambah
+deactivate SC
+Browser --> Guru : Tampilkan daftar soal
+
+== Siswa Mengerjakan Ujian ==
+
+Siswa -> Browser : Buka daftar ujian
+Browser -> UC : GET /ujian/available/{siswa_id}
+activate UC
+UC -> DB_Ujian : SELECT ujian by kelas siswa
+DB_Ujian --> UC : daftar ujian[]
+UC --> Browser : Tampilkan daftar ujian
+deactivate UC
+
+Siswa -> Browser : Klik "Mulai Ujian"
+Browser -> UC : POST /ujian/{id}/start\n{siswa_id}
+activate UC
+UC -> DB_UjianUser : INSERT trx_ujian_user\n(status=2:Mengerjakan, waktu_mulai)
+UC -> DB_Soal : SELECT soal by mapel_id\n(random/urut)
+DB_Soal --> UC : soal[] + opsi[]
+UC --> Browser : Tampilkan soal ujian\n+ timer countdown
+deactivate UC
+
+loop Untuk setiap soal
+  Siswa -> Browser : Pilih jawaban / ketik essay
+  Browser -> UC : POST /ujian/jawab\n{ujian_user_id, soal_id, opsi_id/teks}
+  activate UC
+  UC -> DB_Jawaban : INSERT/UPDATE trx_ujian_jawaban
+  UC --> Browser : Jawaban tersimpan
+  deactivate UC
+end
+
+Siswa -> Browser : Klik "Selesai Ujian"
+Browser -> UC : POST /ujian/{id}/finish
+activate UC
+UC -> DB_Jawaban : SELECT all jawaban by ujian_user_id
+UC -> UC : Hitung total_benar, total_salah, nilai_akhir
+UC -> DB_UjianUser : UPDATE status=3:Selesai,\nwaktu_selesai, total_benar,\ntotal_salah, nilai_akhir
+UC -> DB_Nilai : INSERT trx_nilai(ujian_id, siswa_id, nilai)
+UC --> Browser : Ujian selesai!\nNilai: XX
+deactivate UC
+Browser --> Siswa : Tampilkan hasil ujian
+@enduml

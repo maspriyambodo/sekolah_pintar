@@ -1,0 +1,170 @@
+@startmindmap MindMap_SistemSekolah
+<style>
+mindmapDiagram {
+  .system {
+    BackgroundColor #E8EAF6
+    LineColor #3F51B5
+  }
+  .master {
+    BackgroundColor #E3F2FD
+    LineColor #1976D2
+  }
+  .academic {
+    BackgroundColor #E8F5E9
+    LineColor #388E3C
+  }
+  .finance {
+    BackgroundColor #FFF8E1
+    LineColor #F9A825
+  }
+  .bk {
+    BackgroundColor #FCE4EC
+    LineColor #C62828
+  }
+  .library {
+    BackgroundColor #F3E5F5
+    LineColor #7B1FA2
+  }
+  .ppdb {
+    BackgroundColor #FFF3E0
+    LineColor #E65100
+  }
+  .spk {
+    BackgroundColor #E0F7FA
+    LineColor #00838F
+  }
+}
+</style>
+
++ **Sistem Informasi\nSekolah\n(db_sekolah)** <<system>>
+
+++ **Manajemen Sistem** <<system>>
++++ Autentikasi (Login/Logout)
+++++ sys_users
+++++ sessions
+++++ password_reset_tokens
++++ Manajemen Role
+++++ sys_roles
+++++ sys_user_roles
++++ Manajemen Permission
+++++ sys_permissions
+++++ sys_role_permissions
++++ Menu Navigasi
+++++ sys_menus (hierarki parent-child)
++++ Data Referensi
+++++ sys_references
++++++ Jenis Kelamin
++++++ Status Siswa
++++++ Status Absensi
++++++ Status Bayar
++++++ Metode Pembayaran
++++++ Tipe Soal
++++++ dll.
++++ Logging & Audit
+++++ sys_activity_logs
+++++ sys_login_logs
+++++ sys_error_logs
++++ Profil Sekolah
+++++ mst_sekolah
+++++ sys_sekolah_settings
+
+++ **Master Data** <<master>>
++++ Data Guru
+++++ mst_guru (NIP, NUPTK, profil)
+++++ mst_guru_mapel (relasi guru-mapel)
++++ Data Siswa
+++++ mst_siswa (NIS, profil, kelas)
++++ Data Wali Murid
+++++ mst_wali
+++++ mst_wali_murid
+++++ mst_siswa_wali (relasi)
++++ Data Kelas
+++++ mst_kelas (nama, tingkat, tahun ajaran)
+++++ Wali Kelas (wali_guru_id)
++++ Data Mata Pelajaran
+++++ mst_mapel (kode, nama)
+
+-- **Akademik** <<academic>>
+--- Materi Pembelajaran
+---- mst_materi (judul, file, video)
+---- trx_log_akses_materi (tracking)
+--- Tugas
+---- mst_tugas (per guru-mapel & kelas)
+---- trx_tugas_siswa (jawaban & nilai)
+--- Bank Soal
+---- mst_soal (PG / Essay)
+---- mst_soal_opsi (opsi + kunci)
+--- Ujian Online
+---- trx_ujian (jadwal)
+---- trx_ujian_user (sesi siswa)
+---- trx_ujian_jawaban (jawaban)
+--- Penilaian
+---- trx_nilai (nilai per ujian)
+---- trx_rapor (per semester)
+---- trx_rapor_detail (per mapel)
+---- trx_ranking (peringkat kelas)
+--- Presensi & Absensi
+---- trx_absensi_siswa (harian)
+---- trx_absensi_guru (harian)
+---- trx_presensi (per mapel)
+--- Forum Diskusi
+---- trx_forum (topik & balasan)
+
+-- **Keuangan (SPP)** <<finance>>
+--- Tarif SPP
+---- mst_tarif_spp (per kelas & tahun)
+--- Pembayaran
+---- trx_pembayaran_spp
+----- Bulan & Tahun
+----- Metode Pembayaran
+----- Status (Lunas/Belum)
+----- Petugas pencatat
+
+-- **Bimbingan Konseling** <<bk>>
+--- Master BK
+---- mst_bk_kategori
+---- mst_bk_jenis
+--- Kasus BK
+---- trx_bk_kasus (siswa + guru BK)
+--- Sesi Konseling
+---- trx_bk_sesi (tanggal, metode)
+--- Tindakan
+---- trx_bk_tindakan
+--- Hasil & Rekomendasi
+---- trx_bk_hasil
+--- Lampiran
+---- trx_bk_lampiran (file bukti)
+--- Keterlibatan Wali
+---- trx_bk_wali
+
+-- **Perpustakaan** <<library>>
+--- Data Buku
+---- mst_buku (ISBN, stok)
+--- Peminjaman
+---- trx_peminjaman_buku
+----- Tanggal Pinjam
+----- Tanggal Kembali
+----- Status (Dipinjam/Dikembalikan)
+
+-- **PPDB** <<ppdb>>
+--- Gelombang Pendaftaran
+---- ppdb_gelombang (periode, biaya)
+--- Data Pendaftar
+---- ppdb_pendaftar
+----- No Pendaftaran
+----- Status (draft → diterima/ditolak)
+----- Pilihan Jurusan
+--- Dokumen Persyaratan
+---- ppdb_dokumen
+----- Verifikasi Status
+----- Catatan Admin
+
+-- **SPK (Sistem Pendukung\nKeputusan)** <<spk>>
+--- Kriteria
+---- spk_kriteria (bobot, benefit/cost)
+--- Penilaian Siswa
+---- spk_penilaian (per kriteria)
+--- Hasil Perhitungan
+---- spk_hasil (skor, peringkat, periode)
+
+@endmindmap
