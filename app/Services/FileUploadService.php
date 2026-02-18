@@ -49,12 +49,16 @@ class FileUploadService
         ];
     }
 
-    public function getPresignedUrl(string $filePath, int $expirationMinutes = 15): string
+    public function getPresignedUrl(string $filePath)
     {
-        return Storage::disk($this->disk)->temporaryUrl(
-            $filePath,
-            now()->addMinutes($expirationMinutes)
-        );
+        if (!$filePath || !$this->exists($filePath)) {
+            return response()->json(['message' => 'File not found.'], 404);
+        }
+
+        $fileContent = Storage::disk($this->disk)->get($filePath);
+        $mimeType = Storage::disk($this->disk)->mimeType($filePath);
+
+        return response($fileContent, 200)->header('Content-Type', $mimeType);
     }
 
     public function delete(string $filePath): bool
@@ -74,6 +78,7 @@ class FileUploadService
         // Year/Month structure
         $segments[] = now()->format('Y');
         $segments[] = now()->format('m');
+        $segments[] = md5(uniqid(now()->format('H:i:s'), true)); // Unique folder to prevent collisions
 
         // User folder
         if ($userId) {
@@ -94,9 +99,16 @@ class FileUploadService
         return Str::uuid()->toString() . ($extension ? '.' . $extension : '');
     }
 
-    private function getUrl(string $filePath): string
+    private function getUrl(string $filePath)
     {
-        return Storage::disk($this->disk)->url($filePath);
+        if (!$filePath || !$this->exists($filePath)) {
+            return response()->json(['message' => 'File not found.'], 404);
+        }
+
+        $fileContent = Storage::disk($this->disk)->get($filePath);
+        $mimeType = Storage::disk($this->disk)->mimeType($filePath);
+
+        return response($fileContent, 200)->header('Content-Type', $mimeType);
     }
 
     public function validateFile(UploadedFile $file, array $allowedMimeTypes = [], int $maxSize = 10485760): void
