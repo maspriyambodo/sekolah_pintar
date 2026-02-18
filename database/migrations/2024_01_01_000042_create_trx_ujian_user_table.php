@@ -15,7 +15,7 @@ return new class extends Migration
             $table->timestamp('waktu_mulai')->nullable();
             $table->timestamp('waktu_selesai')->nullable();
             $table->unsignedTinyInteger('status')->default(1)->comment('1: Belum mulai, 2: Mengerjakan, 3: Selesai');
-            $table->unsignedInteger('sisa_waktu')->nullable()->comment('Dalam hitungan detik');
+            $table->integer('sisa_waktu')->nullable()->comment('Dalam hitungan detik');
             $table->integer('total_benar')->default(0);
             $table->integer('total_salah')->default(0);
             $table->decimal('nilai_akhir', 5, 2)->default(0.00);
