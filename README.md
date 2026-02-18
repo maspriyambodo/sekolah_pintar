@@ -76,16 +76,16 @@ Sistem izin akses berbasis peran dengan 4 role utama:
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                        API Layer                            │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐ │
-│  │ Controllers │  │  Middleware │  │  Request Validation │ │
-│  └──────┬──────┘  └─────────────┘  └─────────────────────┘ │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │ Controllers │  │  Middleware │  │  Request Validation │  │
+│  └──────┬──────┘  └─────────────┘  └─────────────────────┘  │
 └─────────┼───────────────────────────────────────────────────┘
           │
           ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                     Service Layer                           │
 │  ┌───────────────────────────────────────────────────────┐  │
-│  │ Business Logic: Auth, Siswa, Guru, Kelas, Mapel, dll │  │
+│  │ Business Logic: Auth, Siswa, Guru, Kelas, Mapel, dll  │  │
 │  └───────────────────────────────────────────────────────┘  │
 └─────────┬───────────────────────────────────────────────────┘
           │
@@ -100,10 +100,10 @@ Sistem izin akses berbasis peran dengan 4 role utama:
           ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                      Model Layer                            │
-│  ┌──────────┐  ┌──────────┐  ┌──────────────────────────┐  │
-│  │  Master  │  │ System   │  │      Transaction         │  │
-│  │  Data    │  │ Tables   │  │      Tables              │  │
-│  └──────────┘  └──────────┘  └──────────────────────────┘  │
+│  ┌──────────┐  ┌──────────┐  ┌──────────────────────────┐   │
+│  │  Master  │  │ System   │  │      Transaction         │   │
+│  │  Data    │  │ Tables   │  │      Tables              │   │
+│  └──────────┘  └──────────┘  └──────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -156,6 +156,23 @@ Modul ini mengelola data referensi utama dalam sistem sekolah.
 |-------|-----------|
 | Konfigurasi Tarif | Setup tarif SPP per tingkat/kelas |
 | Periode | Validitas tarif per tahun ajaran |
+
+#### 1.7 Sekolah (`SekolahService`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| CRUD Sekolah | Create, Read, Update, Delete data sekolah |
+| UUID Management | Generate dan management UUID unik per sekolah |
+| Status Aktif | Activation/deactivation sekolah |
+| Subscription Plan | Management paket langganan (free, premium) |
+| Logo Management | Upload dan management logo sekolah |
+
+#### 1.8 Pengaturan Sekolah (`SysSekolahSettings`)
+| Fitur | Deskripsi |
+|-------|-----------|
+| Key-Value Settings | Penyimpanan pengaturan dinamis |
+| Tahun Ajaran Aktif | Konfigurasi tahun ajaran berjalan |
+| Format Rapor | Konfigurasi format rapor |
+| Custom Settings | Pengaturan kustom per sekolah |
 
 ---
 
@@ -323,6 +340,7 @@ Modul ini mengelola seluruh aktivitas akademik sekolah.
 | `mst_bk_kategori` | Kategori BK |
 | `mst_soal` | Bank soal ujian |
 | `mst_soal_opsi` | Opsi jawaban soal |
+| `mst_sekolah` | Data sekolah (multi-tenant) |
 
 ### Transaction Tables
 | Table | Deskripsi |
@@ -358,6 +376,7 @@ Modul ini mengelola seluruh aktivitas akademik sekolah.
 | `sys_login_logs` | Login history |
 | `sys_menus` | Menu definitions |
 | `sys_references` | Reference data |
+| `sys_sekolah_settings` | Pengaturan sekolah (key-value) |
 
 ---
 
@@ -444,6 +463,22 @@ php artisan view:cache
 | GET | `/api/v1/guru/{id}` | Get single guru |
 | PUT | `/api/v1/guru/{id}` | Update guru |
 | DELETE | `/api/v1/guru/{id}` | Delete guru |
+
+### Sekolah
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/sekolah` | List all sekolah |
+| POST | `/api/v1/sekolah` | Create sekolah |
+| GET | `/api/v1/sekolah/{id}` | Get single sekolah |
+| PUT | `/api/v1/sekolah/{id}` | Update sekolah |
+| DELETE | `/api/v1/sekolah/{id}` | Delete sekolah |
+| GET | `/api/v1/sekolah/uuid/{uuid}` | Get sekolah by UUID |
+| GET | `/api/v1/sekolah/{id}/settings` | List settings |
+| POST | `/api/v1/sekolah/{id}/settings` | Create setting |
+| GET | `/api/v1/sekolah/{id}/settings/{id}` | Get setting |
+| PUT | `/api/v1/sekolah/{id}/settings/{id}` | Update setting |
+| DELETE | `/api/v1/sekolah/{id}/settings/{id}` | Delete setting |
+| GET | `/api/v1/sekolah/{id}/settings-key/{key}` | Get setting by key |
 
 ### Kelas
 | Method | Endpoint | Description |
