@@ -11,7 +11,7 @@
  Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 18/02/2026 11:29:44
+ Date: 18/02/2026 13:40:05
 */
 
 SET NAMES utf8mb4;
@@ -430,6 +430,72 @@ CREATE TABLE `password_reset_tokens` (
   `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for ppdb_dokumen
+-- ----------------------------
+DROP TABLE IF EXISTS `ppdb_dokumen`;
+CREATE TABLE `ppdb_dokumen` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `ppdb_pendaftar_id` bigint unsigned NOT NULL,
+  `jenis_dokumen` varchar(50) NOT NULL,
+  `file_path` varchar(255) NOT NULL,
+  `verifikasi_status` tinyint(1) DEFAULT '0',
+  `catatan_admin` text,
+  PRIMARY KEY (`id`),
+  KEY `ppdb_dokumen_pendaftar_id_foreign` (`ppdb_pendaftar_id`),
+  CONSTRAINT `ppdb_dokumen_pendaftar_id_foreign` FOREIGN KEY (`ppdb_pendaftar_id`) REFERENCES `ppdb_pendaftar` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Table structure for ppdb_gelombang
+-- ----------------------------
+DROP TABLE IF EXISTS `ppdb_gelombang`;
+CREATE TABLE `ppdb_gelombang` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `mst_sekolah_id` bigint unsigned NOT NULL,
+  `nama_gelombang` varchar(100) NOT NULL,
+  `tahun_ajaran` varchar(9) NOT NULL,
+  `tgl_mulai` date NOT NULL,
+  `tgl_selesai` date NOT NULL,
+  `biaya_pendaftaran` decimal(12,2) DEFAULT '0.00',
+  `is_active` tinyint(1) DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ppdb_gelombang_sekolah_id_foreign` (`mst_sekolah_id`),
+  CONSTRAINT `ppdb_gelombang_sekolah_id_foreign` FOREIGN KEY (`mst_sekolah_id`) REFERENCES `mst_sekolah` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Table structure for ppdb_pendaftar
+-- ----------------------------
+DROP TABLE IF EXISTS `ppdb_pendaftar`;
+CREATE TABLE `ppdb_pendaftar` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `mst_sekolah_id` bigint unsigned NOT NULL,
+  `ppdb_gelombang_id` bigint unsigned NOT NULL,
+  `no_pendaftaran` varchar(20) NOT NULL,
+  `nama_lengkap` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `nisn` varchar(20) DEFAULT NULL,
+  `jenis_kelamin` enum('L','P') NOT NULL,
+  `telp_hp` varchar(20) DEFAULT NULL,
+  `asal_sekolah` varchar(255) DEFAULT NULL,
+  `status_pendaftaran` enum('draft','terverifikasi','seleksi','diterima','cadangan','ditolak') DEFAULT 'draft',
+  `pilihan_jurusan_id` bigint unsigned DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ppdb_pendaftar_no_unique` (`no_pendaftaran`),
+  KEY `ppdb_pendaftar_sekolah_id_foreign` (`mst_sekolah_id`),
+  KEY `ppdb_pendaftar_gelombang_id_foreign` (`ppdb_gelombang_id`),
+  CONSTRAINT `ppdb_pendaftar_gelombang_id_foreign` FOREIGN KEY (`ppdb_gelombang_id`) REFERENCES `ppdb_gelombang` (`id`),
+  CONSTRAINT `ppdb_pendaftar_sekolah_id_foreign` FOREIGN KEY (`mst_sekolah_id`) REFERENCES `mst_sekolah` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Table structure for sessions
