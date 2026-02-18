@@ -26,6 +26,7 @@ use App\Http\Controllers\Api\V1\RaporController;
 use App\Http\Controllers\Api\V1\RoleController;
 use App\Http\Controllers\Api\V1\SiswaController;
 use App\Http\Controllers\Api\V1\SekolahController;
+use App\Http\Controllers\Api\V1\SysSekolahSettingsController;
 use App\Http\Controllers\Api\V1\SoalsController;
 use App\Http\Controllers\Api\V1\SpkHasilController;
 use App\Http\Controllers\Api\V1\SpkKriteriaController;
@@ -375,9 +376,14 @@ Route::prefix('v1')->group(function () {
             Route::put('/{id}', [SekolahController::class, 'update'])->name('api.v1.sekolah.update');
             Route::delete('/{id}', [SekolahController::class, 'destroy'])->name('api.v1.sekolah.destroy');
             Route::get('/uuid/{uuid}', [SekolahController::class, 'showByUuid'])->name('api.v1.sekolah.show-by-uuid');
-            Route::get('/{id}/settings', [SekolahController::class, 'settings'])->name('api.v1.sekolah.settings');
-            Route::post('/{id}/settings', [SekolahController::class, 'setSetting'])->name('api.v1.sekolah.set-setting');
-            Route::delete('/{id}/settings/{key}', [SekolahController::class, 'deleteSetting'])->name('api.v1.sekolah.delete-setting');
+
+            // Settings routes (using dedicated controller)
+            Route::get('/{sekolahId}/settings', [SysSekolahSettingsController::class, 'index'])->name('api.v1.sekolah.settings.index');
+            Route::post('/{sekolahId}/settings', [SysSekolahSettingsController::class, 'store'])->name('api.v1.sekolah.settings.store');
+            Route::get('/{sekolahId}/settings/{id}', [SysSekolahSettingsController::class, 'show'])->name('api.v1.sekolah.settings.show');
+            Route::put('/{sekolahId}/settings/{id}', [SysSekolahSettingsController::class, 'update'])->name('api.v1.sekolah.settings.update');
+            Route::delete('/{sekolahId}/settings/{id}', [SysSekolahSettingsController::class, 'destroy'])->name('api.v1.sekolah.settings.destroy');
+            Route::get('/{sekolahId}/settings-key/{key}', [SysSekolahSettingsController::class, 'byKey'])->name('api.v1.sekolah.settings.by-key');
         });
 
         // Admin only routes
