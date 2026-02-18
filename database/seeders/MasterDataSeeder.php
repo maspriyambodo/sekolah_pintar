@@ -47,6 +47,9 @@ use App\Models\Spk\SpkPenilaian;
 use App\Models\System\SysActivityLog;
 use App\Models\System\SysErrorLog;
 use App\Models\System\SysLoginLog;
+use App\Models\Ppdb\PpdbGelombang;
+use App\Models\Ppdb\PpdbPendaftaran;
+use App\Models\Ppdb\PpdbDokumen;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -106,6 +109,11 @@ class MasterDataSeeder extends Seeder
         $this->seedSysActivityLogs();
         $this->seedSysErrorLogs();
         $this->seedSysLoginLogs();
+
+        // PPDB Data
+        $this->seedPpdbGelombang();
+        $this->seedPpdbPendaftaran();
+        $this->seedPpdbDokumen();
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
@@ -1154,4 +1162,89 @@ class MasterDataSeeder extends Seeder
 
         $this->command->info('Sys Login Logs seeded from JSON!');
     }
+
+    private function seedPpdbGelombang(): void
+    {
+        $records = $this->loadJsonData('ppdb_gelombang.json');
+        
+        if (empty($records)) {
+            return;
+        }
+
+        foreach ($records as $pg) {
+            PpdbGelombang::firstOrCreate(
+                ['id' => $pg['id'] ?? null],
+                [
+                    'mst_sekolah_id' => $pg['mst_sekolah_id'] ?? null,
+                    'nama_gelombang' => $pg['nama_gelombang'] ?? null,
+                    'tahun_ajaran' => $pg['tahun_ajaran'] ?? null,
+                    'tgl_mulai' => $pg['tgl_mulai'] ?? null,
+                    'tgl_selesai' => $pg['tgl_selesai'] ?? null,
+                    'biaya_pendaftaran' => $pg['biaya_pendaftaran'] ?? null,
+                    'is_active' => $pg['is_active'] ?? 1,
+                ]
+            );
+        }
+
+        $this->command->info('PPDB Gelombang seeded from JSON!');
+    }
+
+    private function seedPpdbPendaftaran(): void
+    {
+        $records = $this->loadJsonData('ppdb_pendaftar.json');
+        
+        if (empty($records)) {
+            return;
+        }
+
+        foreach ($records as $pp) {
+            PpdbPendaftaran::firstOrCreate(
+                ['id' => $pp['id'] ?? null],
+                [
+                    'mst_sekolah_id' => $pp['mst_sekolah_id'] ?? null,
+                    'ppdb_gelombang_id' => $pp['ppdb_gelombang_id'] ?? null,
+                    'no_pendaftaran' => $pp['no_pendaftaran'] ?? null,
+                    'nama_lengkap' => $pp['nama_lengkap'] ?? null,
+                    'email' => $pp['email'] ?? null,
+                    'password' => $pp['password'] ?? null,
+                    'nisn' => $pp['nisn'] ?? null,
+                    'jenis_kelamin' => $pp['jenis_kelamin'] ?? null,
+                    'telp_hp' => $pp['telp_hp'] ?? null,
+                    'asal_sekolah' => $pp['asal_sekolah'] ?? null,
+                    'status_pendaftaran' => $pp['status_pendaftaran'] ?? null,
+                    'pilihan_jurusan_id' => $pp['pilihan_jurusan_id'] ?? null,
+                ]
+            );
+        }
+
+        $this->command->info('PPDB Pendaftaran seeded from JSON!');
+    }
+
+    private function seedPpdbDokumen(): void
+    {
+        $records = $this->loadJsonData('ppdb_dokumen.json');
+        
+        if (empty($records)) {
+            return;
+        }
+
+        foreach ($records as $pd) {
+            PpdbDokumen::firstOrCreate(
+                ['id' => $pd['id'] ?? null],
+                [
+                    'ppdb_pendaftar_id' => $pd['ppdb_pendaftaran_id'] ?? null,
+                    'jenis_dokumen' => $pd['jenis_dokumen'] ?? null,
+                    'file_name' => $pd['file_name'] ?? null,
+                    'mime_type' => $pd['mime_type'] ?? null,
+                    'file_path' => $pd['file_path'] ?? null,
+                    'file_size' => $pd['file_size'] ?? null,
+                    'verifikasi_status' => $pd['verifikasi_status'] ?? null,
+                    'catatan_admin' => $pd['catatan_admin'] ?? null,
+                ]
+            );
+        }
+
+        $this->command->info('PPDB Dokumen seeded from JSON!');
+    }
+
 }

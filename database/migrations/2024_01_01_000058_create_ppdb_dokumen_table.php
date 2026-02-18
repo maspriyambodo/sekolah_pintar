@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('catatan_admin')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->foreign('ppdb_pendaftar_id')->references('id')->on('ppdb_pendaftar')->onDelete('cascade');
             $table->index('ppdb_pendaftar_id');
