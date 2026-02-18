@@ -108,30 +108,16 @@ class RbacSeeder extends Seeder
         }
 
         foreach ($records as $m) {
-            // Find or create parent
-            $parentId = null;
-            if (!empty($m['parent_id'])) {
-                $parent = SysMenu::where('nama_menu', $m['parent_menu'] ?? '')->first();
-                $parentId = $parent?->id;
-            }
-
-            // Find permission
-            $permissionId = null;
-            if (!empty($m['permission_code'])) {
-                $permission = SysPermission::where('code', $m['permission_code'])->first();
-                $permissionId = $permission?->id;
-            }
-
             SysMenu::firstOrCreate(
-                ['nama_menu' => $m['nama_menu'], 'url' => $m['url']],
+                ['id' => $m['id']],
                 [
+                    'parent_id' => $m['parent_id'] ?? null,
+                    'sys_permission_id' => $m['sys_permission_id'],
                     'nama_menu' => $m['nama_menu'],
-                    'url' => $m['url'],
+                    'url' => $m['url'] ?? null,
                     'icon' => $m['icon'] ?? null,
-                    'urutan' => $m['urutan'] ?? 0,
-                    'is_active' => $m['is_active'] ?? true,
-                    'parent_id' => $parentId,
-                    'sys_permission_id' => $permissionId,
+                    'urutan' => $m['urutan'] ?? null,
+                    'is_active' => $m['is_active'] ?? 1,
                 ]
             );
         }
@@ -149,19 +135,13 @@ class RbacSeeder extends Seeder
         }
 
         foreach ($records as $ur) {
-            // Find user and role
-            $user = SysUser::find($ur['sys_user_id']);
-            $role = SysRole::find($ur['sys_role_id']);
-
-            if ($user && $role) {
-                SysUserRole::firstOrCreate(
-                    ['sys_user_id' => $ur['sys_user_id'], 'sys_role_id' => $ur['sys_role_id']],
-                    [
-                        'sys_user_id' => $ur['sys_user_id'],
-                        'sys_role_id' => $ur['sys_role_id'],
-                    ]
-                );
-            }
+            SysUserRole::firstOrCreate(
+                ['sys_user_id' => $ur['sys_user_id'], 'sys_role_id' => $ur['sys_role_id']],
+                [
+                    'sys_user_id' => $ur['sys_user_id'],
+                    'sys_role_id' => $ur['sys_role_id'],
+                ]
+            );
         }
 
         $this->command->info('User roles seeded from JSON!');
@@ -202,10 +182,10 @@ class RbacSeeder extends Seeder
             SysUser::firstOrCreate(
                 ['email' => $u['email']],
                 [
-                    'name' => $u['name'],
                     'email' => $u['email'],
+                    'name' => $u['name'],
                     'password' => $u['password'],
-                    'role' => $u['role'] ?? 1,
+                    'role_id' => $u['role_id'],
                     'is_active' => $u['is_active'] ?? 1,
                 ]
             );
