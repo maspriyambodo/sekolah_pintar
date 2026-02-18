@@ -13,6 +13,7 @@ class GuruResource extends JsonResource
     public function toArray(Request $request): array
     {
         $jenisKelamin = SysReference::getByKode('jenis_kelamin', (string) $this->jenis_kelamin);
+        $pendidikanTerakhir = SysReference::getByKode('pendidikan_terakhir', (string) $this->pendidikan_terakhir);
         return [
             'id' => $this->id,
             'nip' => $this->nip,
@@ -23,7 +24,7 @@ class GuruResource extends JsonResource
             'alamat' => $this->alamat,
             'no_hp' => $this->no_hp,
             'email' => $this->email,
-            'pendidikan_terakhir' => $this->pendidikan_terakhir,
+            'pendidikan_terakhir' => $pendidikanTerakhir?->nama ?? $this->pendidikan_terakhir,
             'user' => $this->whenLoaded('user', fn () => [
                 'id' => $this->user->id,
                 'email' => $this->user->email,
