@@ -25,6 +25,7 @@ use App\Http\Controllers\Api\V1\RankingController;
 use App\Http\Controllers\Api\V1\RaporController;
 use App\Http\Controllers\Api\V1\RoleController;
 use App\Http\Controllers\Api\V1\SiswaController;
+use App\Http\Controllers\Api\V1\SekolahController;
 use App\Http\Controllers\Api\V1\SoalsController;
 use App\Http\Controllers\Api\V1\SpkHasilController;
 use App\Http\Controllers\Api\V1\SpkKriteriaController;
@@ -364,6 +365,19 @@ Route::prefix('v1')->group(function () {
                 Route::get('/siswa/{siswaId}', [LogAksesMateriController::class, 'bySiswa'])->name('api.v1.log-akses-materi.by-siswa');
                 Route::get('/popular', [LogAksesMateriController::class, 'popular'])->name('api.v1.log-akses-materi.popular');
             });
+        });
+
+        // Sekolah management (admin only)
+        Route::middleware([RoleMiddleware::class . ':admin'])->prefix('sekolah')->group(function () {
+            Route::get('/', [SekolahController::class, 'index'])->name('api.v1.sekolah.index');
+            Route::post('/', [SekolahController::class, 'store'])->name('api.v1.sekolah.store');
+            Route::get('/{id}', [SekolahController::class, 'show'])->name('api.v1.sekolah.show');
+            Route::put('/{id}', [SekolahController::class, 'update'])->name('api.v1.sekolah.update');
+            Route::delete('/{id}', [SekolahController::class, 'destroy'])->name('api.v1.sekolah.destroy');
+            Route::get('/uuid/{uuid}', [SekolahController::class, 'showByUuid'])->name('api.v1.sekolah.show-by-uuid');
+            Route::get('/{id}/settings', [SekolahController::class, 'settings'])->name('api.v1.sekolah.settings');
+            Route::post('/{id}/settings', [SekolahController::class, 'setSetting'])->name('api.v1.sekolah.set-setting');
+            Route::delete('/{id}/settings/{key}', [SekolahController::class, 'deleteSetting'])->name('api.v1.sekolah.delete-setting');
         });
 
         // Admin only routes
