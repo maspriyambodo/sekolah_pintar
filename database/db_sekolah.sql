@@ -442,6 +442,8 @@ CREATE TABLE `ppdb_dokumen` (
   `file_path` varchar(255) NOT NULL,
   `verifikasi_status` tinyint(1) DEFAULT '0',
   `catatan_admin` text,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `ppdb_dokumen_pendaftar_id_foreign` (`ppdb_pendaftar_id`),
   CONSTRAINT `ppdb_dokumen_pendaftar_id_foreign` FOREIGN KEY (`ppdb_pendaftar_id`) REFERENCES `ppdb_pendaftar` (`id`) ON DELETE CASCADE
