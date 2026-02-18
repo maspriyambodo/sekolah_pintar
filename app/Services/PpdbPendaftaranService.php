@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace App\Services;
 
 use App\Models\Ppdb\PpdbPendaftaran;
-use App\Models\Ppdb\PpdbGelombang;
+use App\Models\Ppdb\PpdbDokumen;
+use App\Services\FileUploadService;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Pagination\CursorPaginator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -82,6 +84,23 @@ class PpdbPendaftaranService
                 'status_pendaftaran' => $data['status_pendaftaran'] ?? 'draft',
                 'pilihan_jurusan_id' => $data['pilihan_jurusan_id'] ?? null,
             ]);
+
+            // upload ppdb dokumen
+            $fileUploadService = new FileUploadService();
+            $dokumenTypes = ['kartukeluarga', 'akte', 'rapor', 'ijazah'];
+            foreach ($dokumenTypes as $jenisDokumen) {
+                if (isset($data[$jenisDokumen]) && $data[$jenisDokumen] instanceof UploadedFile) {
+                    $uploadResult = $fileUploadService->upload($data[$jenisDokumen], null, 'ppdb/' . $pendaftaran->id);
+                    PpdbDokumen::create([
+                        'ppdb_pendaftaran_id' => $pendaftaran->id,
+                        'jenis_dokumen' => $jenisDokumen,
+                        'file_name' => $uploadResult['file_name'],
+                        'file_path' => $uploadResult['file_path'],
+                        'file_size' => $uploadResult['file_size'],
+                        'mime_type' => $uploadResult['mime_type'],
+                    ]);
+                }
+            }
 
             Log::info('PPDB Pendaftaran created', [
                 'pendaftaran_id' => $pendaftaran->id,

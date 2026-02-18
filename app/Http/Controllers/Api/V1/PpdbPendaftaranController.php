@@ -90,6 +90,10 @@ class PpdbPendaftaranController extends Controller
                 'telp_hp' => ['nullable', 'string', 'max:20'],
                 'asal_sekolah' => ['nullable', 'string', 'max:255'],
                 'pilihan_jurusan_id' => ['nullable', 'integer'],
+                'kartukeluarga' => ['required', 'file', 'max:2048'], // max 2mb
+                'akte' => ['required', 'file', 'max:2048'], // max 2mb
+                'rapor' => ['required', 'file', 'max:2048'], // max 2mb
+                'ijazah' => ['required', 'file', 'max:2048'], // max 2mb
             ]);
 
             $pendaftaran = $this->pendaftaranService->createPendaftaran($request->all());
