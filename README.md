@@ -111,216 +111,83 @@ Sistem izin akses berbasis peran dengan 4 role utama:
 
 ## 📦 Modul Sistem
 
-### 1. Modul Master Data
+### 1. Manajemen Sistem
 
-Modul ini mengelola data referensi utama dalam sistem sekolah.
+| Modul | Deskripsi | Tabel |
+|-------|-----------|-------|
+| **Autentikasi** | Login, Logout, Reset Password | `sys_users`, `sessions`, `password_reset_tokens` |
+| **Manajemen Role** | Definisi dan pengelolaan role pengguna | `sys_roles`, `sys_user_roles` |
+| **Manajemen Permission** | Hak akses dan izin pengguna | `sys_permissions`, `sys_role_permissions` |
+| **Menu Navigasi** | Hierarki menu sistem (parent-child) | `sys_menus` |
+| **Data Referensi** | Data referensi sistem (jenis kelamin, status, dll) | `sys_references` |
+| **Logging & Audit** | Aktivitas, login, dan error logging | `sys_activity_logs`, `sys_login_logs`, `sys_error_logs` |
+| **Profil Sekolah** | Data dan pengaturan sekolah (multi-tenant) | `mst_sekolah`, `sys_sekolah_settings` |
 
-#### 1.1 Data Siswa (`SiswaService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| CRUD Siswa | Create, Read, Update, Delete data siswa |
-| Kelas Management | Penempatan siswa ke kelas |
-| Wali Murid | Relasi siswa dengan wali |
-| Status Siswa | Aktif, Naik Kelas, Lulus, Keluar |
-| Riwayat Kelas | Tracking perpindahan kelas |
+### 2. Master Data
 
-#### 1.2 Data Guru (`GuruService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| CRUD Guru | Create, Read, Update, Delete data guru |
-| Mapel Diajar | Relasi guru dengan mata pelajaran |
-| Wali Kelas | Penugasan sebagai wali kelas |
+| Modul | Deskripsi | Tabel |
+|-------|-----------|-------|
+| **Data Guru** | Profil guru, NIP, NUPTK | `mst_guru`, `mst_guru_mapel` |
+| **Data Siswa** | Profil siswa, NIS, kelas | `mst_siswa` |
+| **Data Wali Murid** | Profil wali dan relasi dengan siswa | `mst_wali`, `mst_wali_murid`, `mst_siswa_wali` |
+| **Data Kelas** | Kelas, tingkat, tahun ajaran, wali kelas | `mst_kelas` |
+| **Data Mata Pelajaran** | Kode dan nama mata pelajaran | `mst_mapel` |
 
-#### 1.3 Data Kelas (`KelasService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| CRUD Kelas | Create, Read, Update, Delete kelas |
-| Wali Kelas | Penugasan wali kelas |
-| Kapasitas | Monitoring kapasitas kelas |
+### 3. Akademik
 
-#### 1.4 Mata Pelajaran (`MapelService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| CRUD Mapel | Create, Read, Update, Delete mata pelajaran |
-| Guru Mapel | Relasi mapel dengan guru pengajar |
+| Modul | Deskripsi | Tabel |
+|-------|-----------|-------|
+| **Materi Pembelajaran** | Upload materi, video pembelajaran | `mst_materi`, `trx_log_akses_materi` |
+| **Tugas** | Penugasan per guru-mapel dan kelas | `mst_tugas`, `trx_tugas_siswa` |
+| **Bank Soal** | Kumpulan soal (PG/Essay) dan opsi jawaban | `mst_soal`, `mst_soal_opsi` |
+| **Ujian Online** | Jadwal ujian dan sesi siswa | `trx_ujian`, `trx_ujian_user`, `trx_ujian_jawaban` |
+| **Penilaian** | Nilai, rapor, dan ranking | `trx_nilai`, `trx_rapor`, `trx_rapor_detail`, `trx_ranking` |
+| **Presensi & Absensi** | Absensi siswa dan guru harian | `trx_absensi_siswa`, `trx_absensi_guru`, `trx_presensi` |
+| **Forum Diskusi** | Topik dan balasan diskusi | `trx_forum` |
 
-#### 1.5 Perpustakaan (`BukuService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| CRUD Buku | Create, Read, Update, Delete buku |
-| Kategori | Pengelompokan buku |
-| Peminjaman | Transaksi peminjaman buku |
+### 4. Keuangan (SPP)
 
-#### 1.6 Tarif SPP (`TarifSppService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| Konfigurasi Tarif | Setup tarif SPP per tingkat/kelas |
-| Periode | Validitas tarif per tahun ajaran |
+| Modul | Deskripsi | Tabel |
+|-------|-----------|-------|
+| **Tarif SPP** | Konfigurasi tarif per kelas dan tahun | `mst_tarif_spp` |
+| **Pembayaran** | Pembayaran SPP per bulan | `trx_pembayaran_spp` |
 
-#### 1.7 Sekolah (`SekolahService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| CRUD Sekolah | Create, Read, Update, Delete data sekolah |
-| UUID Management | Generate dan management UUID unik per sekolah |
-| Status Aktif | Activation/deactivation sekolah |
-| Subscription Plan | Management paket langganan (free, premium) |
-| Logo Management | Upload dan management logo sekolah |
+### 5. Bimbingan Konseling (BK)
 
-#### 1.8 Pengaturan Sekolah (`SysSekolahSettings`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| Key-Value Settings | Penyimpanan pengaturan dinamis |
-| Tahun Ajaran Aktif | Konfigurasi tahun ajaran berjalan |
-| Format Rapor | Konfigurasi format rapor |
-| Custom Settings | Pengaturan kustom per sekolah |
+| Modul | Deskripsi | Tabel |
+|-------|-----------|-------|
+| **Master BK** | Kategori dan jenis kasus BK | `mst_bk_kategori`, `mst_bk_jenis` |
+| **Kasus BK** | Pelaporan kasus siswa | `trx_bk_kasus` |
+| **Sesi Konseling** | Jadwal dan metode konseling | `trx_bk_sesi` |
+| **Tindakan** | Tindakan penanganan | `trx_bk_tindakan` |
+| **Hasil & Rekomendasi** | Hasil penanganan dan rekomendasi | `trx_bk_hasil` |
+| **Lampiran** | File bukti dan dokumentasi | `trx_bk_lampiran` |
+| **Keterlibatan Wali** | Pelibatan wali dalam penanganan | `trx_bk_wali` |
 
----
+### 6. Perpustakaan
 
-### 2. Modul Akademik
+| Modul | Deskripsi | Tabel |
+|-------|-----------|-------|
+| **Data Buku** | Katalog buku (ISBN, stok) | `mst_buku` |
+| **Peminjaman** | Peminjaman dan pengembalian buku | `trx_peminjaman_buku` |
 
-Modul ini mengelola seluruh aktivitas akademik sekolah.
+### 7. PPDB (Penerimaan Peserta Didik Baru)
 
-#### 2.1 Ujian (`UjianService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| CRUD Ujian | Create, Read, Update, Delete ujian |
-| Bank Soal | Manajemen soal ujian |
-| Opsi Jawaban | Multiple choice dengan opsi |
-| Ujian Siswa | Tracking ujian per siswa |
-| Penilaian | Auto-grading dan scoring |
+| Modul | Deskripsi | Tabel |
+|-------|-----------|-------|
+| **Gelombang Pendaftaran** | Periode dan biaya pendaftaran | `ppdb_gelombang` |
+| **Data Pendaftaran** | Data pendaftar dan status | `ppdb_pendaftar` |
+| **Dokumen Persyaratan** | Upload dan verifikasi dokumen | `ppdb_dokumen` |
 
-#### 2.2 Nilai (`NilaiService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| Input Nilai | Entry nilai per siswa per mapel |
-| Jenis Nilai | UH, UTS, UAS, Tugas, dll |
-| Rata-rata | Kalkulasi nilai rata-rata |
-| Konversi | Konversi nilai ke skala 1-100 |
+### 8. SPK (Sistem Pendukung Keputusan)
 
-#### 2.3 Rapor (`RaporService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| Generate Rapor | Pembuatan rapor otomatis |
-| Detail Rapor | Nilai per mata pelajaran |
-| Catatan Guru | Input catatan untuk rapor |
-| Prestasi | Pencatatan prestasi siswa |
-| Absensi Rapor | Rekap absensi untuk rapor |
+| Modul | Deskripsi | Tabel |
+|-------|-----------|-------|
+| **Kriteria** | Kriteria penilaian dengan bobot | `spk_kriteria` |
+| **Penilaian** | Penilaian siswa per kriteria | `spk_penilaian` |
+| **Hasil Perhitungan** | Skor dan peringkat siswa | `spk_hasil` |
 
-#### 2.4 Ranking (`RankingService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| Peringkat Kelas | Ranking berdasarkan nilai |
-| Peringkat Umum | Ranking sekolah-wide |
-| Rekapitulasi | Summary ranking per periode |
-
----
-
-### 3. Modul Absensi
-
-#### 3.1 Absensi Guru (`AbsensiGuruService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| Input Absensi | Recording kehadiran guru |
-| Rekap Bulanan | Summary absensi per bulan |
-| Status | Hadir, Izin, Sakit, Alpha |
-
-#### 3.2 Absensi Siswa (`AbsensiSiswaService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| Input Absensi | Recording kehadiran siswa per kelas |
-| Rekap Harian | Summary absensi harian |
-| Rekap Bulanan | Summary absensi per bulan |
-| Status | Hadir, Izin, Sakit, Alpha, Bolos |
-| Summary | Dashboard ringkasan absensi |
-
----
-
-### 4. Modul Keuangan
-
-#### 4.1 Pembayaran SPP (`PembayaranSppService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| Input Pembayaran | Recording pembayaran SPP |
-| Riwayat | History pembayaran per siswa |
-| Status Lunas | Tracking kelunasan |
-| Laporan | Rekap keuangan SPP |
-| Tunggakan | Monitoring tunggakan pembayaran |
-
----
-
-### 5. Modul Perpustakaan
-
-#### 5.1 Peminjaman Buku (`PeminjamanBukuService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| Peminjaman | Recording pinjam buku |
-| Pengembalian | Recording kembali buku |
-| Denda | Kalkulasi denda keterlambatan |
-| Status | Tersedia, Dipinjam, Hilang |
-| Riwayat | History peminjaman per siswa |
-
----
-
-### 6. Modul Bimbingan Konseling
-
-#### 6.1 BK (`BkJenisService`, `BkKasusService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| Jenis Kasus | Kategori masalah siswa |
-| Kasus | Recording kasus siswa |
-| Sesi BK | Jadwal dan catatan sesi konseling |
-| Hasil | Outcome dari penanganan kasus |
-| Tindakan | Tindakan yang diambil |
-| Lampiran | File pendukung (dokumen, foto) |
-| Involving Wali | Keterlibatan wali dalam penanganan |
-
----
-
-### 7. Modul Autentikasi & Otorisasi
-
-#### 7.1 Auth (`AuthService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| Login | Autentikasi user |
-| Register | Pendaftaran user baru |
-| Logout | Invalidasi token |
-| Refresh Token | Perpanjangan akses token |
-| Me | Get current user info |
-
-#### 7.2 User (`UserService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| CRUD User | Create, Read, Update, Delete user |
-| Profile | Management profil user |
-| Password | Reset dan change password |
-
-#### 7.3 Role & Permission (`RoleService`, `PermissionService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| CRUD Role | Create, Read, Update, Delete role |
-| CRUD Permission | Create, Read, Update, Delete permission |
-| User Role | Assignment role ke user |
-| Role Permission | Assignment permission ke role |
-
----
-
-### 8. Modul Sistem
-
-#### 8.1 File Upload (`FileUploadService`)
-| Fitur | Deskripsi |
-|-------|-----------|
-| Upload File | Upload file ke storage |
-| Presigned URL | Generate URL untuk direct upload |
-| Delete File | Hapus file dari storage |
-
-#### 8.2 Logging
-| Fitur | Deskripsi |
-|-------|-----------|
-| Activity Log | Logging aktivitas user |
-| Error Log | Recording error sistem |
-| Login Log | Tracking login attempts |
-
----
+-------
 
 ## 📊 Struktur Database
 
