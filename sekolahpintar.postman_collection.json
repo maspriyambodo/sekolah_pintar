@@ -2681,6 +2681,222 @@
       ]
     },
     {
+      "name": "WaliMurid",
+      "item": [
+        {
+          "name": "getAllWali",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/wali/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "wali",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getWaliById",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/wali/2",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "wali",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "createWali",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "sys_user_id",
+                  "value": "5",
+                  "description": "'required', 'integer', 'exists:sys_users,id'",
+                  "type": "text",
+                  "uuid": "ac62ee1a-ec68-4eef-b789-ecc03184d1bf"
+                },
+                {
+                  "key": "nama",
+                  "value": "Wak Doyok",
+                  "description": "'required', 'string', 'max:100'",
+                  "type": "text",
+                  "uuid": "bca2aa4c-6508-423d-9406-9f6861b417a2"
+                },
+                {
+                  "key": "no_hp",
+                  "value": "08237889082",
+                  "description": "'nullable', 'string', 'max:20'",
+                  "type": "text",
+                  "uuid": "fb3b0933-9a09-4bb0-a4cd-da8a58e8ad67"
+                },
+                {
+                  "key": "alamat",
+                  "value": "Jl. Wak Doyok No. 123",
+                  "description": "'nullable', 'string'",
+                  "type": "text",
+                  "uuid": "11c7b4b7-2e12-4d61-8249-2bcce1dbb47a"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/wali/",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "wali",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateWali",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sys_user_id\": 5,\n    \"nama\": \"Wak Doyoks\",\n    \"no_hp\": \"081234567890\",\n    \"alamat\": \"Jalan Kebon Jeruk No. 123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url_sekolah}}/wali/5",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "wali",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/wali/5",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "wali",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getSiswaByWali",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{sekolah_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url_sekolah}}/wali/2/siswa",
+              "host": [
+                "{{url_sekolah}}"
+              ],
+              "path": [
+                "wali",
+                "2",
+                "siswa"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "name": "healthcheck",
       "request": {
         "method": "GET",
