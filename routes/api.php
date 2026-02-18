@@ -21,6 +21,8 @@ use App\Http\Controllers\Api\V1\PembayaranSppController;
 use App\Http\Controllers\Api\V1\PeminjamanBukuController;
 use App\Http\Controllers\Api\V1\PresensiController;
 use App\Http\Controllers\Api\V1\PermissionController;
+use App\Http\Controllers\Api\V1\PpdbGelombangController;
+use App\Http\Controllers\Api\V1\PpdbPendaftaranController;
 use App\Http\Controllers\Api\V1\RankingController;
 use App\Http\Controllers\Api\V1\RaporController;
 use App\Http\Controllers\Api\V1\RoleController;
@@ -497,6 +499,36 @@ Route::prefix('v1')->group(function () {
                 Route::delete('/{id}', [SpkHasilController::class, 'destroy'])->name('api.v1.spk.hasil.destroy');
                 Route::get('/periode/{periode}', [SpkHasilController::class, 'byPeriode'])->name('api.v1.spk.hasil.by-periode');
                 Route::get('/siswa/{siswaId}', [SpkHasilController::class, 'bySiswa'])->name('api.v1.spk.hasil.by-siswa');
+            });
+        });
+
+        // PPDB Routes - Admin & Guru access
+        Route::middleware([RoleMiddleware::class . ':admin,guru'])->prefix('ppdb')->group(function () {
+            // PPDB Gelombang
+            Route::prefix('gelombang')->group(function () {
+                Route::get('/', [PpdbGelombangController::class, 'index'])->name('api.v1.ppdb.gelombang.index');
+                Route::post('/', [PpdbGelombangController::class, 'store'])->name('api.v1.ppdb.gelombang.store');
+                Route::get('/{id}', [PpdbGelombangController::class, 'show'])->name('api.v1.ppdb.gelombang.show');
+                Route::put('/{id}', [PpdbGelombangController::class, 'update'])->name('api.v1.ppdb.gelombang.update');
+                Route::delete('/{id}', [PpdbGelombangController::class, 'destroy'])->name('api.v1.ppdb.gelombang.destroy');
+                Route::get('/sekolah/{sekolahId}/active', [PpdbGelombangController::class, 'active'])->name('api.v1.ppdb.gelombang.active');
+                Route::post('/{id}/activate', [PpdbGelombangController::class, 'activate'])->name('api.v1.ppdb.gelombang.activate');
+                Route::post('/{id}/deactivate', [PpdbGelombangController::class, 'deactivate'])->name('api.v1.ppdb.gelombang.deactivate');
+            });
+
+            // PPDB Pendaftaran
+            Route::prefix('pendaftaran')->group(function () {
+                Route::get('/', [PpdbPendaftaranController::class, 'index'])->name('api.v1.ppdb.pendaftaran.index');
+                Route::post('/', [PpdbPendaftaranController::class, 'store'])->name('api.v1.ppdb.pendaftaran.store');
+                Route::get('/no/{noPendaftaran}', [PpdbPendaftaranController::class, 'showByNo'])->name('api.v1.ppdb.pendaftaran.show-by-no');
+                Route::get('/{id}', [PpdbPendaftaranController::class, 'show'])->name('api.v1.ppdb.pendaftaran.show');
+                Route::put('/{id}', [PpdbPendaftaranController::class, 'update'])->name('api.v1.ppdb.pendaftaran.update');
+                Route::put('/{id}/status', [PpdbPendaftaranController::class, 'updateStatus'])->name('api.v1.ppdb.pendaftaran.update-status');
+                Route::delete('/{id}', [PpdbPendaftaranController::class, 'destroy'])->name('api.v1.ppdb.pendaftaran.destroy');
+                Route::post('/{id}/verify', [PpdbPendaftaranController::class, 'verify'])->name('api.v1.ppdb.pendaftaran.verify');
+                Route::post('/{id}/accept', [PpdbPendaftaranController::class, 'accept'])->name('api.v1.ppdb.pendaftaran.accept');
+                Route::post('/{id}/reject', [PpdbPendaftaranController::class, 'reject'])->name('api.v1.ppdb.pendaftaran.reject');
+                Route::get('/sekolah/{sekolahId}/statistics', [PpdbPendaftaranController::class, 'statistics'])->name('api.v1.ppdb.pendaftaran.statistics');
             });
         });
     });
