@@ -1,7 +1,6 @@
 {
   "RECORDS": [
     {
-      "id": 47,
       "ppdb_pendaftar_id": 1,
       "jenis_dokumen": "KK",
       "file_name": "kk_ahmad_fauzi.pdf",
@@ -11,10 +10,10 @@
       "verifikasi_status": 1,
       "catatan_admin": "Dokumen valid",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 48,
       "ppdb_pendaftar_id": 1,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_ahmad_fauzi.pdf",
@@ -24,10 +23,10 @@
       "verifikasi_status": 1,
       "catatan_admin": "Lihat original",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 49,
       "ppdb_pendaftar_id": 1,
       "jenis_dokumen": "Foto",
       "file_name": "foto_ahmad_fauzi.jpg",
@@ -37,10 +36,10 @@
       "verifikasi_status": 1,
       "catatan_admin": "Foto sesuai规格",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 50,
       "ppdb_pendaftar_id": 1,
       "jenis_dokumen": "Akta Kelahiran",
       "file_name": "akta_ahmad_fauzi.pdf",
@@ -50,10 +49,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 51,
       "ppdb_pendaftar_id": 2,
       "jenis_dokumen": "KK",
       "file_name": "kk_siti_nurhaliza.pdf",
@@ -63,10 +62,10 @@
       "verifikasi_status": 1,
       "catatan_admin": "Dokumen valid",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 52,
       "ppdb_pendaftar_id": 2,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_siti_nurhaliza.pdf",
@@ -76,10 +75,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 53,
       "ppdb_pendaftar_id": 2,
       "jenis_dokumen": "Foto",
       "file_name": "foto_siti_nurhaliza.jpg",
@@ -89,10 +88,10 @@
       "verifikasi_status": 0,
       "catatan_admin": "Mohon upload ulang foto berlatar merah",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 54,
       "ppdb_pendaftar_id": 3,
       "jenis_dokumen": "KK",
       "file_name": "kk_budi_santoso.pdf",
@@ -102,10 +101,10 @@
       "verifikasi_status": 1,
       "catatan_admin": "Valid",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 55,
       "ppdb_pendaftar_id": 3,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_budi_santoso.pdf",
@@ -115,10 +114,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 56,
       "ppdb_pendaftar_id": 3,
       "jenis_dokumen": "Foto",
       "file_name": "foto_budi_santoso.jpg",
@@ -128,10 +127,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 57,
       "ppdb_pendaftar_id": 3,
       "jenis_dokumen": "Akta Kelahiran",
       "file_name": "akta_budi_santoso.pdf",
@@ -141,10 +140,10 @@
       "verifikasi_status": 0,
       "catatan_admin": "Ukuran terlalu kecil, mohon upload ulang",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 58,
       "ppdb_pendaftar_id": 4,
       "jenis_dokumen": "KK",
       "file_name": "kk_dewi_lestari.pdf",
@@ -154,10 +153,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 59,
       "ppdb_pendaftar_id": 4,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_dewi_lestari.pdf",
@@ -167,10 +166,10 @@
       "verifikasi_status": 1,
       "catatan_admin": "Lihat ulang",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 60,
       "ppdb_pendaftar_id": 4,
       "jenis_dokumen": "Foto",
       "file_name": "foto_dewi_lestari.jpg",
@@ -180,10 +179,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 61,
       "ppdb_pendaftar_id": 5,
       "jenis_dokumen": "KK",
       "file_name": "kk_rendi_wijaya.pdf",
@@ -193,10 +192,10 @@
       "verifikasi_status": 0,
       "catatan_admin": "Belum upload",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 62,
       "ppdb_pendaftar_id": 5,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_rendi_wijaya.pdf",
@@ -206,10 +205,10 @@
       "verifikasi_status": 0,
       "catatan_admin": "Belum upload",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 63,
       "ppdb_pendaftar_id": 6,
       "jenis_dokumen": "KK",
       "file_name": "kk_nadia_amalia.pdf",
@@ -219,10 +218,10 @@
       "verifikasi_status": 1,
       "catatan_admin": "Valid",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 64,
       "ppdb_pendaftar_id": 6,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_nadia_amalia.pdf",
@@ -232,10 +231,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 65,
       "ppdb_pendaftar_id": 6,
       "jenis_dokumen": "Foto",
       "file_name": "foto_nadia_amalia.jpg",
@@ -245,10 +244,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 66,
       "ppdb_pendaftar_id": 6,
       "jenis_dokumen": "Akta Kelahiran",
       "file_name": "akta_nadia_amalia.pdf",
@@ -258,10 +257,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 67,
       "ppdb_pendaftar_id": 7,
       "jenis_dokumen": "KK",
       "file_name": "kk_fajar_pratama.pdf",
@@ -271,10 +270,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 68,
       "ppdb_pendaftar_id": 7,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_fajar_pratama.pdf",
@@ -284,10 +283,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 69,
       "ppdb_pendaftar_id": 8,
       "jenis_dokumen": "KK",
       "file_name": "kk_putri_ayu.pdf",
@@ -297,10 +296,10 @@
       "verifikasi_status": 1,
       "catatan_admin": "Valid",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 70,
       "ppdb_pendaftar_id": 8,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_putri_ayu.pdf",
@@ -310,10 +309,10 @@
       "verifikasi_status": 0,
       "catatan_admin": "Ijazah tidak jelas",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 71,
       "ppdb_pendaftar_id": 9,
       "jenis_dokumen": "KK",
       "file_name": "kk_rio_akbar.pdf",
@@ -323,10 +322,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 72,
       "ppdb_pendaftar_id": 9,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_rio_akbar.pdf",
@@ -336,10 +335,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 73,
       "ppdb_pendaftar_id": 9,
       "jenis_dokumen": "Foto",
       "file_name": "foto_rio_akbar.jpg",
@@ -349,10 +348,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 74,
       "ppdb_pendaftar_id": 10,
       "jenis_dokumen": "KK",
       "file_name": "kk_lisa_permata.pdf",
@@ -362,10 +361,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 75,
       "ppdb_pendaftar_id": 10,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_lisa_permata.pdf",
@@ -375,10 +374,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 76,
       "ppdb_pendaftar_id": 10,
       "jenis_dokumen": "Foto",
       "file_name": "foto_lisa_permata.jpg",
@@ -388,10 +387,10 @@
       "verifikasi_status": 0,
       "catatan_admin": "Foto blur, mohon upload ulang",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 77,
       "ppdb_pendaftar_id": 11,
       "jenis_dokumen": "KK",
       "file_name": "kk_andi_saputra.pdf",
@@ -401,10 +400,10 @@
       "verifikasi_status": 1,
       "catatan_admin": "Valid",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 78,
       "ppdb_pendaftar_id": 11,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_andi_saputra.pdf",
@@ -414,10 +413,10 @@
       "verifikasi_status": 1,
       "catatan_admin": "Sangat baik",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 79,
       "ppdb_pendaftar_id": 11,
       "jenis_dokumen": "Foto",
       "file_name": "foto_andi_saputra.jpg",
@@ -427,10 +426,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 80,
       "ppdb_pendaftar_id": 12,
       "jenis_dokumen": "KK",
       "file_name": "kk_mega_wati.pdf",
@@ -440,10 +439,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 81,
       "ppdb_pendaftar_id": 12,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_mega_wati.pdf",
@@ -453,10 +452,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 82,
       "ppdb_pendaftar_id": 13,
       "jenis_dokumen": "KK",
       "file_name": "kk_hendra_gunawan.pdf",
@@ -466,10 +465,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 83,
       "ppdb_pendaftar_id": 13,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_hendra_gunawan.pdf",
@@ -479,10 +478,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 84,
       "ppdb_pendaftar_id": 14,
       "jenis_dokumen": "KK",
       "file_name": "kk_rina_susilowati.pdf",
@@ -492,10 +491,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 85,
       "ppdb_pendaftar_id": 15,
       "jenis_dokumen": "KK",
       "file_name": "kk_dedi_kurniawan.pdf",
@@ -505,10 +504,10 @@
       "verifikasi_status": 0,
       "catatan_admin": "File corrupt",
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 86,
       "ppdb_pendaftar_id": 16,
       "jenis_dokumen": "KK",
       "file_name": "kk_sari_dewi.pdf",
@@ -518,10 +517,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 87,
       "ppdb_pendaftar_id": 17,
       "jenis_dokumen": "KK",
       "file_name": "kk_tommy_hermawan.pdf",
@@ -531,10 +530,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 88,
       "ppdb_pendaftar_id": 18,
       "jenis_dokumen": "KK",
       "file_name": "kk_indah_cahyani.pdf",
@@ -544,10 +543,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 89,
       "ppdb_pendaftar_id": 19,
       "jenis_dokumen": "KK",
       "file_name": "kk_reza_pahlevi.pdf",
@@ -557,10 +556,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 90,
       "ppdb_pendaftar_id": 20,
       "jenis_dokumen": "KK",
       "file_name": "kk_devi_octavia.pdf",
@@ -570,10 +569,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 91,
       "ppdb_pendaftar_id": 20,
       "jenis_dokumen": "Ijazah",
       "file_name": "ijazah_devi_octavia.pdf",
@@ -583,10 +582,10 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     },
     {
-      "id": 92,
       "ppdb_pendaftar_id": 20,
       "jenis_dokumen": "Foto",
       "file_name": "foto_devi_octavia.jpg",
@@ -596,7 +595,8 @@
       "verifikasi_status": 1,
       "catatan_admin": null,
       "created_at": "2026-2-18 14:34:41",
-      "updated_at": "2026-2-18 14:34:41"
+      "updated_at": "2026-2-18 14:34:41",
+      "deleted_at": null
     }
   ]
 }
