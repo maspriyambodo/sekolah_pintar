@@ -13,6 +13,7 @@ use App\Models\System\SysUserRole;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB;
 
 class RbacSeeder extends Seeder
 {
@@ -41,6 +42,7 @@ class RbacSeeder extends Seeder
 
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         // Seed from JSON files
         $this->seedPermissions();
         $this->seedRoles();
@@ -48,6 +50,8 @@ class RbacSeeder extends Seeder
         $this->seedUserRoles();
         $this->seedRolePermissions();
         $this->seedUsers();
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         $this->command->info('RBAC seeding completed from JSON files!');
     }
