@@ -1232,7 +1232,7 @@ class MasterDataSeeder extends Seeder
             PpdbDokumen::firstOrCreate(
                 ['id' => $pd['id'] ?? null],
                 [
-                    'ppdb_pendaftar_id' => $pd['ppdb_pendaftaran_id'] ?? null,
+                    'ppdb_pendaftar_id' => (int)$pd['ppdb_pendaftar_id'] ?? null,
                     'jenis_dokumen' => $pd['jenis_dokumen'] ?? null,
                     'file_name' => $pd['file_name'] ?? null,
                     'mime_type' => $pd['mime_type'] ?? null,
