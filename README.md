@@ -129,7 +129,7 @@ Sistem izin akses berbasis peran dengan 4 role utama:
 |-------|-----------|-------|
 | **Data Guru** | Profil guru, NIP, NUPTK | `mst_guru`, `mst_guru_mapel` |
 | **Data Siswa** | Profil siswa, NIS, kelas | `mst_siswa` |
-| **Data Wali Murid** | Profil wali dan relasi dengan siswa | `mst_wali`, `mst_wali_murid`, `mst_siswa_wali` |
+| **Data Wali Murid** | Profil wali dan relasi dengan siswa | `mst_wali`, `mst_siswa_wali` |
 | **Data Kelas** | Kelas, tingkat, tahun ajaran, wali kelas | `mst_kelas` |
 | **Data Mata Pelajaran** | Kode dan nama mata pelajaran | `mst_mapel` |
 
@@ -213,9 +213,11 @@ Sistem izin akses berbasis peran dengan 4 role utama:
 | `mst_mapel` | Data mata pelajaran |
 | `mst_guru` | Data guru |
 | `mst_guru_mapel` | Relasi guru-mapel |
+| `mst_tugas` | Data Tugas untuk siswa (LMS) |
+| `mst_materi` | Data Materi (LMS) |
 | `mst_siswa` | Data siswa |
+| `mst_siswa_wali` | Relasi siswa-wali |
 | `mst_wali` | Data wali murid |
-| `mst_wali_murid` | Relasi wali-murid |
 | `mst_tarif_spp` | Konfigurasi tarif SPP |
 | `mst_buku` | Data buku perpustakaan |
 | `mst_bk_jenis` | Jenis kasus BK |
@@ -223,6 +225,9 @@ Sistem izin akses berbasis peran dengan 4 role utama:
 | `mst_soal` | Bank soal ujian |
 | `mst_soal_opsi` | Opsi jawaban soal |
 | `mst_sekolah` | Data sekolah (multi-tenant) |
+| `mst_organisasi` | Data Organisasi |
+| `mst_organisasi_jabatan` | Relasi organisasi |
+| `mst_ekstrakurikuler` | Data Ekstrakurikuler |
 
 ### Transaction Tables
 | Table | Deskripsi |
