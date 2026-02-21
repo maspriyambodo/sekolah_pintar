@@ -1423,6 +1423,38 @@
       "module": "ppdb-pendaftaran",
       "created_at": "2026-2-18 14:00:00",
       "updated_at": "2026-2-18 14:00:00"
+    },
+    {
+      "id": 179,
+      "code": "ekstrakurikuler.view",
+      "name": "View Ekstrakurikuler",
+      "module": "ekstrakurikuler",
+      "created_at": "2026-2-21 19:20:00",
+      "updated_at": "2026-2-21 19:20:00"
+    },
+    {
+      "id": 180,
+      "code": "ekstrakurikuler.manage",
+      "name": "Manage Ekstrakurikuler",
+      "module": "ekstrakurikuler",
+      "created_at": "2026-2-21 19:20:00",
+      "updated_at": "2026-2-21 19:20:00"
+    },
+    {
+      "id": 181,
+      "code": "ekstrakurikuler.pendaftaran.view",
+      "name": "View Pendaftaran Ekstrakurikuler",
+      "module": "ekstrakurikuler-pendaftaran",
+      "created_at": "2026-2-21 19:20:00",
+      "updated_at": "2026-2-21 19:20:00"
+    },
+    {
+      "id": 182,
+      "code": "ekstrakurikuler.pendaftaran.manage",
+      "name": "Manage Pendaftaran Ekstrakurikuler",
+      "module": "ekstrakurikuler-pendaftaran",
+      "created_at": "2026-2-21 19:20:00",
+      "updated_at": "2026-2-21 19:20:00"
     }
   ]
 }
