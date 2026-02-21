@@ -9,6 +9,8 @@ use App\Http\Controllers\Api\V1\BkJenisController;
 use App\Http\Controllers\Api\V1\BkKasusController;
 use App\Http\Controllers\Api\V1\BukuController;
 use App\Http\Controllers\Api\V1\DashboardController;
+use App\Http\Controllers\Api\V1\EkstrakurikulerController;
+use App\Http\Controllers\Api\V1\EkstrakurikulerSiswaController;
 use App\Http\Controllers\Api\V1\FileUploadController;
 use App\Http\Controllers\Api\V1\ForumController;
 use App\Http\Controllers\Api\V1\GuruController;
@@ -529,6 +531,33 @@ Route::prefix('v1')->group(function () {
                 Route::post('/{id}/accept', [PpdbPendaftaranController::class, 'accept'])->name('api.v1.ppdb.pendaftaran.accept');
                 Route::post('/{id}/reject', [PpdbPendaftaranController::class, 'reject'])->name('api.v1.ppdb.pendaftaran.reject');
                 Route::get('/sekolah/{sekolahId}/statistics', [PpdbPendaftaranController::class, 'statistics'])->name('api.v1.ppdb.pendaftaran.statistics');
+            });
+        });
+
+        // Ekstrakurikuler Routes - Admin & Guru access
+        Route::middleware([RoleMiddleware::class . ':admin,guru'])->prefix('ekstrakurikuler')->group(function () {
+            // Ekstrakurikuler
+            Route::get('/', [EkstrakurikulerController::class, 'index'])->name('api.v1.ekstrakurikuler.index');
+            Route::post('/', [EkstrakurikulerController::class, 'store'])->name('api.v1.ekstrakurikuler.store');
+            Route::get('/aktif', [EkstrakurikulerController::class, 'aktif'])->name('api.v1.ekstrakurikuler.aktif');
+            Route::get('/pembina/{pembinaGuruId}', [EkstrakurikulerController::class, 'byPembina'])->name('api.v1.ekstrakurikuler.by-pembina');
+            Route::get('/{id}', [EkstrakurikulerController::class, 'show'])->name('api.v1.ekstrakurikuler.show');
+            Route::put('/{id}', [EkstrakurikulerController::class, 'update'])->name('api.v1.ekstrakurikuler.update');
+            Route::delete('/{id}', [EkstrakurikulerController::class, 'destroy'])->name('api.v1.ekstrakurikuler.destroy');
+            Route::get('/{id}/statistik', [EkstrakurikulerController::class, 'statistik'])->name('api.v1.ekstrakurikuler.statistik');
+
+            // Pendaftaran Siswa
+            Route::prefix('pendaftaran')->group(function () {
+                Route::get('/', [EkstrakurikulerSiswaController::class, 'index'])->name('api.v1.ekstrakurikuler.pendaftaran.index');
+                Route::post('/', [EkstrakurikulerSiswaController::class, 'store'])->name('api.v1.ekstrakurikuler.pendaftaran.store');
+                Route::post('/check-status', [EkstrakurikulerSiswaController::class, 'checkStatus'])->name('api.v1.ekstrakurikuler.pendaftaran.check-status');
+                Route::get('/{id}', [EkstrakurikulerSiswaController::class, 'show'])->name('api.v1.ekstrakurikuler.pendaftaran.show');
+                Route::put('/{id}/status', [EkstrakurikulerSiswaController::class, 'updateStatus'])->name('api.v1.ekstrakurikuler.pendaftaran.update-status');
+                Route::post('/{id}/keluar', [EkstrakurikulerSiswaController::class, 'keluar'])->name('api.v1.ekstrakurikuler.pendaftaran.keluar');
+                Route::delete('/{id}', [EkstrakurikulerSiswaController::class, 'destroy'])->name('api.v1.ekstrakurikuler.pendaftaran.destroy');
+                Route::get('/ekstrakurikuler/{ekstrakurikulerId}', [EkstrakurikulerSiswaController::class, 'byEkstrakurikuler'])->name('api.v1.ekstrakurikuler.pendaftaran.by-ekstrakurikuler');
+                Route::get('/siswa/{siswaId}', [EkstrakurikulerSiswaController::class, 'bySiswa'])->name('api.v1.ekstrakurikuler.pendaftaran.by-siswa');
+                Route::get('/siswa/{siswaId}/riwayat', [EkstrakurikulerSiswaController::class, 'riwayatBySiswa'])->name('api.v1.ekstrakurikuler.pendaftaran.riwayat');
             });
         });
     });
