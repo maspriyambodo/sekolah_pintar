@@ -464,24 +464,6 @@ CREATE TABLE `mst_wali` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
--- Table structure for mst_wali_murid
--- ----------------------------
-DROP TABLE IF EXISTS `mst_wali_murid`;
-CREATE TABLE `mst_wali_murid` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `sys_user_id` bigint unsigned NOT NULL,
-  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `no_hp` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `alamat` text COLLATE utf8mb4_unicode_ci,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `mst_wali_murid_sys_user_id_foreign` (`sys_user_id`),
-  CONSTRAINT `mst_wali_murid_sys_user_id_foreign` FOREIGN KEY (`sys_user_id`) REFERENCES `sys_users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ----------------------------
 -- Table structure for password_reset_tokens
 -- ----------------------------
 DROP TABLE IF EXISTS `password_reset_tokens`;
@@ -971,15 +953,15 @@ DROP TABLE IF EXISTS `trx_bk_wali`;
 CREATE TABLE `trx_bk_wali` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `trx_bk_kasus_id` bigint unsigned NOT NULL,
-  `mst_wali_murid_id` bigint unsigned NOT NULL,
+  `mst_wali_id` bigint unsigned NOT NULL,
   `peran` tinyint unsigned NOT NULL COMMENT 'Referensi ke sys_references dengan kategori peran_wali_bk',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `trx_bk_wali_trx_bk_kasus_id_foreign` (`trx_bk_kasus_id`),
-  KEY `trx_bk_wali_mst_wali_murid_id_foreign` (`mst_wali_murid_id`),
-  CONSTRAINT `trx_bk_wali_mst_wali_murid_id_foreign` FOREIGN KEY (`mst_wali_murid_id`) REFERENCES `mst_wali_murid` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  KEY `trx_bk_wali_mst_wali_id_foreign` (`mst_wali_id`),
+  CONSTRAINT `trx_bk_wali_mst_wali_id_foreign` FOREIGN KEY (`mst_wali_id`) REFERENCES `mst_wali` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `trx_bk_wali_trx_bk_kasus_id_foreign` FOREIGN KEY (`trx_bk_kasus_id`) REFERENCES `trx_bk_kasus` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

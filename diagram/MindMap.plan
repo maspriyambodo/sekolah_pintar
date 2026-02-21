@@ -76,7 +76,6 @@ mindmapDiagram {
 ++++ mst_siswa (NIS, profil, kelas)
 +++ Data Wali Murid
 ++++ mst_wali
-++++ mst_wali_murid
 ++++ mst_siswa_wali (relasi)
 +++ Data Kelas
 ++++ mst_kelas (nama, tingkat, tahun ajaran)

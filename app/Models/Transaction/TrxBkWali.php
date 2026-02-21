@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Master\MstWaliMurid;
+use App\Models\Master\MstWali;
 
 class TrxBkWali extends Model
 {
@@ -18,7 +18,7 @@ class TrxBkWali extends Model
 
     protected $fillable = [
         'trx_bk_kasus_id',
-        'mst_wali_murid_id',
+        'mst_wali_id',
         'peran',
         'created_at',
         'updated_at',
@@ -36,6 +36,6 @@ class TrxBkWali extends Model
 
     public function waliMurid(): BelongsTo
     {
-        return $this->belongsTo(MstWaliMurid::class, 'mst_wali_murid_id');
+        return $this->belongsTo(MstWali::class, 'mst_wali_id');
     }
 }

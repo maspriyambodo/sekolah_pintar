@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\System\SysUser;
+use App\Models\Transaction\TrxBkWali;
 
 class MstWali extends Model
 {
@@ -36,5 +38,10 @@ class MstWali extends Model
     {
         return $this->belongsToMany(MstSiswa::class, 'mst_siswa_wali', 'mst_wali_id', 'mst_siswa_id')
             ->withPivot('hubungan');
+    }
+
+    public function bkWali(): HasMany
+    {
+        return $this->hasMany(TrxBkWali::class, 'mst_wali_id');
     }
 }

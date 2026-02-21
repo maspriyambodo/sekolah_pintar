@@ -18,7 +18,6 @@ use App\Models\Master\MstSoalOpsi;
 use App\Models\Master\MstSoal;
 use App\Models\Master\MstTarifSpp;
 use App\Models\Master\MstTugas;
-use App\Models\Master\MstWaliMurid;
 use App\Models\Master\MstWali;
 use App\Models\Master\MstEkstrakurikuler;
 use App\Models\Master\MstOrganisasi;
@@ -79,7 +78,6 @@ class MasterDataSeeder extends Seeder
         $this->seedSoal();
         $this->seedTarifSpp();
         $this->seedTugas();
-        $this->seedWaliMurid();
         $this->seedWali();
 
         // Transaction Data
@@ -484,29 +482,6 @@ class MasterDataSeeder extends Seeder
         }
 
         $this->command->info('Tugas seeded from JSON!');
-    }
-
-    private function seedWaliMurid(): void
-    {
-        $records = $this->loadJsonData('mst_wali_murid.json');
-        
-        if (empty($records)) {
-            return;
-        }
-
-        foreach ($records as $w) {
-            MstWaliMurid::firstOrCreate(
-                ['sys_user_id' => $w['sys_user_id']],
-                [
-                    'sys_user_id' => $w['sys_user_id'],
-                    'nama' => $w['nama'],
-                    'no_hp' => $w['no_hp'] ?? null,
-                    'alamat' => $w['alamat'] ?? null,
-                ]
-            );
-        }
-
-        $this->command->info('Wali Murid seeded from JSON!');
     }
 
     private function seedWali(): void
@@ -926,7 +901,7 @@ class MasterDataSeeder extends Seeder
                 ['id' => $bw['id'] ?? null],
                 [
                     'trx_bk_kasus_id' => $bw['trx_bk_kasus_id'] ?? null,
-                    'mst_wali_murid_id' => $bw['mst_wali_murid_id'] ?? null,
+                    'mst_wali_id' => $bw['mst_wali_id'] ?? null,
                     'peran' => $bw['peran'] ?? null,
                 ]
             );
