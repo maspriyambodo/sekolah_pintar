@@ -19,6 +19,9 @@ use App\Http\Controllers\Api\V1\LogAksesMateriController;
 use App\Http\Controllers\Api\V1\MateriController;
 use App\Http\Controllers\Api\V1\MapelController;
 use App\Http\Controllers\Api\V1\NilaiController;
+use App\Http\Controllers\Api\V1\OrganisasiController;
+use App\Http\Controllers\Api\V1\OrganisasiAnggotaController;
+use App\Http\Controllers\Api\V1\OrganisasiJabatanController;
 use App\Http\Controllers\Api\V1\PembayaranSppController;
 use App\Http\Controllers\Api\V1\PeminjamanBukuController;
 use App\Http\Controllers\Api\V1\PresensiController;
@@ -558,6 +561,41 @@ Route::prefix('v1')->group(function () {
                 Route::get('/ekstrakurikuler/{ekstrakurikulerId}', [EkstrakurikulerSiswaController::class, 'byEkstrakurikuler'])->name('api.v1.ekstrakurikuler.pendaftaran.by-ekstrakurikuler');
                 Route::get('/siswa/{siswaId}', [EkstrakurikulerSiswaController::class, 'bySiswa'])->name('api.v1.ekstrakurikuler.pendaftaran.by-siswa');
                 Route::get('/siswa/{siswaId}/riwayat', [EkstrakurikulerSiswaController::class, 'riwayatBySiswa'])->name('api.v1.ekstrakurikuler.pendaftaran.riwayat');
+            });
+        });
+
+        // Organisasi Routes - Admin & Guru access
+        Route::middleware([RoleMiddleware::class . ':admin,guru'])->prefix('organisasi')->group(function () {
+            // Jabatan
+            Route::prefix('jabatan')->group(function () {
+                Route::get('/', [OrganisasiJabatanController::class, 'index'])->name('api.v1.organisasi.jabatan.index');
+                Route::post('/', [OrganisasiJabatanController::class, 'store'])->name('api.v1.organisasi.jabatan.store');
+                Route::get('/all', [OrganisasiJabatanController::class, 'all'])->name('api.v1.organisasi.jabatan.all');
+                Route::get('/{id}', [OrganisasiJabatanController::class, 'show'])->name('api.v1.organisasi.jabatan.show');
+                Route::put('/{id}', [OrganisasiJabatanController::class, 'update'])->name('api.v1.organisasi.jabatan.update');
+                Route::delete('/{id}', [OrganisasiJabatanController::class, 'destroy'])->name('api.v1.organisasi.jabatan.destroy');
+            });
+
+            // Organisasi
+            Route::get('/', [OrganisasiController::class, 'index'])->name('api.v1.organisasi.index');
+            Route::post('/', [OrganisasiController::class, 'store'])->name('api.v1.organisasi.store');
+            Route::get('/aktif', [OrganisasiController::class, 'aktif'])->name('api.v1.organisasi.aktif');
+            Route::get('/pembina/{pembinaGuruId}', [OrganisasiController::class, 'byPembina'])->name('api.v1.organisasi.by-pembina');
+            Route::get('/{id}', [OrganisasiController::class, 'show'])->name('api.v1.organisasi.show');
+            Route::put('/{id}', [OrganisasiController::class, 'update'])->name('api.v1.organisasi.update');
+            Route::delete('/{id}', [OrganisasiController::class, 'destroy'])->name('api.v1.organisasi.destroy');
+            Route::get('/{id}/statistik', [OrganisasiController::class, 'statistik'])->name('api.v1.organisasi.statistik');
+
+            // Anggota
+            Route::prefix('anggota')->group(function () {
+                Route::get('/', [OrganisasiAnggotaController::class, 'index'])->name('api.v1.organisasi.anggota.index');
+                Route::post('/', [OrganisasiAnggotaController::class, 'store'])->name('api.v1.organisasi.anggota.store');
+                Route::get('/aktif', [OrganisasiAnggotaController::class, 'aktif'])->name('api.v1.organisasi.anggota.aktif');
+                Route::get('/organisasi/{organisasiId}', [OrganisasiAnggotaController::class, 'byOrganisasi'])->name('api.v1.organisasi.anggota.by-organisasi');
+                Route::get('/siswa/{siswaId}', [OrganisasiAnggotaController::class, 'bySiswa'])->name('api.v1.organisasi.anggota.by-siswa');
+                Route::get('/{id}', [OrganisasiAnggotaController::class, 'show'])->name('api.v1.organisasi.anggota.show');
+                Route::put('/{id}', [OrganisasiAnggotaController::class, 'update'])->name('api.v1.organisasi.anggota.update');
+                Route::delete('/{id}', [OrganisasiAnggotaController::class, 'destroy'])->name('api.v1.organisasi.anggota.destroy');
             });
         });
     });
