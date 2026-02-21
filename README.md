@@ -250,6 +250,11 @@ Sistem izin akses berbasis peran dengan 4 role utama:
 | `trx_bk_lampiran` | Lampiran kasus BK |
 | `trx_bk_wali` | Keterlibatan wali dalam BK |
 | `trx_ekstrakurikuler_siswa` | Pendaftaran siswa ekstrakurikuler |
+| `trx_forum` | Topik dan balasan diskusi |
+| `trx_log_akses_materi` | log siswa akses materi |
+| `trx_organisasi_anggota` | Data Siswa Anggota Organisasi |
+| `trx_presensi` | Absen siswa & guru tiap pelajaran |
+| `trx_tugas_siswa` | Data siswa mengerjakan tugas |
 
 ### System Tables
 | Table | Deskripsi |
