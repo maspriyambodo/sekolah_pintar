@@ -563,6 +563,54 @@
       "is_active": 1,
       "created_at": "2026-2-21 19:20:00",
       "updated_at": "2026-2-21 19:20:00"
+    },
+    {
+      "id": 48,
+      "parent_id": null,
+      "sys_permission_id": 183,
+      "nama_menu": "Organisasi",
+      "url": "#",
+      "icon": "bi-diagram-3",
+      "urutan": 13,
+      "is_active": 1,
+      "created_at": "2026-2-21 19:40:00",
+      "updated_at": "2026-2-21 19:40:00"
+    },
+    {
+      "id": 49,
+      "parent_id": 48,
+      "sys_permission_id": 184,
+      "nama_menu": "Data Organisasi",
+      "url": "/api/v1/organisasi",
+      "icon": "bi-building",
+      "urutan": 1,
+      "is_active": 1,
+      "created_at": "2026-2-21 19:40:00",
+      "updated_at": "2026-2-21 19:40:00"
+    },
+    {
+      "id": 50,
+      "parent_id": 48,
+      "sys_permission_id": 185,
+      "nama_menu": "Jabatan",
+      "url": "/api/v1/organisasi/jabatan",
+      "icon": "bi-person-badge",
+      "urutan": 2,
+      "is_active": 1,
+      "created_at": "2026-2-21 19:40:00",
+      "updated_at": "2026-2-21 19:40:00"
+    },
+    {
+      "id": 51,
+      "parent_id": 48,
+      "sys_permission_id": 186,
+      "nama_menu": "Anggota",
+      "url": "/api/v1/organisasi/anggota",
+      "icon": "bi-people",
+      "urutan": 3,
+      "is_active": 1,
+      "created_at": "2026-2-21 19:40:00",
+      "updated_at": "2026-2-21 19:40:00"
     }
   ]
 }

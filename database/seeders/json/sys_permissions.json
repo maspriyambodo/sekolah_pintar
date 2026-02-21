@@ -1455,6 +1455,54 @@
       "module": "ekstrakurikuler-pendaftaran",
       "created_at": "2026-2-21 19:20:00",
       "updated_at": "2026-2-21 19:20:00"
+    },
+    {
+      "id": 183,
+      "code": "organisasi.view",
+      "name": "View Organisasi",
+      "module": "organisasi",
+      "created_at": "2026-2-21 19:40:00",
+      "updated_at": "2026-2-21 19:40:00"
+    },
+    {
+      "id": 184,
+      "code": "organisasi.manage",
+      "name": "Manage Organisasi",
+      "module": "organisasi",
+      "created_at": "2026-2-21 19:40:00",
+      "updated_at": "2026-2-21 19:40:00"
+    },
+    {
+      "id": 185,
+      "code": "organisasi.jabatan.view",
+      "name": "View Jabatan Organisasi",
+      "module": "organisasi-jabatan",
+      "created_at": "2026-2-21 19:40:00",
+      "updated_at": "2026-2-21 19:40:00"
+    },
+    {
+      "id": 186,
+      "code": "organisasi.jabatan.manage",
+      "name": "Manage Jabatan Organisasi",
+      "module": "organisasi-jabatan",
+      "created_at": "2026-2-21 19:40:00",
+      "updated_at": "2026-2-21 19:40:00"
+    },
+    {
+      "id": 187,
+      "code": "organisasi.anggota.view",
+      "name": "View Anggota Organisasi",
+      "module": "organisasi-anggota",
+      "created_at": "2026-2-21 19:40:00",
+      "updated_at": "2026-2-21 19:40:00"
+    },
+    {
+      "id": 188,
+      "code": "organisasi.anggota.manage",
+      "name": "Manage Anggota Organisasi",
+      "module": "organisasi-anggota",
+      "created_at": "2026-2-21 19:40:00",
+      "updated_at": "2026-2-21 19:40:00"
     }
   ]
 }
