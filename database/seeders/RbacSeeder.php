@@ -189,7 +189,7 @@ class RbacSeeder extends Seeder
                     'email' => $u['email'],
                     'name' => $u['name'],
                     'password' => $u['password'],
-                    'role_id' => $u['role_id'],
+                    'role' => $u['role'],
                     'is_active' => $u['is_active'] ?? 1,
                 ]
             );
