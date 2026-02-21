@@ -11,7 +11,7 @@
  Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 18/02/2026 13:40:05
+ Date: 21/02/2026 19:51:19
 */
 
 SET NAMES utf8mb4;
@@ -145,6 +145,30 @@ CREATE TABLE `mst_buku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
+-- Table structure for mst_ekstrakurikuler
+-- ----------------------------
+DROP TABLE IF EXISTS `mst_ekstrakurikuler`;
+CREATE TABLE `mst_ekstrakurikuler` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `kode` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deskripsi` text COLLATE utf8mb4_unicode_ci,
+  `pembina_guru_id` bigint unsigned DEFAULT NULL,
+  `hari` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jam_mulai` time DEFAULT NULL,
+  `jam_selesai` time DEFAULT NULL,
+  `lokasi` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` enum('aktif','nonaktif') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'aktif',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `mst_ekstrakurikuler_kode_unique` (`kode`),
+  KEY `mst_ekstrakurikuler_pembina_guru_id_foreign` (`pembina_guru_id`),
+  CONSTRAINT `mst_ekstrakurikuler_pembina_guru_id_foreign` FOREIGN KEY (`pembina_guru_id`) REFERENCES `mst_guru` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
 -- Table structure for mst_guru
 -- ----------------------------
 DROP TABLE IF EXISTS `mst_guru`;
@@ -193,7 +217,7 @@ CREATE TABLE `mst_guru_mapel` (
 DROP TABLE IF EXISTS `mst_kelas`;
 CREATE TABLE `mst_kelas` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `nama_kelas` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nama_kelas` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tingkat` tinyint unsigned DEFAULT NULL COMMENT '1-12 untuk Kelas X-XII',
   `tahun_ajaran` varchar(9) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `wali_guru_id` bigint unsigned DEFAULT NULL,
@@ -211,7 +235,7 @@ CREATE TABLE `mst_kelas` (
 DROP TABLE IF EXISTS `mst_mapel`;
 CREATE TABLE `mst_mapel` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `kode_mapel` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode_mapel` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nama_mapel` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -241,18 +265,55 @@ CREATE TABLE `mst_materi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
+-- Table structure for mst_organisasi
+-- ----------------------------
+DROP TABLE IF EXISTS `mst_organisasi`;
+CREATE TABLE `mst_organisasi` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `kode` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deskripsi` text COLLATE utf8mb4_unicode_ci,
+  `pembina_guru_id` bigint unsigned DEFAULT NULL,
+  `periode_mulai` year NOT NULL,
+  `periode_selesai` year DEFAULT NULL,
+  `status` enum('aktif','nonaktif') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'aktif',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `mst_organisasi_kode_unique` (`kode`),
+  KEY `mst_organisasi_pembina_guru_id_foreign` (`pembina_guru_id`),
+  CONSTRAINT `mst_organisasi_pembina_guru_id_foreign` FOREIGN KEY (`pembina_guru_id`) REFERENCES `mst_guru` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Table structure for mst_organisasi_jabatan
+-- ----------------------------
+DROP TABLE IF EXISTS `mst_organisasi_jabatan`;
+CREATE TABLE `mst_organisasi_jabatan` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deskripsi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `urutan` int NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
 -- Table structure for mst_sekolah
 -- ----------------------------
 DROP TABLE IF EXISTS `mst_sekolah`;
 CREATE TABLE `mst_sekolah` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Untuk URL unik/slug (misal: sekolah-a.app.com)',
   `npsn` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nama_sekolah` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `alamat` text COLLATE utf8mb4_unicode_ci,
-  `logo_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `is_active` tinyint(1) DEFAULT '1',
-  `subscription_plan` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT 'free',
+  `logo_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Path ke Minio',
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
+  `subscription_plan` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'free' COMMENT 'Integrasi billing nantinya',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -438,20 +499,21 @@ DROP TABLE IF EXISTS `ppdb_dokumen`;
 CREATE TABLE `ppdb_dokumen` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `ppdb_pendaftar_id` bigint unsigned NOT NULL,
-  `jenis_dokumen` varchar(50) NOT NULL,
-  `file_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `mime_type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_size` int unsigned DEFAULT NULL,
-  `file_path` varchar(255) NOT NULL,
-  `verifikasi_status` tinyint(1) DEFAULT '0',
-  `catatan_admin` text,
+  `jenis_dokumen` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'KK, Ijazah, Foto, dll',
+  `file_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nama file asli',
+  `mime_type` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'MIME type file',
+  `file_size` int unsigned NOT NULL COMMENT 'Ukuran file dalam bytes',
+  `file_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Path di Minio',
+  `verifikasi_status` tinyint(1) NOT NULL DEFAULT '0',
+  `catatan_admin` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `ppdb_dokumen_pendaftar_id_foreign` (`ppdb_pendaftar_id`),
-  CONSTRAINT `ppdb_dokumen_pendaftar_id_foreign` FOREIGN KEY (`ppdb_pendaftar_id`) REFERENCES `ppdb_pendaftar` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `ppdb_dokumen_ppdb_pendaftar_id_index` (`ppdb_pendaftar_id`),
+  KEY `ppdb_dokumen_jenis_dokumen_index` (`jenis_dokumen`),
+  CONSTRAINT `ppdb_dokumen_ppdb_pendaftar_id_foreign` FOREIGN KEY (`ppdb_pendaftar_id`) REFERENCES `ppdb_pendaftar` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for ppdb_gelombang
@@ -460,19 +522,21 @@ DROP TABLE IF EXISTS `ppdb_gelombang`;
 CREATE TABLE `ppdb_gelombang` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `mst_sekolah_id` bigint unsigned NOT NULL,
-  `nama_gelombang` varchar(100) NOT NULL,
-  `tahun_ajaran` varchar(9) NOT NULL,
+  `nama_gelombang` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Contoh: Gelombang 1, Jalur Prestasi',
+  `tahun_ajaran` varchar(9) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Contoh: 2025/2026',
   `tgl_mulai` date NOT NULL,
   `tgl_selesai` date NOT NULL,
-  `biaya_pendaftaran` decimal(12,2) DEFAULT '0.00',
-  `is_active` tinyint(1) DEFAULT '1',
+  `biaya_pendaftaran` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `ppdb_gelombang_sekolah_id_foreign` (`mst_sekolah_id`),
-  CONSTRAINT `ppdb_gelombang_sekolah_id_foreign` FOREIGN KEY (`mst_sekolah_id`) REFERENCES `mst_sekolah` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `ppdb_gelombang_mst_sekolah_id_index` (`mst_sekolah_id`),
+  KEY `ppdb_gelombang_tahun_ajaran_index` (`tahun_ajaran`),
+  KEY `ppdb_gelombang_is_active_index` (`is_active`),
+  CONSTRAINT `ppdb_gelombang_mst_sekolah_id_foreign` FOREIGN KEY (`mst_sekolah_id`) REFERENCES `mst_sekolah` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for ppdb_pendaftar
@@ -482,26 +546,29 @@ CREATE TABLE `ppdb_pendaftar` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `mst_sekolah_id` bigint unsigned NOT NULL,
   `ppdb_gelombang_id` bigint unsigned NOT NULL,
-  `no_pendaftaran` varchar(20) NOT NULL,
-  `nama_lengkap` varchar(255) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `nisn` varchar(20) DEFAULT NULL,
-  `jenis_kelamin` enum('L','P') NOT NULL,
-  `telp_hp` varchar(20) DEFAULT NULL,
-  `asal_sekolah` varchar(255) DEFAULT NULL,
-  `status_pendaftaran` enum('draft','terverifikasi','seleksi','diterima','cadangan','ditolak') DEFAULT 'draft',
-  `pilihan_jurusan_id` bigint unsigned DEFAULT NULL,
+  `no_pendaftaran` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Generate otomatis (mis: PPDB-2025-001)',
+  `nama_lengkap` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Untuk calon siswa login cek status',
+  `nisn` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jenis_kelamin` enum('L','P') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telp_hp` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `asal_sekolah` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status_pendaftaran` enum('draft','terverifikasi','seleksi','diterima','cadangan','ditolak') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'draft',
+  `pilihan_jurusan_id` bigint unsigned DEFAULT NULL COMMENT 'Opsional untuk SMK/SMA',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `ppdb_pendaftar_no_unique` (`no_pendaftaran`),
-  KEY `ppdb_pendaftar_sekolah_id_foreign` (`mst_sekolah_id`),
-  KEY `ppdb_pendaftar_gelombang_id_foreign` (`ppdb_gelombang_id`),
-  CONSTRAINT `ppdb_pendaftar_gelombang_id_foreign` FOREIGN KEY (`ppdb_gelombang_id`) REFERENCES `ppdb_gelombang` (`id`),
-  CONSTRAINT `ppdb_pendaftar_sekolah_id_foreign` FOREIGN KEY (`mst_sekolah_id`) REFERENCES `mst_sekolah` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `ppdb_pendaftar_no_pendaftaran_unique` (`no_pendaftaran`),
+  KEY `ppdb_pendaftar_mst_sekolah_id_index` (`mst_sekolah_id`),
+  KEY `ppdb_pendaftar_ppdb_gelombang_id_index` (`ppdb_gelombang_id`),
+  KEY `ppdb_pendaftar_no_pendaftaran_index` (`no_pendaftaran`),
+  KEY `ppdb_pendaftar_email_index` (`email`),
+  KEY `ppdb_pendaftar_status_pendaftaran_index` (`status_pendaftaran`),
+  CONSTRAINT `ppdb_pendaftar_mst_sekolah_id_foreign` FOREIGN KEY (`mst_sekolah_id`) REFERENCES `mst_sekolah` (`id`) ON DELETE RESTRICT,
+  CONSTRAINT `ppdb_pendaftar_ppdb_gelombang_id_foreign` FOREIGN KEY (`ppdb_gelombang_id`) REFERENCES `ppdb_gelombang` (`id`) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for sessions
@@ -719,12 +786,12 @@ DROP TABLE IF EXISTS `sys_sekolah_settings`;
 CREATE TABLE `sys_sekolah_settings` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `mst_sekolah_id` bigint unsigned NOT NULL,
-  `key` varchar(100) NOT NULL,
-  `value` text,
+  `key` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'misal: tahun_ajaran_aktif, format_rapor',
+  `value` text COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`),
-  KEY `sys_settings_sekolah_id_foreign` (`mst_sekolah_id`),
-  CONSTRAINT `sys_settings_sekolah_id_foreign` FOREIGN KEY (`mst_sekolah_id`) REFERENCES `mst_sekolah` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `sys_sekolah_settings_mst_sekolah_id_foreign` (`mst_sekolah_id`),
+  CONSTRAINT `sys_sekolah_settings_mst_sekolah_id_foreign` FOREIGN KEY (`mst_sekolah_id`) REFERENCES `mst_sekolah` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Table structure for sys_user_roles
@@ -917,6 +984,26 @@ CREATE TABLE `trx_bk_wali` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
+-- Table structure for trx_ekstrakurikuler_siswa
+-- ----------------------------
+DROP TABLE IF EXISTS `trx_ekstrakurikuler_siswa`;
+CREATE TABLE `trx_ekstrakurikuler_siswa` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `ekstrakurikuler_id` bigint unsigned NOT NULL,
+  `siswa_id` bigint unsigned NOT NULL,
+  `tanggal_daftar` date NOT NULL,
+  `status` enum('aktif','keluar') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'aktif',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uniq_ekskul_siswa` (`ekstrakurikuler_id`,`siswa_id`),
+  KEY `trx_ekstrakurikuler_siswa_siswa_id_foreign` (`siswa_id`),
+  CONSTRAINT `trx_ekstrakurikuler_siswa_ekstrakurikuler_id_foreign` FOREIGN KEY (`ekstrakurikuler_id`) REFERENCES `mst_ekstrakurikuler` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `trx_ekstrakurikuler_siswa_siswa_id_foreign` FOREIGN KEY (`siswa_id`) REFERENCES `mst_siswa` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
 -- Table structure for trx_forum
 -- ----------------------------
 DROP TABLE IF EXISTS `trx_forum`;
@@ -980,6 +1067,30 @@ CREATE TABLE `trx_nilai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
+-- Table structure for trx_organisasi_anggota
+-- ----------------------------
+DROP TABLE IF EXISTS `trx_organisasi_anggota`;
+CREATE TABLE `trx_organisasi_anggota` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `organisasi_id` bigint unsigned NOT NULL,
+  `siswa_id` bigint unsigned NOT NULL,
+  `jabatan_id` bigint unsigned NOT NULL,
+  `tanggal_mulai` date NOT NULL,
+  `tanggal_selesai` date DEFAULT NULL,
+  `status` enum('aktif','nonaktif') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'aktif',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uniq_org_siswa_periode` (`organisasi_id`,`siswa_id`),
+  KEY `trx_organisasi_anggota_siswa_id_foreign` (`siswa_id`),
+  KEY `trx_organisasi_anggota_jabatan_id_foreign` (`jabatan_id`),
+  CONSTRAINT `trx_organisasi_anggota_jabatan_id_foreign` FOREIGN KEY (`jabatan_id`) REFERENCES `mst_organisasi_jabatan` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `trx_organisasi_anggota_organisasi_id_foreign` FOREIGN KEY (`organisasi_id`) REFERENCES `mst_organisasi` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `trx_organisasi_anggota_siswa_id_foreign` FOREIGN KEY (`siswa_id`) REFERENCES `mst_siswa` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
 -- Table structure for trx_pembayaran_spp
 -- ----------------------------
 DROP TABLE IF EXISTS `trx_pembayaran_spp`;
@@ -987,7 +1098,7 @@ CREATE TABLE `trx_pembayaran_spp` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `mst_siswa_id` bigint unsigned NOT NULL,
   `mst_tarif_spp_id` bigint unsigned NOT NULL,
-  `bulan` tinyint unsigned NOT NULL COMMENT '1=Januari, 12=Desember',
+  `bulan` tinyint NOT NULL COMMENT '1=Januari, 12=Desember',
   `tahun` year NOT NULL,
   `tanggal_bayar` date NOT NULL,
   `jumlah_bayar` decimal(10,2) NOT NULL,
@@ -1170,7 +1281,9 @@ CREATE TABLE `trx_ujian_jawaban` (
   PRIMARY KEY (`id`),
   KEY `trx_ujian_jawaban_trx_ujian_user_id_foreign` (`trx_ujian_user_id`),
   KEY `trx_ujian_jawaban_mst_soal_id_foreign` (`mst_soal_id`),
+  KEY `trx_ujian_jawaban_mst_soal_opsi_id_foreign` (`mst_soal_opsi_id`),
   CONSTRAINT `trx_ujian_jawaban_mst_soal_id_foreign` FOREIGN KEY (`mst_soal_id`) REFERENCES `mst_soal` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `trx_ujian_jawaban_mst_soal_opsi_id_foreign` FOREIGN KEY (`mst_soal_opsi_id`) REFERENCES `mst_soal_opsi` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `trx_ujian_jawaban_trx_ujian_user_id_foreign` FOREIGN KEY (`trx_ujian_user_id`) REFERENCES `trx_ujian_user` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -1185,7 +1298,7 @@ CREATE TABLE `trx_ujian_user` (
   `waktu_mulai` timestamp NULL DEFAULT NULL,
   `waktu_selesai` timestamp NULL DEFAULT NULL,
   `status` tinyint unsigned NOT NULL DEFAULT '1' COMMENT '1: Belum mulai, 2: Mengerjakan, 3: Selesai',
-  `sisa_waktu` int unsigned DEFAULT NULL COMMENT 'Dalam hitungan detik',
+  `sisa_waktu` int DEFAULT NULL COMMENT 'Dalam hitungan detik',
   `total_benar` int NOT NULL DEFAULT '0',
   `total_salah` int NOT NULL DEFAULT '0',
   `nilai_akhir` decimal(5,2) NOT NULL DEFAULT '0.00',
