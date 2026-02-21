@@ -1,0 +1,49 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "nama": "Ketua",
+      "deskripsi": null,
+      "urutan": 1,
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "nama": "Wakil Ketua",
+      "deskripsi": null,
+      "urutan": 2,
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "nama": "Sekretaris",
+      "deskripsi": null,
+      "urutan": 3,
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "nama": "Bendahara",
+      "deskripsi": null,
+      "urutan": 4,
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "nama": "Anggota",
+      "deskripsi": null,
+      "urutan": 5,
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    }
+  ]
+}

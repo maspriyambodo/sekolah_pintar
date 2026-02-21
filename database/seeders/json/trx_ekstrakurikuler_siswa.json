@@ -1,0 +1,84 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "ekstrakurikuler_id": 1,
+      "siswa_id": 1,
+      "tanggal_daftar": "1072025",
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "ekstrakurikuler_id": 1,
+      "siswa_id": 2,
+      "tanggal_daftar": "1072025",
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "ekstrakurikuler_id": 2,
+      "siswa_id": 3,
+      "tanggal_daftar": "1172025",
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "ekstrakurikuler_id": 2,
+      "siswa_id": 4,
+      "tanggal_daftar": "1172025",
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "ekstrakurikuler_id": 3,
+      "siswa_id": 5,
+      "tanggal_daftar": "1272025",
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "ekstrakurikuler_id": 3,
+      "siswa_id": 6,
+      "tanggal_daftar": "1272025",
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "ekstrakurikuler_id": 4,
+      "siswa_id": 7,
+      "tanggal_daftar": "1372025",
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 8,
+      "ekstrakurikuler_id": 4,
+      "siswa_id": 8,
+      "tanggal_daftar": "1372025",
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    }
+  ]
+}

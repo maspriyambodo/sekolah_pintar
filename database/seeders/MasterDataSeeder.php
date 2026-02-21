@@ -20,6 +20,11 @@ use App\Models\Master\MstTarifSpp;
 use App\Models\Master\MstTugas;
 use App\Models\Master\MstWaliMurid;
 use App\Models\Master\MstWali;
+use App\Models\Master\MstEkstrakurikuler;
+use App\Models\Master\MstOrganisasi;
+use App\Models\Master\MstOrganisasiJabatan;
+use App\Models\Transaction\TrxEkstrakurikulerSiswa;
+use App\Models\Transaction\TrxOrganisasiAnggota;
 use App\Models\Transaction\TrxAbsensiGuru;
 use App\Models\Transaction\TrxAbsensiSiswa;
 use App\Models\Transaction\TrxBkHasil;
@@ -114,6 +119,20 @@ class MasterDataSeeder extends Seeder
         $this->seedPpdbGelombang();
         $this->seedPpdbPendaftaran();
         $this->seedPpdbDokumen();
+
+        // use App\Models\Master\MstOrganisasi;
+        // use App\Models\Master\MstOrganisasiJabatan;
+        // use App\Models\Transaction\TrxEkstrakurikulerSiswa;
+        // use App\Models\Transaction\TrxOrganisasiAnggota;
+
+        // Ekstrakurikuler
+        $this->seedEkstrakurikuler();
+        $this->seedEkstrakurikulerSiswa();
+
+        // Organisasi
+        $this->seedMstOrganisasi();
+        $this->seedMstOrganisasiJabatan();
+        $this->seedTrxOrganisasiAnggota();
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
@@ -1245,6 +1264,115 @@ class MasterDataSeeder extends Seeder
         }
 
         $this->command->info('PPDB Dokumen seeded from JSON!');
+    }
+
+    private function seedEkstrakurikuler() : void {
+        $records = $this->loadJsonData('mst_ekstrakurikuler.json');
+        
+        if (empty($records)) {
+            return;
+        }
+
+        foreach ($records as $eksul) {
+            MstEkstrakurikuler::firstOrCreate(
+                ['id' => $eksul['id']],
+                [
+                    'kode' => $eksul['kode'] ?? null,
+                    'nama' => $eksul['nama'] ?? null,
+                    'deskripsi' => $eksul['deskripsi'] ?? null,
+                    'pembina_guru_id' => (int)$eksul['pembina_guru_id'] ?? null,
+                    'hari' => $eksul['hari'] ?? null,
+                    'jam_mulai' => $eksul['jam_mulai'] ?? null,
+                    'jam_selesai' => $eksul['jam_selesai'] ?? null,
+                    'lokasi' => $eksul['lokasi'] ?? null,
+                    'status' => $eksul['status'] ?? null
+                ]
+            );
+        }
+    }
+
+    private function seedEkstrakurikulerSiswa() : void {
+        $records = $this->loadJsonData('trx_ekstrakurikuler_siswa.json');
+        
+        if (empty($records)) {
+            return;
+        }
+
+        foreach ($records as $eksul) {
+            TrxEkstrakurikulerSiswa::firstOrCreate(
+                ['id' => $eksul['id']],
+                [
+                    'ekstrakurikuler_id' => $eksul['ekstrakurikuler_id'] ?? null,
+                    'siswa_id' => (int)$eksul['siswa_id'] ?? null,
+                    'tanggal_daftar' => $eksul['tanggal_daftar'] ?? null,
+                    'status' => $eksul['status'] ?? null,
+                ]
+            );
+        }
+    }
+
+    private function seedMstOrganisasi() : void {
+        $records = $this->loadJsonData('mst_organisasi.json');
+        
+        if (empty($records)) {
+            return;
+        }
+
+        foreach ($records as $org) {
+            MstOrganisasi::firstOrCreate(
+                ['id' => $org['id']],
+                [
+                    'kode' => $org['kode'] ?? null,
+                    'nama' => $org['nama'] ?? null,
+                    'deskripsi' => $org['deskripsi'] ?? null,
+                    'pembina_guru_id' => $org['pembina_guru_id'] ?? null,
+                    'periode_mulai' => $org['periode_mulai'] ?? null,
+                    'periode_selesai' => $org['periode_selesai'] ?? null,
+                    'status' => $org['status'] ?? null,
+                ]
+            );
+        }
+    }
+
+    private function seedMstOrganisasiJabatan() : void {
+        $records = $this->loadJsonData('mst_organisasi_jabatan.json');
+        
+        if (empty($records)) {
+            return;
+        }
+
+        foreach ($records as $org) {
+            MstOrganisasiJabatan::firstOrCreate(
+                ['id' => $org['id']],
+                [
+                    'nama' => $org['nama'] ?? null,
+                    'deskripsi' => $org['deskripsi'] ?? null,
+                    'urutan' => $org['urutan'] ?? null,
+                ]
+            );
+        }
+    }
+
+    private function seedTrxOrganisasiAnggota() : void {
+        $records = $this->loadJsonData('trx_organisasi_anggota.json');
+        
+        if (empty($records)) {
+            return;
+        }
+
+        foreach ($records as $org) {
+            TrxOrganisasiAnggota::firstOrCreate(
+                ['id' => $org['id']],
+                [
+                    'organisasi_id' => $org['organisasi_id'] ?? null,
+                    'siswa_id' => $org['siswa_id'] ?? null,
+                    'jabatan_id' => $org['jabatan_id'] ?? null,
+                    'tanggal_mulai' => $org['tanggal_mulai'] ?? null,
+                    'tanggal_selesai' => $org['tanggal_selesai'] ?? null,
+                    'status' => $org['status'] ?? null,
+                ]
+            );
+        }
     }
 
 }

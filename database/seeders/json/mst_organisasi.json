@@ -1,0 +1,30 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "kode": "ORG001",
+      "nama": "OSIS",
+      "deskripsi": "Organisasi Siswa Intra Sekolah",
+      "pembina_guru_id": 2,
+      "periode_mulai": 2025,
+      "periode_selesai": 2026,
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "kode": "ORG002",
+      "nama": "MPK",
+      "deskripsi": "Majelis Perwakilan Kelas",
+      "pembina_guru_id": 3,
+      "periode_mulai": 2025,
+      "periode_selesai": 2026,
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    }
+  ]
+}

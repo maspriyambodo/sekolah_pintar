@@ -1,0 +1,100 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "organisasi_id": 1,
+      "siswa_id": 1,
+      "jabatan_id": 1,
+      "tanggal_mulai": "1572025",
+      "tanggal_selesai": null,
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "organisasi_id": 1,
+      "siswa_id": 2,
+      "jabatan_id": 2,
+      "tanggal_mulai": "1572025",
+      "tanggal_selesai": null,
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "organisasi_id": 1,
+      "siswa_id": 3,
+      "jabatan_id": 3,
+      "tanggal_mulai": "1572025",
+      "tanggal_selesai": null,
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "organisasi_id": 1,
+      "siswa_id": 4,
+      "jabatan_id": 4,
+      "tanggal_mulai": "1572025",
+      "tanggal_selesai": null,
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "organisasi_id": 1,
+      "siswa_id": 5,
+      "jabatan_id": 5,
+      "tanggal_mulai": "1572025",
+      "tanggal_selesai": null,
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 6,
+      "organisasi_id": 2,
+      "siswa_id": 6,
+      "jabatan_id": 1,
+      "tanggal_mulai": "1572025",
+      "tanggal_selesai": null,
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 7,
+      "organisasi_id": 2,
+      "siswa_id": 7,
+      "jabatan_id": 3,
+      "tanggal_mulai": "1572025",
+      "tanggal_selesai": null,
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 8,
+      "organisasi_id": 2,
+      "siswa_id": 8,
+      "jabatan_id": 5,
+      "tanggal_mulai": "1572025",
+      "tanggal_selesai": null,
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    }
+  ]
+}

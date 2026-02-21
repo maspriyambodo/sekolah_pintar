@@ -1,0 +1,64 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "kode": "EKS001",
+      "nama": "Pramuka",
+      "deskripsi": "Kegiatan kepanduan dan kepemimpinan",
+      "pembina_guru_id": 1,
+      "hari": "Jumat",
+      "jam_mulai": "14:00:00",
+      "jam_selesai": "16:00:00",
+      "lokasi": "Lapangan Sekolah",
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "kode": "EKS002",
+      "nama": "Futsal",
+      "deskripsi": "Latihan dan kompetisi futsal antar sekolah",
+      "pembina_guru_id": 2,
+      "hari": "Rabu",
+      "jam_mulai": "15:00:00",
+      "jam_selesai": "17:00:00",
+      "lokasi": "Gor Sekolah",
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "kode": "EKS003",
+      "nama": "Paskibra",
+      "deskripsi": "Pelatihan baris-berbaris dan upacara",
+      "pembina_guru_id": 3,
+      "hari": "Selasa",
+      "jam_mulai": "14:00:00",
+      "jam_selesai": "16:00:00",
+      "lokasi": "Lapangan Utama",
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "kode": "EKS004",
+      "nama": "English Club",
+      "deskripsi": "Pengembangan kemampuan bahasa Inggris",
+      "pembina_guru_id": 1,
+      "hari": "Kamis",
+      "jam_mulai": "13:00:00",
+      "jam_selesai": "15:00:00",
+      "lokasi": "Ruang Bahasa",
+      "status": "aktif",
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null
+    }
+  ]
+}
