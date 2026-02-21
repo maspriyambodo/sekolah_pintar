@@ -509,6 +509,76 @@
       "created_at": "2026-2-17 13:10:21",
       "updated_at": "2026-2-17 13:10:21",
       "deleted_at": null
+    },
+    {
+      "id": 52,
+      "kategori": "agama",
+      "kode": "1",
+      "nama": "Islam",
+      "urutan": 1,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 53,
+      "kategori": "agama",
+      "kode": "2",
+      "nama": "Kristen",
+      "urutan": 2,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 54,
+      "kategori": "agama",
+      "kode": "3",
+      "nama": "Katholik",
+      "urutan": 3,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 55,
+      "kategori": "agama",
+      "kode": "4",
+      "nama": "Hindu",
+      "urutan": 4,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 56,
+      "kategori": "agama",
+      "kode": "5",
+      "nama": "Budha",
+      "urutan": 5,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 57,
+      "kategori": "agama",
+      "kode": "6",
+      "nama": "Konghucu",
+      "urutan": 6,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
+    },
+    {
+      "id": 58,
+      "kategori": "agama",
+      "kode": "7",
+      "nama": "Kepercayaan",
+      "urutan": 7,
+      "created_at": "2026-2-17 13:10:21",
+      "updated_at": "2026-2-17 13:10:21",
+      "deleted_at": null
     }
   ]
 }
