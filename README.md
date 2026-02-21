@@ -187,6 +187,13 @@ Sistem izin akses berbasis peran dengan 4 role utama:
 | **Penilaian** | Penilaian siswa per kriteria | `spk_penilaian` |
 | **Hasil Perhitungan** | Skor dan peringkat siswa | `spk_hasil` |
 
+### 9. Ekstrakurikuler
+
+| Modul | Deskripsi | Tabel |
+|-------|-----------|-------|
+| **Data Ekstrakurikuler** | Master data ekstrakurikuler dan pembina | `mst_ekstrakurikuler` |
+| **Pendaftaran Siswa** | Pendaftaran dan manajemen siswa ekstrakurikuler | `trx_ekstrakurikuler_siswa` |
+
 -------
 
 ## 📊 Struktur Database
@@ -229,6 +236,7 @@ Sistem izin akses berbasis peran dengan 4 role utama:
 | `trx_bk_tindakan` | Tindakan BK |
 | `trx_bk_lampiran` | Lampiran kasus BK |
 | `trx_bk_wali` | Keterlibatan wali dalam BK |
+| `trx_ekstrakurikuler_siswa` | Pendaftaran siswa ekstrakurikuler |
 
 ### System Tables
 | Table | Deskripsi |
@@ -298,7 +306,7 @@ php artisan view:cache
 
 ---
 
-## 🔗 API Endpoints
+## � API Endpoints
 
 ### Authentication
 | Method | Endpoint | Description |
@@ -406,7 +414,7 @@ Lihat [API_DOCUMENTATION.md](API_DOCUMENTATION.md) untuk dokumentasi lengkap.
 
 ---
 
-## 📚 Dokumentasi
+## � Dokumentasi
 
 | Dokumen | Deskripsi |
 |---------|-----------|
