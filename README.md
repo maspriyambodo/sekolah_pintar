@@ -194,6 +194,14 @@ Sistem izin akses berbasis peran dengan 4 role utama:
 | **Data Ekstrakurikuler** | Master data ekstrakurikuler dan pembina | `mst_ekstrakurikuler` |
 | **Pendaftaran Siswa** | Pendaftaran dan manajemen siswa ekstrakurikuler | `trx_ekstrakurikuler_siswa` |
 
+### 9. Organisasi
+
+| Modul | Deskripsi | Tabel |
+|-------|-----------|-------|
+| **Data Organisasi** | Master data Organisasi dan pembina | `mst_organisasi` |
+| **Data Organisasi Jabatan** | Master Data Jabatan Organisasi | `mst_organisasi_jabatan` |
+ **Data Anggota Organisasi** | Data Anggota Organisasi | `trx_organisasi_anggota` |
+
 -------
 
 ## 📊 Struktur Database
